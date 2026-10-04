@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+import { BookOpen, MonitorPlay, Globe, Microscope } from 'lucide-react';
+---
+
+<BaseLayout title="Academics">
+  <Header />
+  
+  <main class="flex-grow py-16 bg-surface">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h1 class="text-4xl font-serif font-bold text-primary mb-4 text-center">Academic Structure</h1>
+      <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
+        We offer comprehensive education from Grade 1 to Grade 13, preparing students for both Ordinary Level (O/L) and Advanced Level (A/L) examinations.
+      </p>
+      
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex items-start gap-4">
+          <div class="bg-primary/10 p-3 rounded-lg text-primary shrink-0">
+            <BookOpen size={24} />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Bilingual Education</h3>
+            <p class="text-gray-600">Classes are conducted in both <strong>Sinhala</strong> and <strong>English</strong> mediums, providing students with a strong foundation for higher education.</p>
+          </div>
+        </div>
+        
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex items-start gap-4">
+          <div class="bg-primary/10 p-3 rounded-lg text-primary shrink-0">
+            <Globe size={24} />
+          </div>
+          <div>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">Global Languages</h3>
+            <p class="text-gray-600">We prepare students for a globalized world by offering international language studies, including <strong>Chinese</strong> and <strong>Japanese</strong>.</p>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="text-3xl font-serif font-bold text-primary mb-8 text-center">Facilities & Learning</h2>
+      
+      <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2">
+          <div class="p-8 border-b md:border-b-0 md:border-r border-gray-100">
+            <MonitorPlay size={32} class="text-accent mb-4" />
+            <h3 class="text-xl font-bold text-gray-800 mb-3">IT Laboratories</h3>
+            <p class="text-gray-600">Fully equipped IT laboratories featuring modern computers and resources to ensure students are prepared for the digital age.</p>
+          </div>
+          <div class="p-8">
+            <Microscope size={32} class="text-accent mb-4" />
+            <h3 class="text-xl font-bold text-gray-800 mb-3">Science Stream</h3>
+            <p class="text-gray-600">Specialized Biology, Chemistry, and Physics labs designed specifically for our A/L science students to conduct practical experiments.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <Footer />
+</BaseLayout>

@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+import { FileText, Download, ClipboardCheck } from 'lucide-react';
+---
+
+<BaseLayout title="Admissions">
+  <Header />
+  
+  <main class="flex-grow py-16 bg-surface">
+    <div class="container mx-auto px-4 max-w-3xl">
+      <h1 class="text-4xl font-serif font-bold text-primary mb-4 text-center">Admissions</h1>
+      <p class="text-center text-gray-600 mb-12">Join Sri Chandananda Buddhist College and begin a journey of academic excellence and spiritual growth.</p>
+      
+      <div class="bg-white p-8 md:p-12 rounded-2xl shadow-sm border border-gray-100 mb-12">
+        <h2 class="text-2xl font-serif font-bold text-gray-800 mb-6 flex items-center gap-3">
+          <ClipboardCheck class="text-accent" size={28} />
+          Admission Procedure
+        </h2>
+        
+        <ol class="space-y-6 relative border-l-2 border-gray-200 ml-3 md:ml-4">
+          <li class="pl-8 relative">
+            <div class="absolute w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold -left-[13px] top-0 border-4 border-white shadow-sm">1</div>
+            <h3 class="font-bold text-lg text-gray-800 mb-1">Download Application</h3>
+            <p class="text-gray-600">Download the official application form below and print it clearly on A4 size paper.</p>
+          </li>
+          <li class="pl-8 relative">
+            <div class="absolute w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold -left-[13px] top-0 border-4 border-white shadow-sm">2</div>
+            <h3 class="font-bold text-lg text-gray-800 mb-1">Fill & Attach Documents</h3>
+            <p class="text-gray-600">Complete the form accurately and attach a copy of the student's birth certificate and any required academic records.</p>
+          </li>
+          <li class="pl-8 relative">
+            <div class="absolute w-6 h-6 bg-primary text-white rounded-full flex items-center justify-center text-sm font-bold -left-[13px] top-0 border-4 border-white shadow-sm">3</div>
+            <h3 class="font-bold text-lg text-gray-800 mb-1">Submit to Office</h3>
+            <p class="text-gray-600">Submit the physical application package to the school office during operating hours (Mon-Fri, 7:30 AM - 1:30 PM).</p>
+          </li>
+        </ol>
+      </div>
+      
+      <div class="bg-gradient-to-br from-primary to-[#5A252C] rounded-2xl p-8 md:p-12 text-center text-white shadow-lg relative overflow-hidden">
+        <div class="absolute -right-10 -top-10 text-white/10">
+          <FileText size={160} />
+        </div>
+        <div class="relative z-10">
+          <h2 class="text-2xl font-serif font-bold mb-4">Application Form</h2>
+          <p class="text-primary-100 mb-8 max-w-md mx-auto text-gray-200">
+            Get started by downloading the official admission application form for the upcoming academic year.
+          </p>
+          <a href="#" class="inline-flex items-center gap-2 bg-accent text-primary px-8 py-4 rounded-lg font-bold hover:bg-yellow-400 transition-colors shadow-md">
+            <Download size={20} />
+            Download Application Form
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <Footer />
+</BaseLayout>

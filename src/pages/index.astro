@@ -1,0 +1,130 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+import { Users, BookOpen, Globe2 } from 'lucide-react';
+---
+
+<BaseLayout title="Home">
+  <Header />
+  
+  <main class="flex-grow">
+    <!-- Hero Section -->
+    <section class="relative bg-gray-900 text-white py-32 lg:py-48 overflow-hidden">
+      <div class="absolute inset-0 opacity-40">
+        <img src="/assets/campus/campus-main-building.jpg" alt="Main School Building" width="1920" height="1080" class="w-full h-full object-cover" />
+      </div>
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/50"></div>
+      
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-3xl">
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-6">
+            Welcome to Sri Chandananda Buddhist College
+          </h1>
+          <p class="text-lg md:text-xl font-light mb-10 text-gray-100 max-w-2xl leading-relaxed">
+            Empowering the next generation through wisdom, discipline, and Buddhist philosophy since 2006.
+          </p>
+          <div class="flex flex-wrap gap-4">
+            <a href="/about" class="bg-accent text-primary px-8 py-3 rounded-md font-semibold hover:bg-yellow-400 transition-colors shadow-lg">
+              Discover Our History
+            </a>
+            <a href="/admissions" class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-8 py-3 rounded-md font-semibold hover:bg-white/20 transition-colors shadow-lg">
+              Admissions Info
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quick Stats -->
+    <section class="py-16 bg-white shadow-sm border-b border-gray-100 relative z-20 -mt-8 mx-4 md:mx-auto md:max-w-5xl rounded-xl">
+      <div class="container mx-auto px-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center divide-y md:divide-y-0 md:divide-x divide-gray-200">
+          <div class="flex flex-col items-center py-4">
+            <Users size={40} class="text-primary mb-4" />
+            <span class="text-4xl font-bold text-gray-800 mb-2">3,500+</span>
+            <span class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Proud Students</span>
+          </div>
+          <div class="flex flex-col items-center py-4">
+            <BookOpen size={40} class="text-primary mb-4" />
+            <span class="text-4xl font-bold text-gray-800 mb-2">1 - 13</span>
+            <span class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Grades Offered</span>
+          </div>
+          <div class="flex flex-col items-center py-4">
+            <Globe2 size={40} class="text-primary mb-4" />
+            <span class="text-4xl font-bold text-gray-800 mb-2">Bilingual</span>
+            <span class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Sinhala & English Mediums</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership Spotlight -->
+    <section class="py-20 bg-surface">
+      <div class="container mx-auto px-4">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl font-serif font-bold text-primary mb-4">Our Leadership</h2>
+          <div class="w-24 h-1 bg-accent mx-auto"></div>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+          <!-- Founder -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="/assets/leadership/founder.jpg" alt="Most Ven. Dr. Godagama Mangala Thero" width="800" height="600" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-8 text-center border-t-4 border-primary">
+              <h3 class="text-xl font-bold text-gray-800 mb-2 font-serif">Most Ven. Dr. Godagama Mangala Thero</h3>
+              <p class="text-accent font-semibold uppercase text-sm tracking-wide">Executive Director & Founder</p>
+            </div>
+          </div>
+          
+          <!-- Principal -->
+          <div class="bg-white rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow group">
+            <div class="aspect-[4/3] overflow-hidden">
+              <img src="/assets/leadership/principal.jpg" alt="Ven. Godagama Dhammakiththi Thero" width="800" height="600" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+            </div>
+            <div class="p-8 text-center border-t-4 border-primary">
+              <h3 class="text-xl font-bold text-gray-800 mb-2 font-serif">Ven. Godagama Dhammakiththi Thero</h3>
+              <p class="text-accent font-semibold uppercase text-sm tracking-wide">Principal</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Inter-house System Preview -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center mb-16">
+          <h2 class="text-3xl font-serif font-bold text-primary mb-4">Student Life & Athletics</h2>
+          <div class="w-24 h-1 bg-accent mx-auto mb-6"></div>
+          <p class="text-gray-600">Students participate in our highly anticipated annual inter-house sports meet. The student body is divided into three esteemed houses.</p>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          <!-- Houses -->
+          <div class="rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-center relative overflow-hidden group">
+            <div class="absolute top-0 left-0 w-full h-2 bg-red-500"></div>
+            <h3 class="text-2xl font-serif font-bold text-gray-800 mb-2 mt-4">Ramya</h3>
+            <p class="text-sm text-gray-500 font-medium">House</p>
+          </div>
+          
+          <div class="rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-center relative overflow-hidden group">
+            <div class="absolute top-0 left-0 w-full h-2 bg-blue-500"></div>
+            <h3 class="text-2xl font-serif font-bold text-gray-800 mb-2 mt-4">Suramya</h3>
+            <p class="text-sm text-gray-500 font-medium">House</p>
+          </div>
+          
+          <div class="rounded-lg p-8 border border-gray-100 shadow-sm hover:shadow-md transition-shadow text-center relative overflow-hidden group">
+            <div class="absolute top-0 left-0 w-full h-2 bg-green-500"></div>
+            <h3 class="text-2xl font-serif font-bold text-gray-800 mb-2 mt-4">Subha</h3>
+            <p class="text-sm text-gray-500 font-medium">House</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  
+  <Footer />
+</BaseLayout>

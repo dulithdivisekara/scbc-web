@@ -1,0 +1,72 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+---
+
+<BaseLayout title="About Us">
+  <Header />
+  
+  <main class="flex-grow py-16 bg-surface">
+    <div class="container mx-auto px-4 max-w-4xl">
+      <h1 class="text-4xl font-serif font-bold text-primary mb-8 text-center">About Us</h1>
+      
+      <section class="mb-12 bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+        <h2 class="text-2xl font-serif font-bold text-primary mb-4 border-b pb-2">Our Vision</h2>
+        <p class="text-lg text-gray-700 italic border-l-4 border-accent pl-4 py-2">
+          "To create a healthy generation which faces the challenges of the modern world, practicing the values of Buddhist Philosophy."
+        </p>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="text-2xl font-serif font-bold text-primary mb-6">Our History</h2>
+        <div class="space-y-6 text-gray-700 leading-relaxed bg-white p-8 rounded-xl shadow-sm border border-gray-100">
+          <p>
+            Sri Chandananda Buddhist College was established on <strong>January 4, 2006</strong>. The school was conceptualized and brought to life by our Founder and Executive Director, Most Ven. Dr. Godagama Mangala Thero.
+          </p>
+          <p>
+            It is proudly named in honor of his respected teacher, the Most Ven. Palipana Sri Chandananda Mahanayake Thera, continuing a legacy of educational and spiritual excellence in Kandy.
+          </p>
+          <div class="bg-primary/5 p-4 rounded-lg border border-primary/10 mt-6">
+            <h3 class="font-bold text-primary mb-2 flex items-center gap-2">
+              <span class="bg-accent text-primary text-xs px-2 py-1 rounded">2020</span>
+              Expansion Milestone
+            </h3>
+            <p>In 2020, we expanded our vision by opening a dedicated Girls' School section, broadening our impact and commitment to holistic education.</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 class="text-2xl font-serif font-bold text-primary mb-6">Leadership Directory</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 border-t-4 border-t-primary">
+            <h3 class="font-bold text-xl mb-1 text-gray-800">Most Ven. Dr. Godagama Mangala Thero</h3>
+            <p class="text-accent font-semibold text-sm uppercase tracking-wide">Executive Director & Founder</p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 border-t-4 border-t-primary">
+            <h3 class="font-bold text-xl mb-1 text-gray-800">Ven. Godagama Dhammakiththi Thero</h3>
+            <p class="text-accent font-semibold text-sm uppercase tracking-wide">Principal</p>
+          </div>
+          
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 md:col-span-2 border-t-4 border-t-primary">
+            <h3 class="font-bold text-xl mb-1 text-gray-800">Vice Principals</h3>
+            <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 mt-2">
+              <p class="text-gray-600 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-accent"></span>
+                Ven. Thulawala Dhammasiddi Thero
+              </p>
+              <p class="text-gray-600 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-accent"></span>
+                Mr. J.B. Dassanayaka
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+  
+  <Footer />
+</BaseLayout>

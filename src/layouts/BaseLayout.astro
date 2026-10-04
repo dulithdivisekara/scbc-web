@@ -1,0 +1,30 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+	title: string;
+	description?: string;
+}
+
+const { title, description = "Empowering the next generation through wisdom, discipline, and Buddhist philosophy since 2006." } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>{title} | Sri Chandananda Buddhist College</title>
+		<meta name="description" content={description} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+	</head>
+	<body class="flex flex-col min-h-screen">
+		<slot />
+	</body>
+</html>
