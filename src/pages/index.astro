@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
+import HouseCalculator from '../components/common/HouseCalculator.astro';
 import { Users, BookOpen, Globe2, Bell, Trophy, Shield, Flame, ArrowRight } from 'lucide-react';
 import { getCollection } from 'astro:content';
 
@@ -369,6 +370,11 @@ const latestAnnouncements = announcements
                 Channeling vibrant energy, track and field excellence, and tenacious athletic spirit into annual inter-house competitions and team triumphs.
               </p>
             </div>
+          </div>
+
+          <!-- Interactive Student House Calculator -->
+          <div class="mt-10 border-t border-slate-100 pt-6">
+            <HouseCalculator />
           </div>
         </div>
 
