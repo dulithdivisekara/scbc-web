@@ -10,10 +10,10 @@ const { title, description = "Empowering the next generation through wisdom, dis
 ---
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="overflow-x-hidden w-full">
 	<head>
 		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 		<title>{title} | Sri Chandananda Buddhist College</title>
 		<meta name="description" content={description} />
 		<meta property="og:title" content={title} />
@@ -24,9 +24,9 @@ const { title, description = "Empowering the next generation through wisdom, dis
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
 	</head>
-	<body class="flex flex-col min-h-screen bg-school-surface text-school-textPrimary antialiased">
-		<!-- Tri-color Brand Rule -->
-		<div class="h-1.5 w-full flex">
+	<body class="overflow-x-hidden w-full min-h-screen flex flex-col bg-school-surface text-school-textPrimary antialiased">
+		<!-- Tri-color Brand Rule across the top -->
+		<div class="h-1.5 w-full flex shrink-0">
 			<div class="flex-1 bg-school-teal"></div>
 			<div class="flex-1 bg-school-orange"></div>
 			<div class="flex-1 bg-school-maroon"></div>
