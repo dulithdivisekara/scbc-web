@@ -1,0 +1,108 @@
+---
+// Preloader.astro - Official institutional emblem preloader with session caching
+---
+
+<div 
+  id="scbc-preloader" 
+  class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white transition-opacity duration-700 ease-out"
+  aria-hidden="true"
+>
+  <!-- Ambient Aura -->
+  <div class="bg-amber-400/20 blur-2xl rounded-full w-48 h-48 absolute pointer-events-none"></div>
+
+  <!-- Animated Oval Crest Emblem -->
+  <img 
+    src="/assets/branding/school-crest-official.png" 
+    alt="Sri Chandananda Buddhist College Emblem" 
+    class="h-28 sm:h-36 w-auto object-contain z-10 drop-shadow-md animate-pulse" 
+    width="144" 
+    height="144"
+  />
+
+  <!-- Sub-text / Title -->
+  <div class="text-center mt-6 z-10">
+    <p class="font-serif font-bold text-school-textPrimary text-base sm:text-lg tracking-wide">
+      ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය
+    </p>
+    <p class="text-[11px] sm:text-xs text-school-maroon font-semibold tracking-widest uppercase mt-0.5">
+      Sri Chandananda Buddhist College
+    </p>
+  </div>
+
+  <!-- Sleek Tri-Color Expanding Loading Bar -->
+  <div class="w-36 sm:w-44 h-1 bg-slate-100 rounded-full overflow-hidden mt-5 z-10 relative">
+    <div class="preloader-strip h-full rounded-full"></div>
+  </div>
+</div>
+
+<style>
+  .preloader-strip {
+    width: 100%;
+    background: linear-gradient(90deg, #007A87 0%, #F58220 50%, #581838 100%);
+    background-size: 200% 100%;
+    animation: preloader-gradient-slide 1.4s ease-in-out infinite;
+  }
+
+  @keyframes preloader-gradient-slide {
+    0% {
+      transform: translateX(-100%);
+    }
+    50% {
+      transform: translateX(0%);
+    }
+    100% {
+      transform: translateX(100%);
+    }
+  }
+</style>
+
+<script is:inline>
+  (function() {
+    const preloader = document.getElementById('scbc-preloader');
+    if (!preloader) return;
+
+    // Check session storage immediately to bypass on repeated/internal navigation
+    try {
+      if (sessionStorage.getItem('scbc_preloader_seen')) {
+        preloader.style.display = 'none';
+        preloader.remove();
+        return;
+      }
+      sessionStorage.setItem('scbc_preloader_seen', 'true');
+    } catch (e) {
+      // In case storage access is restricted
+    }
+
+    let dismissed = false;
+    function dismiss() {
+      if (dismissed) return;
+      dismissed = true;
+      preloader.style.opacity = '0';
+      preloader.style.pointerEvents = 'none';
+      
+      const onTransitionEnd = () => {
+        preloader.remove();
+        preloader.removeEventListener('transitionend', onTransitionEnd);
+      };
+      preloader.addEventListener('transitionend', onTransitionEnd);
+
+      // Fallback cleanup in case transitionend does not fire
+      setTimeout(() => {
+        if (preloader.parentNode) {
+          preloader.remove();
+        }
+      }, 750);
+    }
+
+    if (document.readyState === 'complete') {
+      setTimeout(dismiss, 500);
+    } else {
+      window.addEventListener('load', () => {
+        setTimeout(dismiss, 400);
+      });
+    }
+
+    // Safety timeout fallback (1400ms max)
+    setTimeout(dismiss, 1400);
+  })();
+</script>
