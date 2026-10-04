@@ -1,5 +1,5 @@
 ---
-// Preloader.astro - Official institutional emblem preloader with session caching
+// Preloader.astro - Official institutional emblem spinner with session caching
 ---
 
 <div 
@@ -7,20 +7,82 @@
   class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-white transition-opacity duration-700 ease-out"
   aria-hidden="true"
 >
-  <!-- Ambient Aura -->
-  <div class="bg-amber-400/20 blur-2xl rounded-full w-48 h-48 absolute pointer-events-none"></div>
+  <!-- Central Emblem & Oval Spinner Ring Container -->
+  <div class="relative flex items-center justify-center w-36 h-48 sm:w-40 sm:h-52">
+    <!-- Ambient Aura behind the oval contour -->
+    <div class="absolute w-32 h-44 bg-amber-400/15 blur-xl rounded-[50%] pointer-events-none"></div>
 
-  <!-- Animated Oval Crest Emblem -->
-  <img 
-    src="/assets/branding/school-crest-official.png" 
-    alt="Sri Chandananda Buddhist College Emblem" 
-    class="h-28 sm:h-36 w-auto object-contain z-10 drop-shadow-md animate-pulse" 
-    width="144" 
-    height="144"
-  />
+    <!-- Contoured Oval Spinner Ring (SVG) -->
+    <svg 
+      class="absolute inset-0 w-full h-full pointer-events-none" 
+      viewBox="0 0 160 210" 
+      fill="none" 
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <defs>
+        <!-- Tri-Color Gradient 1 -->
+        <linearGradient id="scbcTriGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stop-color="#007A87" />
+          <stop offset="50%" stop-color="#F58220" />
+          <stop offset="100%" stop-color="#581838" />
+        </linearGradient>
+        <!-- Tri-Color Gradient 2 (Reverse) -->
+        <linearGradient id="scbcTriGradReverse" x1="100%" y1="100%" x2="0%" y2="0%">
+          <stop offset="0%" stop-color="#581838" />
+          <stop offset="50%" stop-color="#F58220" />
+          <stop offset="100%" stop-color="#007A87" />
+        </linearGradient>
+      </defs>
 
-  <!-- Sub-text / Title -->
-  <div class="text-center mt-6 z-10">
+      <!-- Faint guide track for oval contour -->
+      <ellipse 
+        cx="80" 
+        cy="105" 
+        rx="72" 
+        ry="96" 
+        stroke="#E2E8F0" 
+        stroke-width="1.5" 
+        opacity="0.7" 
+      />
+
+      <!-- Primary Orbiting Tri-Color Arc -->
+      <ellipse 
+        class="spinner-orbit-primary" 
+        cx="80" 
+        cy="105" 
+        rx="72" 
+        ry="96" 
+        stroke="url(#scbcTriGrad)" 
+        stroke-width="3" 
+        stroke-linecap="round" 
+      />
+
+      <!-- Secondary Harmonic Orbiting Arc -->
+      <ellipse 
+        class="spinner-orbit-secondary" 
+        cx="80" 
+        cy="105" 
+        rx="72" 
+        ry="96" 
+        stroke="url(#scbcTriGradReverse)" 
+        stroke-width="2.5" 
+        stroke-linecap="round" 
+      />
+    </svg>
+
+    <!-- Transparent Oval Crest -->
+    <img 
+      src="/assets/branding/school-crest-official.png" 
+      alt="Sri Chandananda Buddhist College Crest" 
+      class="h-24 sm:h-28 w-auto object-contain z-10 drop-shadow-md select-none" 
+      width="112" 
+      height="112"
+      loading="eager"
+    />
+  </div>
+
+  <!-- Formal Bilingual Typography -->
+  <div class="text-center mt-6 z-10 animate-fade-in">
     <p class="font-serif font-bold text-school-textPrimary text-base sm:text-lg tracking-wide">
       ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය
     </p>
@@ -28,30 +90,49 @@
       Sri Chandananda Buddhist College
     </p>
   </div>
-
-  <!-- Sleek Tri-Color Expanding Loading Bar -->
-  <div class="w-36 sm:w-44 h-1 bg-slate-100 rounded-full overflow-hidden mt-5 z-10 relative">
-    <div class="preloader-strip h-full rounded-full"></div>
-  </div>
 </div>
 
 <style>
-  .preloader-strip {
-    width: 100%;
-    background: linear-gradient(90deg, #007A87 0%, #F58220 50%, #581838 100%);
-    background-size: 200% 100%;
-    animation: preloader-gradient-slide 1.4s ease-in-out infinite;
+  .spinner-orbit-primary {
+    stroke-dasharray: 140 390;
+    animation: orbit-flow-primary 2.2s linear infinite;
   }
 
-  @keyframes preloader-gradient-slide {
+  .spinner-orbit-secondary {
+    stroke-dasharray: 90 440;
+    animation: orbit-flow-secondary 2.2s linear infinite;
+  }
+
+  @keyframes orbit-flow-primary {
     0% {
-      transform: translateX(-100%);
-    }
-    50% {
-      transform: translateX(0%);
+      stroke-dashoffset: 0;
     }
     100% {
-      transform: translateX(100%);
+      stroke-dashoffset: -530;
+    }
+  }
+
+  @keyframes orbit-flow-secondary {
+    0% {
+      stroke-dashoffset: -265;
+    }
+    100% {
+      stroke-dashoffset: -795;
+    }
+  }
+
+  .animate-fade-in {
+    animation: preloader-text-fade 0.8s ease-out forwards;
+  }
+
+  @keyframes preloader-text-fade {
+    from {
+      opacity: 0;
+      transform: translateY(4px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
     }
   }
 </style>
@@ -70,7 +151,7 @@
       }
       sessionStorage.setItem('scbc_preloader_seen', 'true');
     } catch (e) {
-      // In case storage access is restricted
+      // Storage access safety
     }
 
     let dismissed = false;
@@ -86,7 +167,7 @@
       };
       preloader.addEventListener('transitionend', onTransitionEnd);
 
-      // Fallback cleanup in case transitionend does not fire
+      // Fallback cleanup
       setTimeout(() => {
         if (preloader.parentNode) {
           preloader.remove();
@@ -95,10 +176,10 @@
     }
 
     if (document.readyState === 'complete') {
-      setTimeout(dismiss, 500);
+      setTimeout(dismiss, 600);
     } else {
       window.addEventListener('load', () => {
-        setTimeout(dismiss, 400);
+        setTimeout(dismiss, 500);
       });
     }
 
