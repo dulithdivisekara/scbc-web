@@ -1,11 +1,14 @@
 ---
 import { Menu, Phone } from 'lucide-react';
+const currentPath = Astro.url.pathname;
 ---
 
 <header class="bg-primary text-white shadow-md sticky top-0 z-50">
   <div class="container mx-auto px-4 py-3 flex justify-between items-center">
     <div class="flex items-center gap-4">
-      <img src="/assets/branding/crest.jpg" alt="Sri Chandananda Buddhist College Crest" class="w-12 h-12 rounded-full object-cover" width="48" height="48" />
+      <div class="bg-white rounded-full p-0.5 shadow-sm">
+        <img src="/assets/branding/crest.jpg" alt="Sri Chandananda Buddhist College Crest" class="w-11 h-11 rounded-full object-cover" width="44" height="44" />
+      </div>
       <div>
         <h1 class="text-xl md:text-2xl font-serif font-bold leading-tight">Sri Chandananda</h1>
         <p class="text-xs md:text-sm text-accent tracking-wider uppercase font-semibold">Buddhist College, Kandy</p>
@@ -13,12 +16,12 @@ import { Menu, Phone } from 'lucide-react';
     </div>
     
     <nav class="hidden md:flex gap-6 items-center font-medium text-sm">
-      <a href="/" class="hover:text-accent transition-colors">Home</a>
-      <a href="/about" class="hover:text-accent transition-colors">About Us</a>
-      <a href="/academics" class="hover:text-accent transition-colors">Academics</a>
-      <a href="/student-life" class="hover:text-accent transition-colors">Student Life</a>
-      <a href="/admissions" class="hover:text-accent transition-colors">Admissions</a>
-      <a href="/contact" class="hover:text-accent transition-colors">Contact</a>
+      <a href="/" class={`hover:text-accent transition-colors py-1 ${currentPath === '/' ? 'border-b-2 border-amber-400 text-accent' : ''}`}>Home</a>
+      <a href="/about" class={`hover:text-accent transition-colors py-1 ${currentPath === '/about' ? 'border-b-2 border-amber-400 text-accent' : ''}`}>About Us</a>
+      <a href="/academics" class={`hover:text-accent transition-colors py-1 ${currentPath === '/academics' ? 'border-b-2 border-amber-400 text-accent' : ''}`}>Academics</a>
+      <a href="/student-life" class={`hover:text-accent transition-colors py-1 ${currentPath === '/student-life' ? 'border-b-2 border-amber-400 text-accent' : ''}`}>Student Life</a>
+      <a href="/admissions" class={`hover:text-accent transition-colors py-1 ${currentPath === '/admissions' ? 'border-b-2 border-amber-400 text-accent' : ''}`}>Admissions</a>
+      <a href="/contact" class={`hover:text-accent transition-colors py-1 ${currentPath === '/contact' ? 'border-b-2 border-amber-400 text-accent' : ''}`}>Contact</a>
     </nav>
 
     <div class="hidden lg:flex items-center gap-2 text-accent font-semibold text-sm">

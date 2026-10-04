@@ -2,7 +2,11 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
-import { Users, BookOpen, Globe2 } from 'lucide-react';
+import { Users, BookOpen, Globe2, Bell } from 'lucide-react';
+import { getCollection } from 'astro:content';
+
+const announcements = await getCollection('announcements');
+const latestAnnouncements = announcements.sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf()).slice(0, 3);
 ---
 
 <BaseLayout title="Home">
@@ -14,7 +18,7 @@ import { Users, BookOpen, Globe2 } from 'lucide-react';
       <div class="absolute inset-0 opacity-40">
         <img src="/assets/campus/campus-main-building.jpg" alt="Main School Building" width="1920" height="1080" class="w-full h-full object-cover" />
       </div>
-      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/50"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-stone-900/90 via-stone-900/60 to-transparent"></div>
       
       <div class="container mx-auto px-4 relative z-10">
         <div class="max-w-3xl">
@@ -55,6 +59,38 @@ import { Users, BookOpen, Globe2 } from 'lucide-react';
             <span class="text-4xl font-bold text-gray-800 mb-2">Bilingual</span>
             <span class="text-sm font-semibold text-gray-500 uppercase tracking-wide">Sinhala & English Mediums</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Official Notices & Circulars -->
+    <section class="py-16 bg-surface">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="flex items-center gap-3 mb-8">
+          <Bell size={28} class="text-accent" />
+          <h2 class="text-2xl font-serif font-bold text-gray-800">Official Notices & Circulars</h2>
+        </div>
+        
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {latestAnnouncements.map((notice) => (
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 hover:shadow-md transition-shadow relative group">
+              {notice.data.pinned && (
+                <div class="absolute -top-3 -right-3 bg-accent text-primary text-xs font-bold px-3 py-1 rounded-full shadow-sm">
+                  Pinned
+                </div>
+              )}
+              <div class="flex justify-between items-start mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-primary bg-primary/10 px-2 py-1 rounded">
+                  {notice.data.category}
+                </span>
+                <span class="text-sm text-gray-500 font-medium">
+                  {notice.data.date.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                </span>
+              </div>
+              <h3 class="text-lg font-bold text-gray-800 mb-2 group-hover:text-primary transition-colors">{notice.data.title}</h3>
+              <p class="text-gray-600 text-sm line-clamp-3 leading-relaxed">{notice.data.summary}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>
