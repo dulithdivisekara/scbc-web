@@ -5,10 +5,12 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 
 <header class="bg-white/95 backdrop-blur-md border-b border-school-border sticky top-0 z-50 w-full" id="site-header">
   <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-    <a href="/" class="flex items-center gap-3 group">
-      <div class="w-10 h-10 sm:w-11 sm:h-11 rounded-full overflow-hidden bg-white p-0.5 flex items-center justify-center border border-school-border shadow-xs group-hover:border-school-orange transition-colors shrink-0">
-        <img src="/assets/branding/crest.jpg" alt="Sri Chandananda Buddhist College Crest" class="w-full h-full object-cover rounded-full" width="44" height="44" />
-      </div>
+    <a href="/" class="flex items-center gap-3.5 group">
+      <img 
+        src="/assets/branding/branding-crest-highres.jpeg" 
+        alt="Sri Chandananda Buddhist College Crest" 
+        class="h-14 w-auto object-contain shrink-0" 
+      />
       <div>
         <span class="block text-lg sm:text-xl md:text-2xl font-serif font-bold leading-tight tracking-tight text-school-textPrimary group-hover:text-school-maroon transition-colors">Sri Chandananda</span>
         <span class="block text-[11px] sm:text-xs md:text-sm text-school-maroon font-semibold tracking-wider uppercase">Buddhist College, Kandy</span>
