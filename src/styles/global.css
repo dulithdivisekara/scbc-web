@@ -1,25 +1,39 @@
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #722F37;
-  --color-accent: #D4AF37;
-  --color-surface: #F8F5F2;
-  --color-text-primary: #2C3E50;
-  
+  --color-school-white: #FFFFFF;
+  --color-school-surface: #F8FAFC;
+  --color-school-border: #E2E8F0;
+  --color-school-text-primary: #0F172A;
+  --color-school-text-muted: #475569;
+  --color-school-textPrimary: #0F172A;
+  --color-school-textMuted: #475569;
+  --color-school-teal: #007A87;
+  --color-school-orange: #F58220;
+  --color-school-maroon: #581838;
+
+  --color-primary: #581838;
+  --color-accent: #F58220;
+  --color-surface: #F8FAFC;
+  --color-border: #E2E8F0;
+
   --font-serif: "Merriweather", serif;
   --font-sans: "Inter", sans-serif;
 }
 
 :root {
-  --primary: #722F37; /* Deep Maroon / Burgundy */
-  --accent: #D4AF37; /* Warm Gold / Amber */
-  --surface: #F8F5F2; /* Off-white / Warm Gray */
-  --text-primary: #2C3E50; /* Deep charcoal / slate */
+  --primary: #581838; /* Deep Maroon */
+  --accent: #F58220; /* Saffron Orange */
+  --teal: #007A87; /* School Teal */
+  --surface: #F8FAFC; /* Crisp Off-White */
+  --border: #E2E8F0;
+  --text-primary: #0F172A; /* Slate 900 */
+  --text-muted: #475569; /* Slate 600 */
 }
 
 body {
-  background-color: var(--color-surface);
-  color: var(--color-text-primary);
+  background-color: var(--color-school-surface);
+  color: var(--color-school-textPrimary);
   font-family: var(--font-sans);
 }
 
