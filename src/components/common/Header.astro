@@ -3,33 +3,33 @@ import { Menu, Phone } from 'lucide-react';
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
 
-<header class="bg-primary text-white shadow-md sticky top-0 z-50">
+<header class="bg-white/95 backdrop-blur-md border-b border-school-border sticky top-0 z-50">
   <div class="container mx-auto px-4 py-3 flex justify-between items-center">
     <a href="/" class="flex items-center gap-3.5 group">
-      <div class="w-11 h-11 rounded-full overflow-hidden bg-white/95 p-0.5 flex items-center justify-center shadow-md ring-2 ring-amber-400/40 group-hover:ring-amber-400 transition-all">
+      <div class="w-11 h-11 rounded-full overflow-hidden bg-white p-0.5 flex items-center justify-center border border-school-border shadow-sm group-hover:border-school-orange transition-colors">
         <img src="/assets/branding/crest.jpg" alt="Sri Chandananda Buddhist College Crest" class="w-full h-full object-cover rounded-full" width="44" height="44" />
       </div>
       <div>
-        <span class="block text-xl md:text-2xl font-serif font-bold leading-tight tracking-tight text-white group-hover:text-amber-200 transition-colors">Sri Chandananda</span>
-        <span class="block text-xs md:text-sm text-accent tracking-wider uppercase font-semibold">Buddhist College, Kandy</span>
+        <span class="block text-xl md:text-2xl font-serif font-bold leading-tight tracking-tight text-school-textPrimary group-hover:text-school-maroon transition-colors">Sri Chandananda</span>
+        <span class="block text-xs md:text-sm text-school-maroon font-semibold tracking-wider uppercase">Buddhist College, Kandy</span>
       </div>
     </a>
     
     <nav class="hidden md:flex gap-6 items-center font-medium text-sm">
-      <a href="/" class={`hover:text-accent transition-colors py-1 ${currentPath === '/' ? 'border-b-2 border-amber-400 text-accent font-semibold' : 'text-gray-200'}`}>Home</a>
-      <a href="/about" class={`hover:text-accent transition-colors py-1 ${currentPath === '/about' ? 'border-b-2 border-amber-400 text-accent font-semibold' : 'text-gray-200'}`}>About Us</a>
-      <a href="/academics" class={`hover:text-accent transition-colors py-1 ${currentPath === '/academics' ? 'border-b-2 border-amber-400 text-accent font-semibold' : 'text-gray-200'}`}>Academics</a>
-      <a href="/student-life" class={`hover:text-accent transition-colors py-1 ${currentPath === '/student-life' ? 'border-b-2 border-amber-400 text-accent font-semibold' : 'text-gray-200'}`}>Student Life</a>
-      <a href="/admissions" class={`hover:text-accent transition-colors py-1 ${currentPath === '/admissions' ? 'border-b-2 border-amber-400 text-accent font-semibold' : 'text-gray-200'}`}>Admissions</a>
-      <a href="/contact" class={`hover:text-accent transition-colors py-1 ${currentPath === '/contact' ? 'border-b-2 border-amber-400 text-accent font-semibold' : 'text-gray-200'}`}>Contact</a>
+      <a href="/" class={`py-1 transition-colors ${currentPath === '/' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>Home</a>
+      <a href="/about" class={`py-1 transition-colors ${currentPath === '/about' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>About Us</a>
+      <a href="/academics" class={`py-1 transition-colors ${currentPath === '/academics' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>Academics</a>
+      <a href="/student-life" class={`py-1 transition-colors ${currentPath === '/student-life' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>Student Life</a>
+      <a href="/admissions" class={`py-1 transition-colors ${currentPath === '/admissions' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>Admissions</a>
+      <a href="/contact" class={`py-1 transition-colors ${currentPath === '/contact' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>Contact</a>
     </nav>
 
-    <div class="hidden lg:flex items-center gap-2 text-accent font-semibold text-sm">
-      <Phone size={16} />
+    <a href="tel:+94812203162" class="hidden lg:flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-school-teal text-school-teal hover:bg-school-teal hover:text-white transition font-medium text-sm">
+      <Phone size={15} />
       <span>+94 81 220 3162</span>
-    </div>
+    </a>
 
-    <button class="md:hidden text-white hover:text-accent p-2" aria-label="Toggle navigation menu">
+    <button class="md:hidden text-school-textPrimary hover:text-school-maroon p-2" aria-label="Toggle navigation menu">
       <Menu size={24} />
       <span class="sr-only">Menu</span>
     </button>

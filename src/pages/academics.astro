@@ -8,48 +8,58 @@ import { BookOpen, MonitorPlay, Globe, Microscope } from 'lucide-react';
 <BaseLayout title="Academics">
   <Header />
   
-  <main class="flex-grow py-16 bg-surface">
+  <main class="flex-grow py-16 bg-school-surface">
     <div class="container mx-auto px-4 max-w-4xl">
-      <h1 class="text-4xl font-serif font-bold text-primary mb-4 text-center">Academic Structure</h1>
-      <p class="text-center text-gray-600 max-w-2xl mx-auto mb-12">
-        We offer comprehensive education from Grade 1 to Grade 13, preparing students for both Ordinary Level (O/L) and Advanced Level (A/L) examinations.
-      </p>
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-school-teal mb-2 inline-block">Curriculum & Standards</span>
+        <h1 class="text-4xl font-serif font-bold text-school-textPrimary">Academic Structure</h1>
+        <div class="w-16 h-1 bg-school-orange mx-auto mt-4 mb-4"></div>
+        <p class="text-center text-school-textMuted max-w-2xl mx-auto">
+          We offer comprehensive education from Grade 1 to Grade 13, preparing students for both Ordinary Level (O/L) and Advanced Level (A/L) examinations.
+        </p>
+      </div>
       
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
-        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex items-start gap-4">
-          <div class="bg-primary/10 p-3 rounded-lg text-primary shrink-0">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-school-border flex items-start gap-4">
+          <div class="bg-teal-50 border border-teal-100 p-3 rounded-lg text-school-teal shrink-0">
             <BookOpen size={24} />
           </div>
           <div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Bilingual Education</h3>
-            <p class="text-gray-600">Classes are conducted in both <strong>Sinhala</strong> and <strong>English</strong> mediums, providing students with a strong foundation for higher education.</p>
+            <h3 class="text-lg font-bold text-school-textPrimary mb-2 font-serif">Bilingual Education</h3>
+            <p class="text-school-textMuted text-sm leading-relaxed">Classes are conducted in both <strong class="text-school-textPrimary">Sinhala</strong> and <strong class="text-school-textPrimary">English</strong> mediums, providing students with a strong foundation for higher education.</p>
           </div>
         </div>
         
-        <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 flex items-start gap-4">
-          <div class="bg-primary/10 p-3 rounded-lg text-primary shrink-0">
+        <div class="bg-white p-8 rounded-xl shadow-sm border border-school-border flex items-start gap-4">
+          <div class="bg-orange-50 border border-orange-100 p-3 rounded-lg text-school-orange shrink-0">
             <Globe size={24} />
           </div>
           <div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Global Languages</h3>
-            <p class="text-gray-600">We prepare students for a globalized world by offering international language studies, including <strong>Chinese</strong> and <strong>Japanese</strong>.</p>
+            <h3 class="text-lg font-bold text-school-textPrimary mb-2 font-serif">Global Languages</h3>
+            <p class="text-school-textMuted text-sm leading-relaxed">We prepare students for a globalized world by offering international language studies, including <strong class="text-school-textPrimary">Chinese</strong> and <strong class="text-school-textPrimary">Japanese</strong>.</p>
           </div>
         </div>
       </div>
 
-      <h2 class="text-3xl font-serif font-bold text-primary mb-8 text-center">Facilities & Learning</h2>
+      <div class="text-center mb-8">
+        <h2 class="text-2xl font-serif font-bold text-school-textPrimary">Facilities & Learning</h2>
+      </div>
       
-      <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-        <div class="grid grid-cols-1 md:grid-cols-2">
-          <div class="p-8 border-b md:border-b-0 md:border-r border-gray-100">
-            <MonitorPlay size={32} class="text-accent mb-4" />
-            <h3 class="text-xl font-bold text-gray-800 mb-3">IT Laboratories</h3>
-            <p class="text-gray-600">Fully equipped IT laboratories featuring modern computers and resources to ensure students are prepared for the digital age.</p>
+      <div class="bg-white rounded-xl shadow-sm border border-school-border overflow-hidden">
+        <div class="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-school-border">
+          <div class="p-8">
+            <div class="p-3 bg-teal-50 border border-teal-100 rounded-lg text-school-teal w-fit mb-4">
+              <MonitorPlay size={24} />
+            </div>
+            <h3 class="text-lg font-bold text-school-textPrimary mb-2 font-serif">IT Laboratories</h3>
+            <p class="text-school-textMuted text-sm leading-relaxed">Fully equipped IT laboratories featuring modern computers and digital learning resources to ensure students are prepared for the modern digital age.</p>
           </div>
           <div class="p-8">
-            <Microscope size={32} class="text-accent mb-4" />
-            <h3 class="text-xl font-bold text-gray-800 mb-3">Science Stream</h3>
-            <p class="text-gray-600">Specialized Biology, Chemistry, and Physics labs designed specifically for our A/L science students to conduct practical experiments.</p>
+            <div class="p-3 bg-purple-50 border border-purple-100 rounded-lg text-school-maroon w-fit mb-4">
+              <Microscope size={24} />
+            </div>
+            <h3 class="text-lg font-bold text-school-textPrimary mb-2 font-serif">Science Stream</h3>
+            <p class="text-school-textMuted text-sm leading-relaxed">Specialized Biology, Chemistry, and Physics laboratories designed specifically for our A/L science stream students to conduct practical experiments.</p>
           </div>
         </div>
       </div>

@@ -8,35 +8,38 @@ import { Heart, Trophy } from 'lucide-react';
 <BaseLayout title="Student Life">
   <Header />
   
-  <main class="flex-grow py-16 bg-surface">
+  <main class="flex-grow py-16 bg-school-surface">
     <div class="container mx-auto px-4 max-w-4xl">
-      <h1 class="text-4xl font-serif font-bold text-primary mb-12 text-center">Student Life</h1>
+      <div class="text-center mb-12">
+        <span class="text-xs font-bold uppercase tracking-wider text-school-teal mb-2 inline-block">Co-Curricular & Ethics</span>
+        <h1 class="text-4xl font-serif font-bold text-school-textPrimary">Student Life & Culture</h1>
+        <div class="w-16 h-1 bg-school-orange mx-auto mt-4 mb-4"></div>
+      </div>
       
       <!-- Culture Section -->
       <section class="mb-16">
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-100 overflow-hidden relative">
-          <div class="absolute top-0 right-0 w-32 h-32 bg-accent/10 rounded-bl-full -z-10"></div>
-          <div class="p-8 md:p-12">
+        <div class="bg-white rounded-xl shadow-sm border border-school-border overflow-hidden">
+          <div class="p-8 md:p-10">
             <div class="flex items-center gap-4 mb-6">
-              <div class="bg-primary text-white p-3 rounded-full">
+              <div class="bg-purple-50 border border-purple-100 text-school-maroon p-3 rounded-full">
                 <Heart size={24} />
               </div>
-              <h2 class="text-3xl font-serif font-bold text-gray-800">Our Culture</h2>
+              <h2 class="text-2xl font-serif font-bold text-school-textPrimary">Our School Culture</h2>
             </div>
             
-            <p class="text-lg text-gray-700 leading-relaxed mb-6">
-              Our school culture is deeply rooted in respect and mindfulness, fostering a highly disciplined and compassionate environment.
+            <p class="text-base text-school-textMuted leading-relaxed mb-8">
+              Our school culture is deeply rooted in respect, mindfulness, and Buddhist values, fostering a disciplined, compassionate, and inspiring academic environment.
             </p>
             
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-              <div class="bg-surface p-6 rounded-xl">
-                <p class="text-sm text-gray-500 uppercase font-semibold mb-2 tracking-wider">Traditional Greeting</p>
-                <p class="font-serif text-primary text-xl font-medium italic">"May the triple gems bless you!"</p>
+              <div class="bg-school-surface border border-school-border p-6 rounded-xl">
+                <p class="text-xs text-school-teal uppercase font-semibold mb-2 tracking-wider">Traditional Greeting</p>
+                <p class="font-serif text-school-maroon text-xl font-medium italic">"May the triple gems bless you!"</p>
               </div>
               
-              <div class="bg-surface p-6 rounded-xl">
-                <p class="text-sm text-gray-500 uppercase font-semibold mb-2 tracking-wider">Addressing Educators</p>
-                <p class="font-serif text-primary text-xl font-medium">"Guruthuma" & "Guruthumi"</p>
+              <div class="bg-school-surface border border-school-border p-6 rounded-xl">
+                <p class="text-xs text-school-teal uppercase font-semibold mb-2 tracking-wider">Addressing Educators</p>
+                <p class="font-serif text-school-maroon text-xl font-medium">"Guruthuma" & "Guruthumi"</p>
               </div>
             </div>
           </div>
@@ -46,32 +49,35 @@ import { Heart, Trophy } from 'lucide-react';
       <!-- Sports & Houses -->
       <section>
         <div class="text-center mb-10">
-          <div class="inline-block bg-primary/10 text-primary p-3 rounded-full mb-4">
-            <Trophy size={32} />
+          <div class="inline-block bg-orange-50 border border-orange-200 text-school-orange p-3 rounded-full mb-3">
+            <Trophy size={28} />
           </div>
-          <h2 class="text-3xl font-serif font-bold text-gray-800 mb-4">Sports and Houses</h2>
-          <p class="text-gray-600 max-w-2xl mx-auto">
+          <h2 class="text-2xl font-serif font-bold text-school-textPrimary mb-3">Sports and Houses</h2>
+          <p class="text-school-textMuted max-w-2xl mx-auto text-sm leading-relaxed">
             Students participate in our highly anticipated annual inter-house sports meet. The student body is divided into three esteemed houses.
           </p>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center relative overflow-hidden group">
-            <div class="absolute top-0 left-0 w-full h-2 bg-red-500"></div>
-            <h3 class="text-3xl font-serif font-bold text-gray-800 mb-1 mt-2 group-hover:text-red-600 transition-colors">Ramya</h3>
-            <p class="text-sm text-gray-500 font-medium uppercase tracking-wider">House</p>
+          <!-- Ramya (Deep Maroon Trim) -->
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-school-border text-center relative overflow-hidden group hover:shadow-md transition">
+            <div class="absolute top-0 left-0 w-full h-1.5 bg-school-maroon"></div>
+            <h3 class="text-2xl font-serif font-bold text-school-textPrimary mb-1 mt-2 group-hover:text-school-maroon transition-colors">Ramya</h3>
+            <p class="text-xs text-school-textMuted font-medium uppercase tracking-wider">House</p>
           </div>
           
-          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center relative overflow-hidden group">
-            <div class="absolute top-0 left-0 w-full h-2 bg-blue-500"></div>
-            <h3 class="text-3xl font-serif font-bold text-gray-800 mb-1 mt-2 group-hover:text-blue-600 transition-colors">Suramya</h3>
-            <p class="text-sm text-gray-500 font-medium uppercase tracking-wider">House</p>
+          <!-- Suramya (Teal Trim) -->
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-school-border text-center relative overflow-hidden group hover:shadow-md transition">
+            <div class="absolute top-0 left-0 w-full h-1.5 bg-school-teal"></div>
+            <h3 class="text-2xl font-serif font-bold text-school-textPrimary mb-1 mt-2 group-hover:text-school-teal transition-colors">Suramya</h3>
+            <p class="text-xs text-school-textMuted font-medium uppercase tracking-wider">House</p>
           </div>
           
-          <div class="bg-white p-8 rounded-xl shadow-sm border border-gray-100 text-center relative overflow-hidden group">
-            <div class="absolute top-0 left-0 w-full h-2 bg-green-500"></div>
-            <h3 class="text-3xl font-serif font-bold text-gray-800 mb-1 mt-2 group-hover:text-green-600 transition-colors">Subha</h3>
-            <p class="text-sm text-gray-500 font-medium uppercase tracking-wider">House</p>
+          <!-- Subha (Orange Trim) -->
+          <div class="bg-white p-6 rounded-xl shadow-sm border border-school-border text-center relative overflow-hidden group hover:shadow-md transition">
+            <div class="absolute top-0 left-0 w-full h-1.5 bg-school-orange"></div>
+            <h3 class="text-2xl font-serif font-bold text-school-textPrimary mb-1 mt-2 group-hover:text-school-orange transition-colors">Subha</h3>
+            <p class="text-xs text-school-textMuted font-medium uppercase tracking-wider">House</p>
           </div>
         </div>
       </section>

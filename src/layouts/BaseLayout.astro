@@ -24,7 +24,13 @@ const { title, description = "Empowering the next generation through wisdom, dis
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
 	</head>
-	<body class="flex flex-col min-h-screen">
+	<body class="flex flex-col min-h-screen bg-school-surface text-school-textPrimary antialiased">
+		<!-- Tri-color Brand Rule -->
+		<div class="h-1.5 w-full flex">
+			<div class="flex-1 bg-school-teal"></div>
+			<div class="flex-1 bg-school-orange"></div>
+			<div class="flex-1 bg-school-maroon"></div>
+		</div>
 		<slot />
 	</body>
 </html>

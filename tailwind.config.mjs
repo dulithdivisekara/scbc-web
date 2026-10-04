@@ -4,10 +4,16 @@ export default {
   theme: {
     extend: {
       colors: {
-        primary: 'var(--color-primary, #722F37)',
-        accent: 'var(--color-accent, #D4AF37)',
-        surface: 'var(--color-surface, #F8F5F2)',
-        'text-primary': 'var(--color-text-primary, #2C3E50)',
+        school: {
+          white: '#FFFFFF',
+          surface: '#F8FAFC',
+          border: '#E2E8F0',
+          textPrimary: '#0F172A',
+          textMuted: '#475569',
+          teal: '#007A87',
+          orange: '#F58220',
+          maroon: '#581838',
+        },
       },
       fontFamily: {
         serif: ['var(--font-serif)', 'Merriweather', 'serif'],
