@@ -8,20 +8,20 @@ import { FileText, Download, ClipboardCheck } from 'lucide-react';
 <BaseLayout title="Admissions">
   <Header />
   
-  <main class="flex-grow py-16 bg-school-surface">
+  <main class="flex-grow py-12 sm:py-16 bg-school-surface">
     <div class="container mx-auto px-4 max-w-3xl">
-      <div class="text-center mb-12">
+      <div class="text-center mb-10 sm:mb-12">
         <span class="text-xs font-bold uppercase tracking-wider text-school-teal mb-2 inline-block">Enrollment</span>
-        <h1 class="text-4xl font-serif font-bold text-school-textPrimary">Admissions</h1>
+        <h1 class="text-3xl sm:text-4xl font-serif font-bold text-school-textPrimary">Admissions</h1>
         <div class="w-16 h-1 bg-school-orange mx-auto mt-4 mb-4"></div>
-        <p class="text-center text-school-textMuted max-w-xl mx-auto text-base">
+        <p class="text-center text-school-textMuted max-w-xl mx-auto text-sm sm:text-base">
           Join Sri Chandananda Buddhist College and begin a journey of academic excellence, discipline, and spiritual growth.
         </p>
       </div>
       
       <!-- Procedure Card -->
-      <div class="bg-white p-8 md:p-10 rounded-2xl shadow-sm border border-school-border mb-12">
-        <h2 class="text-2xl font-serif font-bold text-school-textPrimary mb-6 flex items-center gap-3">
+      <div class="bg-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-sm border border-school-border mb-10 sm:mb-12">
+        <h2 class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-6 flex items-center gap-3">
           <div class="p-2 rounded-lg bg-teal-50 border border-teal-100 text-school-teal">
             <ClipboardCheck size={22} />
           </div>
@@ -48,16 +48,16 @@ import { FileText, Download, ClipboardCheck } from 'lucide-react';
       </div>
       
       <!-- Download Box -->
-      <div class="bg-gradient-to-br from-school-maroon to-[#3D1026] rounded-2xl p-8 md:p-10 text-center text-white shadow-md relative overflow-hidden">
+      <div class="bg-gradient-to-br from-school-maroon to-[#3D1026] rounded-2xl p-6 sm:p-8 md:p-10 text-center text-white shadow-md relative overflow-hidden">
         <div class="absolute -right-8 -top-8 text-white/5 pointer-events-none">
           <FileText size={160} />
         </div>
         <div class="relative z-10">
-          <h2 class="text-2xl font-serif font-bold mb-3">Application Form</h2>
+          <h2 class="text-xl sm:text-2xl font-serif font-bold mb-3">Application Form</h2>
           <p class="text-stone-200 mb-6 max-w-md mx-auto text-sm leading-relaxed">
             Get started by downloading the official admission application form for the upcoming academic year.
           </p>
-          <a href="#" class="inline-flex items-center gap-2 bg-school-orange text-white hover:bg-orange-600 px-8 py-3.5 rounded-lg font-semibold transition-all shadow-md hover:shadow-lg">
+          <a href="#" class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-school-orange text-white hover:bg-orange-600 px-8 py-3.5 rounded-lg font-semibold transition-all shadow-md hover:shadow-lg">
             <Download size={18} />
             Download Application Form
           </a>
