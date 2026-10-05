@@ -8,9 +8,13 @@ export interface Props {
 
 const { title, description = "Empowering the next generation through wisdom, discipline, and Buddhist philosophy since 2006." } = Astro.props;
 
-const pageTitle = (title === "Home" || title === "Sri Chandananda Buddhist College | Kandy")
-	? "Sri Chandananda Buddhist College | Kandy"
-	: `${title} | Sri Chandananda Buddhist College`;
+const pageTitle = (title === "Home" || title === "Sri Chandananda Buddhist College")
+	? "Sri Chandananda Buddhist College"
+	: title;
+
+const ogTitle = (title === "Home" || title === "Sri Chandananda Buddhist College")
+	? "Sri Chandananda Buddhist College, Kandy"
+	: `${title} | Sri Chandananda Buddhist College, Kandy`;
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://srichandananda.edu.lk/');
 
@@ -48,14 +52,14 @@ const jsonLd = {
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalURL} />
 		
-		<meta property="og:title" content={pageTitle} />
+		<meta property="og:title" content={ogTitle} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={canonicalURL} />
 		<meta property="og:image" content={new URL("/assets/branding/school-crest-official.png", canonicalURL)} />
 		
 		<meta name="twitter:card" content="summary_large_image" />
-		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:title" content={ogTitle} />
 		<meta name="twitter:description" content={description} />
 		<meta name="twitter:image" content={new URL("/assets/branding/school-crest-official.png", canonicalURL)} />
 		
@@ -83,7 +87,7 @@ const jsonLd = {
 				<img src="/assets/branding/school-crest-official.png" alt="Crest" class="h-16 w-auto" />
 				<div>
 					<h1 class="text-xl font-bold font-serif text-slate-900">Sri Chandananda Buddhist College</h1>
-					<p class="text-xs text-slate-600 font-sinhalaSerif">ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය — Asgiriya, Kandy</p>
+					<p class="text-xs text-slate-600 font-sinhalaSerif">ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය, අස්ගිරිය, මහනුවර</p>
 				</div>
 			</div>
 			<div class="text-right text-xs text-slate-500">

@@ -38,7 +38,7 @@ export const translations: Record<string, Record<string, string>> = {
     // Contact Page
     'contact.title': 'Contact Us',
     'contact.get_in_touch': 'Get in Touch',
-    'contact.address': 'Campus Address',
+    'contact.address': 'School Address',
     'contact.phone': 'Phone',
     'contact.email': 'Email',
     'contact.hours': 'Office Hours',
@@ -48,7 +48,7 @@ export const translations: Record<string, Record<string, string>> = {
     'contact.form_submit': 'Send Inquiry',
     'contact.direct_inquiries': 'DIRECT INQUIRIES',
     'contact.send_inquiry': 'Send an Inquiry',
-    'contact.map_title': 'Find Us in Kandy',
+    'contact.map_title': 'Visit Our School',
 
     // Academics Page
     'academics.title': 'Academic Structure & Curriculum',
@@ -127,7 +127,7 @@ export const translations: Record<string, Record<string, string>> = {
     'contact.form_submit': 'පණිවිඩය යොමු කරන්න',
     'contact.direct_inquiries': 'ඍජු විමසීම්',
     'contact.send_inquiry': 'පණිවිඩයක් එවන්න',
-    'contact.map_title': 'මහනුවර පිහිටි අපගේ පරිශ්‍රය',
+    'contact.map_title': 'විද්‍යාලය වෙත පැමිණෙන්න',
 
     // Academics Page
     'academics.title': 'අධ්‍යාපනික ව්‍යුහය සහ විෂයමාලාව',
