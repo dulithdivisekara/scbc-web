@@ -40,3 +40,33 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-serif);
 }
+
+/* Sinhala Typography Adjustments */
+html[lang="si"] {
+  font-family: 'Noto Sans Sinhala', var(--font-sans);
+}
+
+html[lang="si"] h1,
+html[lang="si"] h2,
+html[lang="si"] h3,
+html[lang="si"] h4,
+html[lang="si"] h5,
+html[lang="si"] h6,
+html[lang="si"] .font-serif {
+  font-family: 'Noto Serif Sinhala', var(--font-serif);
+  line-height: 1.625 !important;
+}
+
+/* Micro-Interactions & Transitions */
+.card-hover, section.bg-white, .bg-white.p-6, .bg-white.p-8 {
+  transition: transform 300ms ease-out, box-shadow 300ms ease-out;
+}
+
+.card-hover:hover {
+  transform: translateY(-0.25rem);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+}
+
+.i18n-fade {
+  transition: opacity 200ms ease-in-out;
+}

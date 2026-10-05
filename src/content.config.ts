@@ -19,6 +19,7 @@ const leadershipCollection = defineCollection({
     title: z.string(),
     order: z.number(),
     image: z.string(),
+    fallbackImage: z.string().optional(),
     bio: z.string(),
   }),
 });

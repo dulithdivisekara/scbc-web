@@ -5,6 +5,8 @@ import Footer from '../components/common/Footer.astro';
 import HouseCalculator from '../components/common/HouseCalculator.astro';
 import { Users, BookOpen, Globe2, Bell, Trophy, Shield, Flame, ArrowRight } from 'lucide-react';
 import { getCollection } from 'astro:content';
+import fs from 'node:fs';
+import path from 'node:path';
 
 const announcements = await getCollection('announcements');
 const latestAnnouncements = announcements
@@ -17,6 +19,16 @@ const latestAnnouncements = announcements
 
 const leadership = await getCollection('leadership');
 const sortedLeadership = leadership.sort((a, b) => a.data.order - b.data.order);
+
+function getLeaderImage(imagePath: string, fallbackPath?: string) {
+  try {
+    const localFile = path.join(process.cwd(), 'public', imagePath);
+    if (fs.existsSync(localFile)) {
+      return imagePath;
+    }
+  } catch (e) {}
+  return fallbackPath || '/assets/leadership/founder.jpg';
+}
 ---
 
 <BaseLayout title="Home">
@@ -37,12 +49,12 @@ const sortedLeadership = leadership.sort((a, b) => a.data.order - b.data.order);
       
       <div class="container mx-auto px-4 relative z-10 py-16 sm:py-20 lg:py-24">
         <div class="max-w-3xl">
-          <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-4 sm:mb-6 text-white drop-shadow-sm">
-            Welcome to Sri Chandananda Buddhist College
+          <h1 data-i18n="home.hero_title" class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-4 sm:mb-6 text-white drop-shadow-sm">
+            Nurturing Wisdom, Heritage & Excellence in Kandy
           </h1>
 
-          <p class="text-base sm:text-lg md:text-xl font-light mb-8 sm:mb-10 text-slate-200 max-w-2xl leading-relaxed">
-            Empowering the next generation through wisdom, discipline, and Buddhist philosophy since 2006.
+          <p data-i18n="home.hero_sub" class="text-base sm:text-lg md:text-xl font-light mb-8 sm:mb-10 text-slate-200 max-w-2xl leading-relaxed">
+            Empowering students from Primary through Advanced Level with strong Buddhist values, modern academic rigor, and holistic co-curricular traditions.
           </p>
 
           <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
@@ -50,7 +62,7 @@ const sortedLeadership = leadership.sort((a, b) => a.data.order - b.data.order);
               href="/about" 
               class="w-full sm:w-auto justify-center bg-school-orange text-white hover:opacity-95 font-medium shadow-lg px-6 py-3 rounded-lg inline-flex items-center gap-2 transition hover:-translate-y-0.5 text-center"
             >
-              Discover Our History
+              <span data-i18n="home.btn_about">Discover Our History</span>
               <ArrowRight size={18} />
             </a>
 
@@ -58,7 +70,7 @@ const sortedLeadership = leadership.sort((a, b) => a.data.order - b.data.order);
               href="/admissions" 
               class="w-full sm:w-auto justify-center border border-white/40 text-white hover:bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg font-medium transition inline-flex items-center hover:-translate-y-0.5 text-center"
             >
-              Admissions Info
+              <span data-i18n="home.btn_admissions">Admissions Info</span>
             </a>
           </div>
         </div>
@@ -183,14 +195,15 @@ const sortedLeadership = leadership.sort((a, b) => a.data.order - b.data.order);
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {sortedLeadership.map(leader => (
             <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition group flex flex-col">
-              <div class="overflow-hidden bg-slate-100">
+              <div class="overflow-hidden bg-slate-100 rounded-t-xl">
                 <img 
-                  src={leader.data.image} 
+                  src={getLeaderImage(leader.data.image, leader.data.fallbackImage)} 
                   alt={leader.data.name} 
                   width="600" 
                   height="800" 
-                  class="aspect-[3/4] w-full object-cover object-top group-hover:scale-102 transition-transform duration-500" 
+                  class="aspect-[3/4] w-full object-cover object-top rounded-t-xl group-hover:scale-102 transition-transform duration-500" 
                   style="object-position: 50% 15%;"
+                  onerror={`this.onerror=null;this.src='${leader.data.fallbackImage || '/assets/leadership/founder.jpg'}';`}
                 />
               </div>
               <div class="p-6 sm:p-7 flex flex-col flex-grow text-center">

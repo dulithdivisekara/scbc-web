@@ -18,6 +18,8 @@ export default {
       fontFamily: {
         serif: ['var(--font-serif)', 'Merriweather', 'serif'],
         sans: ['var(--font-sans)', 'Inter', 'sans-serif'],
+        sinhalaSerif: ['Noto Serif Sinhala', 'serif'],
+        sinhalaSans: ['Noto Sans Sinhala', 'sans-serif'],
       },
     },
   },
