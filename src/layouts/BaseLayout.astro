@@ -8,22 +8,21 @@ export interface Props {
 
 const { title, description = "Empowering the next generation through wisdom, discipline, and Buddhist philosophy since 2006." } = Astro.props;
 
-const pageTitle = (title === "Home" || title === "Sri Chandananda Buddhist College")
-	? "Sri Chandananda Buddhist College"
-	: title;
+const isHome = title === "Home" || title === "Sri Chandananda Buddhist College";
+const pageTitle = isHome ? "Sri Chandananda College, Kandy" : title;
 
-const ogTitle = (title === "Home" || title === "Sri Chandananda Buddhist College")
+const ogTitle = isHome
 	? "Sri Chandananda Buddhist College, Kandy"
 	: `${title} | Sri Chandananda Buddhist College, Kandy`;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://srichandananda.edu.lk/');
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://scbck.lk/');
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
   "name": "Sri Chandananda Buddhist College",
   "alternateName": "ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය",
-  "url": Astro.site || "https://srichandananda.edu.lk/",
+  "url": Astro.site || "https://scbck.lk/",
   "logo": new URL("/assets/branding/school-crest-official.png", canonicalURL).toString(),
   "foundingDate": "2006",
   "founder": {
@@ -32,13 +31,17 @@ const jsonLd = {
   },
   "address": {
     "@type": "PostalAddress",
+    "streetAddress": "Asgiri Vihara Mawatha",
     "addressLocality": "Kandy",
+    "postalCode": "20000",
     "addressCountry": "LK"
   },
   "contactPoint": {
     "@type": "ContactPoint",
     "telephone": "+94812203162",
-    "contactType": "Admissions"
+    "email": "info@scbck.lk",
+    "contactType": "Admissions",
+    "availableLanguage": ["Sinhala", "English"]
   }
 };
 ---

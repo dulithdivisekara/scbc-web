@@ -22,33 +22,32 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
         <div>
           <h3 class="text-white text-xl font-serif font-bold leading-tight">Sri Chandananda Buddhist College</h3>
           <p class="text-sm font-sinhalaSerif text-amber-400 mt-1 leading-relaxed">ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය</p>
-          <p class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Asgiriya, Kandy, Sri Lanka</p>
+          <p data-i18n="footer.location" class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Asgiriya, Kandy, Sri Lanka</p>
         </div>
       </div>
-      <p class="text-sm text-slate-400 leading-relaxed max-w-sm mb-6">
-        Empowering the next generation through wisdom, discipline, and Buddhist philosophy since 2006. Operating under the visionary guidance of Most Ven. Dr. Godagama Mangala Thero.
+      <p data-i18n="footer.desc" class="text-sm text-slate-400 leading-relaxed max-w-sm mb-6"> Empowering the next generation through wisdom, discipline, and Buddhist philosophy since 2006. Operating under the visionary guidance of Most Ven. Dr. Godagama Mangala Thero.
       </p>
     </div>
 
     <!-- Quick Navigation Column -->
     <div class="md:col-span-3">
-      <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-5 border-l-2 border-school-orange pl-2.5">Quick Links</h4>
+      <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-5 border-l-2 border-school-orange pl-2.5" data-i18n="footer.quick_links">Quick Links</h4>
       <ul class="space-y-3 text-sm">
-        <li><a href="/about" class="text-slate-400 hover:text-school-orange transition">About the College</a></li>
-        <li><a href="/academics" class="text-slate-400 hover:text-school-orange transition">Academic Structure</a></li>
-        <li><a href="/student-life" class="text-slate-400 hover:text-school-orange transition">Student Life & Sports</a></li>
-        <li><a href="/admissions" class="text-slate-400 hover:text-school-orange transition">Admissions & Forms</a></li>
-        <li><a href="/contact" class="text-slate-400 hover:text-school-orange transition">Contact Directory</a></li>
+        <li><a href="/about" class="text-slate-400 hover:text-school-orange transition" data-i18n="about.title">About the College</a></li>
+        <li><a href="/academics" class="text-slate-400 hover:text-school-orange transition" data-i18n="footer.academics">Academic Structure</a></li>
+        <li><a href="/student-life" class="text-slate-400 hover:text-school-orange transition" data-i18n="footer.student_life">Student Life &amp; Sports</a></li>
+        <li><a href="/admissions" class="text-slate-400 hover:text-school-orange transition" data-i18n="footer.admissions">Admissions &amp; Forms</a></li>
+        <li><a href="/contact" class="text-slate-400 hover:text-school-orange transition" data-i18n="footer.contact_dir">Contact Directory</a></li>
       </ul>
     </div>
 
     <!-- Campus & Contact Info Column -->
     <div class="md:col-span-4">
-      <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-5 border-l-2 border-school-teal pl-2.5">Contact Us</h4>
+      <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-5 border-l-2 border-school-teal pl-2.5" data-i18n="contact.title">Contact Us</h4>
       <ul class="space-y-3.5 text-sm">
         <li class="flex items-start gap-3">
           <MapPin size={18} class="text-school-teal shrink-0 mt-0.5" />
-          <span class="text-slate-400">Asgiri Vihara Mawatha, Kandy 20000, Sri Lanka</span>
+          <span class="text-slate-400" data-i18n="contact.address_val">Asgiri Vihara Mawatha, Kandy 20000, Sri Lanka</span>
         </li>
         <li class="flex items-center gap-3">
           <Phone size={18} class="text-school-teal shrink-0" />
@@ -60,7 +59,7 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
         </li>
         <li class="flex items-start gap-3">
           <Clock size={18} class="text-school-teal shrink-0 mt-0.5" />
-          <span class="text-slate-400">Office Hours: Monday - Friday, 7:30 AM - 1:30 PM</span>
+          <span class="text-slate-400" data-i18n="footer.hours_line">Office Hours: Monday – Friday, 7:30 AM – 1:30 PM</span>
         </li>
       </ul>
     </div>
@@ -69,11 +68,10 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
   <!-- Bottom Legal & Alumnus Attribution Bar -->
   <div class="border-t border-slate-800/80 py-6 text-xs text-slate-400">
     <div class="container mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-3 text-center md:text-left">
-      <p class="text-slate-400">
-        &copy; 2026 Sri Chandananda Buddhist College, Kandy. All rights reserved.
+      <p class="text-slate-400" data-i18n="footer.copyright"> &copy; 2026 Sri Chandananda Buddhist College, Kandy. All rights reserved.
       </p>
       <p class="text-slate-400 font-medium">
-        Contributed as an Alumnus Digital Initiative by <a href="https://dulith.me" target="_blank" rel="noopener noreferrer" class="hover:text-school-orange underline decoration-slate-700 underline-offset-4 transition">Dulith Divisekara</a>
+        <span data-i18n="footer.credit">Contributed as an Alumnus Digital Initiative by</span> <a href="https://dulith.me" target="_blank" rel="noopener noreferrer" class="hover:text-school-orange underline decoration-slate-700 underline-offset-4 transition">Dulith Divisekara</a>
       </p>
     </div>
   </div>

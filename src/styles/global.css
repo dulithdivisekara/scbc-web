@@ -48,26 +48,36 @@ h1, h2, h3, h4, h5, h6, .font-serif, [class*="font-serif"] {
   letter-spacing: 0.05em !important;
 }
 
-/* 1. Global Sinhala Base for Body, Nav, Buttons, Inputs, and Links */
+/* ==========================================================================
+   Sinhala typography (html[lang="si"])
+   Single consolidated cascade. Tailwind font utilities (font-sans/font-serif)
+   would otherwise override the language-level font, hence !important.
+   ========================================================================== */
+
+/* 1. Body copy, navigation, controls and links: Noto Sans Sinhala */
 html[lang="si"],
 html[lang="si"] body,
+html[lang="si"] #site-header,
 html[lang="si"] nav,
-html[lang="si"] button,
-html[lang="si"] input,
-html[lang="si"] select,
-html[lang="si"] textarea,
 html[lang="si"] p,
 html[lang="si"] span,
 html[lang="si"] a,
 html[lang="si"] li,
-html[lang="si"] label {
-  font-family: 'Noto Sans Sinhala', system-ui, -apple-system, sans-serif !important;
+html[lang="si"] div,
+html[lang="si"] label,
+html[lang="si"] button,
+html[lang="si"] input,
+html[lang="si"] select,
+html[lang="si"] textarea,
+html[lang="si"] [data-lang-btn],
+html[lang="si"] .font-sans {
+  font-family: 'Noto Sans Sinhala', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif !important;
   line-height: 1.7 !important;
   letter-spacing: 0px !important;
   word-spacing: 0px !important;
 }
 
-/* 2. Formal Editorial Serif for All Headings & Titles */
+/* 2. Headings, titles and bold accents: Noto Serif Sinhala */
 html[lang="si"] h1,
 html[lang="si"] h2,
 html[lang="si"] h3,
@@ -76,8 +86,7 @@ html[lang="si"] h5,
 html[lang="si"] h6,
 html[lang="si"] .font-serif,
 html[lang="si"] [class*="font-serif"],
-html[lang="si"] [data-i18n$=".title"],
-html[lang="si"] [data-i18n$=".heading"] {
+html[lang="si"] strong {
   font-family: 'Noto Serif Sinhala', Georgia, serif !important;
   font-weight: 700 !important;
   line-height: 1.55 !important;
@@ -85,17 +94,16 @@ html[lang="si"] [data-i18n$=".heading"] {
   word-spacing: 0px !important;
 }
 
-/* 3. Navigation Bar Links & Page Selector */
+/* 3. Navigation links and language switcher */
 html[lang="si"] #site-header nav a,
 html[lang="si"] .mobile-menu-drawer a,
-html[lang="si"] [data-lang-btn="si"] {
-  font-family: 'Noto Sans Sinhala', sans-serif !important;
+html[lang="si"] [data-lang-btn] {
   font-weight: 500 !important;
   font-size: 0.95rem;
   line-height: 1.4 !important;
 }
 
-/* 4. Ensure Sinhala Diacritics (Pilla / Kombuwa) Never Clip */
+/* 4. Keep Sinhala diacritics (pilla / kombuwa) from clipping */
 html[lang="si"] * {
   overflow-wrap: break-word;
   text-rendering: optimizeLegibility;
@@ -230,40 +238,4 @@ div.bg-white.rounded-2xl:hover {
     max-width: 100% !important;
     height: auto !important;
   }
-}
-
-/* Enforce Noto Sans Sinhala globally across all Tailwind utilities when in Sinhala mode */
-html[lang="si"] body,
-html[lang="si"] #site-header,
-html[lang="si"] #site-header nav,
-html[lang="si"] #site-header a,
-html[lang="si"] [data-lang-btn],
-html[lang="si"] p,
-html[lang="si"] span,
-html[lang="si"] a,
-html[lang="si"] li,
-html[lang="si"] div,
-html[lang="si"] button,
-html[lang="si"] input,
-html[lang="si"] label,
-html[lang="si"] .font-sans {
-  font-family: 'Noto Sans Sinhala', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
-  letter-spacing: 0px !important;
-  word-spacing: 0px !important;
-}
-
-/* Enforce Noto Serif Sinhala for all titles, headings, and bold accents */
-html[lang="si"] h1,
-html[lang="si"] h2,
-html[lang="si"] h3,
-html[lang="si"] h4,
-html[lang="si"] h5,
-html[lang="si"] h6,
-html[lang="si"] .font-serif,
-html[lang="si"] strong {
-  font-family: 'Noto Serif Sinhala', Georgia, serif !important;
-  font-weight: 700 !important;
-  letter-spacing: 0px !important;
-  word-spacing: 0px !important;
-  line-height: 1.55 !important;
 }
