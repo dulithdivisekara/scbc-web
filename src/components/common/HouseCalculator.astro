@@ -4,13 +4,10 @@ import { Trophy, Shield, Flame, Search, Sparkles } from 'lucide-react';
 
 <section class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 max-w-2xl mx-auto my-8 house-calculator-root">
   <header class="text-center mb-6">
-    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-school-teal text-xs font-bold uppercase tracking-wider mb-2">
-      <Sparkles size={14} />
-      <span>Interactive Tool</span>
-    </div>
-    <h3 class="text-2xl font-serif font-bold text-school-textPrimary">Find Your House</h3>
+    <p class="text-xs font-bold uppercase tracking-widest text-school-teal mb-1">STUDENT ALLOCATION PORTAL</p>
+    <h3 class="text-2xl font-serif font-bold text-school-textPrimary">Find Your Assigned House</h3>
     <p class="text-school-textMuted text-sm max-w-md mx-auto mt-1 leading-relaxed">
-      Enter your student admission or index number to discover your collegiate house allocation.
+      Enter your student index or admission number to verify your official house assignment.
     </p>
   </header>
 
@@ -45,7 +42,7 @@ import { Trophy, Shield, Flame, Search, Sparkles } from 'lucide-react';
     const houseData = {
       1: {
         name: 'Ramya House',
-        colorName: 'Deep Maroon',
+        colorName: 'Virtues of Discipline & Heritage',
         bgColor: '#581838',
         tagBg: 'bg-purple-50',
         tagBorder: 'border-purple-200',
@@ -57,7 +54,7 @@ import { Trophy, Shield, Flame, Search, Sparkles } from 'lucide-react';
       },
       2: {
         name: 'Suramya House',
-        colorName: 'Teal / Cyan',
+        colorName: 'Virtues of Wisdom & Leadership',
         bgColor: '#007A87',
         tagBg: 'bg-teal-50',
         tagBorder: 'border-teal-200',
@@ -69,13 +66,13 @@ import { Trophy, Shield, Flame, Search, Sparkles } from 'lucide-react';
       },
       0: {
         name: 'Subha House',
-        colorName: 'Warm Saffron Gold',
+        colorName: 'Virtues of Sportsmanship & Vitality',
         bgColor: '#F58220',
         tagBg: 'bg-orange-50',
         tagBorder: 'border-orange-200',
         textColor: 'text-[#F58220]',
         borderColor: 'border-t-[#F58220]',
-        motto: 'Sports & Vitality',
+        motto: 'Sportsmanship & Vitality',
         description: 'Radiating vibrant athletic energy, perseverance, and tenacious competitive drive at the annual sports meet.',
         iconSvg: `<svg class="w-6 h-6 text-[#F58220]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>`
       }
