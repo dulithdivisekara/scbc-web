@@ -63,7 +63,8 @@ html[lang="si"] li,
 html[lang="si"] label {
   font-family: 'Noto Sans Sinhala', system-ui, -apple-system, sans-serif !important;
   line-height: 1.7 !important;
-  letter-spacing: normal !important;
+  letter-spacing: 0px !important;
+  word-spacing: 0px !important;
 }
 
 /* 2. Formal Editorial Serif for All Headings & Titles */
@@ -80,8 +81,8 @@ html[lang="si"] [data-i18n$=".heading"] {
   font-family: 'Noto Serif Sinhala', Georgia, serif !important;
   font-weight: 700 !important;
   line-height: 1.55 !important;
-  letter-spacing: normal !important;
-  word-spacing: normal !important;
+  letter-spacing: 0px !important;
+  word-spacing: 0px !important;
 }
 
 /* 3. Navigation Bar Links & Page Selector */
@@ -248,7 +249,7 @@ html[lang="si"] label,
 html[lang="si"] .font-sans {
   font-family: 'Noto Sans Sinhala', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif !important;
   letter-spacing: 0px !important;
-  word-spacing: normal !important;
+  word-spacing: 0px !important;
 }
 
 /* Enforce Noto Serif Sinhala for all titles, headings, and bold accents */
@@ -263,6 +264,6 @@ html[lang="si"] strong {
   font-family: 'Noto Serif Sinhala', Georgia, serif !important;
   font-weight: 700 !important;
   letter-spacing: 0px !important;
-  word-spacing: normal !important;
+  word-spacing: 0px !important;
   line-height: 1.55 !important;
 }
