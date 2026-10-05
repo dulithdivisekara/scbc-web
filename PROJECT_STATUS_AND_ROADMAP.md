@@ -36,7 +36,7 @@ Alumnus-contributed official web portal for Sri Chandananda Buddhist College, Ka
 
 ## 5. Phase 2: Interactive Digital Campus (Upcoming Roadmap)
 
-These features will transition the site from a static presence to an interactive portal. See `docs/developer-handbook/future-portal-spec.md` for full architectural specs.
+These features will transition the site from a static presence to an interactive portal. See `docs/FUTURE_EXPANSIONS_AND_ROADMAP.md` for full architectural specs.
 
 ### Task A (Multi-Role Auth)
 - **Feature:** Implement authentication layer (NextAuth/Supabase) to handle student, teacher, and admin roles.

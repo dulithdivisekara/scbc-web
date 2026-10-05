@@ -26,3 +26,7 @@ pnpm-debug.log*
 
 # Editors
 .idea/
+
+# Internal Workspace
+asset_extract/
+scratch/
