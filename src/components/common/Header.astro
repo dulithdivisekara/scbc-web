@@ -30,8 +30,8 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 
     <!-- Desktop Phone CTA & Lang Toggle -->
     <div class="hidden md:flex items-center gap-4">
-      <button id="lang-toggle-desktop" class="lang-toggle text-xs font-semibold px-2.5 py-1.5 bg-slate-100 rounded-md hover:bg-slate-200 transition-colors text-school-textPrimary whitespace-nowrap">
-        EN | සිං
+      <button id="lang-toggle-desktop" aria-label="Switch Language" class="lang-toggle inline-flex items-center justify-center min-w-[72px] text-xs font-semibold px-2.5 py-1.5 bg-slate-100/90 rounded-md border border-slate-200/80 hover:bg-slate-200/80 hover:border-slate-300 transition-all text-school-textPrimary whitespace-nowrap">
+        <span class="text-school-maroon font-bold text-xs">EN</span> <span class="text-slate-300 font-normal mx-1">|</span> <span data-lang-btn="si" class="text-slate-500 font-normal text-xs">සිං</span>
       </button>
       <a href="tel:+94812203162" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-school-teal text-school-teal hover:bg-school-teal hover:text-white transition font-medium text-sm">
         <Phone size={15} />
@@ -98,8 +98,8 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 
     <!-- Mobile Buttons -->
     <div class="flex gap-2 w-full">
-      <button id="lang-toggle-mobile" class="lang-toggle w-1/3 py-3 rounded-lg bg-slate-100 hover:bg-slate-200 transition font-bold text-sm text-school-textPrimary shadow-xs text-center flex items-center justify-center">
-        EN | සිං
+      <button id="lang-toggle-mobile" aria-label="Switch Language" class="lang-toggle w-1/3 py-3 rounded-lg bg-slate-100 hover:bg-slate-200 transition font-bold text-sm text-school-textPrimary shadow-xs text-center flex items-center justify-center border border-slate-200/80">
+        <span class="text-school-maroon font-bold text-xs">EN</span> <span class="text-slate-300 font-normal mx-1">|</span> <span data-lang-btn="si" class="text-slate-500 font-normal text-xs">සිං</span>
       </button>
       <a 
         href="tel:+94812203162" 
@@ -145,9 +145,9 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       
       toggleBtns.forEach(btn => {
         if (lang === 'en') {
-          btn.innerHTML = '<span class="text-school-maroon font-bold">EN</span> <span class="text-slate-300 font-normal mx-1">|</span> <span class="text-slate-500 font-normal">සිං</span>';
+          btn.innerHTML = '<span class="text-school-maroon font-bold text-xs">EN</span> <span class="text-slate-300 font-normal mx-1">|</span> <span data-lang-btn="si" class="text-slate-500 font-normal hover:text-slate-800 transition-colors text-xs">සිං</span>';
         } else {
-          btn.innerHTML = '<span class="text-slate-500 font-normal">EN</span> <span class="text-slate-300 font-normal mx-1">|</span> <span class="text-school-maroon font-bold">සිං</span>';
+          btn.innerHTML = '<span class="text-slate-500 font-normal hover:text-slate-800 transition-colors text-xs">EN</span> <span class="text-slate-300 font-normal mx-1">|</span> <span data-lang-btn="si" class="text-school-maroon font-medium font-sinhalaSans text-sm">සිං</span>';
         }
       });
     }
