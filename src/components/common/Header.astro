@@ -116,22 +116,24 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
   function setupTranslation() {
     const currentLang = localStorage.getItem('scbc_lang') || 'en';
     const toggleBtns = document.querySelectorAll('.lang-toggle');
-    const i18nElements = document.querySelectorAll('[data-i18n]');
 
     function applyTranslations(lang) {
       document.documentElement.setAttribute('lang', lang);
-      i18nElements.forEach(el => {
+      localStorage.setItem('scbc_lang', lang);
+
+      document.querySelectorAll('[data-i18n]').forEach((el) => {
         const key = el.getAttribute('data-i18n');
-        if (translations[key] && translations[key][lang]) {
-          el.textContent = translations[key][lang];
+        const text = (translations[lang] && translations[lang][key]) || (translations[key] && translations[key][lang]);
+        if (text) {
+          el.textContent = text;
         }
       });
       
       toggleBtns.forEach(btn => {
         if (lang === 'en') {
-          btn.innerHTML = '<span class="text-school-maroon">EN</span> <span class="text-slate-300 font-normal mx-1">|</span> <span class="text-slate-500 font-normal">සිං</span>';
+          btn.innerHTML = '<span class="text-school-maroon font-bold">EN</span> <span class="text-slate-300 font-normal mx-1">|</span> <span class="text-slate-500 font-normal">සිං</span>';
         } else {
-          btn.innerHTML = '<span class="text-slate-500 font-normal">EN</span> <span class="text-slate-300 font-normal mx-1">|</span> <span class="text-school-maroon">සිං</span>';
+          btn.innerHTML = '<span class="text-slate-500 font-normal">EN</span> <span class="text-slate-300 font-normal mx-1">|</span> <span class="text-school-maroon font-bold">සිං</span>';
         }
       });
     }
@@ -139,15 +141,20 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     applyTranslations(currentLang);
 
     toggleBtns.forEach(btn => {
-      btn.onclick = () => {
-        const newLang = localStorage.getItem('scbc_lang') === 'en' ? 'si' : 'en';
-        localStorage.setItem('scbc_lang', newLang);
+      btn.onclick = (e) => {
+        e.preventDefault();
+        const activeLang = localStorage.getItem('scbc_lang') || 'en';
+        const newLang = activeLang === 'en' ? 'si' : 'en';
         applyTranslations(newLang);
       };
     });
   }
   
-  setupTranslation();
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupTranslation);
+  } else {
+    setupTranslation();
+  }
   document.addEventListener('astro:page-load', setupTranslation);
 </script>
 

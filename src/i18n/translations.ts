@@ -1,83 +1,116 @@
-export const translations: Record<string, { en: string; si: string }> = {
-  // Navigation
-  'nav.home': { en: 'Home', si: 'මුල් පිටුව' },
-  'nav.about': { en: 'About Us', si: 'අප ගැන' },
-  'nav.academics': { en: 'Academics', si: 'අධ්‍යාපනය' },
-  'nav.student_life': { en: 'Student Life', si: 'ශිෂ්‍ය ජීවිතය' },
-  'nav.admissions': { en: 'Admissions', si: 'ඇතුළත් කිරීම්' },
-  'nav.contact': { en: 'Contact', si: 'සම්බන්ධ වන්න' },
+export const translations: Record<string, Record<string, string>> = {
+  en: {
+    // Navigation
+    'nav.home': 'Home',
+    'nav.about': 'About Us',
+    'nav.academics': 'Academics',
+    'nav.student_life': 'Student Life',
+    'nav.admissions': 'Admissions',
+    'nav.contact': 'Contact',
 
-  // Home Page
-  'home.hero_title': {
-    en: 'Nurturing Wisdom, Heritage & Excellence in Kandy',
-    si: 'නුවණ, උරුමය සහ විශිෂ්ටත්වය පෝෂණය කරන මහනුවර ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය'
-  },
-  'home.hero_sub': {
-    en: 'Empowering students from Primary through Advanced Level with strong Buddhist values, modern academic rigor, and holistic co-curricular traditions.',
-    si: 'ප්‍රාථමික ශ්‍රේණිවල සිට උසස් පෙළ දක්වා සිසුන්ට ගුණගරුක බෞද්ධ හික්මීම, නවීන අධ්‍යාපනය සහ පරිපූර්ණ කෞශල්‍යයන් ලබා දෙමින්.'
-  },
-  'home.btn_about': { en: 'Discover Our History', si: 'අපගේ ඉතිහාසය' },
-  'home.btn_admissions': { en: 'Admissions Info', si: 'ඇතුළත් කිරීම්' },
-  'home.stats_students': { en: 'Active Students', si: 'සක්‍රීය සිසුන්' },
-  'home.stats_grades': { en: 'Grades Offered', si: 'ඉගෙනුම් ශ්‍රේණි' },
-  'home.stats_mediums': { en: 'Dual Mediums', si: 'ද්විභාෂා මාධ්‍යයන්' },
-  'home.stats_founded': { en: 'Year Founded', si: 'ආරම්භ කළ වර්ෂය' },
-  'home.announcements_title': { en: 'Latest Circulars & Announcements', si: 'නවතම නිවේදන සහ වටලේඛන' },
-  'home.leadership_title': { en: 'Our Leadership', si: 'විද්‍යාලයීය නායකත්වය' },
-  'home.house_title': { en: 'House System Calculator', si: 'නිවාස සංඛ්‍යාත්මක ගණකය' },
+    // Home Page
+    'home.hero_title': 'Welcome to Sri Chandananda Buddhist College',
+    'home.hero_sub': 'Empowering the next generation through wisdom, discipline, and Buddhist philosophy since 2006.',
+    'home.btn_about': 'Discover Our History',
+    'home.btn_admissions': 'Admissions Info',
+    'home.stats_students': 'Active Students',
+    'home.stats_grades': 'Grades Offered',
+    'home.stats_mediums': 'Dual Mediums',
+    'home.stats_founded': 'Year Founded',
+    'home.announcements_title': 'Latest Circulars & Announcements',
+    'home.leadership_title': 'Our Leadership',
+    'home.house_title': 'House System Calculator',
 
-  // About Page
-  'about.title': { en: 'About the College', si: 'විද්‍යාලය පිළිබඳව' },
-  'about.vision_title': { en: 'Our Vision', si: 'අපගේ දර්ශනය' },
-  'about.vision_text': {
-    en: '"To create a healthy generation which faces the challenges of the modern world, practicing the values of Buddhist Philosophy."',
-    si: '"බෞද්ධ දර්ශනයේ අගයන් ප්‍රගුණ කරමින් නවීන ලෝකයේ අභියෝගවලට සාර්ථකව මුහුණ දෙන නීරෝගී පරපුරක් බිහිකිරීම."'
-  },
-  'about.history_title': { en: 'Our History', si: 'අපගේ ඉතිහාසය' },
-  'about.history_p1': {
-    en: 'Sri Chandananda Buddhist College was established on January 4, 2006. The school was conceptualized and brought to life by our Founder and Executive Director, Most Ven. Dr. Godagama Mangala Thero.',
-    si: 'ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය 2006 ජනවාරි 4 වන දින ආරම්භ කරන ලදී. අපගේ නිර්මාතෘ සහ විධායක අධ්‍යක්ෂ පූජ්‍ය ආචාර්ය ගොඩගම මංගල හිමියන්ගේ සංකල්පයකට අනුව මෙය බිහිවිය.'
-  },
-  'about.history_p2': {
-    en: 'It is proudly named in honor of his respected teacher, the Most Ven. Palipana Sri Chandananda Mahanayake Thera, continuing a legacy of educational and spiritual excellence in Kandy.',
-    si: 'අපගේ පූජනීය පාලිපාන ශ්‍රී චන්දානන්ද අනුනායක හිමිපාණන්ගේ ශ්‍රී නාමයට ගෞරව පිණිස විද්‍යාලය නම් කර ඇත.'
-  },
-  'about.girls_expansion': {
-    en: 'In 2020, we expanded our vision by opening a dedicated Girls\' School section, broadening our impact and commitment to holistic education.',
-    si: '2020 වර්ෂයේදී බාලිකා අංශය ආරම්භ කරමින් විද්‍යාලයීය අධ්‍යාපනික මෙහෙවර තවදුරටත් පුළුල් කරන ලදී.'
-  },
-  'about.leadership_directory': { en: 'Leadership Directory', si: 'නායකත්ව මණ්ඩලය' },
-  'about.vice_principals': { en: 'Vice Principals', si: 'නියෝජ්‍ය විදුහල්පතිවරු' },
+    // About Page
+    'about.title': 'About the College',
+    'about.vision_title': 'Our Vision',
+    'about.vision_text': '"To create a healthy generation which faces the challenges of the modern world, practicing the values of Buddhist Philosophy."',
+    'about.history_title': 'Our History',
+    'about.history_p1': 'Sri Chandananda Buddhist College was established on January 4, 2006. The school was conceptualized and brought to life by our Founder and Executive Director, Most Ven. Dr. Godagama Mangala Thero.',
+    'about.history_p2': 'It is proudly named in honor of his respected teacher, the Most Ven. Palipana Sri Chandananda Mahanayake Thera, continuing a legacy of educational and spiritual excellence in Kandy.',
+    'about.girls_expansion': 'In 2020, we expanded our vision by opening a dedicated Girls\' School section, broadening our impact and commitment to holistic education.',
+    'about.leadership_directory': 'Leadership Directory',
+    'about.vice_principals': 'Vice Principals',
 
-  // Contact Page
-  'contact.title': { en: 'Contact Us', si: 'අප හා සම්බන්ධ වන්න' },
-  'contact.get_in_touch': { en: 'Get in Touch', si: 'අප හා සම්බන්ධ වන්න' },
-  'contact.address': { en: 'Campus Address', si: 'විද්‍යාලයීය ලිපිනය' },
-  'contact.phone': { en: 'Phone', si: 'දුරකථන අංකය' },
-  'contact.email': { en: 'Email', si: 'විද්‍යුත් තැපෑල' },
-  'contact.hours': { en: 'Office Hours', si: 'කාර්යාල වේලාවන්' },
-  'contact.form_name': { en: 'Full Name', si: 'සම්පූර්ණ නම' },
-  'contact.form_email': { en: 'Email Address', si: 'විද්‍යුත් තැපැල් ලිපිනය' },
-  'contact.form_message': { en: 'Your Message', si: 'ඔබගේ පණිවිඩය' },
-  'contact.form_submit': { en: 'Send Inquiry', si: 'පණිවිඩය යොමු කරන්න' },
+    // Contact Page
+    'contact.title': 'Contact Us',
+    'contact.get_in_touch': 'Get in Touch',
+    'contact.address': 'Campus Address',
+    'contact.phone': 'Phone',
+    'contact.email': 'Email',
+    'contact.hours': 'Office Hours',
+    'contact.form_name': 'Full Name',
+    'contact.form_email': 'Email Address',
+    'contact.form_message': 'Your Message',
+    'contact.form_submit': 'Send Inquiry',
 
-  // Academics Page
-  'academics.title': { en: 'Academic Structure & Curriculum', si: 'අධ්‍යාපනික ව්‍යුහය සහ විෂයමාලාව' },
-  'academics.primary': { en: 'Primary Education (Grades 1–5)', si: 'ප්‍රාථමික අධ්‍යාපනය (1–5 ශ්‍රේණි)' },
-  'academics.secondary': { en: 'Secondary Education (Grades 6–11)', si: 'ද්විතීයික අධ්‍යාපනය (6–11 ශ්‍රේණි)' },
-  'academics.advanced': { en: 'Collegiate & Advanced Level (Grades 12–13)', si: 'උසස් පෙළ අධ්‍යාපනය (12–13 ශ්‍රේණි)' },
+    // Academics Page
+    'academics.title': 'Academic Structure & Curriculum',
+    'academics.bilingual_title': 'Bilingual Education',
 
-  // Student Life Page
-  'student_life.title': { en: 'Student Life & Co-Curricular Excellence', si: 'ශිෂ්‍ය ජීවිතය සහ සම-පාඨමාලා කටයුතු' },
-  'student_life.house_system': { en: 'Inter-House System', si: 'නිවාසාන්තර තරඟ පද්ධතිය' },
-  'student_life.ramya': { en: 'Ramya House', si: 'රම්‍යා නිවාසය' },
-  'student_life.suramya': { en: 'Suramya House', si: 'සුරම්‍යා නිවාසය' },
-  'student_life.subha': { en: 'Subha House', si: 'සුභා නිවාසය' },
-  'student_life.sports': { en: 'Athletics & Sports Facilities', si: 'ක්‍රීඩා සහ ශාරීරික සෞඛ්‍යය' },
-  'student_life.societies': { en: 'Clubs, Societies & Cadeting', si: 'සංගම් සහ ශිෂ්‍ය භට කණ්ඩායම්' },
+    // Student Life Page
+    'student_life.title': 'Student Life & Co-Curricular Excellence',
+    'student_life.culture_title': 'Our School Culture',
 
-  // Admissions Page
-  'admissions.title': { en: 'Student Admissions & Enrolment', si: 'ශිෂ්‍ය ඇතුළත් කිරීම් සහ ලියාපදිංචිය' },
-  'admissions.download_btn': { en: 'Download Admissions Form (PDF)', si: 'ඇතුළත් වීමේ අයදුම්පත බාගත කරන්න (PDF)' },
-  'admissions.criteria_title': { en: 'General Admission Criteria', si: 'ඇතුළත් වීමේ මූලික සුදුසුකම්' },
+    // Admissions Page
+    'admissions.title': 'Student Admissions & Enrolment',
+    'admissions.procedure_title': 'Admission Procedure',
+  },
+  si: {
+    // Navigation
+    'nav.home': 'මුල් පිටුව',
+    'nav.about': 'අප ගැන',
+    'nav.academics': 'අධ්‍යාපනය',
+    'nav.student_life': 'ශිෂ්‍ය ජීවිතය',
+    'nav.admissions': 'ඇතුළත් කිරීම්',
+    'nav.contact': 'සම්බන්ධ වන්න',
+
+    // Home Page
+    'home.hero_title': 'ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය වෙත සාදරයෙන් පිළිගනිමු',
+    'home.hero_sub': '2006 වසරේ සිට ප්‍රඥාව, විනය සහ බෞද්ධ දර්ශනයෙන් හෙබි අනාගත පරපුරක් දැයට දායාද කරමින්.',
+    'home.btn_about': 'අපගේ ඉතිහාසය',
+    'home.btn_admissions': 'ඇතුළත් කිරීම් තොරතුරු',
+    'home.stats_students': 'සක්‍රීය සිසුන්',
+    'home.stats_grades': 'ඉගෙනුම් ශ්‍රේණි',
+    'home.stats_mediums': 'ද්විභාෂා මාධ්‍යයන්',
+    'home.stats_founded': 'ආරම්භ කළ වර්ෂය',
+    'home.announcements_title': 'නවතම නිවේදන සහ වටලේඛන',
+    'home.leadership_title': 'විද්‍යාලයීය නායකත්වය',
+    'home.house_title': 'නිවාස සංඛ්‍යාත්මක ගණකය',
+
+    // About Page
+    'about.title': 'විද්‍යාලය පිළිබඳව',
+    'about.vision_title': 'අපගේ දර්ශනය',
+    'about.vision_text': '"බෞද්ධ දර්ශනයේ අගයන් ප්‍රගුණ කරමින් නවීන ලෝකයේ අභියෝගවලට සාර්ථකව මුහුණ දෙන නීරෝගී පරපුරක් බිහිකිරීම."',
+    'about.history_title': 'අපගේ ඉතිහාසය',
+    'about.history_p1': 'ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය 2006 ජනවාරි 4 වන දින ආරම්භ කරන ලදී. අපගේ නිර්මාතෘ සහ විධායක අධ්‍යක්ෂ පූජ්‍ය ආචාර්ය ගොඩගම මංගල හිමියන්ගේ සංකල්පයකට අනුව මෙය බිහිවිය.',
+    'about.history_p2': 'අපගේ පූජනීය පාලිපාන ශ්‍රී චන්දානන්ද අනුනායක හිමිපාණන්ගේ ශ්‍රී නාමයට ගෞරව පිණිස විද්‍යාලය නම් කර ඇත.',
+    'about.girls_expansion': '2020 වර්ෂයේදී බාලිකා අංශය ආරම්භ කරමින් විද්‍යාලයීය අධ්‍යාපනික මෙහෙවර තවදුරටත් පුළුල් කරන ලදී.',
+    'about.leadership_directory': 'නායකත්ව මණ්ඩලය',
+    'about.vice_principals': 'නියෝජ්‍ය විදුහල්පතිවරු',
+
+    // Contact Page
+    'contact.title': 'අප හා සම්බන්ධ වන්න',
+    'contact.get_in_touch': 'අප හා සම්බන්ධ වන්න',
+    'contact.address': 'විද්‍යාලයීය ලිපිනය',
+    'contact.phone': 'දුරකථන අංකය',
+    'contact.email': 'විද්‍යුත් තැපෑල',
+    'contact.hours': 'කාර්යාල වේලාවන්',
+    'contact.form_name': 'සම්පූර්ණ නම',
+    'contact.form_email': 'විද්‍යුත් තැපැල් ලිපිනය',
+    'contact.form_message': 'ඔබගේ පණිවිඩය',
+    'contact.form_submit': 'පණිවිඩය යොමු කරන්න',
+
+    // Academics Page
+    'academics.title': 'අධ්‍යාපනික ව්‍යුහය සහ විෂයමාලාව',
+    'academics.bilingual_title': 'ද්විභාෂා අධ්‍යාපනය',
+
+    // Student Life Page
+    'student_life.title': 'ශිෂ්‍ය ජීවිතය සහ සම-පාඨමාලා කටයුතු',
+    'student_life.culture_title': 'අපගේ විද්‍යාලයීය සංස්කෘතිය',
+
+    // Admissions Page
+    'admissions.title': 'ශිෂ්‍ය ඇතුළත් කිරීම් සහ ලියාපදිංචිය',
+    'admissions.procedure_title': 'ඇතුළත් වීමේ ක්‍රියාපටිපාටිය',
+  }
 };
