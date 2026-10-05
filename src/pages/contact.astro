@@ -116,8 +116,12 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
                 return;
               }
 
+              const subject = encodeURIComponent(`[SCBC Web Inquiry] Message from ${name}`);
+              const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\nMessage:\n${message}`);
+              window.location.href = `mailto:contact@dulith.me?subject=${subject}&body=${body}`;
+
               feedbackDiv.className = 'mb-5 p-4 rounded-xl text-sm font-medium bg-emerald-50 text-emerald-900 border border-emerald-200 flex items-center gap-2';
-              feedbackDiv.textContent = 'Thank you for contacting Sri Chandananda Buddhist College. Your message has been received.';
+              feedbackDiv.textContent = 'Thank you for contacting Sri Chandananda Buddhist College. Your inquiry has been forwarded to the administration desk.';
               feedbackDiv.classList.remove('hidden');
 
               form.reset();

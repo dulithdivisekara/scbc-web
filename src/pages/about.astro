@@ -32,29 +32,30 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
       </div>
       
       <!-- Vision Section -->
-      <section class="mb-10 sm:mb-12 bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-school-border">
-        <h2 data-i18n="about.vision_title" class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-4 border-b border-school-border pb-2">Our Vision</h2>
-        <p data-i18n="about.vision_text" class="text-base sm:text-lg text-school-textPrimary italic border-l-4 border-school-orange pl-4 py-2 bg-school-surface/60 rounded-r-lg">
+      <section class="mb-10 sm:mb-12">
+        <h2 data-i18n="about.vision_title" class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-4">Our Vision</h2>
+        <blockquote data-i18n="about.vision_text" class="border-l-4 border-school-orange pl-6 py-2 my-8 text-xl font-serif italic text-slate-800">
           "To create a healthy generation which faces the challenges of the modern world, practicing the values of Buddhist Philosophy."
-        </p>
+        </blockquote>
       </section>
 
       <!-- History Section -->
       <section class="mb-10 sm:mb-12">
         <h2 data-i18n="about.history_title" class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-6">Our History</h2>
-        <div class="space-y-6 text-school-textMuted leading-relaxed bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-school-border text-sm sm:text-base">
+        <div class="space-y-6 text-slate-700 leading-relaxed text-lg">
           <p data-i18n="about.history_p1">
             Sri Chandananda Buddhist College was established on January 4, 2006. The school was conceptualized and brought to life by our Founder and Executive Director, Most Ven. Dr. Godagama Mangala Thero.
           </p>
           <p data-i18n="about.history_p2">
             It is proudly named in honor of his respected teacher, the Most Ven. Palipana Sri Chandananda Mahanayake Thera, continuing a legacy of educational and spiritual excellence in Kandy.
           </p>
-          <div class="bg-orange-50/50 p-4 sm:p-5 rounded-lg border border-orange-200 mt-6">
-            <h3 class="font-bold text-school-maroon mb-2 flex items-center gap-2">
-              <span class="bg-school-orange text-white text-xs px-2.5 py-0.5 rounded-full font-bold">2020</span>
+          <div class="border-l-4 border-school-teal pl-6 py-2 mt-6">
+            <h3 class="font-bold font-serif text-school-textPrimary mb-2 flex items-center gap-2 text-xl">
+              <span class="text-school-teal">2020</span>
+              <span class="text-slate-300">|</span>
               <span data-i18n="about.expansion">Expansion Milestone</span>
             </h3>
-            <p data-i18n="about.girls_expansion" class="text-xs sm:text-sm text-school-textMuted">In 2020, we expanded our vision by opening a dedicated Girls' School section, broadening our impact and commitment to holistic education.</p>
+            <p data-i18n="about.girls_expansion" class="text-base text-slate-700">In 2020, we expanded our vision by opening a dedicated Girls' School section, broadening our impact and commitment to holistic education.</p>
           </div>
         </div>
       </section>
@@ -81,12 +82,14 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
                 />
               </div>
               <div class="p-6 sm:p-7 flex flex-col flex-grow text-center">
-                <span class="inline-block mx-auto mb-3 px-3 py-1 bg-teal-50 border border-teal-200 text-school-teal text-xs font-bold uppercase tracking-wider rounded-full">
-                  {leader.data.title}
-                </span>
-                <h3 class="text-xl font-bold font-serif text-school-textPrimary mb-2 leading-snug">
-                  {leader.data.name}
-                </h3>
+                <div class="space-y-1 mb-2">
+                  <p class="text-xs font-bold uppercase tracking-wider text-teal-800">
+                    {leader.data.title}
+                  </p>
+                  <h3 class="text-xl font-bold font-serif text-slate-900 leading-snug">
+                    {leader.data.name}
+                  </h3>
+                </div>
                 <p class="text-school-textMuted text-sm leading-relaxed mt-auto">
                   {leader.data.bio}
                 </p>
@@ -96,27 +99,24 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
         </div>
         
         <!-- Vice Principals -->
-        <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8">
-          <h3 class="font-bold text-lg mb-4 text-school-textPrimary font-serif flex items-center gap-2">
-            <span class="w-2 h-2 rounded-full bg-school-teal"></span>
-            <span data-i18n="about.vice_principals">Vice Principals</span>
+        <div class="mt-12">
+          <h3 class="font-bold text-xl mb-6 text-slate-900 font-serif border-b border-slate-200 pb-3" data-i18n="about.vice_principals">
+            Vice Principals
           </h3>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex items-center gap-3">
-              <div class="w-2.5 h-2.5 rounded-full bg-school-orange shrink-0"></div>
-              <div>
-                <p class="font-serif font-semibold text-school-textPrimary text-base">Ven. Thulawala Dhammasiddi Thero</p>
-                <p data-i18n="about.vp_badge" class="text-xs text-school-teal font-medium uppercase tracking-wider">Vice Principal</p>
+          <ul class="space-y-4">
+            <li class="pb-4 border-b border-slate-100">
+              <div class="space-y-1">
+                <p data-i18n="about.vp_badge" class="text-xs font-bold uppercase tracking-wider text-teal-800">Vice Principal</p>
+                <p class="font-serif font-bold text-slate-900 text-lg">Ven. Thulawala Dhammasiddi Thero</p>
               </div>
-            </div>
-            <div class="p-4 rounded-xl bg-slate-50 border border-slate-100 flex items-center gap-3">
-              <div class="w-2.5 h-2.5 rounded-full bg-school-orange shrink-0"></div>
-              <div>
-                <p class="font-serif font-semibold text-school-textPrimary text-base">Mr. J.B. Dassanayaka</p>
-                <p data-i18n="about.vp_badge" class="text-xs text-school-teal font-medium uppercase tracking-wider">Vice Principal</p>
+            </li>
+            <li class="pb-4 border-b border-slate-100">
+              <div class="space-y-1">
+                <p data-i18n="about.vp_badge" class="text-xs font-bold uppercase tracking-wider text-teal-800">Vice Principal</p>
+                <p class="font-serif font-bold text-slate-900 text-lg">Mr. J.B. Dassanayaka</p>
               </div>
-            </div>
-          </div>
+            </li>
+          </ul>
         </div>
       </section>
     </div>

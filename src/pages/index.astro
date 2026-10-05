@@ -207,12 +207,14 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
                 />
               </div>
               <div class="p-6 sm:p-7 flex flex-col flex-grow text-center">
-                <span class="inline-block mx-auto mb-3 px-3 py-1 bg-teal-50 border border-teal-200 text-school-teal text-xs font-bold uppercase tracking-wider rounded-full">
-                  {leader.data.title}
-                </span>
-                <h3 class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-2 leading-snug">
-                  {leader.data.name}
-                </h3>
+                <div class="space-y-1 mb-2">
+                  <p class="text-xs font-bold uppercase tracking-wider text-teal-800">
+                    {leader.data.title}
+                  </p>
+                  <h3 class="text-xl sm:text-2xl font-serif font-bold text-slate-900 leading-snug">
+                    {leader.data.name}
+                  </h3>
+                </div>
                 <p class="text-school-textMuted text-sm leading-relaxed mt-auto">
                   {leader.data.bio}
                 </p>
