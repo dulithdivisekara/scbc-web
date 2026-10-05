@@ -48,6 +48,7 @@ export const translations: Record<string, Record<string, string>> = {
     'contact.form_submit': 'Send Inquiry',
     'contact.direct_inquiries': 'DIRECT INQUIRIES',
     'contact.send_inquiry': 'Send an Inquiry',
+    'contact.map_title': 'Find Us in Kandy',
 
     // Academics Page
     'academics.title': 'Academic Structure & Curriculum',
@@ -63,7 +64,9 @@ export const translations: Record<string, Record<string, string>> = {
     'student_life.co_curricular': 'CO-CURRICULAR & ETHICS',
     'student_life.culture_desc': 'Our school culture is deeply rooted in respect, mindfulness, and Buddhist values, fostering a disciplined, compassionate, and inspiring academic environment.',
     'student_life.traditional_greeting': 'TRADITIONAL GREETING',
+    'student_life.greeting_quote': '"May the triple gems bless you!"',
     'student_life.addressing_educators': 'ADDRESSING EDUCATORS',
+    'student_life.educators_quote': '"Guruthuma" & "Guruthumi"',
     'student_life.house_system_title': 'Collegiate House System',
 
     // Admissions Page
@@ -124,6 +127,7 @@ export const translations: Record<string, Record<string, string>> = {
     'contact.form_submit': 'පණිවිඩය යොමු කරන්න',
     'contact.direct_inquiries': 'ඍජු විමසීම්',
     'contact.send_inquiry': 'පණිවිඩයක් එවන්න',
+    'contact.map_title': 'මහනුවර පිහිටි අපගේ පරිශ්‍රය',
 
     // Academics Page
     'academics.title': 'අධ්‍යාපනික ව්‍යුහය සහ විෂයමාලාව',
@@ -139,7 +143,9 @@ export const translations: Record<string, Record<string, string>> = {
     'student_life.co_curricular': 'විෂය සමගාමී සහ සාරධර්ම',
     'student_life.culture_desc': 'අපගේ පාසල් සංස්කෘතිය ගෞරවය, සිහිය සහ බෞද්ධ වටිනාකම් මත ගැඹුරින් මුල් බැස ඇති අතර, විනයගරුක, දයානුකම්පිත සහ ප්‍රබෝධමත් අධ්‍යාපනික පරිසරයක් පෝෂණය කරයි.',
     'student_life.traditional_greeting': 'සාම්ප්‍රදායික ආචාරය',
+    'student_life.greeting_quote': '"තෙරුවන් සරණයි!"',
     'student_life.addressing_educators': 'ගුරුවරුන්ට ආමන්ත්‍රණය',
+    'student_life.educators_quote': '"ගුරුතුමා" සහ "ගුරුතුමිය"',
     'student_life.house_system_title': 'නිවාස ක්‍රමය',
 
     // Admissions Page
