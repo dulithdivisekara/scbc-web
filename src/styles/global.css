@@ -37,10 +37,10 @@ body {
   font-family: var(--font-sans);
 }
 
-h1, h2, h3, h4, h5, h6, .font-serif {
+h1, h2, h3, h4, h5, h6, .font-serif, [class*="font-serif"] {
   font-family: var(--font-serif);
-  word-spacing: normal !important;
-  letter-spacing: -0.015em;
+  word-spacing: 0px !important;
+  letter-spacing: normal !important;
 }
 
 /* Fix Awkward Word Spacing & Tracking */

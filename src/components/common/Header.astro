@@ -135,6 +135,13 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
           el.textContent = text;
         }
       });
+
+      document.querySelectorAll('[data-placeholder-en]').forEach((el) => {
+        const text = el.getAttribute(`data-placeholder-${lang}`);
+        if (text) {
+          el.setAttribute('placeholder', text);
+        }
+      });
       
       toggleBtns.forEach(btn => {
         if (lang === 'en') {

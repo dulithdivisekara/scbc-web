@@ -30,7 +30,10 @@ export const translations: Record<string, Record<string, string>> = {
     'about.history_p2': 'It is proudly named in honor of his respected teacher, the Most Ven. Palipana Sri Chandananda Mahanayake Thera, continuing a legacy of educational and spiritual excellence in Kandy.',
     'about.girls_expansion': 'In 2020, we expanded our vision by opening a dedicated Girls\' School section, broadening our impact and commitment to holistic education.',
     'about.leadership_directory': 'Leadership Directory',
+    'about.leadership_sub': 'Guided by visionary Buddhist leadership and dedicated administrative stewardship.',
     'about.vice_principals': 'Vice Principals',
+    'about.vp_badge': 'VICE PRINCIPAL',
+    'about.expansion': 'Expansion Milestone',
 
     // Contact Page
     'contact.title': 'Contact Us',
@@ -43,6 +46,8 @@ export const translations: Record<string, Record<string, string>> = {
     'contact.form_email': 'Email Address',
     'contact.form_message': 'Your Message',
     'contact.form_submit': 'Send Inquiry',
+    'contact.direct_inquiries': 'DIRECT INQUIRIES',
+    'contact.send_inquiry': 'Send an Inquiry',
 
     // Academics Page
     'academics.title': 'Academic Structure & Curriculum',
@@ -55,6 +60,11 @@ export const translations: Record<string, Record<string, string>> = {
     // Student Life Page
     'student_life.title': 'Student Life & Co-Curricular Excellence',
     'student_life.culture_title': 'Our School Culture',
+    'student_life.co_curricular': 'CO-CURRICULAR & ETHICS',
+    'student_life.culture_desc': 'Our school culture is deeply rooted in respect, mindfulness, and Buddhist values, fostering a disciplined, compassionate, and inspiring academic environment.',
+    'student_life.traditional_greeting': 'TRADITIONAL GREETING',
+    'student_life.addressing_educators': 'ADDRESSING EDUCATORS',
+    'student_life.house_system_title': 'Collegiate House System',
 
     // Admissions Page
     'admissions.title': 'Student Admissions & Enrolment',
@@ -96,7 +106,10 @@ export const translations: Record<string, Record<string, string>> = {
     'about.history_p2': 'අපගේ පූජනීය පාලිපාන ශ්‍රී චන්දානන්ද අනුනායක හිමිපාණන්ගේ ශ්‍රී නාමයට ගෞරව පිණිස විද්‍යාලය නම් කර ඇත.',
     'about.girls_expansion': '2020 වර්ෂයේදී බාලිකා අංශය ආරම්භ කරමින් විද්‍යාලයීය අධ්‍යාපනික මෙහෙවර තවදුරටත් පුළුල් කරන ලදී.',
     'about.leadership_directory': 'නායකත්ව මණ්ඩලය',
+    'about.leadership_sub': 'ගෞරවනීය මහා සංඝරත්නයේ සහ විදුහල්පති මණ්ඩලයේ මඟපෙන්වීම යටතේ.',
     'about.vice_principals': 'නියෝජ්‍ය විදුහල්පතිවරු',
+    'about.vp_badge': 'නියෝජ්‍ය විදුහල්පති',
+    'about.expansion': 'සුවිශේෂී සන්ධිස්ථානය',
 
     // Contact Page
     'contact.title': 'අප හා සම්බන්ධ වන්න',
@@ -109,6 +122,8 @@ export const translations: Record<string, Record<string, string>> = {
     'contact.form_email': 'විද්‍යුත් තැපැල් ලිපිනය',
     'contact.form_message': 'ඔබගේ පණිවිඩය',
     'contact.form_submit': 'පණිවිඩය යොමු කරන්න',
+    'contact.direct_inquiries': 'ඍජු විමසීම්',
+    'contact.send_inquiry': 'පණිවිඩයක් එවන්න',
 
     // Academics Page
     'academics.title': 'අධ්‍යාපනික ව්‍යුහය සහ විෂයමාලාව',
@@ -121,6 +136,11 @@ export const translations: Record<string, Record<string, string>> = {
     // Student Life Page
     'student_life.title': 'ශිෂ්‍ය ජීවිතය සහ සම-පාඨමාලා කටයුතු',
     'student_life.culture_title': 'අපගේ විද්‍යාලයීය සංස්කෘතිය',
+    'student_life.co_curricular': 'විෂය සමගාමී සහ සාරධර්ම',
+    'student_life.culture_desc': 'අපගේ පාසල් සංස්කෘතිය ගෞරවය, සිහිය සහ බෞද්ධ වටිනාකම් මත ගැඹුරින් මුල් බැස ඇති අතර, විනයගරුක, දයානුකම්පිත සහ ප්‍රබෝධමත් අධ්‍යාපනික පරිසරයක් පෝෂණය කරයි.',
+    'student_life.traditional_greeting': 'සාම්ප්‍රදායික ආචාරය',
+    'student_life.addressing_educators': 'ගුරුවරුන්ට ආමන්ත්‍රණය',
+    'student_life.house_system_title': 'නිවාස ක්‍රමය',
 
     // Admissions Page
     'admissions.title': 'ශිෂ්‍ය ඇතුළත් කිරීම් සහ ලියාපදිංචිය',
