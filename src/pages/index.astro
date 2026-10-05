@@ -20,9 +20,7 @@ const latestAnnouncements = announcements
   <Header />
   
   <main class="flex-grow bg-[#F8FAFC]">
-    <!-- 1. Full-Bleed Immersive Collegiate Hero -->
     <section class="min-h-[520px] sm:min-h-[580px] lg:min-h-[640px] relative flex items-center overflow-hidden">
-      <!-- Full Cover Campus Photo -->
       <img 
         src="/assets/campus/campus-main-building.jpg" 
         alt="Sri Chandananda Buddhist College Campus Grounds" 
@@ -32,10 +30,8 @@ const latestAnnouncements = announcements
         loading="eager"
       />
 
-      <!-- Deep Cinematic Gradient Scrim Overlay for Uncompromised Contrast -->
       <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-slate-900/40"></div>
       
-      <!-- Hero Content -->
       <div class="container mx-auto px-4 relative z-10 py-16 sm:py-20 lg:py-24">
         <div class="max-w-3xl">
           <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-4 sm:mb-6 text-white drop-shadow-sm">
@@ -47,7 +43,6 @@ const latestAnnouncements = announcements
           </p>
 
           <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
-            <!-- Primary Saffron Gold/Orange Button -->
             <a 
               href="/about" 
               class="w-full sm:w-auto justify-center bg-school-orange text-white hover:opacity-95 font-medium shadow-lg px-6 py-3 rounded-lg inline-flex items-center gap-2 transition hover:-translate-y-0.5 text-center"
@@ -56,7 +51,6 @@ const latestAnnouncements = announcements
               <ArrowRight size={18} />
             </a>
 
-            <!-- Secondary Frosted Glass Outline Button -->
             <a 
               href="/admissions" 
               class="w-full sm:w-auto justify-center border border-white/40 text-white hover:bg-white/10 backdrop-blur-sm px-6 py-3 rounded-lg font-medium transition inline-flex items-center hover:-translate-y-0.5 text-center"
@@ -67,7 +61,6 @@ const latestAnnouncements = announcements
         </div>
       </div>
 
-      <!-- Bottom Edge Smooth Divider into Content Sections -->
       <div class="absolute bottom-0 left-0 right-0 h-8 md:h-12 overflow-hidden pointer-events-none z-20">
         <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-full text-[#F8FAFC] fill-current">
           <path d="M0,0 C300,80 900,80 1200,0 L1200,120 L0,120 Z"></path>
@@ -75,7 +68,6 @@ const latestAnnouncements = announcements
       </div>
     </section>
 
-    <!-- 2. Anchored Institutional Metric Strip -->
     <section class="relative z-30 -mt-8 sm:-mt-10 md:-mt-12 px-4">
       <div class="container mx-auto max-w-5xl">
         <div class="bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl rounded-2xl p-6 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-100">
@@ -117,7 +109,6 @@ const latestAnnouncements = announcements
       </div>
     </section>
 
-    <!-- 3. Official Notices & Circulars (Pure White Cards on #F8FAFC) -->
     <section class="py-12 sm:py-16">
       <div class="container mx-auto px-4 max-w-5xl">
         <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
@@ -178,7 +169,6 @@ const latestAnnouncements = announcements
       </div>
     </section>
 
-    <!-- 4. Leadership Spotlight (Pure White Cards on #F8FAFC) -->
     <section class="py-12 sm:py-16 border-t border-slate-200">
       <div class="container mx-auto px-4">
         <div class="text-center mb-10 sm:mb-14">
@@ -188,7 +178,6 @@ const latestAnnouncements = announcements
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <!-- Founder -->
           <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition group flex flex-col">
             <div class="overflow-hidden bg-slate-100">
               <img 
@@ -213,7 +202,6 @@ const latestAnnouncements = announcements
             </div>
           </div>
           
-          <!-- Principal -->
           <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition group flex flex-col">
             <div class="overflow-hidden bg-slate-100">
               <img 
@@ -241,7 +229,6 @@ const latestAnnouncements = announcements
       </div>
     </section>
 
-    <!-- 5. Student Life Highlights & House System -->
     <section class="py-12 sm:py-16 border-t border-slate-200">
       <div class="container mx-auto px-4 max-w-5xl">
         <div class="text-center mb-10 sm:mb-14">
@@ -253,9 +240,7 @@ const latestAnnouncements = announcements
           </p>
         </div>
 
-        <!-- Highlights Cards -->
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 sm:mb-14">
-          <!-- Cultural Dance & Buddhist Traditions Card -->
           <div class="bg-white border border-slate-200 shadow-sm hover:shadow-md transition rounded-xl overflow-hidden group">
             <div class="aspect-[16/10] overflow-hidden bg-slate-100">
               <img 
@@ -280,7 +265,6 @@ const latestAnnouncements = announcements
             </div>
           </div>
 
-          <!-- Athletics & Sports Card -->
           <div class="bg-white border border-slate-200 shadow-sm hover:shadow-md transition rounded-xl overflow-hidden group">
             <div class="aspect-[16/10] overflow-hidden bg-slate-100">
               <img 
@@ -306,7 +290,6 @@ const latestAnnouncements = announcements
           </div>
         </div>
 
-        <!-- House System (Collegiate House Showcases) -->
         <div class="p-6 sm:p-8 md:p-10 rounded-2xl bg-white border border-slate-200 shadow-sm">
           <div class="text-center mb-8">
             <div class="inline-flex items-center gap-2 text-school-maroon font-semibold text-xs uppercase tracking-wider mb-2">
@@ -320,11 +303,10 @@ const latestAnnouncements = announcements
           </div>
           
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- Ramya (Deep Maroon Accent) -->
             <div class="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden shadow-xs hover:shadow-md transition group border-t-4 border-t-[#581838] flex flex-col">
               <div class="flex items-center justify-between mb-4">
                 <span class="text-xs font-bold uppercase tracking-wider text-[#581838] bg-purple-50 border border-purple-200 px-2.5 py-1 rounded-full">
-                  Deep Maroon
+                  Virtues of Discipline & Heritage
                 </span>
                 <div class="w-10 h-10 rounded-xl bg-purple-50 text-[#581838] flex items-center justify-center border border-purple-100 group-hover:scale-110 transition-transform">
                   <Trophy size={20} />
@@ -337,11 +319,10 @@ const latestAnnouncements = announcements
               </p>
             </div>
             
-            <!-- Suramya (Teal Accent) -->
             <div class="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden shadow-xs hover:shadow-md transition group border-t-4 border-t-[#007A87] flex flex-col">
               <div class="flex items-center justify-between mb-4">
                 <span class="text-xs font-bold uppercase tracking-wider text-[#007A87] bg-teal-50 border border-teal-200 px-2.5 py-1 rounded-full">
-                  Teal / Cyan
+                  Virtues of Wisdom & Leadership
                 </span>
                 <div class="w-10 h-10 rounded-xl bg-teal-50 text-[#007A87] flex items-center justify-center border border-teal-100 group-hover:scale-110 transition-transform">
                   <Shield size={20} />
@@ -354,25 +335,23 @@ const latestAnnouncements = announcements
               </p>
             </div>
             
-            <!-- Subha (Warm Saffron / Gold Accent) -->
             <div class="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden shadow-xs hover:shadow-md transition group border-t-4 border-t-[#F58220] flex flex-col">
               <div class="flex items-center justify-between mb-4">
                 <span class="text-xs font-bold uppercase tracking-wider text-[#F58220] bg-orange-50 border border-orange-200 px-2.5 py-1 rounded-full">
-                  Warm Saffron Gold
+                  Virtues of Sportsmanship & Vitality
                 </span>
                 <div class="w-10 h-10 rounded-xl bg-orange-50 text-[#F58220] flex items-center justify-center border border-orange-100 group-hover:scale-110 transition-transform">
                   <Flame size={20} />
                 </div>
               </div>
               <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-1 group-hover:text-[#F58220] transition-colors">Subha House</h4>
-              <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-3">Sports & Vitality</p>
+              <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-3">Sportsmanship & Vitality</p>
               <p class="text-sm text-school-textMuted leading-relaxed">
                 Channeling vibrant energy, track and field excellence, and tenacious athletic spirit into annual inter-house competitions and team triumphs.
               </p>
             </div>
           </div>
 
-          <!-- Interactive Student House Calculator -->
           <div class="mt-10 border-t border-slate-100 pt-6">
             <HouseCalculator />
           </div>
