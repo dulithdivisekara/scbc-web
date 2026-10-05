@@ -85,7 +85,7 @@ Detailed documentation on project architecture and future roadmap items can be f
 
 - [System Architecture](docs/developer-handbook/architecture.md)
 - [Content Editing Guide](docs/developer-handbook/content-editing-guide.md)
-- [Future Portal Specification](docs/developer-handbook/future-portal-spec.md)
+- [Future Expansions & Roadmap](docs/FUTURE_EXPANSIONS_AND_ROADMAP.md)
 
 ---
 
