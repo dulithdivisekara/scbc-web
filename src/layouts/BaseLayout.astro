@@ -74,5 +74,45 @@ const jsonLd = {
 			<div class="flex-1 bg-school-maroon"></div>
 		</div>
 		<slot />
+
+		<script is:inline>
+			function setupInteractions() {
+				const header = document.getElementById('site-header');
+				const handleScroll = () => {
+					if (header) {
+						if (window.scrollY > 20) {
+							header.classList.add('scrolled');
+						} else {
+							header.classList.remove('scrolled');
+						}
+					}
+				};
+				window.addEventListener('scroll', handleScroll, { passive: true });
+				handleScroll();
+
+				const revealElements = document.querySelectorAll('.reveal');
+				if (revealElements.length > 0 && 'IntersectionObserver' in window) {
+					const observer = new IntersectionObserver((entries) => {
+						entries.forEach(entry => {
+							if (entry.isIntersecting) {
+								entry.target.classList.add('opacity-100', 'translate-y-0');
+								observer.unobserve(entry.target);
+							}
+						});
+					}, { threshold: 0.1 });
+
+					revealElements.forEach(el => observer.observe(el));
+				} else {
+					revealElements.forEach(el => el.classList.add('opacity-100', 'translate-y-0'));
+				}
+			}
+
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', setupInteractions);
+			} else {
+				setupInteractions();
+			}
+			document.addEventListener('astro:page-load', setupInteractions);
+		</script>
 	</body>
 </html>
