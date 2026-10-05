@@ -10,19 +10,18 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
   
   <main class="flex-grow py-12 sm:py-16 bg-school-surface">
     <div class="container mx-auto px-4 max-w-5xl">
-      <div class="text-center mb-12 sm:mb-16">
+      <header class="text-center mb-12 sm:mb-16">
         <span class="text-xs font-bold uppercase tracking-wider text-school-teal mb-2 inline-block">Direct Inquiries</span>
         <h1 class="text-3xl sm:text-4xl font-serif font-bold text-school-textPrimary mb-2">Contact Us</h1>
         <div class="w-16 h-1 bg-school-orange mx-auto mt-4 mb-4"></div>
         <p class="text-school-textMuted max-w-xl mx-auto text-sm sm:text-base">We are here to answer your questions and welcome you to our school community.</p>
-      </div>
+      </header>
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
-        <!-- Contact Information -->
-        <div>
+        <section>
           <h2 class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-6">Get in Touch</h2>
           
-          <div class="space-y-5">
+          <address class="space-y-5 not-italic">
             <div class="flex items-start gap-4 bg-white p-5 rounded-xl border border-school-border shadow-xs">
               <div class="bg-teal-50 border border-teal-100 p-3 rounded-lg text-school-teal shrink-0">
                 <MapPin size={22} />
@@ -62,27 +61,28 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
                 <p class="text-school-textMuted text-sm leading-relaxed">Monday - Friday<br/>7:30 AM - 1:30 PM</p>
               </div>
             </div>
-          </div>
-        </div>
+          </address>
+        </section>
         
-        <!-- Contact Form -->
-        <div class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-school-border">
+        <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-school-border">
           <h2 class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-6">Send an Inquiry</h2>
           
-          <form class="space-y-5" onsubmit="event.preventDefault();">
+          <div id="form-feedback" class="hidden mb-5 p-4 rounded-xl text-sm font-medium" role="alert"></div>
+
+          <form id="contact-form" class="space-y-5">
             <div>
-              <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-school-textMuted mb-2">Full Name</label>
-              <input type="text" id="name" autocomplete="name" class="w-full px-4 py-3 rounded-lg border border-school-border focus:outline-none focus:ring-2 focus:ring-school-teal text-school-textPrimary text-sm transition-all" placeholder="Enter your full name">
+              <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-school-textMuted mb-2">Full Name <span class="text-red-500">*</span></label>
+              <input type="text" id="name" required autocomplete="name" class="w-full px-4 py-3 rounded-lg border border-school-border focus:outline-none focus:ring-2 focus:ring-school-teal text-school-textPrimary text-sm transition-all" placeholder="Enter your full name">
             </div>
             
             <div>
-              <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-school-textMuted mb-2">Email Address</label>
-              <input type="email" id="email" autocomplete="email" class="w-full px-4 py-3 rounded-lg border border-school-border focus:outline-none focus:ring-2 focus:ring-school-teal text-school-textPrimary text-sm transition-all" placeholder="name@example.com">
+              <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-school-textMuted mb-2">Email Address <span class="text-red-500">*</span></label>
+              <input type="email" id="email" required autocomplete="email" class="w-full px-4 py-3 rounded-lg border border-school-border focus:outline-none focus:ring-2 focus:ring-school-teal text-school-textPrimary text-sm transition-all" placeholder="name@example.com">
             </div>
             
             <div>
-              <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-school-textMuted mb-2">Your Message</label>
-              <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-school-border focus:outline-none focus:ring-2 focus:ring-school-teal text-school-textPrimary text-sm transition-all" placeholder="Please specify your inquiry or message..."></textarea>
+              <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-school-textMuted mb-2">Your Message <span class="text-red-500">*</span></label>
+              <textarea id="message" required rows="4" class="w-full px-4 py-3 rounded-lg border border-school-border focus:outline-none focus:ring-2 focus:ring-school-teal text-school-textPrimary text-sm transition-all" placeholder="Please specify your inquiry or message..."></textarea>
             </div>
             
             <button type="submit" class="w-full bg-school-maroon hover:opacity-90 text-white font-semibold py-3.5 px-6 rounded-lg transition-opacity flex items-center justify-center gap-2 shadow-sm text-sm">
@@ -90,8 +90,58 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
               Send Inquiry
             </button>
           </form>
-        </div>
+        </section>
+
+        <script is:inline>
+          document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('contact-form');
+            const feedbackDiv = document.getElementById('form-feedback');
+            const nameInput = document.getElementById('name');
+            const emailInput = document.getElementById('email');
+            const messageInput = document.getElementById('message');
+
+            if (!form || !feedbackDiv) return;
+
+            form.addEventListener('submit', (e) => {
+              e.preventDefault();
+              
+              const name = nameInput.value.trim();
+              const email = emailInput.value.trim();
+              const message = messageInput.value.trim();
+
+              if (!name || !email || !message) {
+                feedbackDiv.className = 'mb-5 p-4 rounded-xl text-sm font-medium bg-red-50 text-red-800 border border-red-200';
+                feedbackDiv.textContent = 'Please fill out all required fields (Full Name, Email Address, and Your Message) before submitting.';
+                feedbackDiv.classList.remove('hidden');
+                return;
+              }
+
+              feedbackDiv.className = 'mb-5 p-4 rounded-xl text-sm font-medium bg-emerald-50 text-emerald-900 border border-emerald-200 flex items-center gap-2';
+              feedbackDiv.textContent = 'Thank you for contacting Sri Chandananda Buddhist College. Your message has been received.';
+              feedbackDiv.classList.remove('hidden');
+
+              form.reset();
+            });
+          });
+        </script>
       </div>
+
+      <section class="mt-12 sm:mt-16">
+        <header class="mb-4">
+          <span class="text-xs font-bold uppercase tracking-wider text-school-teal mb-1 inline-block">Campus Location</span>
+          <h2 class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary">Find Us in Kandy</h2>
+          <p class="text-school-textMuted text-sm">Located on Asgiri Vihara Mawatha, in the historic hill capital of Kandy.</p>
+        </header>
+        <figure class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-72 sm:h-96 w-full m-0">
+          <iframe
+            title="Sri Chandananda Buddhist College Campus Map"
+            src="https://maps.google.com/maps?q=Sri+Chandananda+Buddhist+College+Kandy&t=&z=16&ie=UTF8&iwloc=&output=embed"
+            class="w-full h-full border-0"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </figure>
+      </section>
     </div>
   </main>
   
