@@ -130,7 +130,7 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
           <div>
             <div class="flex items-center gap-2 text-school-teal font-semibold text-xs uppercase tracking-wider mb-1">
               <Bell size={16} />
-              <span>Official Announcements</span>
+              <span data-en="Official Announcements" data-si="නිල නිවේදන">Official Announcements</span>
             </div>
             <h2 data-i18n="home.announcements_title" class="text-2xl sm:text-3xl font-serif font-bold text-school-textPrimary">Latest Circulars & Announcements</h2>
           </div>
@@ -170,11 +170,11 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
                   {new Date(notice.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                 </p>
                 
-                <h3 class="text-lg font-bold text-school-textPrimary group-hover:text-school-maroon transition-colors leading-snug mb-2 font-serif">
+                <h3 class="text-lg font-bold text-school-textPrimary group-hover:text-school-maroon transition-colors leading-snug mb-2 font-serif" data-en={notice.data.title} data-si={notice.data.title_si || notice.data.title}>
                   {notice.data.title}
                 </h3>
                 
-                <p class="text-school-textMuted text-sm line-clamp-3 leading-relaxed mb-4">
+                <p class="text-school-textMuted text-sm line-clamp-3 leading-relaxed mb-4" data-en={notice.data.summary} data-si={notice.data.summary_si || notice.data.summary}>
                   {notice.data.summary}
                 </p>
               </div>
@@ -187,7 +187,7 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
     <section class="reveal py-12 sm:py-16 border-t border-slate-200">
       <div class="container mx-auto px-4">
         <div class="text-center mb-10 sm:mb-14">
-          <span class="text-xs font-bold uppercase tracking-wider text-school-teal mb-2 inline-block">College Governance</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-school-teal mb-2 inline-block" data-en="COLLEGE GOVERNANCE" data-si="විද්‍යාලයීය පාලන අධිකාරිය">College Governance</span>
           <h2 data-i18n="home.leadership_title" class="text-2xl sm:text-3xl font-serif font-bold text-school-textPrimary mb-3">Our Leadership</h2>
           <div class="w-16 h-1 bg-school-orange mx-auto"></div>
         </div>
@@ -226,7 +226,7 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
     <section class="py-12 sm:py-16 border-t border-slate-200">
       <div class="container mx-auto px-4 max-w-5xl">
         <div class="text-center mb-10 sm:mb-14">
-          <span class="text-xs font-bold uppercase tracking-wider text-school-teal mb-2 inline-block">Student Life</span>
+          <span class="text-xs font-bold uppercase tracking-wider text-school-teal mb-2 inline-block" data-en="STUDENT LIFE" data-si="ශිෂ්‍ය ජීවිතය">Student Life</span>
           <h2 class="text-2xl sm:text-3xl font-serif font-bold text-school-textPrimary mb-3">Holistic Development</h2>
           <div class="w-16 h-1 bg-school-teal mx-auto mb-4"></div>
           <p class="text-school-textMuted max-w-2xl mx-auto text-sm leading-relaxed">

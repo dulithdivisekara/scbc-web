@@ -30,7 +30,10 @@ export const translations: Record<string, Record<string, string>> = {
     'about.history_p2': 'It is proudly named in honor of his respected teacher, the Most Ven. Palipana Sri Chandananda Mahanayake Thera, continuing a legacy of educational and spiritual excellence in Kandy.',
     'about.girls_expansion': 'In 2020, we expanded our vision by opening a dedicated Girls\' School section, broadening our impact and commitment to holistic education.',
     'about.leadership_directory': 'Leadership Directory',
+    'about.leadership_sub': 'Guided by visionary Buddhist leadership and dedicated administrative stewardship.',
     'about.vice_principals': 'Vice Principals',
+    'about.vp_badge': 'VICE PRINCIPAL',
+    'about.expansion': 'Expansion Milestone',
 
     // Contact Page
     'contact.title': 'Contact Us',
@@ -43,18 +46,37 @@ export const translations: Record<string, Record<string, string>> = {
     'contact.form_email': 'Email Address',
     'contact.form_message': 'Your Message',
     'contact.form_submit': 'Send Inquiry',
+    'contact.direct_inquiries': 'DIRECT INQUIRIES',
+    'contact.send_inquiry': 'Send an Inquiry',
+    'contact.map_title': 'Find Us in Kandy',
 
     // Academics Page
     'academics.title': 'Academic Structure & Curriculum',
     'academics.bilingual_title': 'Bilingual Education',
+    'academics.global_languages': 'Global Languages',
+    'academics.facilities_learning': 'Facilities & Learning',
+    'academics.it_laboratories': 'IT Laboratories',
+    'academics.science_stream': 'Science Stream',
 
     // Student Life Page
     'student_life.title': 'Student Life & Co-Curricular Excellence',
     'student_life.culture_title': 'Our School Culture',
+    'student_life.co_curricular': 'CO-CURRICULAR & ETHICS',
+    'student_life.culture_desc': 'Our school culture is deeply rooted in respect, mindfulness, and Buddhist values, fostering a disciplined, compassionate, and inspiring academic environment.',
+    'student_life.traditional_greeting': 'TRADITIONAL GREETING',
+    'student_life.greeting_quote': '"May the triple gems bless you!"',
+    'student_life.addressing_educators': 'ADDRESSING EDUCATORS',
+    'student_life.educators_quote': '"Guruthuma" & "Guruthumi"',
+    'student_life.house_system_title': 'Collegiate House System',
 
     // Admissions Page
     'admissions.title': 'Student Admissions & Enrolment',
     'admissions.procedure_title': 'Admission Procedure',
+    'admissions.step_1': 'Download Application',
+    'admissions.step_2': 'Fill & Attach Documents',
+    'admissions.step_3': 'Submit to School Office',
+    'admissions.app_form': 'Application Form',
+    'admissions.download_app': 'Download Application Form',
   },
   si: {
     // Navigation
@@ -87,7 +109,10 @@ export const translations: Record<string, Record<string, string>> = {
     'about.history_p2': 'අපගේ පූජනීය පාලිපාන ශ්‍රී චන්දානන්ද අනුනායක හිමිපාණන්ගේ ශ්‍රී නාමයට ගෞරව පිණිස විද්‍යාලය නම් කර ඇත.',
     'about.girls_expansion': '2020 වර්ෂයේදී බාලිකා අංශය ආරම්භ කරමින් විද්‍යාලයීය අධ්‍යාපනික මෙහෙවර තවදුරටත් පුළුල් කරන ලදී.',
     'about.leadership_directory': 'නායකත්ව මණ්ඩලය',
+    'about.leadership_sub': 'ගෞරවනීය මහා සංඝරත්නයේ සහ විදුහල්පති මණ්ඩලයේ මඟපෙන්වීම යටතේ.',
     'about.vice_principals': 'නියෝජ්‍ය විදුහල්පතිවරු',
+    'about.vp_badge': 'නියෝජ්‍ය විදුහල්පති',
+    'about.expansion': 'සුවිශේෂී සන්ධිස්ථානය',
 
     // Contact Page
     'contact.title': 'අප හා සම්බන්ධ වන්න',
@@ -100,17 +125,36 @@ export const translations: Record<string, Record<string, string>> = {
     'contact.form_email': 'විද්‍යුත් තැපැල් ලිපිනය',
     'contact.form_message': 'ඔබගේ පණිවිඩය',
     'contact.form_submit': 'පණිවිඩය යොමු කරන්න',
+    'contact.direct_inquiries': 'ඍජු විමසීම්',
+    'contact.send_inquiry': 'පණිවිඩයක් එවන්න',
+    'contact.map_title': 'මහනුවර පිහිටි අපගේ පරිශ්‍රය',
 
     // Academics Page
     'academics.title': 'අධ්‍යාපනික ව්‍යුහය සහ විෂයමාලාව',
     'academics.bilingual_title': 'ද්විභාෂා අධ්‍යාපනය',
+    'academics.global_languages': 'ජාත්‍යන්තර භාෂා',
+    'academics.facilities_learning': 'පහසුකම් සහ අධ්‍යයන පරිසරය',
+    'academics.it_laboratories': 'තොරතුරු තාක්ෂණාගාර',
+    'academics.science_stream': 'විද්‍යා අංශය',
 
     // Student Life Page
     'student_life.title': 'ශිෂ්‍ය ජීවිතය සහ සම-පාඨමාලා කටයුතු',
     'student_life.culture_title': 'අපගේ විද්‍යාලයීය සංස්කෘතිය',
+    'student_life.co_curricular': 'විෂය සමගාමී සහ සාරධර්ම',
+    'student_life.culture_desc': 'අපගේ පාසල් සංස්කෘතිය ගෞරවය, සිහිය සහ බෞද්ධ වටිනාකම් මත ගැඹුරින් මුල් බැස ඇති අතර, විනයගරුක, දයානුකම්පිත සහ ප්‍රබෝධමත් අධ්‍යාපනික පරිසරයක් පෝෂණය කරයි.',
+    'student_life.traditional_greeting': 'සාම්ප්‍රදායික ආචාරය',
+    'student_life.greeting_quote': '"තෙරුවන් සරණයි!"',
+    'student_life.addressing_educators': 'ගුරුවරුන්ට ආමන්ත්‍රණය',
+    'student_life.educators_quote': '"ගුරුතුමා" සහ "ගුරුතුමිය"',
+    'student_life.house_system_title': 'නිවාස ක්‍රමය',
 
     // Admissions Page
     'admissions.title': 'ශිෂ්‍ය ඇතුළත් කිරීම් සහ ලියාපදිංචිය',
     'admissions.procedure_title': 'ඇතුළත් වීමේ ක්‍රියාපටිපාටිය',
+    'admissions.step_1': 'අයදුම්පත්‍රය බාගත කිරීම',
+    'admissions.step_2': 'ලේඛන සම්පූර්ණ කිරීම',
+    'admissions.step_3': 'කාර්යාලයට භාරදීම',
+    'admissions.app_form': 'අයදුම්පත්‍රය',
+    'admissions.download_app': 'අයදුම්පත්‍රය බාගත කරන්න',
   }
 };

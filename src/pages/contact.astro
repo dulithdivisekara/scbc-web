@@ -11,10 +11,10 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
   <main class="flex-grow py-12 sm:py-16 bg-school-surface">
     <div class="container mx-auto px-4 max-w-5xl">
       <header class="text-center mb-12 sm:mb-16">
-        <span class="text-xs font-bold uppercase tracking-wider text-school-teal mb-2 inline-block">Direct Inquiries</span>
+        <span data-i18n="contact.direct_inquiries" class="text-xs font-bold uppercase tracking-wider text-school-teal mb-2 inline-block">Direct Inquiries</span>
         <h1 data-i18n="contact.title" class="text-3xl sm:text-4xl font-serif font-bold text-school-textPrimary mb-2">Contact Us</h1>
         <div class="w-16 h-1 bg-school-orange mx-auto mt-4 mb-4"></div>
-        <p class="text-school-textMuted max-w-xl mx-auto text-sm sm:text-base">We are here to answer your questions and welcome you to our school community.</p>
+        <p class="text-school-textMuted max-w-xl mx-auto text-sm sm:text-base" data-en="We are here to answer your questions and welcome you to our school community." data-si="ඔබගේ සියලු විමසීම් සඳහා සහය වීමට අප සූදානම්.">We are here to answer your questions and welcome you to our school community.</p>
       </header>
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -65,24 +65,24 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
         </section>
         
         <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-school-border">
-          <h2 class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-6">Send an Inquiry</h2>
+          <h2 data-i18n="contact.send_inquiry" class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-6">Send an Inquiry</h2>
           
           <div id="form-feedback" class="hidden mb-5 p-4 rounded-xl text-sm font-medium" role="alert"></div>
 
           <form id="contact-form" class="space-y-5">
             <div>
               <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-school-textMuted mb-2"><span data-i18n="contact.form_name">Full Name</span> <span class="text-red-500">*</span></label>
-              <input type="text" id="name" required autocomplete="name" class="w-full px-4 py-3 rounded-lg border border-school-border focus:outline-none focus:ring-2 focus:ring-school-teal text-school-textPrimary text-sm transition-all" placeholder="Enter your full name">
+              <input type="text" id="name" required autocomplete="name" class="w-full px-4 py-3 rounded-lg border border-school-border focus:outline-none focus:ring-2 focus:ring-school-teal text-school-textPrimary text-sm transition-all" placeholder="Enter your full name" data-placeholder-en="Enter your full name" data-placeholder-si="ඔබගේ සම්පූර්ණ නම ඇතුළත් කරන්න">
             </div>
             
             <div>
               <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-school-textMuted mb-2"><span data-i18n="contact.form_email">Email Address</span> <span class="text-red-500">*</span></label>
-              <input type="email" id="email" required autocomplete="email" class="w-full px-4 py-3 rounded-lg border border-school-border focus:outline-none focus:ring-2 focus:ring-school-teal text-school-textPrimary text-sm transition-all" placeholder="name@example.com">
+              <input type="email" id="email" required autocomplete="email" class="w-full px-4 py-3 rounded-lg border border-school-border focus:outline-none focus:ring-2 focus:ring-school-teal text-school-textPrimary text-sm transition-all" placeholder="name@example.com" data-placeholder-en="name@example.com" data-placeholder-si="ඔබගේ විද්‍යුත් තැපැල් ලිපිනය">
             </div>
             
             <div>
               <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-school-textMuted mb-2"><span data-i18n="contact.form_message">Your Message</span> <span class="text-red-500">*</span></label>
-              <textarea id="message" required rows="4" class="w-full px-4 py-3 rounded-lg border border-school-border focus:outline-none focus:ring-2 focus:ring-school-teal text-school-textPrimary text-sm transition-all" placeholder="Please specify your inquiry or message..."></textarea>
+              <textarea id="message" required rows="4" class="w-full px-4 py-3 rounded-lg border border-school-border focus:outline-none focus:ring-2 focus:ring-school-teal text-school-textPrimary text-sm transition-all" placeholder="Please specify your inquiry or message..." data-placeholder-en="Please specify your inquiry or message..." data-placeholder-si="ඔබගේ පණිවිඩය මෙහි සටහන් කරන්න..."></textarea>
             </div>
             
             <button type="submit" class="w-full bg-school-maroon hover:opacity-90 text-white font-semibold py-3.5 px-6 rounded-lg transition-opacity flex items-center justify-center gap-2 shadow-sm text-sm">
@@ -128,9 +128,9 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 
       <section class="mt-12 sm:mt-16">
         <header class="mb-4">
-          <span class="text-xs font-bold uppercase tracking-wider text-school-teal mb-1 inline-block">Campus Location</span>
-          <h2 class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary">Find Us in Kandy</h2>
-          <p class="text-school-textMuted text-sm">Located on Asgiri Vihara Mawatha, in the historic hill capital of Kandy.</p>
+          <span class="text-xs font-bold uppercase tracking-wider text-school-teal mb-1 inline-block" data-en="CAMPUS LOCATION" data-si="පරිශ්‍ර පිහිටීම">CAMPUS LOCATION</span>
+          <h2 class="text-2xl sm:text-3xl font-bold font-serif text-slate-900" data-i18n="contact.map_title">Find Us in Kandy</h2>
+          <p class="text-school-textMuted text-sm" data-en="Located on Asgiri Vihara Mawatha, in the historic hill capital of Kandy." data-si="මහනුවර ඓතිහාසික අස්ගිරි විහාර මාවතේ පිහිටා ඇත.">Located on Asgiri Vihara Mawatha, in the historic hill capital of Kandy.</p>
         </header>
         <figure class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-72 sm:h-96 w-full m-0">
           <iframe
