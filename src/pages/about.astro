@@ -2,6 +2,10 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
+import { getCollection } from 'astro:content';
+
+const leadership = await getCollection('leadership');
+const sortedLeadership = leadership.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <BaseLayout title="About Us">
@@ -50,56 +54,32 @@ import Footer from '../components/common/Footer.astro';
           <p class="text-school-textMuted text-sm mt-1">Guided by visionary Buddhist leadership and dedicated administrative stewardship.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-          <!-- Founder Profile -->
-          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition group flex flex-col">
-            <div class="overflow-hidden bg-slate-100">
-              <img 
-                src="/assets/leadership/leadership-founder-ai-portrait.png" 
-                alt="Most Ven. Dr. Godagama Mangala Thero" 
-                width="600" 
-                height="800" 
-                class="aspect-[3/4] w-full object-cover object-top group-hover:scale-102 transition-transform duration-500" 
-                style="object-position: 50% 15%;"
-              />
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+          {sortedLeadership.map(leader => (
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition group flex flex-col">
+              <div class="overflow-hidden bg-slate-100">
+                <img 
+                  src={leader.data.image} 
+                  alt={leader.data.name} 
+                  width="600" 
+                  height="800" 
+                  class="aspect-[3/4] w-full object-cover object-top group-hover:scale-102 transition-transform duration-500" 
+                  style="object-position: 50% 15%;"
+                />
+              </div>
+              <div class="p-6 sm:p-7 flex flex-col flex-grow text-center">
+                <span class="inline-block mx-auto mb-3 px-3 py-1 bg-teal-50 border border-teal-200 text-school-teal text-xs font-bold uppercase tracking-wider rounded-full">
+                  {leader.data.title}
+                </span>
+                <h3 class="text-xl font-bold font-serif text-school-textPrimary mb-2 leading-snug">
+                  {leader.data.name}
+                </h3>
+                <p class="text-school-textMuted text-sm leading-relaxed mt-auto">
+                  {leader.data.bio}
+                </p>
+              </div>
             </div>
-            <div class="p-6 sm:p-7 flex flex-col flex-grow text-center">
-              <span class="inline-block mx-auto mb-3 px-3 py-1 bg-amber-50 border border-amber-200 text-school-maroon text-xs font-bold uppercase tracking-wider rounded-full">
-                Founder & Executive Director
-              </span>
-              <h3 class="text-xl font-bold font-serif text-school-textPrimary mb-2 leading-snug">
-                Most Ven. Dr. Godagama Mangala Thero
-              </h3>
-              <p class="text-school-textMuted text-sm leading-relaxed mt-auto">
-                Established Sri Chandananda Buddhist College in 2006 to honor the legacy of Most Ven. Palipana Sri Chandananda Mahanayake Thera, championing high academic standards rooted in Buddhist moral philosophy.
-              </p>
-            </div>
-          </div>
-          
-          <!-- Principal Profile -->
-          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition group flex flex-col">
-            <div class="overflow-hidden bg-slate-100">
-              <img 
-                src="/assets/leadership/leadership-principal-ai-portrait.png" 
-                alt="Ven. Godagama Dhammakiththi Thero" 
-                width="600" 
-                height="800" 
-                class="aspect-[3/4] w-full object-cover object-top group-hover:scale-102 transition-transform duration-500" 
-                style="object-position: 50% 15%;"
-              />
-            </div>
-            <div class="p-6 sm:p-7 flex flex-col flex-grow text-center">
-              <span class="inline-block mx-auto mb-3 px-3 py-1 bg-teal-50 border border-teal-200 text-school-teal text-xs font-bold uppercase tracking-wider rounded-full">
-                Principal
-              </span>
-              <h3 class="text-xl font-bold font-serif text-school-textPrimary mb-2 leading-snug">
-                Ven. Godagama Dhammakiththi Thero
-              </h3>
-              <p class="text-school-textMuted text-sm leading-relaxed mt-auto">
-                Directing the administrative and academic execution of the college, instilling exemplary conduct, spiritual mindfulness, and intellectual rigor across all student tiers.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
         
         <!-- Vice Principals -->

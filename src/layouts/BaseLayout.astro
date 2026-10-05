@@ -11,6 +11,32 @@ const { title, description = "Empowering the next generation through wisdom, dis
 const pageTitle = (title === "Home" || title === "Sri Chandananda Buddhist College | Kandy")
 	? "Sri Chandananda Buddhist College | Kandy"
 	: `${title} | Sri Chandananda Buddhist College`;
+
+const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://srichandananda.edu.lk/');
+
+const jsonLd = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Sri Chandananda Buddhist College",
+  "alternateName": "ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය",
+  "url": Astro.site || "https://srichandananda.edu.lk/",
+  "logo": new URL("/assets/branding/school-crest-official.png", canonicalURL).toString(),
+  "foundingDate": "2006",
+  "founder": {
+    "@type": "Person",
+    "name": "Most Ven. Dr. Godagama Mangala Thero"
+  },
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Kandy",
+    "addressCountry": "LK"
+  },
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "+94812203162",
+    "contactType": "Admissions"
+  }
+};
 ---
 
 <!DOCTYPE html>
@@ -20,14 +46,25 @@ const pageTitle = (title === "Home" || title === "Sri Chandananda Buddhist Colle
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
 		<title>{pageTitle}</title>
 		<meta name="description" content={description} />
+		<link rel="canonical" href={canonicalURL} />
+		
 		<meta property="og:title" content={pageTitle} />
 		<meta property="og:description" content={description} />
 		<meta property="og:type" content="website" />
+		<meta property="og:url" content={canonicalURL} />
+		<meta property="og:image" content={new URL("/assets/branding/school-crest-official.png", canonicalURL)} />
+		
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:title" content={pageTitle} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={new URL("/assets/branding/school-crest-official.png", canonicalURL)} />
+		
 		<link rel="icon" type="image/png" href="/assets/branding/school-crest-official.png" />
 		<link rel="apple-touch-icon" href="/assets/branding/school-crest-official.png" />
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Merriweather:wght@400;700;900&display=swap" rel="stylesheet">
+		<script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 	</head>
 	<body class="overflow-x-hidden w-full min-h-screen flex flex-col bg-school-surface text-school-textPrimary antialiased">
 		<!-- Tri-color Brand Rule across the top -->

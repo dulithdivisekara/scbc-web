@@ -12,6 +12,18 @@ const announcementsCollection = defineCollection({
   }),
 });
 
+const leadershipCollection = defineCollection({
+  loader: glob({ pattern: "*.md", base: "./src/content/leadership" }),
+  schema: z.object({
+    name: z.string(),
+    title: z.string(),
+    order: z.number(),
+    image: z.string(),
+    bio: z.string(),
+  }),
+});
+
 export const collections = {
   announcements: announcementsCollection,
+  leadership: leadershipCollection,
 };

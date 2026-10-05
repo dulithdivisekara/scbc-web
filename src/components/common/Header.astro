@@ -1,5 +1,6 @@
 ---
 import { Menu, X, Phone, ArrowRight } from 'lucide-react';
+import { translations } from '../../i18n/translations';
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
 
@@ -19,19 +20,24 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     
     <!-- Desktop Navigation Links (Hidden on screens < md) -->
     <nav class="hidden md:flex gap-6 items-center font-medium text-sm">
-      <a href="/" class={`py-1 transition-colors ${currentPath === '/' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>Home</a>
-      <a href="/about" class={`py-1 transition-colors ${currentPath === '/about' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>About Us</a>
-      <a href="/academics" class={`py-1 transition-colors ${currentPath === '/academics' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>Academics</a>
-      <a href="/student-life" class={`py-1 transition-colors ${currentPath === '/student-life' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>Student Life</a>
-      <a href="/admissions" class={`py-1 transition-colors ${currentPath === '/admissions' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>Admissions</a>
-      <a href="/contact" class={`py-1 transition-colors ${currentPath === '/contact' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>Contact</a>
+      <a href="/" data-i18n="nav.home" class={`py-1 transition-colors ${currentPath === '/' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>Home</a>
+      <a href="/about" data-i18n="nav.about" class={`py-1 transition-colors ${currentPath === '/about' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>About Us</a>
+      <a href="/academics" data-i18n="nav.academics" class={`py-1 transition-colors ${currentPath === '/academics' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>Academics</a>
+      <a href="/student-life" data-i18n="nav.student_life" class={`py-1 transition-colors ${currentPath === '/student-life' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>Student Life</a>
+      <a href="/admissions" data-i18n="nav.admissions" class={`py-1 transition-colors ${currentPath === '/admissions' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>Admissions</a>
+      <a href="/contact" data-i18n="nav.contact" class={`py-1 transition-colors ${currentPath === '/contact' ? 'border-b-2 border-school-orange text-school-maroon font-semibold' : 'text-school-textMuted hover:text-school-maroon'}`}>Contact</a>
     </nav>
 
-    <!-- Desktop Phone CTA (Hidden on screens < md) -->
-    <a href="tel:+94812203162" class="hidden md:flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-school-teal text-school-teal hover:bg-school-teal hover:text-white transition font-medium text-sm">
-      <Phone size={15} />
-      <span>+94 81 220 3162</span>
-    </a>
+    <!-- Desktop Phone CTA & Lang Toggle -->
+    <div class="hidden md:flex items-center gap-4">
+      <button id="lang-toggle-desktop" class="lang-toggle text-xs font-semibold px-2.5 py-1.5 bg-slate-100 rounded-md hover:bg-slate-200 transition-colors text-school-textPrimary whitespace-nowrap">
+        EN | සිං
+      </button>
+      <a href="tel:+94812203162" class="flex items-center gap-2 px-3.5 py-1.5 rounded-full border border-school-teal text-school-teal hover:bg-school-teal hover:text-white transition font-medium text-sm">
+        <Phone size={15} />
+        <span>+94 81 220 3162</span>
+      </a>
+    </div>
 
     <!-- Accessible Mobile Hamburger Toggle Button -->
     <button 
@@ -65,41 +71,84 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 
     <nav class="flex flex-col space-y-1 font-medium text-base mb-5" id="mobile-nav-links">
       <a href="/" class={`px-3 py-2.5 rounded-lg transition-colors flex items-center justify-between ${currentPath === '/' ? 'bg-orange-50/60 text-school-orange font-bold border-l-4 border-school-orange' : 'text-school-textPrimary hover:bg-slate-50'}`}>
-        <span>Home</span>
+        <span data-i18n="nav.home">Home</span>
         <ArrowRight size={16} class="text-slate-400" />
       </a>
       <a href="/about" class={`px-3 py-2.5 rounded-lg transition-colors flex items-center justify-between ${currentPath === '/about' ? 'bg-orange-50/60 text-school-orange font-bold border-l-4 border-school-orange' : 'text-school-textPrimary hover:bg-slate-50'}`}>
-        <span>About Us</span>
+        <span data-i18n="nav.about">About Us</span>
         <ArrowRight size={16} class="text-slate-400" />
       </a>
       <a href="/academics" class={`px-3 py-2.5 rounded-lg transition-colors flex items-center justify-between ${currentPath === '/academics' ? 'bg-orange-50/60 text-school-orange font-bold border-l-4 border-school-orange' : 'text-school-textPrimary hover:bg-slate-50'}`}>
-        <span>Academics</span>
+        <span data-i18n="nav.academics">Academics</span>
         <ArrowRight size={16} class="text-slate-400" />
       </a>
       <a href="/student-life" class={`px-3 py-2.5 rounded-lg transition-colors flex items-center justify-between ${currentPath === '/student-life' ? 'bg-orange-50/60 text-school-orange font-bold border-l-4 border-school-orange' : 'text-school-textPrimary hover:bg-slate-50'}`}>
-        <span>Student Life</span>
+        <span data-i18n="nav.student_life">Student Life</span>
         <ArrowRight size={16} class="text-slate-400" />
       </a>
       <a href="/admissions" class={`px-3 py-2.5 rounded-lg transition-colors flex items-center justify-between ${currentPath === '/admissions' ? 'bg-orange-50/60 text-school-orange font-bold border-l-4 border-school-orange' : 'text-school-textPrimary hover:bg-slate-50'}`}>
-        <span>Admissions</span>
+        <span data-i18n="nav.admissions">Admissions</span>
         <ArrowRight size={16} class="text-slate-400" />
       </a>
       <a href="/contact" class={`px-3 py-2.5 rounded-lg transition-colors flex items-center justify-between ${currentPath === '/contact' ? 'bg-orange-50/60 text-school-orange font-bold border-l-4 border-school-orange' : 'text-school-textPrimary hover:bg-slate-50'}`}>
-        <span>Contact</span>
+        <span data-i18n="nav.contact">Contact</span>
         <ArrowRight size={16} class="text-slate-400" />
       </a>
     </nav>
 
-    <!-- Mobile Phone Button -->
-    <a 
-      href="tel:+94812203162" 
-      class="w-full py-3 rounded-lg border border-school-teal text-school-teal hover:bg-school-teal hover:text-white transition font-semibold text-sm flex items-center justify-center gap-2 shadow-xs"
-    >
-      <Phone size={16} />
-      <span>Call Office: +94 81 220 3162</span>
-    </a>
+    <!-- Mobile Buttons -->
+    <div class="flex gap-2 w-full">
+      <button id="lang-toggle-mobile" class="lang-toggle w-1/3 py-3 rounded-lg bg-slate-100 hover:bg-slate-200 transition font-bold text-sm text-school-textPrimary shadow-xs text-center flex items-center justify-center">
+        EN | සිං
+      </button>
+      <a 
+        href="tel:+94812203162" 
+        class="flex-grow py-3 rounded-lg border border-school-teal text-school-teal hover:bg-school-teal hover:text-white transition font-semibold text-sm flex items-center justify-center gap-2 shadow-xs"
+      >
+        <Phone size={16} />
+        <span>Call Office: +94 81 220 3162</span>
+      </a>
+    </div>
   </div>
 </header>
+
+<script is:inline define:vars={{ translations }}>
+  function setupTranslation() {
+    const currentLang = localStorage.getItem('scbc_lang') || 'en';
+    const toggleBtns = document.querySelectorAll('.lang-toggle');
+    const i18nElements = document.querySelectorAll('[data-i18n]');
+
+    function applyTranslations(lang) {
+      i18nElements.forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (translations[key] && translations[key][lang]) {
+          el.textContent = translations[key][lang];
+        }
+      });
+      
+      toggleBtns.forEach(btn => {
+        if (lang === 'en') {
+          btn.innerHTML = '<span class="text-school-maroon">EN</span> <span class="text-slate-300 font-normal mx-1">|</span> <span class="text-slate-500 font-normal">සිං</span>';
+        } else {
+          btn.innerHTML = '<span class="text-slate-500 font-normal">EN</span> <span class="text-slate-300 font-normal mx-1">|</span> <span class="text-school-maroon">සිං</span>';
+        }
+      });
+    }
+
+    applyTranslations(currentLang);
+
+    toggleBtns.forEach(btn => {
+      btn.onclick = () => {
+        const newLang = localStorage.getItem('scbc_lang') === 'en' ? 'si' : 'en';
+        localStorage.setItem('scbc_lang', newLang);
+        applyTranslations(newLang);
+      };
+    });
+  }
+  
+  setupTranslation();
+  document.addEventListener('astro:page-load', setupTranslation);
+</script>
 
 <script>
   function setupMobileMenu() {

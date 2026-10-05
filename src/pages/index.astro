@@ -14,6 +14,9 @@ const latestAnnouncements = announcements
     return new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf();
   })
   .slice(0, 3);
+
+const leadership = await getCollection('leadership');
+const sortedLeadership = leadership.sort((a, b) => a.data.order - b.data.order);
 ---
 
 <BaseLayout title="Home">
@@ -178,53 +181,31 @@ const latestAnnouncements = announcements
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition group flex flex-col">
-            <div class="overflow-hidden bg-slate-100">
-              <img 
-                src="/assets/leadership/leadership-founder-ai-portrait.png" 
-                alt="Most Ven. Dr. Godagama Mangala Thero" 
-                width="600" 
-                height="800" 
-                class="aspect-[3/4] w-full object-cover object-top group-hover:scale-102 transition-transform duration-500" 
-                style="object-position: 50% 15%;"
-              />
+          {sortedLeadership.map(leader => (
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition group flex flex-col">
+              <div class="overflow-hidden bg-slate-100">
+                <img 
+                  src={leader.data.image} 
+                  alt={leader.data.name} 
+                  width="600" 
+                  height="800" 
+                  class="aspect-[3/4] w-full object-cover object-top group-hover:scale-102 transition-transform duration-500" 
+                  style="object-position: 50% 15%;"
+                />
+              </div>
+              <div class="p-6 sm:p-7 flex flex-col flex-grow text-center">
+                <span class="inline-block mx-auto mb-3 px-3 py-1 bg-teal-50 border border-teal-200 text-school-teal text-xs font-bold uppercase tracking-wider rounded-full">
+                  {leader.data.title}
+                </span>
+                <h3 class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-2 leading-snug">
+                  {leader.data.name}
+                </h3>
+                <p class="text-school-textMuted text-sm leading-relaxed mt-auto">
+                  {leader.data.bio}
+                </p>
+              </div>
             </div>
-            <div class="p-6 sm:p-7 flex flex-col flex-grow text-center">
-              <span class="inline-block mx-auto mb-3 px-3 py-1 bg-amber-50 border border-amber-200 text-school-maroon text-xs font-bold uppercase tracking-wider rounded-full">
-                Founder & Executive Director
-              </span>
-              <h3 class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-2 leading-snug">
-                Most Ven. Dr. Godagama Mangala Thero
-              </h3>
-              <p class="text-school-textMuted text-sm leading-relaxed mt-auto">
-                Visionary founder dedicated to synthesizing time-honored Buddhist ethics and contemporary academic rigor for future generations.
-              </p>
-            </div>
-          </div>
-          
-          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition group flex flex-col">
-            <div class="overflow-hidden bg-slate-100">
-              <img 
-                src="/assets/leadership/leadership-principal-ai-portrait.png" 
-                alt="Ven. Godagama Dhammakiththi Thero" 
-                width="600" 
-                height="800" 
-                class="aspect-[3/4] w-full object-cover object-top group-hover:scale-102 transition-transform duration-500" 
-                style="object-position: 50% 15%;"
-              />
-            </div>
-            <div class="p-6 sm:p-7 flex flex-col flex-grow text-center">
-              <span class="inline-block mx-auto mb-3 px-3 py-1 bg-teal-50 border border-teal-200 text-school-teal text-xs font-bold uppercase tracking-wider rounded-full">
-                Principal
-              </span>
-              <h3 class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-2 leading-snug">
-                Ven. Godagama Dhammakiththi Thero
-              </h3>
-              <p class="text-school-textMuted text-sm leading-relaxed mt-auto">
-                Steering the college's daily academic excellence, spiritual discipline, and holistic student welfare with compassionate leadership.
-              </p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
@@ -304,48 +285,21 @@ const latestAnnouncements = announcements
           
           <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden shadow-xs hover:shadow-md transition group border-t-4 border-t-[#581838] flex flex-col">
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-xs font-bold uppercase tracking-wider text-[#581838] bg-purple-50 border border-purple-200 px-2.5 py-1 rounded-full">
-                  Virtues of Discipline & Heritage
-                </span>
-                <div class="w-10 h-10 rounded-xl bg-purple-50 text-[#581838] flex items-center justify-center border border-purple-100 group-hover:scale-110 transition-transform">
-                  <Trophy size={20} />
-                </div>
-              </div>
-              <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-1 group-hover:text-[#581838] transition-colors">Ramya House</h4>
-              <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-3">Discipline & Heritage</p>
+              <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-3 group-hover:text-[#581838] transition-colors">Ramya House</h4>
               <p class="text-sm text-school-textMuted leading-relaxed">
                 Embodying foundational Buddhist discipline, academic devotion, and respect for college heritage during inter-house championships and sports meets.
               </p>
             </div>
             
             <div class="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden shadow-xs hover:shadow-md transition group border-t-4 border-t-[#007A87] flex flex-col">
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-xs font-bold uppercase tracking-wider text-[#007A87] bg-teal-50 border border-teal-200 px-2.5 py-1 rounded-full">
-                  Virtues of Wisdom & Leadership
-                </span>
-                <div class="w-10 h-10 rounded-xl bg-teal-50 text-[#007A87] flex items-center justify-center border border-teal-100 group-hover:scale-110 transition-transform">
-                  <Shield size={20} />
-                </div>
-              </div>
-              <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-1 group-hover:text-[#007A87] transition-colors">Suramya House</h4>
-              <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-3">Wisdom & Leadership</p>
+              <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-3 group-hover:text-[#007A87] transition-colors">Suramya House</h4>
               <p class="text-sm text-school-textMuted leading-relaxed">
                 Fostering intellectual sharpness, ethical governance, and strategic team leadership in competitive co-curricular challenges and debates.
               </p>
             </div>
             
             <div class="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden shadow-xs hover:shadow-md transition group border-t-4 border-t-[#F58220] flex flex-col">
-              <div class="flex items-center justify-between mb-4">
-                <span class="text-xs font-bold uppercase tracking-wider text-[#F58220] bg-orange-50 border border-orange-200 px-2.5 py-1 rounded-full">
-                  Virtues of Sportsmanship & Vitality
-                </span>
-                <div class="w-10 h-10 rounded-xl bg-orange-50 text-[#F58220] flex items-center justify-center border border-orange-100 group-hover:scale-110 transition-transform">
-                  <Flame size={20} />
-                </div>
-              </div>
-              <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-1 group-hover:text-[#F58220] transition-colors">Subha House</h4>
-              <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-3">Sportsmanship & Vitality</p>
+              <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-3 group-hover:text-[#F58220] transition-colors">Subha House</h4>
               <p class="text-sm text-school-textMuted leading-relaxed">
                 Channeling vibrant energy, track and field excellence, and tenacious athletic spirit into annual inter-house competitions and team triumphs.
               </p>
