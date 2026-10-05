@@ -27,7 +27,66 @@ const leadershipCollection = defineCollection({
   }),
 });
 
+const articlesCollection = defineCollection({
+  loader: glob({ pattern: "*.md", base: "./src/content/articles" }),
+  schema: z.object({
+    id: z.string().optional(),
+    title: z.string(),
+    title_si: z.string(),
+    lead: z.string(),
+    lead_si: z.string(),
+    sections: z.array(
+      z.object({
+        heading: z.string(),
+        heading_si: z.string(),
+        body: z.string(),
+        body_si: z.string(),
+      })
+    ),
+  }),
+});
+
+const bi = z.object({ en: z.string(), si: z.string() });
+
+const pagesCollection = defineCollection({
+  loader: glob({ pattern: "*.json", base: "./src/content/pages" }),
+  schema: z.object({
+    intro: bi.optional(),
+    sections: z.array(
+      z.object({
+        layout: z.enum(["cards", "facilities"]),
+        heading: bi.optional(),
+        items: z.array(
+          z.object({
+            icon: z.enum(["BookOpen", "Globe", "MonitorPlay", "Microscope"]),
+            tint: z.enum(["teal", "orange", "purple"]),
+            title: bi,
+            body: bi,
+          })
+        ),
+      })
+    ).optional(),
+    procedure_heading: bi.optional(),
+    steps: z.array(z.object({ title: bi, body: bi })).optional(),
+    download: z.object({ heading: bi, body: bi, button: bi, file: z.string() }).optional(),
+    actions: z.object({ call: bi, email: bi, map: bi }).optional(),
+    map_note: bi.optional(),
+    gallery_heading: bi.optional(),
+    photos: z.array(
+      z.object({
+        src: z.string(),
+        width: z.number(),
+        height: z.number(),
+        caption: bi,
+        alt: bi,
+      })
+    ).optional(),
+  }),
+});
+
 export const collections = {
+  pages: pagesCollection,
   announcements: announcementsCollection,
   leadership: leadershipCollection,
+  articles: articlesCollection,
 };

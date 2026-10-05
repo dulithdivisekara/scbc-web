@@ -1,24 +1,28 @@
-# build output
+# Build & Dependencies
+node_modules/
 dist/
-
-# generated types
 .astro/
 
-# dependencies
-node_modules/
+# Python & Tooling artifacts
+__pycache__/
+*.pyc
+.pytest_cache/
+*.venv/
+venv/
 
-# logs
+# OS & Antigravity/Gemini internal logs
+.DS_Store
+Thumbs.db
+.antigravity/
+.gemini/
+*.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
-
-# environment variables
 .env
-.env.production
+.env.*
+!.env.example
 
-# macOS-specific files
-.DS_Store
-
-# jetbrains setting folder
+# Editors
 .idea/

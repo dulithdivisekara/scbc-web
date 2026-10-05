@@ -142,7 +142,13 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
           el.setAttribute('placeholder', text);
         }
       });
-      
+      document.querySelectorAll('[data-alt-en]').forEach((el) => {
+        const text = el.getAttribute(`data-alt-${lang}`);
+        if (text) {
+          el.setAttribute('alt', text);
+        }
+      });
+
       toggleBtns.forEach(btn => {
         if (lang === 'en') {
           btn.innerHTML = '<span class="text-school-maroon font-bold text-xs">EN</span> <span class="text-slate-300 font-normal mx-1">|</span> <span data-lang-btn="si" class="text-slate-500 font-normal hover:text-slate-800 transition-colors text-xs">සිං</span>';

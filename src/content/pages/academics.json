@@ -1,0 +1,70 @@
+{
+  "intro": {
+    "en": "We offer comprehensive education from Grade 1 to Grade 13, preparing students for both Ordinary Level (O/L) and Advanced Level (A/L) examinations.",
+    "si": "අපි 1 ශ්‍රේණියේ සිට 13 ශ්‍රේණිය දක්වා පූර්ණ අධ්‍යාපනයක් ලබා දෙන අතර, සාමාන්‍ය පෙළ (O/L) සහ උසස් පෙළ (A/L) විභාග සඳහා සිසුන් සූදානම් කරමු."
+  },
+  "sections": [
+    {
+      "layout": "cards",
+      "items": [
+        {
+          "icon": "BookOpen",
+          "tint": "teal",
+          "title": {
+            "en": "Bilingual Education",
+            "si": "ද්විභාෂා අධ්‍යාපනය"
+          },
+          "body": {
+            "en": "Classes are conducted in both Sinhala and English mediums, providing students with a strong foundation for higher education.",
+            "si": "සිංහල සහ ඉංග්‍රීසි මාධ්‍ය දෙකෙන්ම පන්ති පැවැත්වෙන අතර, උසස් අධ්‍යාපනය සඳහා සිසුන්ට ශක්තිමත් පදනමක් ලබා දේ."
+          }
+        },
+        {
+          "icon": "Globe",
+          "tint": "orange",
+          "title": {
+            "en": "Global Languages",
+            "si": "ජාත්‍යන්තර භාෂා"
+          },
+          "body": {
+            "en": "We prepare students for a globalized world by offering international language studies, including Chinese and Japanese.",
+            "si": "චීන සහ ජපන් ඇතුළු ජාත්‍යන්තර භාෂා අධ්‍යයනය ලබා දෙමින් ගෝලීයකරණය වූ ලෝකයකට අපි සිසුන් සූදානම් කරමු."
+          }
+        }
+      ]
+    },
+    {
+      "layout": "facilities",
+      "heading": {
+        "en": "Facilities & Learning",
+        "si": "පහසුකම් සහ අධ්‍යයන පරිසරය"
+      },
+      "items": [
+        {
+          "icon": "MonitorPlay",
+          "tint": "teal",
+          "title": {
+            "en": "IT Laboratories",
+            "si": "තොරතුරු තාක්ෂණාගාර"
+          },
+          "body": {
+            "en": "Fully equipped IT laboratories featuring modern computers and digital learning resources to ensure students are prepared for the modern digital age.",
+            "si": "නවීන පරිගණක සහ ඩිජිටල් ඉගෙනුම් සම්පත් වලින් සමන්විත තොරතුරු තාක්ෂණාගාර, සිසුන් නවීන ඩිජිටල් යුගයට සූදානම් කිරීම සහතික කරයි."
+          }
+        },
+        {
+          "icon": "Microscope",
+          "tint": "purple",
+          "title": {
+            "en": "Science Stream",
+            "si": "විද්‍යා අංශය"
+          },
+          "body": {
+            "en": "Specialized Biology, Chemistry, and Physics laboratories designed specifically for our A/L science stream students to conduct practical experiments.",
+            "si": "උසස් පෙළ විද්‍යා අංශයේ සිසුන්ට ප්‍රායෝගික පරීක්ෂණ සිදු කිරීම සඳහා විශේෂයෙන් නිර්මාණය කර ඇති ජීව විද්‍යා, රසායන විද්‍යා සහ භෞතික විද්‍යාගාර."
+          }
+        }
+      ]
+    }
+  ]
+}

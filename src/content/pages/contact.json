@@ -1,0 +1,24 @@
+{
+  "intro": {
+    "en": "We are here to answer your questions and welcome you to our school community.",
+    "si": "ඔබගේ සියලු විමසීම් සඳහා සහය වීමට අප සූදානම්."
+  },
+  "actions": {
+    "call": {
+      "en": "Call Office",
+      "si": "දුරකථන ඇමතුම්"
+    },
+    "email": {
+      "en": "General Inquiries",
+      "si": "සාමාන්‍ය විමසීම්"
+    },
+    "map": {
+      "en": "Open Campus Location in Google Maps",
+      "si": "ගූගල් සිතියමෙන් විද්‍යාල පිහිටුම බලන්න"
+    }
+  },
+  "map_note": {
+    "en": "Located on Asgiri Vihara Mawatha, in the historic hill capital of Kandy.",
+    "si": "මහනුවර ඓතිහාසික අස්ගිරි විහාර මාවතේ පිහිටා ඇත."
+  }
+}

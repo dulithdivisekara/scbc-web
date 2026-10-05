@@ -1,0 +1,57 @@
+{
+  "intro": {
+    "en": "Join Sri Chandananda Buddhist College and begin a journey of academic excellence, discipline, and spiritual growth.",
+    "si": "ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලයට සම්බන්ධ වී අධ්‍යාපනික විශිෂ්ටත්වය, විනය සහ අධ්‍යාත්මික වර්ධනයේ ගමනක් ආරම්භ කරන්න."
+  },
+  "procedure_heading": {
+    "en": "Admission Procedure",
+    "si": "ඇතුළත් වීමේ ක්‍රියාපටිපාටිය"
+  },
+  "steps": [
+    {
+      "title": {
+        "en": "Download Application",
+        "si": "අයදුම්පත්‍රය බාගත කිරීම"
+      },
+      "body": {
+        "en": "Download the official application form below and print it clearly on A4 size paper.",
+        "si": "පහතින් නිල අයදුම්පත්‍රය බාගත කර එය A4 ප්‍රමාණයේ කඩදාසියක පැහැදිලිව මුද්‍රණය කරගන්න."
+      }
+    },
+    {
+      "title": {
+        "en": "Fill & Attach Documents",
+        "si": "ලේඛන සම්පූර්ණ කිරීම"
+      },
+      "body": {
+        "en": "Complete the form accurately and attach a copy of the student's birth certificate and any required academic records.",
+        "si": "පෝරමය නිවැරදිව පුරවා සිසුවාගේ උප්පැන්න සහතිකයේ පිටපතක් සහ අවශ්‍ය ඕනෑම අධ්‍යාපනික වාර්තා අමුණන්න."
+      }
+    },
+    {
+      "title": {
+        "en": "Submit to School Office",
+        "si": "කාර්යාලයට භාරදීම"
+      },
+      "body": {
+        "en": "Submit the physical application package to the school office during operating hours (Mon-Fri, 7:30 AM - 1:30 PM).",
+        "si": "සම්පූර්ණ කරන ලද අයදුම්පත කාර්යාල වේලාවන් (සඳුදා-සිකුරාදා, පෙ.ව. 7:30 - ප.ව. 1:30) ඇතුළත විද්‍යාලයීය කාර්යාලයට භාර දෙන්න."
+      }
+    }
+  ],
+  "download": {
+    "heading": {
+      "en": "Application Form",
+      "si": "අයදුම්පත්‍රය"
+    },
+    "body": {
+      "en": "Get started by downloading the official admission application form for the upcoming academic year.",
+      "si": "එළඹෙන අධ්‍යයන වර්ෂය සඳහා නිල අයදුම්පත්‍රය බාගත කරගන්න."
+    },
+    "button": {
+      "en": "Download Application Form",
+      "si": "අයදුම්පත්‍රය බාගත කරන්න"
+    },
+    "file": "/docs/admissions-form-2026.pdf"
+  }
+}

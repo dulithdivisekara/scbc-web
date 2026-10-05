@@ -2,7 +2,15 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
-import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
+import { MapPin, Phone, Mail, Send } from 'lucide-react';
+import { getEntry } from 'astro:content';
+
+const page = (await getEntry('pages', 'contact'))!.data;
+const { intro, actions, map_note } = page;
+
+// Inquiry routing is configurable per environment (see .env.example).
+const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'contact@dulith.me';
+const formEndpoint = import.meta.env.PUBLIC_FORM_ENDPOINT || '';
 ---
 
 <BaseLayout title="Contact Us">
@@ -11,57 +19,62 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
   <main class="flex-grow py-12 sm:py-16 bg-school-surface">
     <div class="container mx-auto px-4 max-w-5xl">
       <header class="text-center mb-12 sm:mb-16">
-        <span data-i18n="contact.direct_inquiries" class="text-xs font-bold uppercase tracking-wider text-school-teal mb-2 inline-block">Direct Inquiries</span>
         <h1 data-i18n="contact.title" class="text-3xl sm:text-4xl font-serif font-bold text-school-textPrimary mb-2">Contact Us</h1>
         <div class="w-16 h-1 bg-school-orange mx-auto mt-4 mb-4"></div>
-        <p class="text-school-textMuted max-w-xl mx-auto text-sm sm:text-base" data-en="We are here to answer your questions and welcome you to our school community." data-si="ඔබගේ සියලු විමසීම් සඳහා සහය වීමට අප සූදානම්.">We are here to answer your questions and welcome you to our school community.</p>
+        <p class="text-school-textMuted max-w-xl mx-auto text-sm sm:text-base" data-en={intro!.en} data-si={intro!.si}>{intro!.en}</p>
       </header>
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <section>
-          <h2 data-i18n="contact.get_in_touch" class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-6">Get in Touch</h2>
+          <h2 data-i18n="contact.get_in_touch" class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-6">Direct Contacts</h2>
           
-          <address class="space-y-5 not-italic">
-            <div class="flex items-start gap-4 bg-white p-5 rounded-xl border border-school-border shadow-xs">
-              <div class="bg-teal-50 border border-teal-100 p-3 rounded-lg text-school-teal shrink-0">
-                <MapPin size={22} />
-              </div>
-              <div>
-                <h3 data-i18n="contact.address" class="font-bold text-school-textPrimary text-base mb-1 font-serif">Campus Address</h3>
-                <p class="text-school-textMuted text-sm leading-relaxed">Asgiri Vihara Mawatha,<br/>Kandy 20000, Sri Lanka</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start gap-4 bg-white p-5 rounded-xl border border-school-border shadow-xs">
-              <div class="bg-orange-50 border border-orange-100 p-3 rounded-lg text-school-orange shrink-0">
-                <Phone size={22} />
-              </div>
-              <div>
-                <h3 data-i18n="contact.phone" class="font-bold text-school-textPrimary text-base mb-1 font-serif">Phone</h3>
-                <p class="text-school-textMuted text-sm">+94 81 220 3162</p>
-              </div>
+          <div>
+            <!-- Action Buttons Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <a 
+                href="tel:+94812203162"
+                class="bg-teal-50/60 border border-teal-200/80 hover:bg-teal-100/70 text-teal-950 p-4 rounded-xl flex items-center gap-3 transition"
+              >
+                <Phone size={20} class="shrink-0 text-teal-700" />
+                <div class="flex flex-col text-left">
+                  <span class="text-xs text-teal-700 font-medium uppercase tracking-wider" data-en={actions!.call.en} data-si={actions!.call.si}>{actions!.call.en}</span>
+                  <span class="text-sm font-bold text-teal-950">+94 81 220 3162</span>
+                </div>
+              </a>
+
+              <a 
+                href={`mailto:${contactEmail}`}
+                class="bg-amber-50/60 border border-amber-200/80 hover:bg-amber-100/70 text-amber-950 p-4 rounded-xl flex items-center gap-3 transition"
+              >
+                <Mail size={20} class="shrink-0 text-amber-700" />
+                <div class="flex flex-col text-left">
+                  <span class="text-xs text-amber-700 font-medium uppercase tracking-wider" data-en={actions!.email.en} data-si={actions!.email.si}>{actions!.email.en}</span>
+                  <span class="text-sm font-bold text-amber-950">info@scbck.lk</span>
+                </div>
+              </a>
+
+              <a 
+                href="https://maps.google.com/?q=Sri+Chandananda+Buddhist+College+Kandy"
+                target="_blank" rel="noopener noreferrer"
+                class="sm:col-span-2 bg-slate-50 border border-slate-200 hover:bg-slate-100 text-slate-800 p-3.5 rounded-xl flex items-center justify-center gap-2 transition w-full"
+              >
+                <MapPin size={18} class="shrink-0 text-slate-600" />
+                <span data-en={actions!.map.en} data-si={actions!.map.si}>{actions!.map.en}</span>
+              </a>
             </div>
 
-            <div class="flex items-start gap-4 bg-white p-5 rounded-xl border border-school-border shadow-xs">
-              <div class="bg-purple-50 border border-purple-100 p-3 rounded-lg text-school-maroon shrink-0">
-                <Mail size={22} />
+            <!-- Clean Editorial Metadata Grid -->
+            <div class="mt-6 pt-6 border-t border-slate-200 space-y-4">
+              <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 w-32 shrink-0" data-i18n="contact.address_label">School Address:</span>
+                <span class="text-sm font-medium text-slate-800" data-i18n="contact.address_val">Asgiri Vihara Mawatha, Kandy 20000, Sri Lanka</span>
               </div>
-              <div>
-                <h3 data-i18n="contact.email" class="font-bold text-school-textPrimary text-base mb-1 font-serif">Email</h3>
-                <p class="text-school-textMuted text-sm">info@scbck.lk</p>
-              </div>
-            </div>
-            
-            <div class="flex items-start gap-4 bg-white p-5 rounded-xl border border-school-border shadow-xs">
-              <div class="bg-slate-100 border border-slate-200 p-3 rounded-lg text-school-textMuted shrink-0">
-                <Clock size={22} />
-              </div>
-              <div>
-                <h3 data-i18n="contact.hours" class="font-bold text-school-textPrimary text-base mb-1 font-serif">Office Hours</h3>
-                <p class="text-school-textMuted text-sm leading-relaxed">Monday - Friday<br/>7:30 AM - 1:30 PM</p>
+              <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 w-32 shrink-0" data-i18n="contact.hours_label">Office Hours:</span>
+                <span class="text-sm font-medium text-slate-800" data-i18n="contact.hours_val">Monday – Friday, 7:30 AM – 1:30 PM</span>
               </div>
             </div>
-          </address>
+          </div>
         </section>
         
         <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-school-border">
@@ -69,7 +82,7 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
           
           <div id="form-feedback" class="hidden mb-5 p-4 rounded-xl text-sm font-medium" role="alert"></div>
 
-          <form id="contact-form" class="space-y-5">
+          <form id="contact-form" class="space-y-5" data-endpoint={formEndpoint} data-email={contactEmail}>
             <div>
               <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-school-textMuted mb-2"><span data-i18n="contact.form_name">Full Name</span> <span class="text-red-500">*</span></label>
               <input type="text" id="name" required autocomplete="name" class="w-full px-4 py-3 rounded-lg border border-school-border focus:outline-none focus:ring-2 focus:ring-school-teal text-school-textPrimary text-sm transition-all" placeholder="Enter your full name" data-placeholder-en="Enter your full name" data-placeholder-si="ඔබගේ සම්පූර්ණ නම ඇතුළත් කරන්න">
@@ -96,30 +109,58 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
           document.addEventListener('DOMContentLoaded', () => {
             const form = document.getElementById('contact-form');
             const feedbackDiv = document.getElementById('form-feedback');
-            const nameInput = document.getElementById('name');
-            const emailInput = document.getElementById('email');
-            const messageInput = document.getElementById('message');
-
             if (!form || !feedbackDiv) return;
 
-            form.addEventListener('submit', (e) => {
+            const msgs = {
+              en: {
+                missing: 'Please fill out all required fields (Full Name, Email Address, and Your Message) before submitting.',
+                ok: 'Thank you for contacting Sri Chandananda Buddhist College. Your inquiry has been forwarded to the administration desk.',
+                fail: 'Sorry, your message could not be sent. Please try again or call the school office.'
+              },
+              si: {
+                missing: 'කරුණාකර අවශ්‍ය සියලු තොරතුරු (නම, විද්‍යුත් තැපැල් ලිපිනය සහ පණිවිඩය) සම්පූර්ණ කරන්න.',
+                ok: 'ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය හා සම්බන්ධ වීම ගැන ස්තූතියි. ඔබගේ පණිවිඩය පරිපාලන කාර්යාලයට යොමු කරන ලදී.',
+                fail: 'කණගාටුයි, පණිවිඩය යැවීමට නොහැකි විය. කරුණාකර නැවත උත්සාහ කරන්න හෝ කාර්යාලයට අමතන්න.'
+              }
+            };
+            const t = () => msgs[document.documentElement.lang === 'si' ? 'si' : 'en'];
+            const show = (cls, text) => {
+              feedbackDiv.className = 'mb-5 p-4 rounded-xl text-sm font-medium border ' + cls;
+              feedbackDiv.textContent = text;
+            };
+
+            form.addEventListener('submit', async (e) => {
               e.preventDefault();
-              
-              const name = nameInput.value.trim();
-              const email = emailInput.value.trim();
-              const message = messageInput.value.trim();
+              const name = form.querySelector('#name').value.trim();
+              const email = form.querySelector('#email').value.trim();
+              const message = form.querySelector('#message').value.trim();
 
               if (!name || !email || !message) {
-                feedbackDiv.className = 'mb-5 p-4 rounded-xl text-sm font-medium bg-red-50 text-red-800 border border-red-200';
-                feedbackDiv.textContent = 'Please fill out all required fields (Full Name, Email Address, and Your Message) before submitting.';
-                feedbackDiv.classList.remove('hidden');
+                show('bg-red-50 text-red-800 border-red-200', t().missing);
                 return;
               }
 
-              feedbackDiv.className = 'mb-5 p-4 rounded-xl text-sm font-medium bg-emerald-50 text-emerald-900 border border-emerald-200 flex items-center gap-2';
-              feedbackDiv.textContent = 'Thank you for contacting Sri Chandananda Buddhist College. Your message has been received.';
-              feedbackDiv.classList.remove('hidden');
+              const endpoint = form.dataset.endpoint;
+              if (endpoint) {
+                try {
+                  const res = await fetch(endpoint, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+                    body: JSON.stringify({ name, email, message })
+                  });
+                  if (!res.ok) throw new Error('HTTP ' + res.status);
+                } catch (err) {
+                  show('bg-red-50 text-red-800 border-red-200', t().fail);
+                  return;
+                }
+              } else {
+                // Fallback: open the visitor's mail client
+                const subject = encodeURIComponent('[SCBC Web Inquiry] Message from ' + name);
+                const body = encodeURIComponent('Name: ' + name + '\nEmail: ' + email + '\n\nMessage:\n' + message);
+                window.location.href = 'mailto:' + form.dataset.email + '?subject=' + subject + '&body=' + body;
+              }
 
+              show('bg-emerald-50 text-emerald-900 border-emerald-200', t().ok);
               form.reset();
             });
           });
@@ -128,9 +169,8 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
 
       <section class="mt-12 sm:mt-16">
         <header class="mb-4">
-          <span class="text-xs font-bold uppercase tracking-wider text-school-teal mb-1 inline-block" data-en="CAMPUS LOCATION" data-si="පරිශ්‍ර පිහිටීම">CAMPUS LOCATION</span>
-          <h2 class="text-2xl sm:text-3xl font-bold font-serif text-slate-900" data-i18n="contact.map_title">Find Us in Kandy</h2>
-          <p class="text-school-textMuted text-sm" data-en="Located on Asgiri Vihara Mawatha, in the historic hill capital of Kandy." data-si="මහනුවර ඓතිහාසික අස්ගිරි විහාර මාවතේ පිහිටා ඇත.">Located on Asgiri Vihara Mawatha, in the historic hill capital of Kandy.</p>
+          <h2 class="text-2xl sm:text-3xl font-bold font-serif text-slate-900" data-i18n="contact.map_title">Visit Our School</h2>
+          <p class="text-school-textMuted text-sm" data-en={map_note!.en} data-si={map_note!.si}>{map_note!.en}</p>
         </header>
         <figure class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-72 sm:h-96 w-full m-0">
           <iframe
