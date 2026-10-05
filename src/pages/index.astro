@@ -2,7 +2,8 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
-import { Users, BookOpen, Globe2, Bell, Trophy, ArrowRight } from 'lucide-react';
+import HouseCalculator from '../components/common/HouseCalculator.astro';
+import { Users, BookOpen, Globe2, Bell, Trophy, Shield, Flame, ArrowRight } from 'lucide-react';
 import { getCollection } from 'astro:content';
 
 const announcements = await getCollection('announcements');
@@ -37,11 +38,6 @@ const latestAnnouncements = announcements
       <!-- Hero Content -->
       <div class="container mx-auto px-4 relative z-10 py-16 sm:py-20 lg:py-24">
         <div class="max-w-3xl">
-          <div class="inline-flex items-center gap-2.5 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-amber-300 text-xs sm:text-sm font-semibold uppercase tracking-wider mb-4 sm:mb-6">
-            <span class="w-2 h-2 rounded-full bg-school-orange shrink-0"></span>
-            <span>Asgiriya, Kandy • Established 2006</span>
-          </div>
-
           <h1 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-4 sm:mb-6 text-white drop-shadow-sm">
             Welcome to Sri Chandananda Buddhist College
           </h1>
@@ -79,33 +75,42 @@ const latestAnnouncements = announcements
       </div>
     </section>
 
-    <!-- 2. Quick Stats Section (Pure White Cards with Graceful Responsive Switch) -->
-    <section class="relative z-30 -mt-6 sm:-mt-8 md:-mt-10 px-4">
+    <!-- 2. Anchored Institutional Metric Strip -->
+    <section class="relative z-30 -mt-8 sm:-mt-10 md:-mt-12 px-4">
       <div class="container mx-auto max-w-5xl">
-        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+        <div class="bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl rounded-2xl p-6 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-100">
           
-          <div class="bg-white border border-slate-200 shadow-sm hover:shadow-md transition rounded-xl p-5 sm:p-6 text-center flex flex-col items-center">
-            <div class="p-3 bg-teal-50 border border-teal-100 rounded-full text-school-teal mb-3">
-              <Users size={26} />
+          <div class="flex items-center gap-4 py-4 md:py-0 md:px-6 first:pt-0 md:first:pl-2">
+            <div class="p-3.5 bg-teal-50 border border-teal-100 rounded-xl text-school-teal shrink-0">
+              <Users size={28} />
             </div>
-            <span class="text-2xl sm:text-3xl font-bold text-school-textPrimary mb-1">3,500+</span>
-            <span class="text-xs font-semibold text-school-textMuted uppercase tracking-wider">Proud Students</span>
+            <div>
+              <span class="block text-2xl sm:text-3xl font-bold font-serif text-school-textPrimary tracking-tight">3,500+</span>
+              <span class="block text-xs font-semibold text-school-maroon uppercase tracking-wider">Student Enrollment</span>
+              <span class="block text-xs text-school-textMuted mt-0.5">Grades 1 to 13</span>
+            </div>
           </div>
 
-          <div class="bg-white border border-slate-200 shadow-sm hover:shadow-md transition rounded-xl p-5 sm:p-6 text-center flex flex-col items-center">
-            <div class="p-3 bg-orange-50 border border-orange-100 rounded-full text-school-orange mb-3">
-              <BookOpen size={26} />
+          <div class="flex items-center gap-4 py-4 md:py-0 md:px-6">
+            <div class="p-3.5 bg-orange-50 border border-orange-100 rounded-xl text-school-orange shrink-0">
+              <Globe2 size={28} />
             </div>
-            <span class="text-2xl sm:text-3xl font-bold text-school-textPrimary mb-1">1 - 13</span>
-            <span class="text-xs font-semibold text-school-textMuted uppercase tracking-wider">Grades Offered</span>
+            <div>
+              <span class="block text-2xl sm:text-3xl font-bold font-serif text-school-textPrimary tracking-tight">Bilingual</span>
+              <span class="block text-xs font-semibold text-school-maroon uppercase tracking-wider">Medium Instruction</span>
+              <span class="block text-xs text-school-textMuted mt-0.5">Sinhala & English Mediums</span>
+            </div>
           </div>
 
-          <div class="bg-white border border-slate-200 shadow-sm hover:shadow-md transition rounded-xl p-5 sm:p-6 text-center flex flex-col items-center">
-            <div class="p-3 bg-purple-50 border border-purple-100 rounded-full text-school-maroon mb-3">
-              <Globe2 size={26} />
+          <div class="flex items-center gap-4 py-4 md:py-0 md:px-6 last:pb-0 md:last:pr-2">
+            <div class="p-3.5 bg-purple-50 border border-purple-100 rounded-xl text-school-maroon shrink-0">
+              <BookOpen size={28} />
             </div>
-            <span class="text-2xl sm:text-3xl font-bold text-school-textPrimary mb-1">Bilingual</span>
-            <span class="text-xs font-semibold text-school-textMuted uppercase tracking-wider">Sinhala & English Mediums</span>
+            <div>
+              <span class="block text-2xl sm:text-3xl font-bold font-serif text-school-textPrimary tracking-tight">100%</span>
+              <span class="block text-xs font-semibold text-school-maroon uppercase tracking-wider">Curriculum Excellence</span>
+              <span class="block text-xs text-school-textMuted mt-0.5">Government Syllabus & Pirivena Heritage</span>
+            </div>
           </div>
 
         </div>
@@ -184,36 +189,52 @@ const latestAnnouncements = announcements
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           <!-- Founder -->
-          <div class="bg-white border border-slate-200 shadow-sm hover:shadow-md transition rounded-xl overflow-hidden group">
-            <div class="aspect-[4/3] overflow-hidden bg-slate-100">
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition group flex flex-col">
+            <div class="overflow-hidden bg-slate-100">
               <img 
-                src="/assets/leadership/founder.jpg" 
+                src="/assets/leadership/leadership-founder-ai-portrait.png" 
                 alt="Most Ven. Dr. Godagama Mangala Thero" 
-                width="800" 
-                height="600" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                width="600" 
+                height="800" 
+                class="aspect-[3/4] w-full object-cover object-top group-hover:scale-102 transition-transform duration-500" 
+                style="object-position: 50% 15%;"
               />
             </div>
-            <div class="p-6 text-center border-t-4 border-school-maroon bg-white">
-              <h3 class="text-xl font-bold text-school-textPrimary mb-1 font-serif">Most Ven. Dr. Godagama Mangala Thero</h3>
-              <p class="text-school-teal font-semibold uppercase text-xs tracking-wider">Executive Director & Founder</p>
+            <div class="p-6 sm:p-7 flex flex-col flex-grow text-center">
+              <span class="inline-block mx-auto mb-3 px-3 py-1 bg-amber-50 border border-amber-200 text-school-maroon text-xs font-bold uppercase tracking-wider rounded-full">
+                Founder & Executive Director
+              </span>
+              <h3 class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-2 leading-snug">
+                Most Ven. Dr. Godagama Mangala Thero
+              </h3>
+              <p class="text-school-textMuted text-sm leading-relaxed mt-auto">
+                Visionary founder dedicated to synthesizing time-honored Buddhist ethics and contemporary academic rigor for future generations.
+              </p>
             </div>
           </div>
           
           <!-- Principal -->
-          <div class="bg-white border border-slate-200 shadow-sm hover:shadow-md transition rounded-xl overflow-hidden group">
-            <div class="aspect-[4/3] overflow-hidden bg-slate-100">
+          <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition group flex flex-col">
+            <div class="overflow-hidden bg-slate-100">
               <img 
-                src="/assets/leadership/principal.jpg" 
+                src="/assets/leadership/leadership-principal-ai-portrait.png" 
                 alt="Ven. Godagama Dhammakiththi Thero" 
-                width="800" 
-                height="600" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                width="600" 
+                height="800" 
+                class="aspect-[3/4] w-full object-cover object-top group-hover:scale-102 transition-transform duration-500" 
+                style="object-position: 50% 15%;"
               />
             </div>
-            <div class="p-6 text-center border-t-4 border-school-maroon bg-white">
-              <h3 class="text-xl font-bold text-school-textPrimary mb-1 font-serif">Ven. Godagama Dhammakiththi Thero</h3>
-              <p class="text-school-teal font-semibold uppercase text-xs tracking-wider">Principal</p>
+            <div class="p-6 sm:p-7 flex flex-col flex-grow text-center">
+              <span class="inline-block mx-auto mb-3 px-3 py-1 bg-teal-50 border border-teal-200 text-school-teal text-xs font-bold uppercase tracking-wider rounded-full">
+                Principal
+              </span>
+              <h3 class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-2 leading-snug">
+                Ven. Godagama Dhammakiththi Thero
+              </h3>
+              <p class="text-school-textMuted text-sm leading-relaxed mt-auto">
+                Steering the college's daily academic excellence, spiritual discipline, and holistic student welfare with compassionate leadership.
+              </p>
             </div>
           </div>
         </div>
@@ -238,7 +259,7 @@ const latestAnnouncements = announcements
           <div class="bg-white border border-slate-200 shadow-sm hover:shadow-md transition rounded-xl overflow-hidden group">
             <div class="aspect-[16/10] overflow-hidden bg-slate-100">
               <img 
-                src="/assets/activities/buddhist-culture.jpg" 
+                src="/assets/activities/activities-kandyan-dance-group.jpg" 
                 alt="Traditional Kandyan Ves Dance and Cultural Celebrations at SCBC" 
                 width="800" 
                 height="500" 
@@ -263,7 +284,7 @@ const latestAnnouncements = announcements
           <div class="bg-white border border-slate-200 shadow-sm hover:shadow-md transition rounded-xl overflow-hidden group">
             <div class="aspect-[16/10] overflow-hidden bg-slate-100">
               <img 
-                src="/assets/activities/inter-house-meet.jpg" 
+                src="/assets/activities/activities-sports-meet-band.jpg" 
                 alt="Annual Inter-House Sports Meet at Sri Chandananda Buddhist College" 
                 width="800" 
                 height="500" 
@@ -285,34 +306,75 @@ const latestAnnouncements = announcements
           </div>
         </div>
 
-        <!-- House System (Pure White Cards with Tri-Color Trims) -->
+        <!-- House System (Collegiate House Showcases) -->
         <div class="p-6 sm:p-8 md:p-10 rounded-2xl bg-white border border-slate-200 shadow-sm">
           <div class="text-center mb-8">
             <div class="inline-flex items-center gap-2 text-school-maroon font-semibold text-xs uppercase tracking-wider mb-2">
               <Trophy size={16} />
               <span>Inter-House System</span>
             </div>
-            <h3 class="text-2xl font-serif font-bold text-school-textPrimary">Three Esteemed Houses</h3>
+            <h3 class="text-2xl sm:text-3xl font-serif font-bold text-school-textPrimary mb-2">Three Esteemed Houses</h3>
+            <p class="text-school-textMuted text-sm max-w-xl mx-auto">
+              Fostering inter-house sports meet rivalries, camaraderie, and house pride across athletics, academics, and cultural contests.
+            </p>
           </div>
           
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <!-- Ramya (Deep Maroon Trim) -->
-            <div class="bg-white border border-slate-200 rounded-xl p-6 text-center relative overflow-hidden shadow-xs hover:shadow-md transition group border-t-4 border-t-school-maroon">
-              <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-1 mt-1 group-hover:text-school-maroon transition-colors">Ramya</h4>
-              <p class="text-xs text-school-textMuted font-medium uppercase tracking-wider">House</p>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Ramya (Deep Maroon Accent) -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden shadow-xs hover:shadow-md transition group border-t-4 border-t-[#581838] flex flex-col">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#581838] bg-purple-50 border border-purple-200 px-2.5 py-1 rounded-full">
+                  Deep Maroon
+                </span>
+                <div class="w-10 h-10 rounded-xl bg-purple-50 text-[#581838] flex items-center justify-center border border-purple-100 group-hover:scale-110 transition-transform">
+                  <Trophy size={20} />
+                </div>
+              </div>
+              <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-1 group-hover:text-[#581838] transition-colors">Ramya House</h4>
+              <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-3">Discipline & Heritage</p>
+              <p class="text-sm text-school-textMuted leading-relaxed">
+                Embodying foundational Buddhist discipline, academic devotion, and respect for college heritage during inter-house championships and sports meets.
+              </p>
             </div>
             
-            <!-- Suramya (School Teal Trim) -->
-            <div class="bg-white border border-slate-200 rounded-xl p-6 text-center relative overflow-hidden shadow-xs hover:shadow-md transition group border-t-4 border-t-school-teal">
-              <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-1 mt-1 group-hover:text-school-teal transition-colors">Suramya</h4>
-              <p class="text-xs text-school-textMuted font-medium uppercase tracking-wider">House</p>
+            <!-- Suramya (Teal Accent) -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden shadow-xs hover:shadow-md transition group border-t-4 border-t-[#007A87] flex flex-col">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#007A87] bg-teal-50 border border-teal-200 px-2.5 py-1 rounded-full">
+                  Teal / Cyan
+                </span>
+                <div class="w-10 h-10 rounded-xl bg-teal-50 text-[#007A87] flex items-center justify-center border border-teal-100 group-hover:scale-110 transition-transform">
+                  <Shield size={20} />
+                </div>
+              </div>
+              <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-1 group-hover:text-[#007A87] transition-colors">Suramya House</h4>
+              <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-3">Wisdom & Leadership</p>
+              <p class="text-sm text-school-textMuted leading-relaxed">
+                Fostering intellectual sharpness, ethical governance, and strategic team leadership in competitive co-curricular challenges and debates.
+              </p>
             </div>
             
-            <!-- Subha (Saffron Orange Trim) -->
-            <div class="bg-white border border-slate-200 rounded-xl p-6 text-center relative overflow-hidden shadow-xs hover:shadow-md transition group border-t-4 border-t-school-orange">
-              <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-1 mt-1 group-hover:text-school-orange transition-colors">Subha</h4>
-              <p class="text-xs text-school-textMuted font-medium uppercase tracking-wider">House</p>
+            <!-- Subha (Warm Saffron / Gold Accent) -->
+            <div class="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden shadow-xs hover:shadow-md transition group border-t-4 border-t-[#F58220] flex flex-col">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-[#F58220] bg-orange-50 border border-orange-200 px-2.5 py-1 rounded-full">
+                  Warm Saffron Gold
+                </span>
+                <div class="w-10 h-10 rounded-xl bg-orange-50 text-[#F58220] flex items-center justify-center border border-orange-100 group-hover:scale-110 transition-transform">
+                  <Flame size={20} />
+                </div>
+              </div>
+              <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-1 group-hover:text-[#F58220] transition-colors">Subha House</h4>
+              <p class="text-xs text-slate-500 font-semibold uppercase tracking-wider mb-3">Sports & Vitality</p>
+              <p class="text-sm text-school-textMuted leading-relaxed">
+                Channeling vibrant energy, track and field excellence, and tenacious athletic spirit into annual inter-house competitions and team triumphs.
+              </p>
             </div>
+          </div>
+
+          <!-- Interactive Student House Calculator -->
+          <div class="mt-10 border-t border-slate-100 pt-6">
+            <HouseCalculator />
           </div>
         </div>
 

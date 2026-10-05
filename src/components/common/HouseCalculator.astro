@@ -1,0 +1,155 @@
+---
+// HouseCalculator.astro - Interactive Collegiate House Allocation Calculator
+import { Trophy, Shield, Flame, Search, Sparkles } from 'lucide-react';
+---
+
+<div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-6 sm:p-8 max-w-2xl mx-auto my-8 house-calculator-root">
+  <div class="text-center mb-6">
+    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-50 border border-teal-200 text-school-teal text-xs font-bold uppercase tracking-wider mb-2">
+      <Sparkles size={14} />
+      <span>Interactive Tool</span>
+    </div>
+    <h3 class="text-2xl font-serif font-bold text-school-textPrimary">Find Your House</h3>
+    <p class="text-school-textMuted text-sm max-w-md mx-auto mt-1 leading-relaxed">
+      Enter your student admission or index number to discover your collegiate house allocation.
+    </p>
+  </div>
+
+  <form class="house-calculator-form flex flex-col sm:flex-row gap-3 items-center justify-center max-w-md mx-auto mb-6">
+    <div class="relative w-full">
+      <div class="absolute inset-y-0 left-0 pl-3.5 flex items-center pointer-events-none text-slate-400">
+        <Search size={18} />
+      </div>
+      <input 
+        type="number" 
+        name="admissionNumber" 
+        min="1" 
+        placeholder="Enter Admission No. (e.g. 2474)" 
+        required
+        class="admission-input w-full pl-10 pr-4 py-3 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-school-orange text-school-textPrimary text-sm font-medium transition-all shadow-2xs" 
+      />
+    </div>
+    <button 
+      type="submit" 
+      class="w-full sm:w-auto shrink-0 bg-school-maroon hover:opacity-95 text-white font-semibold px-6 py-3 rounded-xl transition hover:-translate-y-0.5 shadow-sm text-sm cursor-pointer flex items-center justify-center gap-2"
+    >
+      Check House
+    </button>
+  </form>
+
+  <!-- Error Alert -->
+  <div class="calculator-error hidden text-center text-xs font-semibold text-rose-600 bg-rose-50 border border-rose-200 rounded-xl p-3 mb-4 max-w-md mx-auto"></div>
+
+  <!-- Dynamic Result Card -->
+  <div class="calculator-result hidden transition-all duration-500 ease-out max-w-md mx-auto">
+    <!-- Populated by client-side script below -->
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    const houseData = {
+      1: {
+        name: 'Ramya House',
+        colorName: 'Deep Maroon',
+        bgColor: '#581838',
+        tagBg: 'bg-purple-50',
+        tagBorder: 'border-purple-200',
+        textColor: 'text-[#581838]',
+        borderColor: 'border-t-[#581838]',
+        motto: 'Discipline & Heritage',
+        description: 'Guided by foundational Buddhist discipline, academic devotion, and respect for college heritage.',
+        iconSvg: `<svg class="w-6 h-6 text-[#581838]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"></path><path d="M4 22h16"></path><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"></path><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"></path><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"></path></svg>`
+      },
+      2: {
+        name: 'Suramya House',
+        colorName: 'Teal / Cyan',
+        bgColor: '#007A87',
+        tagBg: 'bg-teal-50',
+        tagBorder: 'border-teal-200',
+        textColor: 'text-[#007A87]',
+        borderColor: 'border-t-[#007A87]',
+        motto: 'Wisdom & Leadership',
+        description: 'Cultivating intellectual sharpness, ethical leadership, and harmonious team spirit in all co-curricular pursuits.',
+        iconSvg: `<svg class="w-6 h-6 text-[#007A87]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>`
+      },
+      0: {
+        name: 'Subha House',
+        colorName: 'Warm Saffron Gold',
+        bgColor: '#F58220',
+        tagBg: 'bg-orange-50',
+        tagBorder: 'border-orange-200',
+        textColor: 'text-[#F58220]',
+        borderColor: 'border-t-[#F58220]',
+        motto: 'Sports & Vitality',
+        description: 'Radiating vibrant athletic energy, perseverance, and tenacious competitive drive at the annual sports meet.',
+        iconSvg: `<svg class="w-6 h-6 text-[#F58220]" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"></path></svg>`
+      }
+    };
+
+    function initCalculators() {
+      const roots = document.querySelectorAll('.house-calculator-root');
+      roots.forEach(root => {
+        if (root.dataset.initialized) return;
+        root.dataset.initialized = 'true';
+
+        const form = root.querySelector('.house-calculator-form');
+        const input = root.querySelector('.admission-input');
+        const resultBox = root.querySelector('.calculator-result');
+        const errorBox = root.querySelector('.calculator-error');
+
+        if (!form || !input || !resultBox || !errorBox) return;
+
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+          errorBox.classList.add('hidden');
+          errorBox.textContent = '';
+
+          const val = parseInt(input.value, 10);
+          if (isNaN(val) || val <= 0) {
+            errorBox.textContent = 'Please enter a valid positive admission number.';
+            errorBox.classList.remove('hidden');
+            resultBox.classList.add('hidden');
+            return;
+          }
+
+          // Formula rule:
+          // val % 3 === 1 -> Ramya House
+          // val % 3 === 2 -> Suramya House
+          // val % 3 === 0 -> Subha House
+          const remainder = val % 3;
+          const house = houseData[remainder];
+
+          resultBox.innerHTML = `
+            <div class="rounded-2xl border border-slate-200 bg-white p-6 shadow-md border-t-4 ${house.borderColor} text-center">
+              <div class="flex items-center justify-between mb-4">
+                <span class="text-xs font-bold uppercase tracking-wider ${house.textColor} ${house.tagBg} border ${house.tagBorder} px-3 py-1 rounded-full">
+                  ${house.colorName}
+                </span>
+                <div class="w-10 h-10 rounded-xl ${house.tagBg} border ${house.tagBorder} flex items-center justify-center">
+                  ${house.iconSvg}
+                </div>
+              </div>
+              
+              <p class="text-xs text-slate-400 font-semibold uppercase tracking-wider mb-1">Admission No. #${val}</p>
+              <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-1">${house.name}</h4>
+              <p class="text-xs font-semibold ${house.textColor} uppercase tracking-wider mb-3">${house.motto}</p>
+              
+              <p class="text-sm text-school-textMuted leading-relaxed bg-slate-50 p-3.5 rounded-xl border border-slate-100">
+                ${house.description}
+              </p>
+            </div>
+          `;
+
+          resultBox.classList.remove('hidden');
+        });
+      });
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initCalculators);
+    } else {
+      initCalculators();
+    }
+  })();
+</script>
