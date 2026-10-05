@@ -37,11 +37,15 @@ export const translations: Record<string, Record<string, string>> = {
 
     // Contact Page
     'contact.title': 'Contact Us',
-    'contact.get_in_touch': 'Get in Touch',
+    'contact.get_in_touch': 'Direct Contacts',
     'contact.address': 'School Address',
+    'contact.address_label': 'School Address:',
+    'contact.address_val': 'Asgiri Vihara Mawatha, Kandy 20000, Sri Lanka',
     'contact.phone': 'Phone',
     'contact.email': 'Email',
     'contact.hours': 'Office Hours',
+    'contact.hours_label': 'Office Hours:',
+    'contact.hours_val': 'Monday – Friday, 7:30 AM – 1:30 PM',
     'contact.hours_value': 'Monday - Friday, 7:30 AM - 1:30 PM',
     'contact.form_name': 'Full Name',
     'contact.form_email': 'Email Address',
@@ -117,11 +121,15 @@ export const translations: Record<string, Record<string, string>> = {
 
     // Contact Page
     'contact.title': 'අප හා සම්බන්ධ වන්න',
-    'contact.get_in_touch': 'අප හා සම්බන්ධ වන්න',
+    'contact.get_in_touch': 'ක්ෂණික සබඳතා',
     'contact.address': 'විද්‍යාලයීය ලිපිනය',
+    'contact.address_label': 'විද්‍යාලයීය ලිපිනය:',
+    'contact.address_val': 'අස්ගිරි විහාර මාවත, මහනුවර 20000, ශ්‍රී ලංකාව',
     'contact.phone': 'දුරකථන අංකය',
     'contact.email': 'විද්‍යුත් තැපෑල',
     'contact.hours': 'කාර්යාල වේලාවන්',
+    'contact.hours_label': 'කාර්යාල වේලාවන්:',
+    'contact.hours_val': 'සඳුදා – සිකුරාදා, පෙ.ව. 7:30 – ප.ව. 1:30',
     'contact.hours_value': 'සඳුදා - සිකුරාදා: පෙ.ව. 7:30 - ප.ව. 1:30',
     'contact.form_name': 'සම්පූර්ණ නම',
     'contact.form_email': 'විද්‍යුත් තැපැල් ලිපිනය',

@@ -18,48 +18,52 @@ import { MapPin, Phone, Mail, Clock, Send } from 'lucide-react';
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
         <section>
-          <h2 data-i18n="contact.get_in_touch" class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-6">Get in Touch</h2>
+          <h2 data-i18n="contact.get_in_touch" class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-6">Direct Contacts</h2>
           
-          <div class="space-y-6">
+          <div>
             <!-- Action Buttons Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <a 
                 href="tel:+94812203162"
-                class="flex items-center justify-center gap-3 bg-white border border-slate-200 p-4 rounded-xl text-school-textPrimary hover:border-school-teal hover:bg-teal-50/50 hover:text-school-teal transition shadow-sm font-medium"
+                class="bg-teal-50/60 border border-teal-200/80 hover:bg-teal-100/70 text-teal-950 p-4 rounded-xl flex items-center gap-3 transition"
               >
-                <Phone size={18} class="shrink-0" />
-                <span data-en="Call Office: +94 81 220 3162" data-si="දුරකථන ඇමතුමක් ලබාගන්න">Call Office: +94 81 220 3162</span>
+                <Phone size={20} class="shrink-0 text-teal-700" />
+                <div class="flex flex-col text-left">
+                  <span class="text-xs text-teal-700 font-medium uppercase tracking-wider" data-en="Call Office" data-si="දුරකථන ඇමතුම්">Call Office</span>
+                  <span class="text-sm font-bold text-teal-950">+94 81 220 3162</span>
+                </div>
               </a>
 
               <a 
                 href="mailto:contact@dulith.me"
-                class="flex items-center justify-center gap-3 bg-white border border-slate-200 p-4 rounded-xl text-school-textPrimary hover:border-school-orange hover:bg-amber-50/50 hover:text-school-orange transition shadow-sm font-medium"
+                class="bg-amber-50/60 border border-amber-200/80 hover:bg-amber-100/70 text-amber-950 p-4 rounded-xl flex items-center gap-3 transition"
               >
-                <Mail size={18} class="shrink-0" />
-                <span data-en="Email: info@scbck.lk" data-si="විද්‍යුත් තැපෑලෙන් විමසන්න">Email: info@scbck.lk</span>
+                <Mail size={20} class="shrink-0 text-amber-700" />
+                <div class="flex flex-col text-left">
+                  <span class="text-xs text-amber-700 font-medium uppercase tracking-wider" data-en="General Inquiries" data-si="සාමාන්‍ය විමසීම්">General Inquiries</span>
+                  <span class="text-sm font-bold text-amber-950">info@scbck.lk</span>
+                </div>
               </a>
 
               <a 
                 href="https://maps.google.com/?q=Sri+Chandananda+Buddhist+College+Kandy"
                 target="_blank" rel="noopener noreferrer"
-                class="sm:col-span-2 flex items-center justify-center gap-3 bg-white border border-slate-200 p-4 rounded-xl text-school-textPrimary hover:border-school-maroon hover:bg-purple-50/50 hover:text-school-maroon transition shadow-sm font-medium"
+                class="sm:col-span-2 bg-slate-50 border border-slate-200 hover:bg-slate-100 text-slate-800 p-3.5 rounded-xl flex items-center justify-center gap-2 transition w-full"
               >
-                <MapPin size={18} class="shrink-0" />
-                <span data-en="Open in Google Maps" data-si="සිතියමෙන් මාර්ගය සොයාගන්න">Open in Google Maps</span>
+                <MapPin size={18} class="shrink-0 text-slate-600" />
+                <span data-en="Open Campus Location in Google Maps" data-si="ගූගල් සිතියමෙන් විද්‍යාල පිහිටුම බලන්න">Open Campus Location in Google Maps</span>
               </a>
             </div>
 
-            <!-- School Details Summary -->
-            <div class="pt-6 border-t border-slate-100">
-              <div class="space-y-3">
-                <p class="text-sm text-school-textMuted flex items-start gap-3">
-                  <span class="font-bold text-school-textPrimary min-w-[100px]" data-en="Physical Address:" data-si="ලිපිනය:">Physical Address:</span>
-                  <span data-en="Asgiri Vihara Mawatha, Kandy 20000, Sri Lanka" data-si="අස්ගිරි විහාර මාවත, මහනුවර.">Asgiri Vihara Mawatha, Kandy 20000, Sri Lanka</span>
-                </p>
-                <p class="text-sm text-school-textMuted flex items-start gap-3">
-                  <span class="font-bold text-school-textPrimary min-w-[100px]" data-en="Official Hours:" data-si="කාර්යාල වේලාවන්:">Official Hours:</span>
-                  <span data-i18n="contact.hours_value" data-en="Monday - Friday, 7:30 AM - 1:30 PM" data-si="සඳුදා - සිකුරාදා: පෙ.ව. 7:30 - ප.ව. 1:30">Monday - Friday, 7:30 AM - 1:30 PM</span>
-                </p>
+            <!-- Clean Editorial Metadata Grid -->
+            <div class="mt-6 pt-6 border-t border-slate-200 space-y-4">
+              <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 w-32 shrink-0" data-i18n="contact.address_label">School Address:</span>
+                <span class="text-sm font-medium text-slate-800" data-i18n="contact.address_val">Asgiri Vihara Mawatha, Kandy 20000, Sri Lanka</span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
+                <span class="text-xs font-bold uppercase tracking-wider text-slate-500 w-32 shrink-0" data-i18n="contact.hours_label">Office Hours:</span>
+                <span class="text-sm font-medium text-slate-800" data-i18n="contact.hours_val">Monday – Friday, 7:30 AM – 1:30 PM</span>
               </div>
             </div>
           </div>
