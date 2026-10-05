@@ -46,7 +46,36 @@ const articlesCollection = defineCollection({
   }),
 });
 
+const bi = z.object({ en: z.string(), si: z.string() });
+
+const pagesCollection = defineCollection({
+  loader: glob({ pattern: "*.json", base: "./src/content/pages" }),
+  schema: z.object({
+    intro: bi.optional(),
+    sections: z.array(
+      z.object({
+        layout: z.enum(["cards", "facilities"]),
+        heading: bi.optional(),
+        items: z.array(
+          z.object({
+            icon: z.enum(["BookOpen", "Globe", "MonitorPlay", "Microscope"]),
+            tint: z.enum(["teal", "orange", "purple"]),
+            title: bi,
+            body: bi,
+          })
+        ),
+      })
+    ).optional(),
+    procedure_heading: bi.optional(),
+    steps: z.array(z.object({ title: bi, body: bi })).optional(),
+    download: z.object({ heading: bi, body: bi, button: bi, file: z.string() }).optional(),
+    actions: z.object({ call: bi, email: bi, map: bi }).optional(),
+    map_note: bi.optional(),
+  }),
+});
+
 export const collections = {
+  pages: pagesCollection,
   announcements: announcementsCollection,
   leadership: leadershipCollection,
   articles: articlesCollection,
