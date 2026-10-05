@@ -170,11 +170,11 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
                   {new Date(notice.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
                 </p>
                 
-                <h3 class="text-lg font-bold text-school-textPrimary group-hover:text-school-maroon transition-colors leading-snug mb-2 font-serif">
+                <h3 class="text-lg font-bold text-school-textPrimary group-hover:text-school-maroon transition-colors leading-snug mb-2 font-serif" data-en={notice.data.title} data-si={notice.data.title_si || notice.data.title}>
                   {notice.data.title}
                 </h3>
                 
-                <p class="text-school-textMuted text-sm line-clamp-3 leading-relaxed mb-4">
+                <p class="text-school-textMuted text-sm line-clamp-3 leading-relaxed mb-4" data-en={notice.data.summary} data-si={notice.data.summary_si || notice.data.summary}>
                   {notice.data.summary}
                 </p>
               </div>

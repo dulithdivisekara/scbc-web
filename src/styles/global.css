@@ -37,10 +37,10 @@ body {
   font-family: var(--font-sans);
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, .font-serif {
   font-family: var(--font-serif);
+  word-spacing: normal !important;
   letter-spacing: -0.015em;
-  word-spacing: normal;
 }
 
 /* Fix Awkward Word Spacing & Tracking */
@@ -50,7 +50,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Sinhala Typography Adjustments */
 html[lang="si"] {
-  font-family: 'Noto Sans Sinhala', var(--font-sans);
+  font-family: 'Noto Sans Sinhala', sans-serif !important;
 }
 
 html[lang="si"] h1,
@@ -62,8 +62,19 @@ html[lang="si"] h6,
 html[lang="si"] .font-serif,
 .font-sinhalaSerif {
   font-family: 'Noto Serif Sinhala', serif !important;
-  line-height: 1.625 !important;
-  word-spacing: normal;
+  line-height: 1.6 !important;
+  word-spacing: normal !important;
+}
+
+html[lang="si"] p,
+html[lang="si"] span,
+html[lang="si"] a,
+html[lang="si"] li,
+html[lang="si"] button,
+html[lang="si"] input,
+html[lang="si"] label {
+  font-family: 'Noto Sans Sinhala', sans-serif !important;
+  line-height: 1.7 !important;
 }
 
 /* Interactive Card Transitions */

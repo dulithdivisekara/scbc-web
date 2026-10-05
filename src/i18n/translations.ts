@@ -47,6 +47,10 @@ export const translations: Record<string, Record<string, string>> = {
     // Academics Page
     'academics.title': 'Academic Structure & Curriculum',
     'academics.bilingual_title': 'Bilingual Education',
+    'academics.global_languages': 'Global Languages',
+    'academics.facilities_learning': 'Facilities & Learning',
+    'academics.it_laboratories': 'IT Laboratories',
+    'academics.science_stream': 'Science Stream',
 
     // Student Life Page
     'student_life.title': 'Student Life & Co-Curricular Excellence',
@@ -55,6 +59,11 @@ export const translations: Record<string, Record<string, string>> = {
     // Admissions Page
     'admissions.title': 'Student Admissions & Enrolment',
     'admissions.procedure_title': 'Admission Procedure',
+    'admissions.step_1': 'Download Application',
+    'admissions.step_2': 'Fill & Attach Documents',
+    'admissions.step_3': 'Submit to School Office',
+    'admissions.app_form': 'Application Form',
+    'admissions.download_app': 'Download Application Form',
   },
   si: {
     // Navigation
@@ -104,6 +113,10 @@ export const translations: Record<string, Record<string, string>> = {
     // Academics Page
     'academics.title': 'අධ්‍යාපනික ව්‍යුහය සහ විෂයමාලාව',
     'academics.bilingual_title': 'ද්විභාෂා අධ්‍යාපනය',
+    'academics.global_languages': 'ජාත්‍යන්තර භාෂා',
+    'academics.facilities_learning': 'පහසුකම් සහ අධ්‍යයන පරිසරය',
+    'academics.it_laboratories': 'තොරතුරු තාක්ෂණාගාර',
+    'academics.science_stream': 'විද්‍යා අංශය',
 
     // Student Life Page
     'student_life.title': 'ශිෂ්‍ය ජීවිතය සහ සම-පාඨමාලා කටයුතු',
@@ -112,5 +125,10 @@ export const translations: Record<string, Record<string, string>> = {
     // Admissions Page
     'admissions.title': 'ශිෂ්‍ය ඇතුළත් කිරීම් සහ ලියාපදිංචිය',
     'admissions.procedure_title': 'ඇතුළත් වීමේ ක්‍රියාපටිපාටිය',
+    'admissions.step_1': 'අයදුම්පත්‍රය බාගත කිරීම',
+    'admissions.step_2': 'ලේඛන සම්පූර්ණ කිරීම',
+    'admissions.step_3': 'කාර්යාලයට භාරදීම',
+    'admissions.app_form': 'අයදුම්පත්‍රය',
+    'admissions.download_app': 'අයදුම්පත්‍රය බාගත කරන්න',
   }
 };
