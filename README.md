@@ -1,139 +1,92 @@
-# Sri Chandananda Buddhist College - Web Portal
-
-Official web portal for Sri Chandananda Buddhist College (Asgiriya, Kandy, Sri Lanka). Built with [Astro](https://astro.build/), [Tailwind CSS v4](https://tailwindcss.com/), and [React](https://react.dev/).
-
----
-
-## 📋 Prerequisites
-
-Before running the project locally, ensure you have:
-
-- **Node.js**: `v22.12.0` or higher (recommended: LTS)
-- **Package Manager**: `npm` (bundled with Node.js) or `pnpm` / `yarn`
-
-Verify your Node version:
-```bash
-node -v
-```
+<div align="center">
+  <img src="public/assets/branding/school-crest-official.png" alt="Sri Chandananda Buddhist College Crest" width="150" />
+  <h1>Sri Chandananda Buddhist College - Web Platform</h1>
+  
+  [![Astro](https://img.shields.io/badge/Astro-5.0-orange?logo=astro)](https://astro.build)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-v4-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-Strict-3178C6?logo=typescript)](https://www.typescriptlang.org/)
+  [![Decap CMS](https://img.shields.io/badge/Decap_CMS-Enabled-FF0055?logo=netlify)](https://decapcms.org/)
+  [![Cloudflare Pages](https://img.shields.io/badge/Cloudflare_Pages-Ready-F38020?logo=cloudflare)](https://pages.cloudflare.com/)
+</div>
 
 ---
 
-## 🚀 Getting Started (Run on Localhost)
+## 🏛 Executive Summary
 
-Follow these steps to run the website locally on your machine:
+The official web portal for **Sri Chandananda Buddhist College** (Asgiriya, Kandy, Sri Lanka). 
+Designed to be an authoritative, highly performant, and bilingual digital representation of the institution. 
+This project goes beyond a simple brochure site by integrating a dynamic content architecture that will soon evolve into a full digital campus portal.
 
-### 1. Clone & Navigate to Project
+## 🛠 Tech Stack Overview
 
-```bash
-git clone https://github.com/dulithdivisekara/scbc-web.git
-cd scbc-web
-```
-
-### 2. Install Dependencies
-
-```bash
-npm install
-```
-
-### 3. Start the Local Development Server
-
-You can run the development server in standard interactive mode or in background mode.
-
-#### Option A: Standard Interactive Mode (Recommended for everyday development)
-
-```bash
-npm run dev
-```
-
-Once running, open your browser and navigate to:
-```
-http://localhost:4321/
-```
-*(or `http://127.0.0.1:4321/`)*
-
-#### Option B: Background Mode (Using Astro CLI)
-
-To keep the development server running in the background without tying up a terminal window:
-
-```bash
-npx astro dev --background
-```
-
-To manage the background server:
-- **Check status:** `npx astro dev status`
-- **View server logs:** `npx astro dev logs`
-- **Stop server:** `npx astro dev stop`
-
----
-
-## 🧞 Available Scripts
-
-Run from the root of the project:
-
-| Command | Description |
-| :--- | :--- |
-| `npm run dev` | Starts the Astro development server at `http://localhost:4321` with HMR |
-| `npm run build` | Builds the static production site into the `./dist/` directory |
-| `npm run preview` | Serves the production build locally for testing prior to deployment |
-| `npm run astro -- --help` | Displays help and documentation for the Astro CLI |
-
----
+- **Core Framework:** [Astro 5](https://astro.build/) - For unparalleled static performance and content-driven architecture.
+- **Styling System:** [Tailwind CSS v4](https://tailwindcss.com/) - Utilizing institutional design tokens (Teal, Saffron Orange, Maroon).
+- **Language:** TypeScript in strict mode for reliable tooling.
+- **Content Management:** Astro Content Collections paired with [Decap CMS](https://decapcms.org/) for intuitive editorial workflows.
+- **Image Optimization:** Integrated `sharp` for automated WebP conversion.
+- **Icons:** [Lucide React](https://lucide.dev/).
 
 ## 📁 Project Structure
 
 ```text
 scbc-web/
-├── public/
-│   ├── assets/
-│   │   ├── activities/     # Student life, sports, and cultural imagery
-│   │   ├── branding/       # College crest and official seals
-│   │   ├── campus/         # Main buildings, facilities, and campus photos
-│   │   └── leadership/     # Founder and Principal portraits
-│   └── favicon.svg
+├── public/                 # Static assets, gallery images, and /admin Decap CMS entry point
 ├── src/
-│   ├── components/
-│   │   └── common/         # Header, Footer, and shared UI components
-│   ├── content/
-│   │   └── announcements/  # Content collections for notices & circulars
-│   ├── layouts/
-│   │   └── BaseLayout.astro # Base layout with meta tags, navigation & footer
-│   ├── pages/
-│   │   ├── index.astro     # Homepage
-│   │   ├── about.astro     # About the College & Leadership
-│   │   ├── academics.astro # Academic wings, curricula, and facilities
-│   │   ├── admissions.astro # Admissions process and requirements
-│   │   ├── contact.astro   # Contact details, map, and inquiry form
-│   │   └── student-life.astro # Sports, Buddhist society, and clubs
-│   ├── styles/
-│   │   └── global.css      # Tailwind v4 configuration, theme variables & typography
-│   └── content.config.ts   # Astro 5 content collections definition
-├── package.json
-└── astro.config.mjs
+│   ├── components/         # Shared UI, layout wrappers, and dynamic widgets
+│   ├── content/            # The database of the site (JSON page data, Markdown articles)
+│   ├── i18n/               # UI translation dictionaries (EN/SI)
+│   ├── layouts/            # Base document wrappers with SEO metadata
+│   ├── pages/              # Astro routing (consuming content collections)
+│   └── styles/             # Global CSS and institutional font configurations
+├── docs/
+│   └── developer-handbook/ # In-depth technical guides
+└── package.json
 ```
 
----
+## 🚀 Getting Started
 
-## 📝 Managing Content & Announcements
+### Prerequisites
+- **Node.js**: `v22.12.0` or higher
+- **Package Manager**: `npm`
 
-New circulars and announcements can be added as Markdown files under `src/content/announcements/`:
+### Installation
 
-```markdown
----
-title: "Title of Announcement"
-pubDate: 2026-10-05
-summary: "Brief synopsis displayed on the homepage."
-category: "General" # or Academic, Cultural, Sports
-urgent: false
----
-
-Full announcement content goes here...
+```bash
+git clone https://github.com/dulithdivisekara/scbc-web.git
+cd scbc-web
+npm install
 ```
 
+### Development Server
+
+Run the development server in background mode (recommended for a seamless terminal experience):
+```bash
+npx astro dev --background
+```
+
+To manage the background server:
+- **Status:** `npx astro dev status`
+- **Logs:** `npx astro dev logs`
+- **Stop:** `npx astro dev stop`
+
+Navigate to `http://localhost:4321/` in your browser.
+
+## 📝 Content Management
+
+The site's content is completely decoupled from the layout files. Content is managed in two ways:
+1. **Locally via Code:** Edit the JSON/Markdown files in `src/content/`.
+2. **Via Decap CMS:** Navigate to `http://localhost:4321/admin` to access the editorial GUI interface.
+
+For a comprehensive breakdown of the content architecture and editing instructions, please read the [Content Editing Guide](docs/developer-handbook/content-editing-guide.md).
+
+## 📚 Documentation
+
+Detailed documentation on project architecture and future roadmap items can be found in the `docs/developer-handbook/` directory:
+
+- [System Architecture](docs/developer-handbook/architecture.md)
+- [Content Editing Guide](docs/developer-handbook/content-editing-guide.md)
+- [Future Portal Specification](docs/developer-handbook/future-portal-spec.md)
+
 ---
 
-## 🛠️ Tech Stack
-
-- **Framework**: [Astro 5](https://astro.build/)
-- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/)
-- **Icons**: [Lucide React](https://lucide.dev/)
-- **Typography**: Merriweather (serif) & Inter (sans-serif)
+> *“Built with dedication by alumni to serve the next generation of students.”*
