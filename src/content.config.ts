@@ -27,7 +27,27 @@ const leadershipCollection = defineCollection({
   }),
 });
 
+const articlesCollection = defineCollection({
+  loader: glob({ pattern: "*.md", base: "./src/content/articles" }),
+  schema: z.object({
+    id: z.string().optional(),
+    title: z.string(),
+    title_si: z.string(),
+    lead: z.string(),
+    lead_si: z.string(),
+    sections: z.array(
+      z.object({
+        heading: z.string(),
+        heading_si: z.string(),
+        body: z.string(),
+        body_si: z.string(),
+      })
+    ),
+  }),
+});
+
 export const collections = {
   announcements: announcementsCollection,
   leadership: leadershipCollection,
+  articles: articlesCollection,
 };
