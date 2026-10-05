@@ -71,6 +71,16 @@ const pagesCollection = defineCollection({
     download: z.object({ heading: bi, body: bi, button: bi, file: z.string() }).optional(),
     actions: z.object({ call: bi, email: bi, map: bi }).optional(),
     map_note: bi.optional(),
+    gallery_heading: bi.optional(),
+    photos: z.array(
+      z.object({
+        src: z.string(),
+        width: z.number(),
+        height: z.number(),
+        caption: bi,
+        alt: bi,
+      })
+    ).optional(),
   }),
 });
 

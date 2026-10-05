@@ -1,0 +1,125 @@
+{
+  "gallery_heading": {
+    "en": "Life at the College",
+    "si": "විද්‍යාලයීය ජීවිතය"
+  },
+  "photos": [
+    {
+      "src": "/assets/gallery/kandyan-drumming.webp",
+      "width": 1200,
+      "height": 800,
+      "caption": {
+        "en": "Kandyan drumming",
+        "si": "උඩරට ගැට බෙර වාදනය"
+      },
+      "alt": {
+        "en": "Students performing traditional Kandyan drumming.",
+        "si": "සිසුන් සාම්ප්‍රදායික උඩරට බෙර වාදනයේ නිරත වෙමින්."
+      }
+    },
+    {
+      "src": "/assets/gallery/marching-band.webp",
+      "width": 1200,
+      "height": 801,
+      "caption": {
+        "en": "School marching band",
+        "si": "විද්‍යාලීය සෙනෙඟ සංගීත කණ්ඩායම"
+      },
+      "alt": {
+        "en": "The school marching band on parade.",
+        "si": "විද්‍යාලයීය පෙරහැර සංගීත කණ්ඩායම පෙළපාලියේ."
+      }
+    },
+    {
+      "src": "/assets/gallery/pt-drill.webp",
+      "width": 1200,
+      "height": 801,
+      "caption": {
+        "en": "Physical training drill",
+        "si": "ශාරීරික ව්‍යායාම ප්‍රදර්ශනය"
+      },
+      "alt": {
+        "en": "Students taking part in a physical training drill.",
+        "si": "සිසුන් ශාරීරික ව්‍යායාම ප්‍රදර්ශනයක නිරත වෙමින්."
+      }
+    },
+    {
+      "src": "/assets/gallery/scout-camp.webp",
+      "width": 1200,
+      "height": 800,
+      "caption": {
+        "en": "Scout camp",
+        "si": "සීදුවා කඳවුර"
+      },
+      "alt": {
+        "en": "Scouts gathered at a camp.",
+        "si": "කඳවුරක රැස්ව සිටින සීදුවා සිසුන්."
+      }
+    },
+    {
+      "src": "/assets/gallery/cadets.webp",
+      "width": 1200,
+      "height": 757,
+      "caption": {
+        "en": "Cadet platoon",
+        "si": "කැඩෙට් බලකාය"
+      },
+      "alt": {
+        "en": "Cadets lined up in formation.",
+        "si": "පෙළගැසී සිටින කැඩෙට් සිසුන්."
+      }
+    },
+    {
+      "src": "/assets/gallery/award-winners.webp",
+      "width": 1200,
+      "height": 800,
+      "caption": {
+        "en": "Award winners",
+        "si": "සම්මාන ලාභීන්"
+      },
+      "alt": {
+        "en": "Students celebrating their awards.",
+        "si": "සම්මාන දිනූ සිසුන්."
+      }
+    },
+    {
+      "src": "/assets/gallery/religious-ceremony.webp",
+      "width": 1024,
+      "height": 768,
+      "caption": {
+        "en": "Religious observance",
+        "si": "ආගමික වතාවත්"
+      },
+      "alt": {
+        "en": "Students at a religious ceremony.",
+        "si": "ආගමික උත්සවයකට සහභාගී වන සිසුන්."
+      }
+    },
+    {
+      "src": "/assets/gallery/monk-ceremony.webp",
+      "width": 1200,
+      "height": 800,
+      "caption": {
+        "en": "Ceremony with the Maha Sangha",
+        "si": "මහා සංඝයා සමඟ උත්සවය"
+      },
+      "alt": {
+        "en": "A ceremony with members of the Maha Sangha.",
+        "si": "මහා සංඝරත්නය සහභාගී වූ උත්සවයක්."
+      }
+    },
+    {
+      "src": "/assets/gallery/classroom.webp",
+      "width": 1200,
+      "height": 675,
+      "caption": {
+        "en": "In the classroom",
+        "si": "පන්ති කාමරයේදී"
+      },
+      "alt": {
+        "en": "Students learning in class.",
+        "si": "පන්තියේ ඉගෙනුම ලබන සිසුන්."
+      }
+    }
+  ]
+}

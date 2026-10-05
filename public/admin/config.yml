@@ -1,0 +1,157 @@
+# Decap CMS: edits content files in this repo via GitHub commits.
+# Setup notes are in docs/CMS_SETUP.md (GitHub OAuth app + auth proxy required).
+backend:
+  name: github
+  repo: dulithdivisekara/scbc-web
+  branch: develop
+  # base_url: https://YOUR-OAUTH-PROXY.example.com   # set after deploying the OAuth proxy
+  # auth_endpoint: auth
+
+media_folder: public/assets/uploads
+public_folder: /assets/uploads
+locale: en
+site_url: https://scbck.lk
+display_url: https://scbck.lk
+
+# Draft/publish review flow: edits open a pull request instead of committing directly.
+publish_mode: editorial_workflow
+
+collections:
+  - name: announcements
+    label: Announcements
+    label_singular: Announcement
+    folder: src/content/announcements
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{year}}-{{month}}-{{slug}}"
+    summary: "{{title}} ({{date}})"
+    fields:
+      - { label: Title (English), name: title, widget: string }
+      - { label: Title (Sinhala), name: title_si, widget: string, required: false }
+      - { label: Date, name: date, widget: datetime, date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { label: Category, name: category, widget: select, options: [Academic, Sports, Religious, Notice] }
+      - { label: Category (Sinhala), name: category_si, widget: string, required: false }
+      - { label: Summary (English), name: summary, widget: text }
+      - { label: Summary (Sinhala), name: summary_si, widget: text, required: false }
+      - { label: Pin to top, name: pinned, widget: boolean, default: false, required: false }
+      - { label: Full text, name: body, widget: markdown, required: false }
+
+  - name: leadership
+    label: Leadership
+    label_singular: Leader
+    folder: src/content/leadership
+    create: true
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Name, name: name, widget: string }
+      - { label: Title, name: title, widget: string }
+      - { label: Display order, name: order, widget: number, value_type: int, min: 1 }
+      - { label: Portrait, name: image, widget: image }
+      - { label: Fallback portrait, name: fallbackImage, widget: image, required: false }
+      - { label: Short bio, name: bio, widget: text }
+
+  - name: articles
+    label: Long-form Articles
+    label_singular: Article
+    folder: src/content/articles
+    create: false
+    extension: md
+    format: frontmatter
+    fields:
+      - { label: Id, name: id, widget: string, required: false }
+      - { label: Title (English), name: title, widget: string }
+      - { label: Title (Sinhala), name: title_si, widget: string }
+      - { label: Lead (English), name: lead, widget: text }
+      - { label: Lead (Sinhala), name: lead_si, widget: text }
+      - label: Sections
+        name: sections
+        widget: list
+        fields:
+          - { label: Heading (English), name: heading, widget: string }
+          - { label: Heading (Sinhala), name: heading_si, widget: string }
+          - { label: Body (English), name: body, widget: text }
+          - { label: Body (Sinhala), name: body_si, widget: text }
+
+  - name: pages
+    label: Page Content
+    files:
+      - name: academics
+        label: Academics
+        file: src/content/pages/academics.json
+        fields:
+          - label: Introduction
+            name: intro
+            widget: object
+            fields: &bi
+              - { label: English, name: en, widget: text }
+              - { label: Sinhala, name: si, widget: text }
+          - label: Sections
+            name: sections
+            widget: list
+            fields:
+              - { label: Layout, name: layout, widget: select, options: [cards, facilities] }
+              - label: Heading
+                name: heading
+                widget: object
+                required: false
+                fields: *bi
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - { label: Icon, name: icon, widget: select, options: [BookOpen, Globe, MonitorPlay, Microscope] }
+                  - { label: Colour, name: tint, widget: select, options: [teal, orange, purple] }
+                  - { label: Title, name: title, widget: object, fields: *bi }
+                  - { label: Text, name: body, widget: object, fields: *bi }
+
+      - name: admissions
+        label: Admissions
+        file: src/content/pages/admissions.json
+        fields:
+          - { label: Introduction, name: intro, widget: object, fields: *bi }
+          - { label: Procedure heading, name: procedure_heading, widget: object, fields: *bi }
+          - label: Steps
+            name: steps
+            widget: list
+            fields:
+              - { label: Title, name: title, widget: object, fields: *bi }
+              - { label: Text, name: body, widget: object, fields: *bi }
+          - label: Download box
+            name: download
+            widget: object
+            fields:
+              - { label: Heading, name: heading, widget: object, fields: *bi }
+              - { label: Text, name: body, widget: object, fields: *bi }
+              - { label: Button label, name: button, widget: object, fields: *bi }
+              - { label: PDF path, name: file, widget: string, hint: "e.g. /docs/admissions-form-2026.pdf" }
+
+      - name: contact
+        label: Contact
+        file: src/content/pages/contact.json
+        fields:
+          - { label: Introduction, name: intro, widget: object, fields: *bi }
+          - label: Button labels
+            name: actions
+            widget: object
+            fields:
+              - { label: Call, name: call, widget: object, fields: *bi }
+              - { label: Email, name: email, widget: object, fields: *bi }
+              - { label: Map, name: map, widget: object, fields: *bi }
+          - { label: Map note, name: map_note, widget: object, fields: *bi }
+
+      - name: student_life
+        label: Student Life Gallery
+        file: src/content/pages/student-life.json
+        fields:
+          - { label: Gallery heading, name: gallery_heading, widget: object, fields: *bi }
+          - label: Photos
+            name: photos
+            widget: list
+            fields:
+              - { label: Image, name: src, widget: image }
+              - { label: Width (px), name: width, widget: number, value_type: int }
+              - { label: Height (px), name: height, widget: number, value_type: int }
+              - { label: Caption, name: caption, widget: object, fields: *bi }
+              - { label: Alt text, name: alt, widget: object, fields: *bi }
