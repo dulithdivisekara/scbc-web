@@ -24,15 +24,14 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
 <BaseLayout title="About Us">
   <Header />
   
-  <main class="flex-grow py-12 sm:py-16 bg-school-surface">
+  <main class="flex-grow py-16 sm:py-24 bg-[#FCFCFC]">
     <div class="container mx-auto px-4 max-w-4xl">
-      <div class="text-center mb-10 sm:mb-12">
-        <h1 data-i18n="about.title" class="text-3xl sm:text-4xl font-serif font-bold text-school-textPrimary">About the College</h1>
-        <div class="w-16 h-1 bg-school-orange mx-auto mt-4"></div>
+      <div class="mb-12 sm:mb-16">
+        <h1 data-i18n="about.title" class="text-4xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight">About the College</h1>
       </div>
       
       <!-- Article Lead / Pull Quote -->
-      <blockquote class="text-xl sm:text-2xl font-serif italic text-slate-800 text-center max-w-3xl mx-auto my-8 leading-relaxed" data-en={aboutArticle.data.lead} data-si={aboutArticle.data.lead_si}>
+      <blockquote class="text-2xl sm:text-3xl font-serif italic text-stone-800 border-l-2 border-stone-200 pl-6 my-12 leading-relaxed" data-en={aboutArticle.data.lead} data-si={aboutArticle.data.lead_si}>
         {aboutArticle.data.lead}
       </blockquote>
 
@@ -53,36 +52,36 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
       </article>
 
       <!-- Leadership Directory -->
-      <section>
-        <div class="mb-6">
-          <h2 data-i18n="about.leadership_directory" class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary">Leadership Directory</h2>
-          <p data-i18n="about.leadership_sub" class="text-school-textMuted text-sm mt-1">Guided by visionary Buddhist leadership and dedicated administrative stewardship.</p>
+      <section class="mt-20 pt-16 border-t border-stone-200">
+        <div class="mb-10">
+          <h2 data-i18n="about.leadership_directory" class="text-3xl font-serif font-bold text-stone-900 tracking-tight">Leadership Directory</h2>
+          <p data-i18n="about.leadership_sub" class="text-stone-500 text-base mt-2">Guided by visionary Buddhist leadership and dedicated administrative stewardship.</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
           {sortedLeadership.map(leader => (
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition group flex flex-col">
-              <div class="overflow-hidden bg-slate-100 rounded-t-xl">
+            <div class="group flex flex-col">
+              <div class="overflow-hidden rounded-2xl mb-6 bg-stone-100">
                 <img 
                   src={getLeaderImage(leader.data.image, leader.data.fallbackImage)} 
                   alt={leader.data.name} 
                   width="600" 
                   height="800" 
-                  class="aspect-[3/4] w-full object-cover object-top rounded-t-xl group-hover:scale-102 transition-transform duration-500" 
+                  class="aspect-[3/4] w-full object-cover object-top group-hover:scale-[1.02] transition-transform duration-700 ease-out" 
                   style="object-position: 50% 15%;"
                   onerror={`this.onerror=null;this.src='${leader.data.fallbackImage || '/assets/leadership/founder.jpg'}';`}
                 />
               </div>
-              <div class="p-6 sm:p-7 flex flex-col flex-grow text-center">
-                <div class="space-y-1 mb-2">
-                  <p class="text-xs font-bold uppercase tracking-wider text-teal-800">
+              <div class="flex flex-col">
+                <div class="space-y-1 mb-3">
+                  <p class="text-[11px] font-bold uppercase tracking-wider text-stone-500">
                     {leader.data.title}
                   </p>
-                  <h3 class="text-xl font-bold font-serif text-slate-900 leading-snug">
+                  <h3 class="text-2xl font-bold font-serif text-stone-900 leading-snug">
                     {leader.data.name}
                   </h3>
                 </div>
-                <p class="text-school-textMuted text-sm leading-relaxed mt-auto">
+                <p class="text-stone-500 text-sm leading-relaxed max-w-sm">
                   {leader.data.bio}
                 </p>
               </div>
@@ -91,21 +90,21 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
         </div>
         
         <!-- Vice Principals -->
-        <div class="mt-12">
-          <h3 class="font-bold text-xl mb-6 text-slate-900 font-serif border-b border-slate-200 pb-3" data-i18n="about.vice_principals">
+        <div class="mt-16">
+          <h3 class="font-bold text-2xl mb-8 text-stone-900 font-serif border-b border-stone-200 pb-4" data-i18n="about.vice_principals">
             Vice Principals
           </h3>
-          <ul class="space-y-4">
-            <li class="pb-4 border-b border-slate-100">
+          <ul class="space-y-6">
+            <li class="pb-6 border-b border-stone-100">
               <div class="space-y-1">
-                <p data-i18n="about.vp_badge" class="text-xs font-bold uppercase tracking-wider text-teal-800">Vice Principal</p>
-                <p class="font-serif font-bold text-slate-900 text-lg" data-en="Ven. Thulawala Dhammasiddhi Thero" data-si="පූජ්‍ය තුලාවල ධම්මසිද්ධි හිමි">Ven. Thulawala Dhammasiddhi Thero</p>
+                <p data-i18n="about.vp_badge" class="text-[11px] font-bold uppercase tracking-wider text-stone-500">Vice Principal</p>
+                <p class="font-serif font-bold text-stone-900 text-xl" data-en="Ven. Thulawala Dhammasiddhi Thero" data-si="පූජ්‍ය තුලාවල ධම්මසිද්ධි හිමි">Ven. Thulawala Dhammasiddhi Thero</p>
               </div>
             </li>
-            <li class="pb-4 border-b border-slate-100">
+            <li class="pb-6 border-b border-stone-100">
               <div class="space-y-1">
-                <p data-i18n="about.vp_badge" class="text-xs font-bold uppercase tracking-wider text-teal-800">Vice Principal</p>
-                <p class="font-serif font-bold text-slate-900 text-lg" data-en="Mr. J.B. Dassanayaka" data-si="ජේ. බී. දසනායක මහතා">Mr. J.B. Dassanayaka</p>
+                <p data-i18n="about.vp_badge" class="text-[11px] font-bold uppercase tracking-wider text-stone-500">Vice Principal</p>
+                <p class="font-serif font-bold text-stone-900 text-xl" data-en="Mr. J.B. Dassanayaka" data-si="ජේ. බී. දසනායක මහතා">Mr. J.B. Dassanayaka</p>
               </div>
             </li>
           </ul>

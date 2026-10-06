@@ -19,12 +19,11 @@ const encodedEmail = Buffer.from(contactEmail).toString('base64');
 <BaseLayout title="Contact Us">
   <Header />
   
-  <main class="flex-grow py-12 sm:py-16 bg-school-surface">
+  <main class="flex-grow py-16 sm:py-24 bg-[#FCFCFC]">
     <div class="container mx-auto px-4 max-w-5xl">
-      <header class="text-center mb-12 sm:mb-16">
-        <h1 data-i18n="contact.title" class="text-3xl sm:text-4xl font-serif font-bold text-school-textPrimary mb-2">Contact Us</h1>
-        <div class="w-16 h-1 bg-school-orange mx-auto mt-4 mb-4"></div>
-        <p class="text-school-textMuted max-w-xl mx-auto text-sm sm:text-base" data-en={intro!.en} data-si={intro!.si}>{intro!.en}</p>
+      <header class="mb-14 sm:mb-20">
+        <h1 data-i18n="contact.title" class="text-4xl sm:text-5xl font-serif font-bold text-stone-900 mb-4 tracking-tight">Contact Us</h1>
+        <p class="text-stone-500 text-lg max-w-xl leading-relaxed" data-en={intro!.en} data-si={intro!.si}>{intro!.en}</p>
       </header>
       
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -32,37 +31,36 @@ const encodedEmail = Buffer.from(contactEmail).toString('base64');
           <h2 data-i18n="contact.get_in_touch" class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-6">Direct Contacts</h2>
           
           <div>
-            <!-- Action Buttons Grid -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               <a 
                 href="tel:+94812203162"
-                class="bg-teal-50/60 border border-teal-200/80 hover:bg-teal-100/70 text-teal-950 p-4 rounded-xl flex items-center gap-3 transition"
+                class="bg-stone-50 border border-stone-200/60 hover:bg-stone-100 text-stone-900 p-5 rounded-2xl flex items-center gap-4 transition-colors"
               >
-                <Phone size={20} class="shrink-0 text-teal-700" />
+                <Phone size={24} class="shrink-0 text-stone-700" strokeWidth={1.5} />
                 <div class="flex flex-col text-left">
-                  <span class="text-xs text-teal-700 font-medium uppercase tracking-wider" data-en={actions!.call.en} data-si={actions!.call.si}>{actions!.call.en}</span>
-                  <span class="text-sm font-bold text-teal-950">+94 81 220 3162</span>
+                  <span class="text-[11px] text-stone-500 font-bold uppercase tracking-wider mb-1" data-en={actions!.call.en} data-si={actions!.call.si}>{actions!.call.en}</span>
+                  <span class="text-base font-bold text-stone-900 font-serif">+94 81 220 3162</span>
                 </div>
               </a>
 
               <a 
                 href="#"
                 data-b64-email={encodedEmail}
-                class="contact-email-link bg-amber-50/60 border border-amber-200/80 hover:bg-amber-100/70 text-amber-950 p-4 rounded-xl flex items-center gap-3 transition"
+                class="contact-email-link bg-stone-50 border border-stone-200/60 hover:bg-stone-100 text-stone-900 p-5 rounded-2xl flex items-center gap-4 transition-colors"
               >
-                <Mail size={20} class="shrink-0 text-amber-700" />
+                <Mail size={24} class="shrink-0 text-stone-700" strokeWidth={1.5} />
                 <div class="flex flex-col text-left">
-                  <span class="text-xs text-amber-700 font-medium uppercase tracking-wider" data-en={actions!.email.en} data-si={actions!.email.si}>{actions!.email.en}</span>
-                  <span class="text-sm font-bold text-amber-950">info@scbck.lk</span>
+                  <span class="text-[11px] text-stone-500 font-bold uppercase tracking-wider mb-1" data-en={actions!.email.en} data-si={actions!.email.si}>{actions!.email.en}</span>
+                  <span class="text-base font-bold text-stone-900 font-serif">info@scbck.lk</span>
                 </div>
               </a>
 
               <a 
                 href="https://maps.google.com/?q=Sri+Chandananda+Buddhist+College+Kandy"
                 target="_blank" rel="noopener noreferrer"
-                class="sm:col-span-2 bg-slate-50 border border-slate-200 hover:bg-slate-100 text-slate-800 p-3.5 rounded-xl flex items-center justify-center gap-2 transition w-full"
+                class="sm:col-span-2 bg-stone-900 hover:bg-stone-800 text-white p-4 rounded-xl flex items-center justify-center gap-2 transition-colors w-full font-medium"
               >
-                <MapPin size={18} class="shrink-0 text-slate-600" />
+                <MapPin size={18} class="shrink-0 text-stone-300" />
                 <span data-en={actions!.map.en} data-si={actions!.map.si}>{actions!.map.en}</span>
               </a>
             </div>
@@ -81,29 +79,29 @@ const encodedEmail = Buffer.from(contactEmail).toString('base64');
           </div>
         </section>
         
-        <section class="bg-white p-6 sm:p-8 rounded-2xl shadow-sm border border-school-border">
-          <h2 data-i18n="contact.send_inquiry" class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-6">Send an Inquiry</h2>
+        <section class="bg-stone-50 p-6 sm:p-10 rounded-3xl border border-stone-200/60">
+          <h2 data-i18n="contact.send_inquiry" class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 mb-8">Send an Inquiry</h2>
           
-          <div id="form-feedback" class="hidden mb-5 p-4 rounded-xl text-sm font-medium" role="alert"></div>
+          <div id="form-feedback" class="hidden mb-6 p-4 rounded-xl text-sm font-medium" role="alert"></div>
 
-          <form id="contact-form" class="space-y-5" data-endpoint={formEndpoint} data-b64-email={encodedEmail}>
+          <form id="contact-form" class="space-y-6" data-endpoint={formEndpoint} data-b64-email={encodedEmail}>
             <div>
-              <label for="name" class="block text-xs font-semibold uppercase tracking-wider text-school-textMuted mb-2"><span data-i18n="contact.form_name">Full Name</span> <span class="text-red-500">*</span></label>
-              <input type="text" id="name" required autocomplete="name" class="w-full px-4 py-3 rounded-lg border border-school-border focus:outline-none focus:ring-2 focus:ring-school-teal text-school-textPrimary text-sm transition-all" placeholder="Enter your full name" data-placeholder-en="Enter your full name" data-placeholder-si="ඔබගේ සම්පූර්ණ නම ඇතුළත් කරන්න">
+              <label for="name" class="block text-[11px] font-bold uppercase tracking-wider text-stone-500 mb-2"><span data-i18n="contact.form_name">Full Name</span> <span class="text-stone-400">*</span></label>
+              <input type="text" id="name" required autocomplete="name" class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-white focus:outline-none focus:border-stone-900 focus:ring-1 focus:ring-stone-900 text-stone-900 text-base transition-colors" placeholder="Enter your full name" data-placeholder-en="Enter your full name" data-placeholder-si="ඔබගේ සම්පූර්ණ නම ඇතුළත් කරන්න">
             </div>
             
             <div>
-              <label for="email" class="block text-xs font-semibold uppercase tracking-wider text-school-textMuted mb-2"><span data-i18n="contact.form_email">Email Address</span> <span class="text-red-500">*</span></label>
-              <input type="email" id="email" required autocomplete="email" class="w-full px-4 py-3 rounded-lg border border-school-border focus:outline-none focus:ring-2 focus:ring-school-teal text-school-textPrimary text-sm transition-all" placeholder="name@example.com" data-placeholder-en="name@example.com" data-placeholder-si="ඔබගේ විද්‍යුත් තැපැල් ලිපිනය">
+              <label for="email" class="block text-[11px] font-bold uppercase tracking-wider text-stone-500 mb-2"><span data-i18n="contact.form_email">Email Address</span> <span class="text-stone-400">*</span></label>
+              <input type="email" id="email" required autocomplete="email" class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-white focus:outline-none focus:border-stone-900 focus:ring-1 focus:ring-stone-900 text-stone-900 text-base transition-colors" placeholder="name@example.com" data-placeholder-en="name@example.com" data-placeholder-si="ඔබගේ විද්‍යුත් තැපැල් ලිපිනය">
             </div>
             
             <div>
-              <label for="message" class="block text-xs font-semibold uppercase tracking-wider text-school-textMuted mb-2"><span data-i18n="contact.form_message">Your Message</span> <span class="text-red-500">*</span></label>
-              <textarea id="message" required rows="4" class="w-full px-4 py-3 rounded-lg border border-school-border focus:outline-none focus:ring-2 focus:ring-school-teal text-school-textPrimary text-sm transition-all" placeholder="Please specify your inquiry or message..." data-placeholder-en="Please specify your inquiry or message..." data-placeholder-si="ඔබගේ පණිවිඩය මෙහි සටහන් කරන්න..."></textarea>
+              <label for="message" class="block text-[11px] font-bold uppercase tracking-wider text-stone-500 mb-2"><span data-i18n="contact.form_message">Your Message</span> <span class="text-stone-400">*</span></label>
+              <textarea id="message" required rows="5" class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-white focus:outline-none focus:border-stone-900 focus:ring-1 focus:ring-stone-900 text-stone-900 text-base transition-colors" placeholder="Please specify your inquiry or message..." data-placeholder-en="Please specify your inquiry or message..." data-placeholder-si="ඔබගේ පණිවිඩය මෙහි සටහන් කරන්න..."></textarea>
             </div>
             
-            <button type="submit" class="w-full bg-school-maroon hover:opacity-90 text-white font-semibold py-3.5 px-6 rounded-lg transition-opacity flex items-center justify-center gap-2 shadow-sm text-sm">
-              <Send size={16} />
+            <button type="submit" class="w-full bg-stone-900 hover:bg-stone-800 text-white font-medium py-4 px-6 rounded-xl transition-colors flex items-center justify-center gap-2 text-base">
+              <Send size={18} />
               <span data-i18n="contact.form_submit">Send Inquiry</span>
             </button>
           </form>
@@ -182,11 +180,11 @@ const encodedEmail = Buffer.from(contactEmail).toString('base64');
       </div>
 
       <section class="mt-12 sm:mt-16">
-        <header class="mb-4">
-          <h2 class="text-2xl sm:text-3xl font-bold font-serif text-slate-900" data-i18n="contact.map_title">Visit Our School</h2>
-          <p class="text-school-textMuted text-sm" data-en={map_note!.en} data-si={map_note!.si}>{map_note!.en}</p>
+        <header class="mb-6">
+          <h2 class="text-3xl font-bold font-serif text-stone-900 mb-2" data-i18n="contact.map_title">Visit Our School</h2>
+          <p class="text-stone-500 text-sm" data-en={map_note!.en} data-si={map_note!.si}>{map_note!.en}</p>
         </header>
-        <figure class="rounded-2xl overflow-hidden border border-slate-200 shadow-sm h-72 sm:h-96 w-full m-0">
+        <figure class="rounded-3xl overflow-hidden bg-stone-100 h-72 sm:h-96 w-full m-0">
           <iframe
             title="Sri Chandananda Buddhist College Campus Map"
             src="https://maps.google.com/maps?q=Sri+Chandananda+Buddhist+College+Kandy&t=&z=16&ie=UTF8&iwloc=&output=embed"

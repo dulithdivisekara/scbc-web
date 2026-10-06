@@ -17,28 +17,27 @@ const tints = {
 <BaseLayout title="Academics">
   <Header />
   
-  <main class="flex-grow py-12 sm:py-16 bg-school-surface">
+  <main class="flex-grow py-16 sm:py-24 bg-[#FCFCFC]">
     <div class="container mx-auto px-4 max-w-4xl">
-      <div class="text-center mb-10 sm:mb-12">
-        <h1 data-i18n="academics.title" class="text-3xl sm:text-4xl font-serif font-bold text-school-textPrimary">Academic Structure &amp; Curriculum</h1>
-        <div class="w-16 h-1 bg-school-orange mx-auto mt-4 mb-4"></div>
-        <p class="text-center text-school-textMuted max-w-2xl mx-auto text-sm sm:text-base" data-en={page.intro!.en} data-si={page.intro!.si}>{page.intro!.en}</p>
+      <div class="mb-14 sm:mb-20 max-w-2xl">
+        <h1 data-i18n="academics.title" class="text-4xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight mb-4">Academic Structure &amp; Curriculum</h1>
+        <p class="text-stone-500 text-lg leading-relaxed" data-en={page.intro!.en} data-si={page.intro!.si}>{page.intro!.en}</p>
       </div>
 
       {page.sections!.map((section) => {
         if (section.layout === 'cards') {
           return (
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mb-12 sm:mb-16">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-20">
               {section.items.map((item) => {
                 const Icon = icons[item.icon];
                 return (
-                  <div class="bg-white p-6 sm:p-8 rounded-xl shadow-sm border border-school-border flex items-start gap-4">
-                    <div class={`${tints[item.tint].box} border p-3 rounded-lg shrink-0`}>
-                      <Icon size={24} />
+                  <div class="flex flex-col items-start gap-4">
+                    <div class="text-stone-900 mb-2">
+                      <Icon size={28} strokeWidth={1.5} />
                     </div>
                     <div>
-                      <h3 class="text-lg font-bold text-school-textPrimary mb-2 font-serif" data-en={item.title.en} data-si={item.title.si}>{item.title.en}</h3>
-                      <p class="text-school-textMuted text-sm leading-relaxed" data-en={item.body.en} data-si={item.body.si}>{item.body.en}</p>
+                      <h3 class="text-xl font-bold text-stone-900 mb-2 font-serif" data-en={item.title.en} data-si={item.title.si}>{item.title.en}</h3>
+                      <p class="text-stone-500 text-sm leading-relaxed" data-en={item.body.en} data-si={item.body.si}>{item.body.en}</p>
                     </div>
                   </div>
                 );
@@ -49,25 +48,23 @@ const tints = {
         return (
           <>
             {section.heading && (
-              <div class="text-center mb-8">
-                <h2 class="text-2xl font-serif font-bold text-school-textPrimary" data-en={section.heading.en} data-si={section.heading.si}>{section.heading.en}</h2>
+              <div class="mb-10 border-t border-stone-200 pt-10">
+                <h2 class="text-3xl font-serif font-bold text-stone-900 tracking-tight" data-en={section.heading.en} data-si={section.heading.si}>{section.heading.en}</h2>
               </div>
             )}
-            <div class="bg-white rounded-xl shadow-sm border border-school-border overflow-hidden">
-              <div class="grid grid-cols-1 sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-school-border">
-                {section.items.map((item) => {
-                  const Icon = icons[item.icon];
-                  return (
-                    <div class="p-6 sm:p-8">
-                      <div class={`${tints[item.tint].box} border p-3 rounded-lg w-fit mb-4`}>
-                        <Icon size={24} />
-                      </div>
-                      <h3 class="text-lg font-bold text-school-textPrimary mb-2 font-serif" data-en={item.title.en} data-si={item.title.si}>{item.title.en}</h3>
-                      <p class="text-school-textMuted text-sm leading-relaxed" data-en={item.body.en} data-si={item.body.si}>{item.body.en}</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-16 mb-20">
+              {section.items.map((item) => {
+                const Icon = icons[item.icon];
+                return (
+                  <div class="flex flex-col">
+                    <div class="text-stone-900 mb-4">
+                      <Icon size={28} strokeWidth={1.5} />
                     </div>
-                  );
-                })}
-              </div>
+                    <h3 class="text-xl font-bold text-stone-900 mb-3 font-serif" data-en={item.title.en} data-si={item.title.si}>{item.title.en}</h3>
+                    <p class="text-stone-500 text-sm leading-relaxed" data-en={item.body.en} data-si={item.body.si}>{item.body.en}</p>
+                  </div>
+                );
+              })}
             </div>
           </>
         );
