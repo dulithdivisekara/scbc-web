@@ -2,7 +2,7 @@
 import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 ---
 
-<footer class="mt-auto bg-[#0B132B] text-slate-300 w-full overflow-hidden">
+<footer class="mt-auto bg-[#0a0a0a] text-stone-400 w-full overflow-hidden border-t border-stone-800">
   <!-- Official Tri-Color Brand Stripe -->
   <div class="h-1.5 w-full flex">
     <div class="flex-1 bg-school-teal"></div>
@@ -20,9 +20,9 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
           class="h-14 w-auto object-contain shrink-0" 
         />
         <div>
-          <h3 class="text-white text-xl font-serif font-bold leading-tight">Sri Chandananda Buddhist College</h3>
-          <p class="text-sm font-sinhalaSerif text-amber-400 mt-1 leading-relaxed">ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය</p>
-          <p data-i18n="footer.location" class="text-xs text-slate-400 uppercase tracking-wider mt-0.5">Asgiriya, Kandy, Sri Lanka</p>
+          <h3 class="text-stone-100 text-xl font-serif font-bold leading-tight">Sri Chandananda Buddhist College</h3>
+          <p class="text-sm font-sinhalaSerif text-stone-300 mt-1 leading-relaxed">ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය</p>
+          <p data-i18n="footer.location" class="text-xs text-stone-500 uppercase tracking-wider mt-0.5">Asgiriya, Kandy, Sri Lanka</p>
         </div>
       </div>
       <p data-i18n="footer.desc" class="text-sm text-slate-400 leading-relaxed max-w-sm mb-6"> Empowering the next generation through wisdom, discipline, and Buddhist philosophy since 2006. Operating under the visionary guidance of Most Ven. Dr. Godagama Mangala Thero.
@@ -31,35 +31,35 @@ import { MapPin, Phone, Mail, Clock } from 'lucide-react';
 
     <!-- Quick Navigation Column -->
     <div class="md:col-span-3">
-      <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-5 border-l-2 border-school-orange pl-2.5" data-i18n="footer.quick_links">Quick Links</h4>
+      <h4 class="text-stone-100 text-lg font-serif font-bold tracking-tight mb-5" data-i18n="footer.quick_links">Quick Links</h4>
       <ul class="space-y-3 text-sm">
-        <li><a href="/about" class="text-slate-400 hover:text-school-orange transition" data-i18n="about.title">About the College</a></li>
-        <li><a href="/academics" class="text-slate-400 hover:text-school-orange transition" data-i18n="footer.academics">Academic Structure</a></li>
-        <li><a href="/student-life" class="text-slate-400 hover:text-school-orange transition" data-i18n="footer.student_life">Student Life &amp; Sports</a></li>
-        <li><a href="/admissions" class="text-slate-400 hover:text-school-orange transition" data-i18n="footer.admissions">Admissions &amp; Forms</a></li>
-        <li><a href="/contact" class="text-slate-400 hover:text-school-orange transition" data-i18n="footer.contact_dir">Contact Directory</a></li>
+        <li><a href="/about" class="text-stone-400 hover:text-stone-100 transition-colors" data-i18n="about.title">About the College</a></li>
+        <li><a href="/academics" class="text-stone-400 hover:text-stone-100 transition-colors" data-i18n="footer.academics">Academic Structure</a></li>
+        <li><a href="/student-life" class="text-stone-400 hover:text-stone-100 transition-colors" data-i18n="footer.student_life">Student Life &amp; Sports</a></li>
+        <li><a href="/admissions" class="text-stone-400 hover:text-stone-100 transition-colors" data-i18n="footer.admissions">Admissions &amp; Forms</a></li>
+        <li><a href="/contact" class="text-stone-400 hover:text-stone-100 transition-colors" data-i18n="footer.contact_dir">Contact Directory</a></li>
       </ul>
     </div>
 
     <!-- Campus & Contact Info Column -->
     <div class="md:col-span-4">
-      <h4 class="text-white text-sm font-semibold uppercase tracking-wider mb-5 border-l-2 border-school-teal pl-2.5" data-i18n="contact.title">Contact Us</h4>
+      <h4 class="text-stone-100 text-lg font-serif font-bold tracking-tight mb-5" data-i18n="contact.title">Contact Us</h4>
       <ul class="space-y-3.5 text-sm">
         <li class="flex items-start gap-3">
-          <MapPin size={18} class="text-school-teal shrink-0 mt-0.5" />
-          <span class="text-slate-400" data-i18n="contact.address_val">Asgiri Vihara Mawatha, Kandy 20000, Sri Lanka</span>
+          <MapPin size={18} class="text-stone-400 shrink-0 mt-0.5" strokeWidth={1.5} />
+          <span class="text-stone-400" data-i18n="contact.address_val">Asgiri Vihara Mawatha, Kandy 20000, Sri Lanka</span>
         </li>
         <li class="flex items-center gap-3">
-          <Phone size={18} class="text-school-teal shrink-0" />
-          <a href="tel:+94812203162" class="text-slate-400 hover:text-school-orange transition">+94 81 220 3162</a>
+          <Phone size={18} class="text-stone-400 shrink-0" strokeWidth={1.5} />
+          <a href="tel:+94812203162" class="text-stone-400 hover:text-stone-100 transition-colors font-sans">+94 81 220 3162</a>
         </li>
         <li class="flex items-center gap-3">
-          <Mail size={18} class="text-school-teal shrink-0" />
-          <a href="mailto:info@scbck.lk" class="text-slate-400 hover:text-school-orange transition">info@scbck.lk</a>
+          <Mail size={18} class="text-stone-400 shrink-0" strokeWidth={1.5} />
+          <a href="mailto:info@scbck.lk" class="text-stone-400 hover:text-stone-100 transition-colors font-sans">info@scbck.lk</a>
         </li>
         <li class="flex items-start gap-3">
-          <Clock size={18} class="text-school-teal shrink-0 mt-0.5" />
-          <span class="text-slate-400" data-i18n="footer.hours_line">Office Hours: Monday – Friday, 7:30 AM – 1:30 PM</span>
+          <Clock size={18} class="text-stone-400 shrink-0 mt-0.5" strokeWidth={1.5} />
+          <span class="text-stone-400" data-i18n="footer.hours_line">Office Hours: Monday – Friday, 7:30 AM – 1:30 PM</span>
         </li>
       </ul>
     </div>

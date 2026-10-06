@@ -2,33 +2,34 @@
 
 @theme {
   --color-school-white: #FFFFFF;
-  --color-school-surface: #F8FAFC;
-  --color-school-border: #E2E8F0;
-  --color-school-text-primary: #0F172A;
-  --color-school-text-muted: #475569;
-  --color-school-textPrimary: #0F172A;
-  --color-school-textMuted: #475569;
+  --color-school-surface: #FCFCFC;
+  --color-school-muted: #F5F5F4;
+  --color-school-border: #E5E7EB;
+  --color-school-text-primary: #1C1917;
+  --color-school-text-muted: #78716C;
+  --color-school-textPrimary: #1C1917;
+  --color-school-textMuted: #78716C;
   --color-school-teal: #007A87;
   --color-school-orange: #F58220;
   --color-school-maroon: #581838;
 
   --color-primary: #581838;
   --color-accent: #F58220;
-  --color-surface: #F8FAFC;
-  --color-border: #E2E8F0;
+  --color-surface: #FCFCFC;
+  --color-border: #E5E7EB;
 
-  --font-serif: "Merriweather", serif;
-  --font-sans: "Inter", sans-serif;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Inter", system-ui, sans-serif;
 }
 
 :root {
   --primary: #581838;
   --accent: #F58220;
   --teal: #007A87;
-  --surface: #F8FAFC;
-  --border: #E2E8F0;
-  --text-primary: #0F172A;
-  --text-muted: #475569;
+  --surface: #FCFCFC;
+  --border: #E5E7EB;
+  --text-primary: #1C1917;
+  --text-muted: #78716C;
 }
 
 body {
@@ -109,21 +110,13 @@ html[lang="si"] * {
   text-rendering: optimizeLegibility;
 }
 
-/* Interactive Card Transitions */
-.card-hover, 
-.interactive-card,
-section.bg-white,
-div.bg-white.rounded-xl,
-div.bg-white.rounded-2xl {
-  transition: transform 300ms cubic-bezier(0.16, 1, 0.3, 1), box-shadow 300ms cubic-bezier(0.16, 1, 0.3, 1);
+/* Interactive Element Transitions */
+.interactive-card {
+  transition: transform 400ms cubic-bezier(0.16, 1, 0.3, 1), opacity 400ms ease;
 }
 
-.card-hover:hover,
-.interactive-card:hover,
-div.bg-white.rounded-xl:hover,
-div.bg-white.rounded-2xl:hover {
-  transform: translateY(-0.25rem);
-  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+.interactive-card:hover {
+  transform: translateY(-0.15rem);
 }
 
 /* Scroll Reveal Classes */
@@ -136,6 +129,19 @@ div.bg-white.rounded-2xl:hover {
 
 .reveal.active,
 .reveal.opacity-100 {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.reveal-up {
+  opacity: 0;
+  transform: translateY(2rem);
+  transition: opacity 1000ms cubic-bezier(0.16, 1, 0.3, 1), transform 1000ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-up.active,
+.reveal-up.opacity-100 {
   opacity: 1 !important;
   transform: translateY(0) !important;
 }

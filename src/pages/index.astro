@@ -34,7 +34,7 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
 <BaseLayout title="Home">
   <Header />
   
-  <main class="flex-grow bg-[#F8FAFC]">
+  <main class="flex-grow bg-[#FCFCFC]">
     <section class="min-h-[520px] sm:min-h-[580px] lg:min-h-[640px] relative flex items-center overflow-hidden">
       <img 
         src="/assets/campus/campus-main-building.jpg" 
@@ -47,13 +47,13 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
 
       <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-slate-900/40"></div>
       
-      <div class="container mx-auto px-4 relative z-10 py-16 sm:py-20 lg:py-24">
-        <div class="max-w-3xl">
-          <h1 data-i18n="home.hero_title" class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold leading-tight mb-4 sm:mb-6 text-white drop-shadow-sm">
+      <div class="container mx-auto px-4 relative z-10 py-24 md:py-32">
+        <div class="max-w-4xl">
+          <h1 data-i18n="home.hero_title" class="text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] font-serif font-bold leading-[1.05] mb-6 text-white drop-shadow-sm tracking-tight">
             Welcome to Sri Chandananda Buddhist College
           </h1>
 
-          <p data-i18n="home.hero_sub" class="text-base sm:text-lg md:text-xl font-light mb-8 sm:mb-10 text-slate-200 max-w-2xl leading-relaxed">
+          <p data-i18n="home.hero_sub" class="text-lg sm:text-xl font-light mb-10 text-stone-200 max-w-2xl leading-relaxed">
             Empowering the next generation through wisdom, discipline, and Buddhist philosophy since 2006.
           </p>
 
@@ -76,144 +76,91 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
         </div>
       </div>
 
-      <div class="absolute bottom-0 left-0 right-0 h-8 md:h-12 overflow-hidden pointer-events-none z-20">
-        <svg viewBox="0 0 1200 120" preserveAspectRatio="none" class="relative block w-full h-full text-[#F8FAFC] fill-current">
-          <path d="M0,0 C300,80 900,80 1200,0 L1200,120 L0,120 Z"></path>
-        </svg>
-      </div>
     </section>
 
-    <section class="reveal relative z-30 -mt-8 sm:-mt-10 md:-mt-12 px-4">
-      <div class="container mx-auto max-w-5xl">
-        <div class="bg-white/95 backdrop-blur-md border border-slate-200 shadow-xl rounded-2xl p-6 grid grid-cols-1 md:grid-cols-3 divide-y md:divide-y-0 md:divide-x divide-slate-100">
-          
-          <div class="flex items-center gap-4 py-4 md:py-0 md:px-6 first:pt-0 md:first:pl-2">
-            <div class="p-3.5 bg-teal-50 border border-teal-100 rounded-xl text-school-teal shrink-0">
-              <Users size={28} />
-            </div>
-            <div>
-              <span class="block text-2xl sm:text-3xl font-bold font-serif text-school-textPrimary tracking-tight">3,500+</span>
-              <span data-i18n="home.stats_students" class="block text-xs font-semibold text-school-maroon uppercase tracking-wider">Active Students</span>
-              <span data-i18n="home.stats_students_sub" class="block text-xs text-school-textMuted mt-0.5">Grades 1 to 13</span>
-            </div>
+    <section class="reveal-up py-16 sm:py-24">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+          <div class="max-w-2xl">
+            <h2 data-i18n="home.announcements_title" class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight mb-4">Latest Circulars & Announcements</h2>
           </div>
-
-          <div class="flex items-center gap-4 py-4 md:py-0 md:px-6">
-            <div class="p-3.5 bg-orange-50 border border-orange-100 rounded-xl text-school-orange shrink-0">
-              <Globe2 size={28} />
-            </div>
-            <div>
-              <span data-i18n="home.stats_bilingual" class="block text-2xl sm:text-3xl font-bold font-serif text-school-textPrimary tracking-tight">Bilingual</span>
-              <span data-i18n="home.stats_mediums" class="block text-xs font-semibold text-school-maroon uppercase tracking-wider">Dual Mediums</span>
-              <span data-i18n="home.stats_mediums_sub" class="block text-xs text-school-textMuted mt-0.5">Sinhala &amp; English Mediums</span>
-            </div>
-          </div>
-
-          <div class="flex items-center gap-4 py-4 md:py-0 md:px-6 last:pb-0 md:last:pr-2">
-            <div class="p-3.5 bg-purple-50 border border-purple-100 rounded-xl text-school-maroon shrink-0">
-              <BookOpen size={28} />
-            </div>
-            <div>
-              <span class="block text-2xl sm:text-3xl font-bold font-serif text-school-textPrimary tracking-tight">2006</span>
-              <span data-i18n="home.stats_founded" class="block text-xs font-semibold text-school-maroon uppercase tracking-wider">Year Founded</span>
-              <span data-i18n="home.stats_founded_sub" class="block text-xs text-school-textMuted mt-0.5">Established 4 January 2006</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <section class="reveal py-12 sm:py-16">
-      <div class="container mx-auto px-4 max-w-5xl">
-        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-8">
-          <div>
-            <div class="flex items-center gap-2 text-school-teal font-semibold text-xs uppercase tracking-wider mb-1">
-              <Bell size={16} />
-              <span data-en="Official Announcements" data-si="නිල නිවේදන">Official Announcements</span>
-            </div>
-            <h2 data-i18n="home.announcements_title" class="text-2xl sm:text-3xl font-serif font-bold text-school-textPrimary">Latest Circulars & Announcements</h2>
-          </div>
-          <a href="/admissions" class="text-school-maroon hover:text-school-orange font-semibold text-sm inline-flex items-center gap-1 transition-colors">
+          <a href="/admissions" class="text-stone-900 hover:text-stone-500 font-medium text-sm inline-flex items-center gap-2 transition-colors border-b border-stone-900 pb-0.5 mb-2">
             <span data-i18n="home.view_circulars">View all circulars</span> <ArrowRight size={16} />
           </a>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
           {latestAnnouncements.map((notice) => (
-            <div class="bg-white border border-slate-200 shadow-sm hover:shadow-md transition rounded-xl p-6 relative flex flex-col justify-between group">
-              <div>
-                <div class="flex justify-between items-center mb-3">
-                  {notice.data.category === 'Religious' ? (
-                    <span class="text-xs font-bold uppercase tracking-wider bg-orange-50 text-school-orange border border-orange-200 px-2.5 py-1 rounded" data-en={notice.data.category} data-si={notice.data.category_si || notice.data.category}>
-                      {notice.data.category}
-                    </span>
-                  ) : notice.data.category === 'Sports' ? (
-                    <span class="text-xs font-bold uppercase tracking-wider bg-purple-50 text-school-maroon border border-purple-200 px-2.5 py-1 rounded" data-en={notice.data.category} data-si={notice.data.category_si || notice.data.category}>
-                      {notice.data.category}
-                    </span>
-                  ) : (
-                    <span class="text-xs font-bold uppercase tracking-wider bg-teal-50 text-school-teal border border-teal-200 px-2.5 py-1 rounded" data-en={notice.data.category} data-si={notice.data.category_si || notice.data.category}>
-                      {notice.data.category}
-                    </span>
-                  )}
+            <div class="group block cursor-pointer">
+                <div class="pt-6 border-t border-stone-200 group-hover:border-stone-900 transition-colors duration-300">
+                  <div class="flex justify-between items-center mb-4">
+                    {notice.data.category === 'Religious' ? (
+                      <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500" data-en={notice.data.category} data-si={notice.data.category_si || notice.data.category}>
+                        {notice.data.category}
+                      </span>
+                    ) : notice.data.category === 'Sports' ? (
+                      <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500" data-en={notice.data.category} data-si={notice.data.category_si || notice.data.category}>
+                        {notice.data.category}
+                      </span>
+                    ) : (
+                      <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500" data-en={notice.data.category} data-si={notice.data.category_si || notice.data.category}>
+                        {notice.data.category}
+                      </span>
+                    )}
 
-                  {notice.data.pinned && (
-                    <span data-i18n="home.pinned" class="bg-school-orange text-white text-xs font-bold px-2.5 py-0.5 rounded-full shadow-xs">
-                      Pinned
-                    </span>
-                  )}
+                    {notice.data.pinned && (
+                      <span data-i18n="home.pinned" class="text-stone-900 text-[11px] font-bold flex items-center gap-1">
+                        <span class="w-1.5 h-1.5 rounded-full bg-stone-900 block"></span> Pinned
+                      </span>
+                    )}
+                  </div>
+                  
+                  <h3 class="text-xl sm:text-2xl font-serif text-stone-900 group-hover:opacity-70 transition-opacity leading-snug mb-3" data-en={notice.data.title} data-si={notice.data.title_si || notice.data.title}>
+                    {notice.data.title}
+                  </h3>
+                  
+                  <p class="text-stone-500 text-sm line-clamp-3 leading-relaxed mb-4" data-en={notice.data.summary} data-si={notice.data.summary_si || notice.data.summary}>
+                    {notice.data.summary}
+                  </p>
+                  
+                  <p class="text-xs text-stone-400 font-medium">
+                    {new Date(notice.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                  </p>
                 </div>
-                
-                <p class="text-xs text-school-textMuted font-medium mb-2">
-                  {new Date(notice.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                </p>
-                
-                <h3 class="text-lg font-bold text-school-textPrimary group-hover:text-school-maroon transition-colors leading-snug mb-2 font-serif" data-en={notice.data.title} data-si={notice.data.title_si || notice.data.title}>
-                  {notice.data.title}
-                </h3>
-                
-                <p class="text-school-textMuted text-sm line-clamp-3 leading-relaxed mb-4" data-en={notice.data.summary} data-si={notice.data.summary_si || notice.data.summary}>
-                  {notice.data.summary}
-                </p>
-              </div>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <section class="reveal py-12 sm:py-16 border-t border-slate-200">
-      <div class="container mx-auto px-4">
-        <div class="text-center mb-10 sm:mb-14">
-          <h2 data-i18n="home.leadership_title" class="text-2xl sm:text-3xl font-serif font-bold text-school-textPrimary mb-3">Our Leadership</h2>
-          <div class="w-16 h-1 bg-school-orange mx-auto"></div>
+    <section class="reveal-up py-16 sm:py-24 border-t border-stone-200">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="mb-14 sm:mb-20 max-w-2xl">
+          <h2 data-i18n="home.leadership_title" class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight mb-4">Our Leadership</h2>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16">
           {sortedLeadership.map(leader => (
-            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden hover:shadow-md transition group flex flex-col">
-              <div class="overflow-hidden bg-slate-100 rounded-t-xl">
+            <div class="group flex flex-col">
+              <div class="overflow-hidden rounded-3xl mb-8">
                 <img 
                   src={getLeaderImage(leader.data.image, leader.data.fallbackImage)} 
                   alt={leader.data.name} 
                   width="600" 
                   height="800" 
-                  class="aspect-[3/4] w-full object-cover object-top rounded-t-xl group-hover:scale-102 transition-transform duration-500" 
+                  class="aspect-[4/5] w-full object-cover object-top group-hover:scale-[1.03] transition-transform duration-700 ease-out" 
                   style="object-position: 50% 15%;"
                   onerror={`this.onerror=null;this.src='${leader.data.fallbackImage || '/assets/leadership/founder.jpg'}';`}
                 />
               </div>
-              <div class="p-6 sm:p-7 flex flex-col flex-grow text-center">
-                <div class="space-y-1 mb-2">
-                  <p class="text-xs font-bold uppercase tracking-wider text-teal-800">
-                    {leader.data.title}
-                  </p>
-                  <h3 class="text-xl sm:text-2xl font-serif font-bold text-slate-900 leading-snug">
-                    {leader.data.name}
-                  </h3>
-                </div>
-                <p class="text-school-textMuted text-sm leading-relaxed mt-auto">
+              <div class="flex flex-col">
+                <p class="text-[11px] font-bold uppercase tracking-wider text-stone-500 mb-2">
+                  {leader.data.title}
+                </p>
+                <h3 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 leading-snug mb-4">
+                  {leader.data.name}
+                </h3>
+                <p class="text-stone-500 text-sm leading-relaxed max-w-md">
                   {leader.data.bio}
                 </p>
               </div>
@@ -223,92 +170,85 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
       </div>
     </section>
 
-    <section class="py-12 sm:py-16 border-t border-slate-200">
-      <div class="container mx-auto px-4 max-w-5xl">
-        <div class="text-center mb-10 sm:mb-14">
-          <span class="text-xs font-bold uppercase tracking-wider text-school-teal mb-2 inline-block" data-en="STUDENT LIFE" data-si="ශිෂ්‍ය ජීවිතය">Student Life</span>
-          <h2 data-i18n="home.holistic_title" class="text-2xl sm:text-3xl font-serif font-bold text-school-textPrimary mb-3">Holistic Development</h2>
-          <div class="w-16 h-1 bg-school-teal mx-auto mb-4"></div>
-          <p data-i18n="home.holistic_sub" class="text-school-textMuted max-w-2xl mx-auto text-sm leading-relaxed"> Fostering holistic growth through traditional Buddhist culture, vibrant performing arts, and spirited athletics.
+    <section class="reveal-up py-16 sm:py-24 bg-stone-100/50">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="mb-14 sm:mb-20 max-w-2xl">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500 mb-3 inline-block" data-en="STUDENT LIFE" data-si="ශිෂ්‍ය ජීවිතය">Student Life</span>
+          <h2 data-i18n="home.holistic_title" class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight mb-6">Holistic Development</h2>
+          <p data-i18n="home.holistic_sub" class="text-stone-600 text-lg sm:text-xl font-light leading-relaxed"> Fostering holistic growth through traditional Buddhist culture, vibrant performing arts, and spirited athletics.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12 sm:mb-14">
-          <div class="bg-white border border-slate-200 shadow-sm hover:shadow-md transition rounded-xl overflow-hidden group">
-            <div class="aspect-[16/10] overflow-hidden bg-slate-100">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16 sm:mb-24">
+          <div class="md:col-span-7 group cursor-pointer">
+            <div class="aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-3xl bg-stone-200 mb-6">
               <img 
                 src="/assets/activities/activities-kandyan-dance-group.jpg" 
                 alt="Traditional Kandyan Ves Dance and Cultural Celebrations at SCBC" 
                 width="800" 
                 height="500" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out" 
               />
             </div>
-            <div class="p-6">
-              <span data-i18n="home.card_culture_tag" class="text-xs font-bold uppercase tracking-wider text-school-teal bg-teal-50 border border-teal-200 px-2.5 py-1 rounded mb-3 inline-block"> Cultural & Buddhist Heritage </span>
-              <h3 data-i18n="home.card_culture_title" class="text-xl font-bold font-serif text-school-textPrimary mb-2">Traditional Performing Arts &amp; Dance</h3>
-              <p data-i18n="home.card_culture_desc" class="text-school-textMuted text-sm leading-relaxed mb-4"> Students actively engage in traditional Kandyan Ves dance, pirith chanting ceremonies, and Vesak pageants, preserving age-old cultural wisdom and discipline.
+            <div>
+              <h3 data-i18n="home.card_culture_title" class="text-2xl sm:text-3xl font-bold font-serif text-stone-900 mb-3 group-hover:opacity-70 transition-opacity">Traditional Performing Arts &amp; Dance</h3>
+              <p data-i18n="home.card_culture_desc" class="text-stone-500 text-base leading-relaxed mb-5 max-w-lg"> Students actively engage in traditional Kandyan Ves dance, pirith chanting ceremonies, and Vesak pageants, preserving age-old cultural wisdom and discipline.
               </p>
-              <a href="/student-life" class="text-school-maroon hover:text-school-orange font-semibold text-sm inline-flex items-center gap-1.5 transition-colors">
-                <span data-i18n="home.card_culture_link">Explore school culture</span> <ArrowRight size={14} />
+              <a href="/student-life" class="text-stone-900 font-medium text-sm inline-flex items-center gap-2 border-b border-stone-900 pb-0.5">
+                <span data-i18n="home.card_culture_link">Explore school culture</span> <ArrowRight size={16} />
               </a>
             </div>
           </div>
 
-          <div class="bg-white border border-slate-200 shadow-sm hover:shadow-md transition rounded-xl overflow-hidden group">
-            <div class="aspect-[16/10] overflow-hidden bg-slate-100">
+          <div class="md:col-span-5 md:pt-24 group cursor-pointer">
+            <div class="aspect-[4/5] overflow-hidden rounded-3xl bg-stone-200 mb-6">
               <img 
                 src="/assets/activities/activities-sports-meet-band.jpg" 
                 alt="Annual Inter-House Sports Meet at Sri Chandananda Buddhist College" 
-                width="800" 
-                height="500" 
-                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" 
+                width="600" 
+                height="750" 
+                class="w-full h-full object-cover group-hover:scale-[1.03] transition-transform duration-700 ease-out" 
               />
             </div>
-            <div class="p-6">
-              <span data-i18n="home.card_sports_tag" class="text-xs font-bold uppercase tracking-wider text-school-maroon bg-purple-50 border border-purple-200 px-2.5 py-1 rounded mb-3 inline-block"> Athletics & Team Spirit </span>
-              <h3 data-i18n="home.card_sports_title" class="text-xl font-bold font-serif text-school-textPrimary mb-2">Inter-House Sports Meet</h3>
-              <p data-i18n="home.card_sports_desc" class="text-school-textMuted text-sm leading-relaxed mb-4"> An energetic annual tradition celebrating physical endurance, teamwork, and healthy competition across track and field events.
+            <div>
+              <h3 data-i18n="home.card_sports_title" class="text-2xl font-bold font-serif text-stone-900 mb-3 group-hover:opacity-70 transition-opacity">Inter-House Sports Meet</h3>
+              <p data-i18n="home.card_sports_desc" class="text-stone-500 text-sm leading-relaxed mb-5"> An energetic annual tradition celebrating physical endurance, teamwork, and healthy competition across track and field events.
               </p>
-              <a href="/student-life" class="text-school-maroon hover:text-school-orange font-semibold text-sm inline-flex items-center gap-1.5 transition-colors">
-                <span data-i18n="home.card_sports_link">View sports &amp; activities</span> <ArrowRight size={14} />
+              <a href="/student-life" class="text-stone-900 font-medium text-sm inline-flex items-center gap-2 border-b border-stone-900 pb-0.5">
+                <span data-i18n="home.card_sports_link">View sports &amp; activities</span> <ArrowRight size={16} />
               </a>
             </div>
           </div>
         </div>
 
-        <div class="p-6 sm:p-8 md:p-10 rounded-2xl bg-white border border-slate-200 shadow-sm">
-          <div class="text-center mb-8">
-            <div class="inline-flex items-center gap-2 text-school-maroon font-semibold text-xs uppercase tracking-wider mb-2">
-              <Trophy size={16} />
-              <span data-i18n="home.houses_kicker">Inter-House System</span>
-            </div>
-            <h3 data-i18n="home.houses_title" class="text-2xl sm:text-3xl font-serif font-bold text-school-textPrimary mb-2">Three Esteemed Houses</h3>
-            <p data-i18n="home.houses_sub" class="text-school-textMuted text-sm max-w-xl mx-auto"> Fostering inter-house sports meet rivalries, camaraderie, and house pride across athletics, academics, and cultural contests.
+        <div class="reveal-up pt-16 border-t border-stone-200">
+          <div class="max-w-3xl mb-12">
+            <h3 data-i18n="home.houses_title" class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 mb-4 tracking-tight">Three Esteemed Houses</h3>
+            <p data-i18n="home.houses_sub" class="text-stone-500 text-lg leading-relaxed"> Fostering inter-house sports meet rivalries, camaraderie, and house pride across athletics, academics, and cultural contests.
             </p>
           </div>
           
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div class="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden shadow-xs hover:shadow-md transition group border-t-4 border-t-[#581838] flex flex-col">
-              <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-3 group-hover:text-[#581838] transition-colors" data-i18n="home.house_ramya_name">Ramya House</h4>
-              <p data-i18n="home.house_ramya_desc" class="text-sm text-school-textMuted leading-relaxed"> Embodying foundational Buddhist discipline, academic devotion, and respect for college heritage during inter-house championships and sports meets.
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="border-t border-stone-200 pt-6 group">
+              <h4 class="text-2xl font-serif font-bold text-stone-900 mb-3" data-i18n="home.house_ramya_name">Ramya House</h4>
+              <p data-i18n="home.house_ramya_desc" class="text-sm text-stone-500 leading-relaxed"> Embodying foundational Buddhist discipline, academic devotion, and respect for college heritage during inter-house championships and sports meets.
               </p>
             </div>
             
-            <div class="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden shadow-xs hover:shadow-md transition group border-t-4 border-t-[#007A87] flex flex-col">
-              <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-3 group-hover:text-[#007A87] transition-colors" data-i18n="home.house_suramya_name">Suramya House</h4>
-              <p data-i18n="home.house_suramya_desc" class="text-sm text-school-textMuted leading-relaxed"> Fostering intellectual sharpness, ethical governance, and strategic team leadership in competitive co-curricular challenges and debates.
+            <div class="border-t border-stone-200 pt-6 group">
+              <h4 class="text-2xl font-serif font-bold text-stone-900 mb-3" data-i18n="home.house_suramya_name">Suramya House</h4>
+              <p data-i18n="home.house_suramya_desc" class="text-sm text-stone-500 leading-relaxed"> Fostering intellectual sharpness, ethical governance, and strategic team leadership in competitive co-curricular challenges and debates.
               </p>
             </div>
             
-            <div class="bg-white border border-slate-200 rounded-2xl p-6 relative overflow-hidden shadow-xs hover:shadow-md transition group border-t-4 border-t-[#F58220] flex flex-col">
-              <h4 class="text-2xl font-serif font-bold text-school-textPrimary mb-3 group-hover:text-[#F58220] transition-colors" data-i18n="home.house_subha_name">Subha House</h4>
-              <p data-i18n="home.house_subha_desc" class="text-sm text-school-textMuted leading-relaxed"> Channeling vibrant energy, track and field excellence, and tenacious athletic spirit into annual inter-house competitions and team triumphs.
+            <div class="border-t border-stone-200 pt-6 group">
+              <h4 class="text-2xl font-serif font-bold text-stone-900 mb-3" data-i18n="home.house_subha_name">Subha House</h4>
+              <p data-i18n="home.house_subha_desc" class="text-sm text-stone-500 leading-relaxed"> Channeling vibrant energy, track and field excellence, and tenacious athletic spirit into annual inter-house competitions and team triumphs.
               </p>
             </div>
           </div>
 
-          <div class="mt-10 border-t border-slate-100 pt-6">
+          <div class="mt-16 pt-12 border-t border-stone-200/50">
             <HouseCalculator />
           </div>
         </div>

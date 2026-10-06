@@ -85,6 +85,11 @@ export const translations: Record<string, Record<string, string>> = {
 
     // Admissions Page
     'admissions.title': 'Student Admissions & Enrolment',
+
+    // House Calculator
+    'house.calculator_title': 'Find Your Assigned House',
+    'house.calculator_desc': 'Enter your student index or admission number to verify your official house assignment.',
+    'house.calculator_button': 'Check House',
   },
   si: {
     // Navigation
@@ -172,5 +177,10 @@ export const translations: Record<string, Record<string, string>> = {
 
     // Admissions Page
     'admissions.title': 'ශිෂ්‍ය ඇතුළත් කිරීම් සහ ලියාපදිංචිය',
+
+    // House Calculator
+    'house.calculator_title': 'ඔබට අයත් නිවාසය සොයාගන්න',
+    'house.calculator_desc': 'ඔබට හිමි නිවාසය පරීක්ෂා කිරීම සඳහා ඔබගේ ඇතුළත් වීමේ අංකය සටහන් කරන්න.',
+    'house.calculator_button': 'නිවාසය පරීක්ෂා කරන්න',
   }
 };
