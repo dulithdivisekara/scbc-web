@@ -12,23 +12,23 @@ const galleryPage = (await getEntry('pages', 'student-life'))!.data;
 <BaseLayout title="Student Life">
   <Header />
   
-  <main class="flex-grow py-16 sm:py-24 bg-[#FCFCFC]">
+  <main class="flex-grow py-10 sm:py-24 bg-[#FCFCFC]">
     <div class="container mx-auto px-4 max-w-4xl">
-      <div class="text-center mb-12 sm:mb-16">
-        <h1 data-i18n="student_life.title" class="text-4xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight">Student Life & Co-Curricular Excellence</h1>
+      <div class="text-center mb-6 sm:mb-16">
+        <h1 data-i18n="student_life.title" class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight">Student Life & Co-Curricular Excellence</h1>
       </div>
       
       <!-- Article Lead / Pull Quote -->
-      <blockquote class="text-2xl sm:text-3xl font-serif italic text-stone-800 text-center max-w-3xl mx-auto my-12 leading-relaxed" data-en={studentLifeArticle.data.lead} data-si={studentLifeArticle.data.lead_si}>
+      <blockquote class="text-xl sm:text-3xl font-serif italic text-stone-800 text-center max-w-3xl mx-auto my-6 sm:my-12 leading-relaxed" data-en={studentLifeArticle.data.lead} data-si={studentLifeArticle.data.lead_si}>
         {studentLifeArticle.data.lead}
       </blockquote>
 
       <!-- Article Sections -->
-      <article class="prose prose-stone max-w-4xl mx-auto mb-20">
-        <div class="text-base sm:text-lg text-stone-700 leading-relaxed space-y-6 text-left">
+      <article class="prose prose-stone max-w-4xl mx-auto mb-10 sm:mb-20">
+        <div class="text-base sm:text-lg text-stone-700 leading-relaxed space-y-5 text-left">
           {studentLifeArticle.data.sections.map(section => (
-            <div class="mb-8">
-              <h2 class="text-2xl font-bold font-serif text-stone-900 border-b border-stone-200 pb-3 mt-10 mb-4" data-en={section.heading} data-si={section.heading_si}>
+            <div class="mb-6 sm:mb-8">
+              <h2 class="text-xl sm:text-2xl font-bold font-serif text-stone-900 border-b border-stone-200 pb-2 mt-6 sm:mt-10 mb-3" data-en={section.heading} data-si={section.heading_si}>
                 {section.heading}
               </h2>
               <p data-en={section.body} data-si={section.body_si}>
@@ -41,8 +41,8 @@ const galleryPage = (await getEntry('pages', 'student-life'))!.data;
 
       <!-- Photo Gallery -->
       {galleryPage.photos && galleryPage.photos.length > 0 && (
-        <section class="mb-20 pt-16 border-t border-stone-200" aria-labelledby="gallery-heading">
-          <h2 id="gallery-heading" class="text-3xl font-bold font-serif text-stone-900 mb-8" data-en={galleryPage.gallery_heading!.en} data-si={galleryPage.gallery_heading!.si}>{galleryPage.gallery_heading!.en}</h2>
+        <section class="mb-10 sm:mb-20 pt-10 sm:pt-16 border-t border-stone-200" aria-labelledby="gallery-heading">
+          <h2 id="gallery-heading" class="text-2xl sm:text-3xl font-bold font-serif text-stone-900 mb-6 sm:mb-8" data-en={galleryPage.gallery_heading!.en} data-si={galleryPage.gallery_heading!.si}>{galleryPage.gallery_heading!.en}</h2>
           <ul class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 list-none p-0 m-0">
             {galleryPage.photos.map((photo, index) => (
               <li class={`m-0 ${index % 5 === 0 ? 'md:col-span-2 md:row-span-2' : ''}`}>
@@ -68,7 +68,7 @@ const galleryPage = (await getEntry('pages', 'student-life'))!.data;
         </section>
       )}
 
-        <div class="mt-16 pt-12 border-t border-stone-200/50">
+        <div class="mt-10 sm:mt-16 pt-8 sm:pt-12 border-t border-stone-200/50">
           <HouseCalculator />
         </div>
 
