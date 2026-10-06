@@ -51,12 +51,13 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       <span id="menu-icon-close" class="hidden flex items-center justify-center"><X size={24} strokeWidth={1.75} /></span>
     </button>
   </div>
+</header>
 
-  <!-- Mobile Navigation Drawer (Full Screen Overlay) -->
-  <div 
-    id="mobile-drawer" 
-    class="hidden md:hidden fixed inset-0 z-50 bg-[#FCFCFC] flex flex-col justify-between transition-opacity duration-300 overflow-y-auto"
-  >
+<!-- Mobile Navigation Drawer (Full Screen Viewport Overlay - Sibling to Header) -->
+<div 
+  id="mobile-drawer" 
+  class="hidden md:hidden fixed inset-0 z-[100] bg-[#FCFCFC] flex flex-col justify-between transition-opacity duration-300 overflow-y-auto"
+>
     <!-- Drawer Top Header Bar -->
     <div class="px-4 py-3 flex justify-between items-center border-b border-stone-200/60 bg-[#FCFCFC] sticky top-0 z-10 shrink-0">
       <a href="/" class="flex items-center gap-3">
@@ -123,7 +124,6 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       </button>
     </div>
   </div>
-</header>
 
 <script is:inline define:vars={{ translations }}>
   function setupTranslation() {
