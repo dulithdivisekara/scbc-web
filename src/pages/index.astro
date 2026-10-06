@@ -60,15 +60,15 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
           <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
             <a 
               href="/about" 
-              class="w-full sm:w-auto justify-center bg-school-orange text-white hover:opacity-95 font-medium px-6 py-3.5 rounded-full inline-flex items-center gap-2 transition hover:-translate-y-0.5 text-center"
+              class="w-full sm:w-auto justify-center bg-white text-stone-900 hover:bg-stone-100 font-medium px-7 py-3.5 rounded-full inline-flex items-center gap-2 transition hover:-translate-y-0.5 text-center text-sm shadow-md"
             >
               <span data-i18n="home.btn_about">Discover Our History</span>
-              <ArrowRight size={18} />
+              <ArrowRight size={16} />
             </a>
 
             <a 
               href="/admissions" 
-              class="w-full sm:w-auto justify-center border border-white/40 text-white hover:bg-white/10 backdrop-blur-sm px-6 py-3.5 rounded-full font-medium transition inline-flex items-center hover:-translate-y-0.5 text-center"
+              class="w-full sm:w-auto justify-center border border-white/40 text-white hover:bg-white/10 backdrop-blur-md px-7 py-3.5 rounded-full font-medium transition inline-flex items-center gap-2 hover:-translate-y-0.5 text-center text-sm"
             >
               <span data-i18n="home.btn_admissions">Admissions Info</span>
             </a>
@@ -78,18 +78,18 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
 
     </section>
 
-    <section class="reveal-up py-16 sm:py-24">
+    <section class="reveal-up py-10 sm:py-20">
       <div class="container mx-auto px-4 max-w-6xl">
-        <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+        <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-12">
           <div class="max-w-2xl">
-            <h2 data-i18n="home.announcements_title" class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight mb-4">Latest Circulars & Announcements</h2>
+            <h2 data-i18n="home.announcements_title" class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight mb-2 sm:mb-4">Latest Circulars & Announcements</h2>
           </div>
           <a href="/admissions" class="text-stone-900 hover:text-stone-500 font-medium text-sm inline-flex items-center gap-2 transition-colors border-b border-stone-900 pb-0.5 mb-2">
             <span data-i18n="home.view_circulars">View all circulars</span> <ArrowRight size={16} />
           </a>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {latestAnnouncements.map((notice) => (
             <div class="group block cursor-pointer">
                 <div class="pt-6 border-t border-stone-200 group-hover:border-stone-900 transition-colors duration-300">
@@ -133,16 +133,16 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
       </div>
     </section>
 
-    <section class="reveal-up py-16 sm:py-24 border-t border-stone-200">
+    <section class="reveal-up py-10 sm:py-20 border-t border-stone-200">
       <div class="container mx-auto px-4 max-w-6xl">
-        <div class="mb-14 sm:mb-20 max-w-2xl">
-          <h2 data-i18n="home.leadership_title" class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight mb-4">Our Leadership</h2>
+        <div class="mb-8 sm:mb-14 max-w-2xl">
+          <h2 data-i18n="home.leadership_title" class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight mb-3 sm:mb-4">Our Leadership</h2>
         </div>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 sm:gap-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16">
           {sortedLeadership.map(leader => (
             <div class="group flex flex-col">
-              <div class="overflow-hidden rounded-3xl mb-8">
+              <div class="overflow-hidden rounded-3xl mb-5 sm:mb-8">
                 <img 
                   src={getLeaderImage(leader.data.image, leader.data.fallbackImage)} 
                   alt={leader.data.name} 
@@ -157,7 +157,7 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
                 <p class="text-[11px] font-bold uppercase tracking-wider text-stone-500 mb-2">
                   {leader.data.title}
                 </p>
-                <h3 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 leading-snug mb-4">
+                <h3 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 leading-snug mb-3">
                   {leader.data.name}
                 </h3>
                 <p class="text-stone-500 text-sm leading-relaxed max-w-md">
@@ -170,18 +170,18 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
       </div>
     </section>
 
-    <section class="reveal-up py-16 sm:py-24 bg-stone-100/50">
+    <section class="reveal-up py-10 sm:py-20 bg-stone-100/50">
       <div class="container mx-auto px-4 max-w-6xl">
-        <div class="mb-14 sm:mb-20 max-w-2xl">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500 mb-3 inline-block" data-en="STUDENT LIFE" data-si="ශිෂ්‍ය ජීවිතය">Student Life</span>
-          <h2 data-i18n="home.holistic_title" class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight mb-6">Holistic Development</h2>
-          <p data-i18n="home.holistic_sub" class="text-stone-600 text-lg sm:text-xl font-light leading-relaxed"> Fostering holistic growth through traditional Buddhist culture, vibrant performing arts, and spirited athletics.
+        <div class="mb-8 sm:mb-14 max-w-2xl">
+          <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500 mb-2 inline-block" data-en="STUDENT LIFE" data-si="ශිෂ්‍ය ජීවිතය">Student Life</span>
+          <h2 data-i18n="home.holistic_title" class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight mb-4">Holistic Development</h2>
+          <p data-i18n="home.holistic_sub" class="text-stone-600 text-base sm:text-xl font-light leading-relaxed"> Fostering holistic growth through traditional Buddhist culture, vibrant performing arts, and spirited athletics.
           </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-16 sm:mb-24">
+        <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-10 sm:mb-20">
           <div class="md:col-span-7 group cursor-pointer">
-            <div class="aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-3xl bg-stone-200 mb-6">
+            <div class="aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-3xl bg-stone-200 mb-5">
               <img 
                 src="/assets/activities/activities-kandyan-dance-group.jpg" 
                 alt="Traditional Kandyan Ves Dance and Cultural Celebrations at SCBC" 
@@ -191,8 +191,8 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
               />
             </div>
             <div>
-              <h3 data-i18n="home.card_culture_title" class="text-2xl sm:text-3xl font-bold font-serif text-stone-900 mb-3 group-hover:opacity-70 transition-opacity">Traditional Performing Arts &amp; Dance</h3>
-              <p data-i18n="home.card_culture_desc" class="text-stone-500 text-base leading-relaxed mb-5 max-w-lg"> Students actively engage in traditional Kandyan Ves dance, pirith chanting ceremonies, and Vesak pageants, preserving age-old cultural wisdom and discipline.
+              <h3 data-i18n="home.card_culture_title" class="text-2xl sm:text-3xl font-bold font-serif text-stone-900 mb-2 group-hover:opacity-70 transition-opacity">Traditional Performing Arts &amp; Dance</h3>
+              <p data-i18n="home.card_culture_desc" class="text-stone-500 text-sm sm:text-base leading-relaxed mb-4 max-w-lg"> Students actively engage in traditional Kandyan Ves dance, pirith chanting ceremonies, and Vesak pageants, preserving age-old cultural wisdom and discipline.
               </p>
               <a href="/student-life" class="text-stone-900 font-medium text-sm inline-flex items-center gap-2 border-b border-stone-900 pb-0.5">
                 <span data-i18n="home.card_culture_link">Explore school culture</span> <ArrowRight size={16} />
@@ -200,8 +200,8 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
             </div>
           </div>
 
-          <div class="md:col-span-5 md:pt-24 group cursor-pointer">
-            <div class="aspect-[4/5] overflow-hidden rounded-3xl bg-stone-200 mb-6">
+          <div class="md:col-span-5 group cursor-pointer">
+            <div class="aspect-[4/5] overflow-hidden rounded-3xl bg-stone-200 mb-5">
               <img 
                 src="/assets/activities/activities-sports-meet-band.jpg" 
                 alt="Annual Inter-House Sports Meet at Sri Chandananda Buddhist College" 
@@ -211,8 +211,8 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
               />
             </div>
             <div>
-              <h3 data-i18n="home.card_sports_title" class="text-2xl font-bold font-serif text-stone-900 mb-3 group-hover:opacity-70 transition-opacity">Inter-House Sports Meet</h3>
-              <p data-i18n="home.card_sports_desc" class="text-stone-500 text-sm leading-relaxed mb-5"> An energetic annual tradition celebrating physical endurance, teamwork, and healthy competition across track and field events.
+              <h3 data-i18n="home.card_sports_title" class="text-2xl font-bold font-serif text-stone-900 mb-2 group-hover:opacity-70 transition-opacity">Inter-House Sports Meet</h3>
+              <p data-i18n="home.card_sports_desc" class="text-stone-500 text-sm leading-relaxed mb-4"> An energetic annual tradition celebrating physical endurance, teamwork, and healthy competition across track and field events.
               </p>
               <a href="/student-life" class="text-stone-900 font-medium text-sm inline-flex items-center gap-2 border-b border-stone-900 pb-0.5">
                 <span data-i18n="home.card_sports_link">View sports &amp; activities</span> <ArrowRight size={16} />
