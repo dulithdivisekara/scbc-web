@@ -4,17 +4,17 @@ import { translations } from '../../i18n/translations';
 const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
 
-<header class="bg-[#FCFCFC]/80 backdrop-blur-xl border-b border-stone-200/50 sticky top-0 z-50 w-full transition-all duration-300" id="site-header">
-  <div class="container mx-auto px-4 py-3 flex justify-between items-center">
-    <a href="/" class="flex items-center gap-3 group">
+<header class="bg-[#FCFCFC]/90 backdrop-blur-xl border-b border-stone-200/60 sticky top-0 z-50 w-full transition-all duration-300" id="site-header">
+  <div class="container mx-auto px-4 py-2.5 sm:py-3 flex justify-between items-center gap-3">
+    <a href="/" class="flex items-center gap-2.5 sm:gap-3 group shrink min-w-0">
       <img 
         src="/assets/branding/school-crest-official.png" 
         alt="Sri Chandananda Buddhist College Crest" 
-        class="h-12 sm:h-14 w-auto object-contain my-auto shrink-0" 
+        class="h-10 sm:h-12 w-auto object-contain my-auto shrink-0" 
       />
-      <div class="flex flex-col justify-center">
-        <span class="block text-lg sm:text-xl md:text-2xl font-serif font-bold leading-tight tracking-tight text-school-textPrimary group-hover:text-school-maroon transition-colors">Sri Chandananda</span>
-        <span class="block text-[11px] sm:text-xs md:text-sm text-school-maroon font-semibold tracking-wider uppercase">Buddhist College, Kandy</span>
+      <div class="flex flex-col justify-center min-w-0">
+        <span class="block text-base sm:text-lg md:text-2xl font-serif font-bold leading-tight tracking-tight text-stone-900 group-hover:text-school-maroon transition-colors truncate">Sri Chandananda</span>
+        <span class="block text-[10px] sm:text-xs md:text-sm text-school-maroon font-semibold tracking-wider uppercase truncate">Buddhist College, Kandy</span>
       </div>
     </a>
     
@@ -39,16 +39,16 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       </a>
     </div>
 
-    <!-- Accessible Mobile Hamburger Toggle Button -->
+    <!-- High-Contrast Mobile Hamburger Toggle Button -->
     <button 
       id="mobile-menu-btn"
-      class="md:hidden text-school-textPrimary hover:text-school-maroon p-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-school-orange transition-colors" 
+      class="md:hidden flex items-center justify-center p-2.5 rounded-xl border border-stone-300/80 bg-stone-100/80 hover:bg-stone-200/80 text-stone-900 shrink-0 transition-all cursor-pointer shadow-xs active:scale-95" 
       aria-label="Toggle Navigation"
       aria-expanded="false"
       aria-controls="mobile-drawer"
     >
-      <span id="menu-icon-open"><Menu size={24} /></span>
-      <span id="menu-icon-close" class="hidden"><X size={24} /></span>
+      <span id="menu-icon-open" class="flex items-center justify-center"><Menu size={22} strokeWidth={2.2} /></span>
+      <span id="menu-icon-close" class="hidden flex items-center justify-center"><X size={22} strokeWidth={2.2} /></span>
     </button>
   </div>
 
