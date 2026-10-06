@@ -5,7 +5,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
 ---
 
 <header class="bg-[#FCFCFC]/90 backdrop-blur-xl border-b border-stone-200/60 sticky top-0 z-50 w-full transition-all duration-300" id="site-header">
-  <div class="container mx-auto px-4 py-2.5 sm:py-3 flex justify-between items-center gap-3">
+  <div class="container mx-auto px-4 py-2.5 sm:py-3 flex justify-between items-center gap-3 relative z-20">
     <a href="/" class="flex items-center gap-2.5 sm:gap-3 group shrink min-w-0">
       <img 
         src="/assets/branding/school-crest-official.png" 
@@ -42,88 +42,67 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     <!-- Minimalist Mobile Hamburger Toggle Button (Hedvig Theme) -->
     <button 
       id="mobile-menu-btn"
-      class="md:hidden flex items-center justify-center p-2 text-stone-900 hover:text-stone-600 hover:bg-stone-100/60 rounded-full transition-colors cursor-pointer shrink-0" 
+      class="md:hidden flex items-center justify-center p-2 text-stone-900 hover:text-stone-600 hover:bg-stone-100/60 rounded-full transition-colors cursor-pointer shrink-0 z-30" 
       aria-label="Toggle Navigation"
       aria-expanded="false"
       aria-controls="mobile-drawer"
     >
-      <span id="menu-icon-open" class="flex items-center justify-center"><Menu size={24} strokeWidth={1.75} /></span>
-      <span id="menu-icon-close" class="hidden flex items-center justify-center"><X size={24} strokeWidth={1.75} /></span>
+      <span id="menu-icon-open" class="flex items-center justify-center transition-transform duration-300"><Menu size={24} strokeWidth={1.75} /></span>
+      <span id="menu-icon-close" class="hidden flex items-center justify-center transition-transform duration-300"><X size={24} strokeWidth={1.75} /></span>
     </button>
   </div>
-</header>
 
-<!-- Mobile Navigation Drawer (Full Screen Viewport Overlay - Sibling to Header) -->
-<div 
-  id="mobile-drawer" 
-  class="hidden md:hidden fixed inset-0 z-[100] bg-[#FCFCFC] flex flex-col justify-between transition-opacity duration-300 overflow-y-auto"
->
-    <!-- Drawer Top Header Bar -->
-    <div class="px-4 py-3 flex justify-between items-center border-b border-stone-200/60 bg-[#FCFCFC] sticky top-0 z-10 shrink-0">
-      <a href="/" class="flex items-center gap-3">
-        <img 
-          src="/assets/branding/school-crest-official.png" 
-          alt="Sri Chandananda Buddhist College Crest" 
-          class="h-10 sm:h-12 w-auto object-contain shrink-0" 
-        />
-        <div class="flex flex-col justify-center">
-          <span class="block text-base font-serif font-bold leading-tight text-stone-900">Sri Chandananda</span>
-          <span class="block text-[10px] text-school-maroon font-semibold tracking-wider uppercase">Buddhist College, Kandy</span>
-        </div>
-      </a>
-      
-      <button 
-        id="mobile-drawer-close-btn"
-        class="text-stone-900 p-2 rounded-full hover:bg-stone-100 focus:outline-none transition-colors cursor-pointer"
-        aria-label="Close Navigation"
-      >
-        <X size={24} strokeWidth={1.75} />
-      </button>
-    </div>
+  <!-- Mobile Dropdown Menu Overlay (Positioned Directly Below Sticky Header - Hedvig Theme) -->
+  <div 
+    id="mobile-drawer" 
+    class="md:hidden absolute top-full left-0 right-0 z-10 bg-[#FCFCFC]/95 backdrop-blur-2xl border-b border-stone-200/60 shadow-xl opacity-0 -translate-y-2 pointer-events-none transition-all duration-300 ease-out flex flex-col justify-between max-h-[85vh] overflow-y-auto"
+  >
+    <div class="container mx-auto px-6 py-6 flex flex-col gap-6">
+      <!-- Drawer Navigation Links -->
+      <nav class="flex flex-col space-y-1" id="mobile-nav-links">
+        <a href="/" class={`text-xl font-serif tracking-tight transition-colors py-3 flex items-center justify-between border-b border-stone-100 ${currentPath === '/' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
+          <span data-i18n="nav.home">Home</span>
+          {currentPath === '/' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
+        </a>
+        <a href="/about" class={`text-xl font-serif tracking-tight transition-colors py-3 flex items-center justify-between border-b border-stone-100 ${currentPath === '/about' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
+          <span data-i18n="nav.about">About Us</span>
+          {currentPath === '/about' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
+        </a>
+        <a href="/academics" class={`text-xl font-serif tracking-tight transition-colors py-3 flex items-center justify-between border-b border-stone-100 ${currentPath === '/academics' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
+          <span data-i18n="nav.academics">Academics</span>
+          {currentPath === '/academics' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
+        </a>
+        <a href="/student-life" class={`text-xl font-serif tracking-tight transition-colors py-3 flex items-center justify-between border-b border-stone-100 ${currentPath === '/student-life' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
+          <span data-i18n="nav.student_life">Student Life</span>
+          {currentPath === '/student-life' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
+        </a>
+        <a href="/admissions" class={`text-xl font-serif tracking-tight transition-colors py-3 flex items-center justify-between border-b border-stone-100 ${currentPath === '/admissions' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
+          <span data-i18n="nav.admissions">Admissions</span>
+          {currentPath === '/admissions' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
+        </a>
+        <a href="/contact" class={`text-xl font-serif tracking-tight transition-colors py-3 flex items-center justify-between border-b border-stone-100 ${currentPath === '/contact' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
+          <span data-i18n="nav.contact">Contact</span>
+          {currentPath === '/contact' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
+        </a>
+      </nav>
 
-    <!-- Drawer Navigation Links -->
-    <nav class="px-6 py-4 flex flex-col space-y-1 my-auto shrink-0" id="mobile-nav-links">
-      <a href="/" class={`text-xl font-serif tracking-tight transition-colors py-2.5 flex items-center justify-between border-b border-stone-100 ${currentPath === '/' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
-        <span data-i18n="nav.home">Home</span>
-        {currentPath === '/' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
-      </a>
-      <a href="/about" class={`text-xl font-serif tracking-tight transition-colors py-2.5 flex items-center justify-between border-b border-stone-100 ${currentPath === '/about' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
-        <span data-i18n="nav.about">About Us</span>
-        {currentPath === '/about' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
-      </a>
-      <a href="/academics" class={`text-xl font-serif tracking-tight transition-colors py-2.5 flex items-center justify-between border-b border-stone-100 ${currentPath === '/academics' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
-        <span data-i18n="nav.academics">Academics</span>
-        {currentPath === '/academics' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
-      </a>
-      <a href="/student-life" class={`text-xl font-serif tracking-tight transition-colors py-2.5 flex items-center justify-between border-b border-stone-100 ${currentPath === '/student-life' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
-        <span data-i18n="nav.student_life">Student Life</span>
-        {currentPath === '/student-life' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
-      </a>
-      <a href="/admissions" class={`text-xl font-serif tracking-tight transition-colors py-2.5 flex items-center justify-between border-b border-stone-100 ${currentPath === '/admissions' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
-        <span data-i18n="nav.admissions">Admissions</span>
-        {currentPath === '/admissions' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
-      </a>
-      <a href="/contact" class={`text-xl font-serif tracking-tight transition-colors py-2.5 flex items-center justify-between border-b border-stone-100 ${currentPath === '/contact' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
-        <span data-i18n="nav.contact">Contact</span>
-        {currentPath === '/contact' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
-      </a>
-    </nav>
-
-    <!-- Drawer Footer Actions -->
-    <div class="px-6 pb-6 pt-3 flex flex-col gap-4 border-t border-stone-100 shrink-0">
-      <a 
-        href="tel:+94812203162" 
-        class="text-stone-900 text-sm font-medium inline-flex items-center gap-2.5"
-      >
-        <Phone size={16} class="text-stone-500" />
-        <span>+94 81 220 3162</span>
-      </a>
-      
-      <button id="lang-toggle-mobile" aria-label="Switch Language" class="lang-toggle self-start flex items-center justify-center min-w-[72px] text-xs font-semibold px-3.5 py-1.5 rounded-full border border-stone-200 hover:bg-stone-50 transition-all text-stone-900">
-        <span class="text-stone-900 font-bold text-xs">EN</span> <span class="text-stone-300 font-normal mx-1.5">|</span> <span data-lang-btn="si" class="text-stone-400 font-normal text-xs">සිං</span>
-      </button>
+      <!-- Drawer Footer Actions -->
+      <div class="pt-2 flex flex-col gap-4">
+        <a 
+          href="tel:+94812203162" 
+          class="text-stone-900 text-sm font-medium inline-flex items-center gap-2.5"
+        >
+          <Phone size={16} class="text-stone-500" />
+          <span>+94 81 220 3162</span>
+        </a>
+        
+        <button id="lang-toggle-mobile" aria-label="Switch Language" class="lang-toggle self-start flex items-center justify-center min-w-[72px] text-xs font-semibold px-3.5 py-1.5 rounded-full border border-stone-200 hover:bg-stone-50 transition-all text-stone-900">
+          <span class="text-stone-900 font-bold text-xs">EN</span> <span class="text-stone-300 font-normal mx-1.5">|</span> <span data-lang-btn="si" class="text-stone-400 font-normal text-xs">සිං</span>
+        </button>
+      </div>
     </div>
   </div>
+</header>
 
 <script is:inline define:vars={{ translations }}>
   function setupTranslation() {
@@ -195,26 +174,25 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
   function initMobileMenu() {
     const btn = document.getElementById('mobile-menu-btn');
     const drawer = document.getElementById('mobile-drawer');
-    const closeBtn = document.getElementById('mobile-drawer-close-btn');
     const openIcon = document.getElementById('menu-icon-open');
     const closeIcon = document.getElementById('menu-icon-close');
 
     if (!btn || !drawer) return;
 
     function toggleMenu(isOpen) {
-      const willOpen = isOpen !== undefined ? isOpen : drawer.classList.contains('hidden');
+      const willOpen = isOpen !== undefined ? isOpen : drawer.classList.contains('pointer-events-none');
       if (willOpen) {
-        drawer.classList.remove('hidden');
+        drawer.classList.remove('opacity-0', '-translate-y-2', 'pointer-events-none');
+        drawer.classList.add('opacity-100', 'translate-y-0', 'pointer-events-auto');
         if (openIcon) openIcon.classList.add('hidden');
         if (closeIcon) closeIcon.classList.remove('hidden');
         btn.setAttribute('aria-expanded', 'true');
-        document.body.style.overflow = 'hidden';
       } else {
-        drawer.classList.add('hidden');
+        drawer.classList.remove('opacity-100', 'translate-y-0', 'pointer-events-auto');
+        drawer.classList.add('opacity-0', '-translate-y-2', 'pointer-events-none');
         if (openIcon) openIcon.classList.remove('hidden');
         if (closeIcon) closeIcon.classList.add('hidden');
         btn.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
       }
     }
 
@@ -224,13 +202,20 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       toggleMenu();
     };
 
-    if (closeBtn) {
-      closeBtn.onclick = function(e) {
-        e.preventDefault();
-        e.stopPropagation();
+    // Close when clicking outside header
+    document.addEventListener('click', function(e) {
+      const header = document.getElementById('site-header');
+      if (header && !header.contains(e.target)) {
         toggleMenu(false);
-      };
-    }
+      }
+    });
+
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape') {
+        toggleMenu(false);
+      }
+    });
   }
 
   if (document.readyState === 'loading') {
