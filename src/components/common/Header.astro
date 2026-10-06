@@ -52,62 +52,51 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     </button>
   </div>
 
-  <!-- Mobile Navigation Drawer -->
+  <!-- Mobile Navigation Drawer (Full Screen Overlay) -->
   <div 
     id="mobile-drawer" 
-    class="hidden md:hidden border-t border-school-border bg-white shadow-xl transition-all duration-300 ease-in-out px-4 py-5"
+    class="hidden md:hidden fixed inset-0 z-40 bg-[#FCFCFC] pt-24 px-6 pb-8 flex flex-col justify-between transition-opacity duration-300 overflow-y-auto"
   >
-    <div class="mb-4 pb-3 border-b border-slate-100 flex items-center justify-between">
-      <div>
-        <p class="font-serif text-sm font-bold text-school-textPrimary">ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය</p>
-        <p class="text-xs text-school-textMuted">Sri Chandananda Buddhist College</p>
-      </div>
-      <div class="flex h-2 w-8 rounded-sm overflow-hidden shrink-0">
-        <div class="flex-1 bg-school-teal"></div>
-        <div class="flex-1 bg-school-orange"></div>
-        <div class="flex-1 bg-school-maroon"></div>
-      </div>
-    </div>
-
-    <nav class="flex flex-col space-y-1 font-medium text-base mb-5" id="mobile-nav-links">
-      <a href="/" class={`px-3 py-2.5 rounded-lg transition-colors flex items-center justify-between ${currentPath === '/' ? 'bg-orange-50/60 text-school-orange font-bold border-l-4 border-school-orange' : 'text-school-textPrimary hover:bg-slate-50'}`}>
+    <nav class="flex flex-col space-y-4 mt-2" id="mobile-nav-links">
+      <a href="/" class={`text-2xl font-serif tracking-tight transition-colors py-3 flex items-center justify-between border-b border-stone-100 ${currentPath === '/' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
         <span data-i18n="nav.home">Home</span>
-        <ArrowRight size={16} class="text-slate-400" />
+        {currentPath === '/' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
       </a>
-      <a href="/about" class={`px-3 py-2.5 rounded-lg transition-colors flex items-center justify-between ${currentPath === '/about' ? 'bg-orange-50/60 text-school-orange font-bold border-l-4 border-school-orange' : 'text-school-textPrimary hover:bg-slate-50'}`}>
+      <a href="/about" class={`text-2xl font-serif tracking-tight transition-colors py-3 flex items-center justify-between border-b border-stone-100 ${currentPath === '/about' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
         <span data-i18n="nav.about">About Us</span>
-        <ArrowRight size={16} class="text-slate-400" />
+        {currentPath === '/about' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
       </a>
-      <a href="/academics" class={`px-3 py-2.5 rounded-lg transition-colors flex items-center justify-between ${currentPath === '/academics' ? 'bg-orange-50/60 text-school-orange font-bold border-l-4 border-school-orange' : 'text-school-textPrimary hover:bg-slate-50'}`}>
+      <a href="/academics" class={`text-2xl font-serif tracking-tight transition-colors py-3 flex items-center justify-between border-b border-stone-100 ${currentPath === '/academics' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
         <span data-i18n="nav.academics">Academics</span>
-        <ArrowRight size={16} class="text-slate-400" />
+        {currentPath === '/academics' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
       </a>
-      <a href="/student-life" class={`px-3 py-2.5 rounded-lg transition-colors flex items-center justify-between ${currentPath === '/student-life' ? 'bg-orange-50/60 text-school-orange font-bold border-l-4 border-school-orange' : 'text-school-textPrimary hover:bg-slate-50'}`}>
+      <a href="/student-life" class={`text-2xl font-serif tracking-tight transition-colors py-3 flex items-center justify-between border-b border-stone-100 ${currentPath === '/student-life' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
         <span data-i18n="nav.student_life">Student Life</span>
-        <ArrowRight size={16} class="text-slate-400" />
+        {currentPath === '/student-life' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
       </a>
-      <a href="/admissions" class={`px-3 py-2.5 rounded-lg transition-colors flex items-center justify-between ${currentPath === '/admissions' ? 'bg-orange-50/60 text-school-orange font-bold border-l-4 border-school-orange' : 'text-school-textPrimary hover:bg-slate-50'}`}>
+      <a href="/admissions" class={`text-2xl font-serif tracking-tight transition-colors py-3 flex items-center justify-between border-b border-stone-100 ${currentPath === '/admissions' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
         <span data-i18n="nav.admissions">Admissions</span>
-        <ArrowRight size={16} class="text-slate-400" />
+        {currentPath === '/admissions' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
       </a>
-      <a href="/contact" class={`px-3 py-2.5 rounded-lg transition-colors flex items-center justify-between ${currentPath === '/contact' ? 'bg-orange-50/60 text-school-orange font-bold border-l-4 border-school-orange' : 'text-school-textPrimary hover:bg-slate-50'}`}>
+      <a href="/contact" class={`text-2xl font-serif tracking-tight transition-colors py-3 flex items-center justify-between border-b border-stone-100 ${currentPath === '/contact' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
         <span data-i18n="nav.contact">Contact</span>
-        <ArrowRight size={16} class="text-slate-400" />
+        {currentPath === '/contact' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
       </a>
     </nav>
 
-    <!-- Mobile Buttons -->
-    <div class="flex gap-2 w-full">
-      <button id="lang-toggle-mobile" aria-label="Switch Language" class="lang-toggle w-1/3 py-3 rounded-lg bg-slate-100 hover:bg-slate-200 transition font-bold text-sm text-school-textPrimary shadow-xs text-center flex items-center justify-center border border-slate-200/80">
-        <span class="text-school-maroon font-bold text-xs">EN</span> <span class="text-slate-300 font-normal mx-1">|</span> <span data-lang-btn="si" class="text-slate-500 font-normal text-xs">සිං</span>
-      </button>
+    <!-- Mobile Buttons & Contact -->
+    <div class="mt-8 flex flex-col gap-5">
       <a 
         href="tel:+94812203162" 
-        class="flex-grow py-3 rounded-lg border border-school-teal text-school-teal hover:bg-school-teal hover:text-white transition font-semibold text-sm flex items-center justify-center gap-2 shadow-xs"
+        class="text-stone-900 text-base font-medium inline-flex items-center gap-3 border-b border-stone-200 pb-4"
       >
-        <Phone size={16} />
-        <span>Call Office: +94 81 220 3162</span>
+        <Phone size={18} class="text-stone-400" />
+        <span>+94 81 220 3162</span>
       </a>
+      
+      <button id="lang-toggle-mobile" aria-label="Switch Language" class="lang-toggle self-start flex items-center justify-center min-w-[72px] text-xs font-semibold px-4 py-2 rounded-full border border-stone-200 hover:bg-stone-50 transition-all text-stone-900">
+        <span class="text-stone-900 font-bold text-xs">EN</span> <span class="text-stone-300 font-normal mx-2">|</span> <span data-lang-btn="si" class="text-stone-400 font-normal text-xs">සිං</span>
+      </button>
     </div>
   </div>
 </header>
@@ -195,11 +184,13 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
         openIcon.classList.add('hidden');
         closeIcon.classList.remove('hidden');
         btn.setAttribute('aria-expanded', 'true');
+        document.body.style.overflow = 'hidden';
       } else {
         drawer.classList.add('hidden');
         openIcon.classList.remove('hidden');
         closeIcon.classList.add('hidden');
         btn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
       }
     }
 

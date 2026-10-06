@@ -21,9 +21,8 @@ const { intro, procedure_heading, steps, download } = page;
       
       <!-- Procedure -->
       <div class="mb-16 sm:mb-20">
-        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 mb-8 flex items-center gap-3 tracking-tight">
-          <ClipboardCheck size={28} strokeWidth={1.5} class="text-stone-900 shrink-0" />
-          <span data-en={procedure_heading!.en} data-si={procedure_heading!.si}>{procedure_heading!.en}</span>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 mb-8 tracking-tight" data-en={procedure_heading!.en} data-si={procedure_heading!.si}>
+          {procedure_heading!.en}
         </h2>
         
         <ol class="space-y-8 relative border-l-2 border-stone-200 ml-3 md:ml-4">
