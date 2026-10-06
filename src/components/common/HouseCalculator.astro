@@ -4,8 +4,8 @@ import { Trophy, Shield, Flame, Search, Sparkles } from 'lucide-react';
 
 <section class="bg-stone-50 rounded-3xl border border-stone-200/60 p-8 sm:p-10 max-w-2xl mx-auto my-12 house-calculator-root break-inside-avoid">
   <header class="text-center mb-8">
-    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 tracking-tight">Find Your Assigned House</h3>
-    <p class="text-stone-500 text-sm sm:text-base max-w-md mx-auto mt-2 leading-relaxed">
+    <h3 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 tracking-tight" data-i18n="house.calculator_title">Find Your Assigned House</h3>
+    <p class="text-stone-500 text-sm sm:text-base max-w-md mx-auto mt-2 leading-relaxed" data-i18n="house.calculator_desc">
       Enter your student index or admission number to verify your official house assignment.
     </p>
   </header>
@@ -20,6 +20,8 @@ import { Trophy, Shield, Flame, Search, Sparkles } from 'lucide-react';
         name="admissionNumber" 
         min="1" 
         placeholder="Enter Admission No. (e.g. 2474)" 
+        data-placeholder-en="Enter Admission No. (e.g. 2474)"
+        data-placeholder-si="ඇතුළත් කිරීමේ අංකය (උදා: 2474)"
         required
         class="admission-input w-full pl-10 pr-4 py-3.5 rounded-xl border border-stone-200 bg-white focus:outline-none focus:border-stone-900 focus:ring-1 focus:ring-stone-900 text-stone-900 text-sm font-medium transition-colors" 
       />
@@ -28,7 +30,7 @@ import { Trophy, Shield, Flame, Search, Sparkles } from 'lucide-react';
       type="submit" 
       class="w-full sm:w-auto shrink-0 bg-stone-900 hover:bg-stone-800 text-white font-medium px-6 py-3.5 rounded-xl transition-colors text-sm cursor-pointer flex items-center justify-center gap-2"
     >
-      Check House
+      <span data-i18n="house.calculator_button">Check House</span>
     </button>
   </form>
 
@@ -40,16 +42,25 @@ import { Trophy, Shield, Flame, Search, Sparkles } from 'lucide-react';
   (function() {
     const houseData = {
       1: {
-        name: 'Ramya House',
-        description: 'Guided by foundational Buddhist discipline, academic devotion, and respect for college heritage.'
+        name: { en: 'Ramya House', si: 'රම්‍ය නිවාසය' },
+        description: {
+          en: 'Guided by foundational Buddhist discipline, academic devotion, and respect for college heritage.',
+          si: 'මූලික බෞද්ධ විනය, අධ්‍යාපනික කැපවීම සහ විද්‍යාලයීය උරුමයට ගරු කිරීම මූර්තිමත් කරයි.'
+        }
       },
       2: {
-        name: 'Suramya House',
-        description: 'Cultivating intellectual sharpness, ethical leadership, and harmonious team spirit in all co-curricular pursuits.'
+        name: { en: 'Suramya House', si: 'සුරම්‍ය නිවාසය' },
+        description: {
+          en: 'Cultivating intellectual sharpness, ethical leadership, and harmonious team spirit in all co-curricular pursuits.',
+          si: 'තරගකාරී විෂය සමගාමී අභියෝගවලදී බුද්ධිමය තියුණුබව, ආචාරශීලී පාලනය සහ උපායශීලී කණ්ඩායම් නායකත්වය වර්ධනය කරයි.'
+        }
       },
       0: {
-        name: 'Subha House',
-        description: 'Radiating vibrant athletic energy, perseverance, and tenacious competitive drive at the annual sports meet.'
+        name: { en: 'Subha House', si: 'සුභ නිවාසය' },
+        description: {
+          en: 'Radiating vibrant athletic energy, perseverance, and tenacious competitive drive at the annual sports meet.',
+          si: 'ප්‍රාණවත් ශක්තිය, මලල ක්‍රීඩා විශිෂ්ටත්වය සහ අවිහිංසක ක්‍රීඩා ආත්මය වාර්ෂික අන්තර් නිවාස තරග සහ කණ්ඩායම් ජයග්‍රහණ කරා යොමු කරයි.'
+        }
       }
     };
 
@@ -71,9 +82,11 @@ import { Trophy, Shield, Flame, Search, Sparkles } from 'lucide-react';
           errorBox.classList.add('hidden');
           errorBox.textContent = '';
 
+          const isSi = document.documentElement.lang === 'si';
+
           const val = parseInt(input.value, 10);
           if (isNaN(val) || val <= 0) {
-            errorBox.textContent = 'Please enter a valid positive admission number.';
+            errorBox.textContent = isSi ? 'කරුණාකර නිවැරදි ඇතුළත් කිරීමේ අංකයක් සටහන් කරන්න.' : 'Please enter a valid positive admission number.';
             errorBox.classList.remove('hidden');
             resultBox.classList.add('hidden');
             return;
@@ -82,12 +95,16 @@ import { Trophy, Shield, Flame, Search, Sparkles } from 'lucide-react';
           const remainder = val % 3;
           const house = houseData[remainder];
 
+          const houseName = isSi ? house.name.si : house.name.en;
+          const houseDesc = isSi ? house.description.si : house.description.en;
+          const numLabel = isSi ? 'ඇතුළත් කිරීමේ අංකය' : 'Admission No.';
+
           resultBox.innerHTML = `
             <div class="rounded-2xl border border-stone-200 bg-white p-6 text-center">
-              <p class="text-[11px] text-stone-400 font-bold uppercase tracking-wider mb-2">Admission No. #${val}</p>
-              <h4 class="text-2xl font-serif font-bold text-stone-900 mb-3">${house.name}</h4>
+              <p class="text-[11px] text-stone-400 font-bold uppercase tracking-wider mb-2">${numLabel} #${val}</p>
+              <h4 class="text-2xl font-serif font-bold text-stone-900 mb-3">${houseName}</h4>
               <p class="text-sm text-stone-500 leading-relaxed bg-stone-50 p-4 rounded-xl border border-stone-100">
-                ${house.description}
+                ${houseDesc}
               </p>
             </div>
           `;

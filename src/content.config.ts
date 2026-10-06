@@ -19,11 +19,14 @@ const leadershipCollection = defineCollection({
   loader: glob({ pattern: "*.md", base: "./src/content/leadership" }),
   schema: z.object({
     name: z.string(),
+    name_si: z.string().optional(),
     title: z.string(),
+    title_si: z.string().optional(),
     order: z.number(),
     image: z.string(),
     fallbackImage: z.string().optional(),
     bio: z.string(),
+    bio_si: z.string().optional(),
   }),
 });
 

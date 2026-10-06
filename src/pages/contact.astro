@@ -184,13 +184,12 @@ const encodedEmail = Buffer.from(contactEmail).toString('base64');
           <h2 class="text-3xl font-bold font-serif text-stone-900 mb-2" data-i18n="contact.map_title">Visit Our School</h2>
           <p class="text-stone-500 text-sm" data-en={map_note!.en} data-si={map_note!.si}>{map_note!.en}</p>
         </header>
-        <figure class="rounded-3xl overflow-hidden bg-stone-100 h-72 sm:h-96 w-full m-0 border border-stone-200/60">
+        <figure class="rounded-3xl overflow-hidden bg-stone-100 h-72 sm:h-96 w-full m-0 border border-stone-200/60 shadow-xs relative">
           <iframe
             title="Sri Chandananda Buddhist College Campus Map"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3957.5312338870196!2d80.6288675!3d7.2940608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ae3662ef4f1d063%3A0x6b86650965377f06!2sSri%20Chandananda%20Buddhist%20College!5e0!3m2!1sen!2slk!4v1700000000000"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=80.6238%2C7.2900%2C80.6338%2C7.2980&amp;layer=mapnik&amp;marker=7.29406%2C80.6288"
             class="w-full h-full border-0"
             loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </figure>
       </section>
