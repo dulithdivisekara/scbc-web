@@ -39,16 +39,16 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       </a>
     </div>
 
-    <!-- High-Contrast Mobile Hamburger Toggle Button -->
+    <!-- Minimalist Mobile Hamburger Toggle Button (Hedvig Theme) -->
     <button 
       id="mobile-menu-btn"
-      class="md:hidden flex items-center justify-center p-2.5 rounded-xl border border-stone-300/80 bg-stone-100/80 hover:bg-stone-200/80 text-stone-900 shrink-0 transition-all cursor-pointer shadow-xs active:scale-95" 
+      class="md:hidden flex items-center justify-center p-2 text-stone-900 hover:text-stone-600 hover:bg-stone-100/60 rounded-full transition-colors cursor-pointer shrink-0" 
       aria-label="Toggle Navigation"
       aria-expanded="false"
       aria-controls="mobile-drawer"
     >
-      <span id="menu-icon-open" class="flex items-center justify-center"><Menu size={22} strokeWidth={2.2} /></span>
-      <span id="menu-icon-close" class="hidden flex items-center justify-center"><X size={22} strokeWidth={2.2} /></span>
+      <span id="menu-icon-open" class="flex items-center justify-center"><Menu size={24} strokeWidth={1.75} /></span>
+      <span id="menu-icon-close" class="hidden flex items-center justify-center"><X size={24} strokeWidth={1.75} /></span>
     </button>
   </div>
 
@@ -63,7 +63,7 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
         <img 
           src="/assets/branding/school-crest-official.png" 
           alt="Sri Chandananda Buddhist College Crest" 
-          class="h-11 w-auto object-contain shrink-0" 
+          class="h-10 sm:h-12 w-auto object-contain shrink-0" 
         />
         <div class="flex flex-col justify-center">
           <span class="block text-base font-serif font-bold leading-tight text-stone-900">Sri Chandananda</span>
@@ -73,10 +73,10 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       
       <button 
         id="mobile-drawer-close-btn"
-        class="text-stone-900 p-2 rounded-lg hover:bg-stone-100 focus:outline-none transition-colors"
+        class="text-stone-900 p-2 rounded-full hover:bg-stone-100 focus:outline-none transition-colors cursor-pointer"
         aria-label="Close Navigation"
       >
-        <X size={24} />
+        <X size={24} strokeWidth={1.75} />
       </button>
     </div>
 
@@ -191,18 +191,17 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
   document.addEventListener('astro:page-load', setupTranslation);
 </script>
 
-<script>
-  function setupMobileMenu() {
+<script is:inline>
+  function initMobileMenu() {
     const btn = document.getElementById('mobile-menu-btn');
     const drawer = document.getElementById('mobile-drawer');
     const closeBtn = document.getElementById('mobile-drawer-close-btn');
     const openIcon = document.getElementById('menu-icon-open');
     const closeIcon = document.getElementById('menu-icon-close');
-    const navLinks = document.getElementById('mobile-nav-links');
 
     if (!btn || !drawer) return;
 
-    function toggleMenu(isOpen?: boolean) {
+    function toggleMenu(isOpen) {
       const willOpen = isOpen !== undefined ? isOpen : drawer.classList.contains('hidden');
       if (willOpen) {
         drawer.classList.remove('hidden');
@@ -219,43 +218,25 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
       }
     }
 
-    btn.onclick = (e) => {
+    btn.onclick = function(e) {
+      e.preventDefault();
       e.stopPropagation();
       toggleMenu();
     };
 
     if (closeBtn) {
-      closeBtn.onclick = (e) => {
+      closeBtn.onclick = function(e) {
+        e.preventDefault();
         e.stopPropagation();
         toggleMenu(false);
       };
     }
-
-    // Close when clicking outside header
-    document.addEventListener('click', (e) => {
-      const header = document.getElementById('site-header');
-      if (header && !header.contains(e.target as Node)) {
-        toggleMenu(false);
-      }
-    });
-
-    // Close when tapping a link in the mobile nav
-    if (navLinks) {
-      navLinks.querySelectorAll('a').forEach((link) => {
-        link.onclick = () => {
-          toggleMenu(false);
-        };
-      });
-    }
-
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') {
-        toggleMenu(false);
-      }
-    });
   }
 
-  setupMobileMenu();
-  document.addEventListener('astro:page-load', setupMobileMenu);
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileMenu);
+  } else {
+    initMobileMenu();
+  }
+  document.addEventListener('astro:page-load', initMobileMenu);
 </script>
