@@ -21,18 +21,16 @@ const { intro, procedure_heading, steps, download } = page;
       
       <!-- Procedure -->
       <div class="mb-16 sm:mb-20">
-        <h2 class="text-xl sm:text-2xl font-serif font-bold text-school-textPrimary mb-6 flex items-center gap-3">
-          <div class="p-2 rounded-lg bg-teal-50 border border-teal-100 text-school-teal">
-            <ClipboardCheck size={22} />
-          </div>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 mb-8 flex items-center gap-3 tracking-tight">
+          <ClipboardCheck size={28} strokeWidth={1.5} class="text-stone-900 shrink-0" />
           <span data-en={procedure_heading!.en} data-si={procedure_heading!.si}>{procedure_heading!.en}</span>
         </h2>
         
-        <ol class="space-y-6 relative border-l-2 border-school-border ml-3 md:ml-4">
+        <ol class="space-y-8 relative border-l-2 border-stone-200 ml-3 md:ml-4">
           {steps!.map((step, i) => (
             <li class="pl-8 relative pb-2">
-              <div class="absolute w-7 h-7 bg-stone-900 text-white rounded-full flex items-center justify-center text-xs font-bold -left-[15px] top-0 shadow-sm">{i + 1}</div>
-              <h3 class="font-bold text-lg text-stone-900 mb-2 font-serif" data-en={step.title.en} data-si={step.title.si}>{step.title.en}</h3>
+              <div class="absolute w-7 h-7 bg-stone-900 text-white rounded-full flex items-center justify-center text-xs font-bold -left-[15px] top-0 shadow-xs">{i + 1}</div>
+              <h3 class="font-bold text-xl text-stone-900 mb-2 font-serif" data-en={step.title.en} data-si={step.title.si}>{step.title.en}</h3>
               <p class="text-stone-500 text-base leading-relaxed" data-en={step.body.en} data-si={step.body.si}>{step.body.en}</p>
             </li>
           ))}
@@ -40,18 +38,16 @@ const { intro, procedure_heading, steps, download } = page;
       </div>
       
       <!-- Download Box -->
-      <div class="bg-stone-100 rounded-3xl p-8 sm:p-12 text-center text-stone-900 relative overflow-hidden">
-        <div class="absolute -right-8 -top-8 text-stone-900/5 pointer-events-none">
-          <FileText size={160} />
+      <div class="bg-stone-50 border border-stone-200/60 rounded-3xl p-8 sm:p-12 text-center text-stone-900 relative overflow-hidden">
+        <div class="inline-flex p-3.5 bg-white border border-stone-200/80 rounded-2xl mb-4 text-stone-900 shadow-xs">
+          <FileText size={26} strokeWidth={1.5} />
         </div>
-        <div class="relative z-10">
-          <h2 class="text-2xl sm:text-3xl font-serif font-bold mb-4" data-en={download!.heading.en} data-si={download!.heading.si}>{download!.heading.en}</h2>
-          <p class="text-stone-500 mb-8 max-w-md mx-auto text-base leading-relaxed" data-en={download!.body.en} data-si={download!.body.si}>{download!.body.en}</p>
-          <a href={download!.file} download class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-stone-900 text-white hover:bg-stone-800 px-8 py-4 rounded-xl font-medium transition-colors">
-            <Download size={18} />
-            <span data-en={download!.button.en} data-si={download!.button.si}>{download!.button.en}</span>
-          </a>
-        </div>
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold mb-3 tracking-tight" data-en={download!.heading.en} data-si={download!.heading.si}>{download!.heading.en}</h2>
+        <p class="text-stone-500 mb-8 max-w-md mx-auto text-base leading-relaxed" data-en={download!.body.en} data-si={download!.body.si}>{download!.body.en}</p>
+        <a href={download!.file} download class="w-full sm:w-auto inline-flex items-center justify-center gap-2 bg-stone-900 text-white hover:bg-stone-800 px-8 py-4 rounded-xl font-medium transition-colors text-base">
+          <Download size={18} strokeWidth={1.5} />
+          <span data-en={download!.button.en} data-si={download!.button.si}>{download!.button.en}</span>
+        </a>
       </div>
     </div>
   </main>
