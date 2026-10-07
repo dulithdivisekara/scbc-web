@@ -75,7 +75,7 @@ export const translations: Record<string, Record<string, string>> = {
     'footer.contact_dir': 'Contact Directory',
     'footer.hours_line': 'Office Hours: Monday – Friday, 7:30 AM – 1:30 PM',
     'footer.copyright': '© 2026 Sri Chandananda Buddhist College. All rights reserved.',
-    'footer.credit': 'Alumnus Digital Initiative by',
+    'footer.credit': 'Alumni Contribution by',
 
     // Academics Page
     'academics.title': 'Academic Structure & Curriculum',
@@ -167,7 +167,7 @@ export const translations: Record<string, Record<string, string>> = {
     'footer.contact_dir': 'සබඳතා නාමාවලිය',
     'footer.hours_line': 'කාර්යාල වේලාවන්: සඳුදා – සිකුරාදා, පෙ.ව. 7:30 – ප.ව. 1:30',
     'footer.copyright': '© 2026 ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය. සියලුම හිමිකම් ඇවිරිණි.',
-    'footer.credit': 'ආදිශිෂ්‍ය ඩිජිටල් දායකත්වය:',
+    'footer.credit': 'ආදිශිෂ්‍ය දායකත්වය:',
 
     // Academics Page
     'academics.title': 'අධ්‍යාපනික ව්‍යුහය සහ විෂයමාලාව',
