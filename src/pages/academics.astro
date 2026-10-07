@@ -17,28 +17,28 @@ const tints = {
 <BaseLayout title="Academics">
   <Header />
   
-  <main class="flex-grow py-16 sm:py-24 bg-[#FCFCFC]">
+  <main class="flex-grow py-10 sm:py-24 bg-[#FCFCFC]">
     <div class="container mx-auto px-4 max-w-4xl">
-      <div class="mb-14 sm:mb-20 max-w-2xl">
-        <h1 data-i18n="academics.title" class="text-4xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight mb-4">Academic Structure &amp; Curriculum</h1>
-        <p class="text-stone-500 text-lg leading-relaxed" data-en={page.intro!.en} data-si={page.intro!.si}>{page.intro!.en}</p>
+      <div class="mb-10 sm:mb-16 max-w-2xl">
+        <h1 data-i18n="academics.title" class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight mb-3 sm:mb-4">Academic Structure &amp; Curriculum</h1>
+        <p class="text-stone-500 text-base sm:text-lg leading-relaxed" data-en={page.intro!.en} data-si={page.intro!.si}>{page.intro!.en}</p>
       </div>
 
       {page.sections!.map((section) => {
         if (section.layout === 'cards') {
           return (
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-10 mb-20">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-10 mb-12 sm:mb-20">
               {section.items.map((item) => {
                 const Icon = icons[item.icon];
                 return (
-                  <div class="flex flex-col items-start gap-4">
-                    <div class="text-stone-900 mb-2">
-                      <Icon size={28} strokeWidth={1.5} />
+                  <div class="flex flex-col">
+                    <div class="flex items-center gap-3 mb-2.5">
+                      <div class="text-stone-900 shrink-0 p-2 rounded-xl bg-stone-100">
+                        <Icon size={22} strokeWidth={1.75} />
+                      </div>
+                      <h3 class="text-lg sm:text-xl font-bold text-stone-900 font-serif leading-snug" data-en={item.title.en} data-si={item.title.si}>{item.title.en}</h3>
                     </div>
-                    <div>
-                      <h3 class="text-xl font-bold text-stone-900 mb-2 font-serif" data-en={item.title.en} data-si={item.title.si}>{item.title.en}</h3>
-                      <p class="text-stone-500 text-sm leading-relaxed" data-en={item.body.en} data-si={item.body.si}>{item.body.en}</p>
-                    </div>
+                    <p class="text-stone-500 text-sm leading-relaxed" data-en={item.body.en} data-si={item.body.si}>{item.body.en}</p>
                   </div>
                 );
               })}
@@ -48,19 +48,21 @@ const tints = {
         return (
           <>
             {section.heading && (
-              <div class="mb-10 border-t border-stone-200 pt-10">
-                <h2 class="text-3xl font-serif font-bold text-stone-900 tracking-tight" data-en={section.heading.en} data-si={section.heading.si}>{section.heading.en}</h2>
+              <div class="mb-8 sm:mb-10 border-t border-stone-200 pt-8 sm:pt-10">
+                <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 tracking-tight" data-en={section.heading.en} data-si={section.heading.si}>{section.heading.en}</h2>
               </div>
             )}
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-12 sm:gap-16 mb-20">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-8 sm:gap-16 mb-12 sm:mb-20">
               {section.items.map((item) => {
                 const Icon = icons[item.icon];
                 return (
                   <div class="flex flex-col">
-                    <div class="text-stone-900 mb-4">
-                      <Icon size={28} strokeWidth={1.5} />
+                    <div class="flex items-center gap-3 mb-2.5">
+                      <div class="text-stone-900 shrink-0 p-2 rounded-xl bg-stone-100">
+                        <Icon size={22} strokeWidth={1.75} />
+                      </div>
+                      <h3 class="text-lg sm:text-xl font-bold text-stone-900 font-serif leading-snug" data-en={item.title.en} data-si={item.title.si}>{item.title.en}</h3>
                     </div>
-                    <h3 class="text-xl font-bold text-stone-900 mb-3 font-serif" data-en={item.title.en} data-si={item.title.si}>{item.title.en}</h3>
                     <p class="text-stone-500 text-sm leading-relaxed" data-en={item.body.en} data-si={item.body.si}>{item.body.en}</p>
                   </div>
                 );
