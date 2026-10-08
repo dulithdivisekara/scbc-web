@@ -1,1 +1,4 @@
+# TODO: TEMPORARY REDIRECT
+# Temporary redirect configuration for scbck.dulith.me.
+# Remove or update once permanent custom domain is purchased.
 https://scbc-web.pages.dev/* https://scbck.dulith.me/:splat 301!
