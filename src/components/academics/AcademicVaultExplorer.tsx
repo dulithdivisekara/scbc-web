@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { Search, Download, FileText, Filter, BookOpen, Sparkles, CheckCircle2, RotateCcw, FileCheck, Layers } from 'lucide-react';
+import { Search, Download, FileText, Filter, BookOpen, CheckCircle2, RotateCcw, FileCheck, Layers } from 'lucide-react';
 import { vaultResources, type AcademicResource } from '../../data/academicVault';
 
 export const AcademicVaultExplorer: React.FC = () => {

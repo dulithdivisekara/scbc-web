@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Clock, Printer, Calendar, BookOpen, GraduationCap, MapPin, Sparkles, Filter } from 'lucide-react';
+import { Clock, Printer, Calendar, BookOpen, GraduationCap, MapPin, Filter } from 'lucide-react';
 import { bellSchedule, timetableData, type ClassTimetable, type BellPeriod } from '../../data/timetables';
 
 export const TimetableExplorer: React.FC = () => {
@@ -206,7 +206,9 @@ export const TimetableExplorer: React.FC = () => {
       {/* Live Campus Bell Status Banner */}
       <div className="rounded-2xl border border-stone-200 bg-white p-4 sm:p-5 shadow-xs flex flex-col md:flex-row md:items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <div className={`w-3 h-3 rounded-full shrink-0 ${currentStatus.inSession ? 'bg-emerald-500 animate-pulse' : 'bg-amber-400'}`} />
+          <span className={`px-2.5 py-1 rounded text-[11px] font-mono font-bold uppercase tracking-wider shrink-0 ${currentStatus.inSession ? 'bg-emerald-100 text-emerald-900 border border-emerald-300' : 'bg-stone-100 text-stone-700 border border-stone-300'}`}>
+            {currentStatus.inSession ? (isSinhala ? 'සක්‍රීය සැසිය' : 'IN SESSION') : (isSinhala ? 'පාසල් වේලාවෙන් පසු' : 'OFF SESSION')}
+          </span>
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xs font-bold uppercase tracking-wider text-stone-500">
@@ -325,7 +327,7 @@ export const TimetableExplorer: React.FC = () => {
             {/* Morning Assembly Banner */}
             <div className="bg-amber-50/60 px-4 sm:px-6 py-3 flex items-center justify-between text-xs sm:text-sm">
               <div className="flex items-center gap-2 text-amber-900 font-semibold">
-                <Sparkles size={16} className="text-amber-600" />
+                <Clock size={15} className="text-amber-700" />
                 <span>
                   {isSinhala ? 'පෙ.ව. 07:50 - 08:10: බුද්ධ වන්දනාව සහ උදෑසන රැස්වීම' : '07:50 - 08:10 AM: Morning Buddha Vandana & Assembly'}
                 </span>

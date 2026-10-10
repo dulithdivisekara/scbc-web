@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
 import HouseCalculator from '../components/common/HouseCalculator.astro';
-import { Users, BookOpen, Globe2, Bell, Trophy, Shield, Flame, ArrowRight, Clock, DownloadCloud, Sparkles, Compass, CheckCircle2 } from 'lucide-react';
+import { Users, BookOpen, Globe2, Bell, Trophy, Shield, Flame, ArrowRight, Clock, DownloadCloud, Compass, CheckCircle2 } from 'lucide-react';
 import { getCollection } from 'astro:content';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -50,9 +50,8 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
       
       <div class="container mx-auto px-4 relative z-10 py-20 sm:py-28 md:py-36">
         <div class="max-w-4xl">
-          <!-- Institutional Crest Badge -->
-          <div class="gsap-hero-crest inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/20 text-stone-200 text-xs font-semibold uppercase tracking-wider mb-6">
-            <span class="w-2 h-2 rounded-full bg-amber-400 animate-pulse"></span>
+          <!-- Institutional Provenance Eyebrow -->
+          <div class="gsap-hero-crest inline-flex items-center gap-2 text-amber-300/90 font-mono text-xs uppercase tracking-[0.2em] mb-6">
             <span data-en="Asgiriya, Kandy • Founded 2006" data-si="අස්ගිරිය, මහනුවර • ආරම්භය 2006">
               Asgiriya, Kandy • Founded 2006
             </span>
@@ -68,22 +67,21 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
             Nurturing intellect, moral discipline, and Buddhist values in the sacred hill capital of Kandy.
           </p>
 
-          <!-- Staggered CTA Buttons (Max 2 CTAs for visual taste) -->
+          <!-- Staggered CTA Buttons (Primary: Open Admissions per requirement) -->
           <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
             <a 
-              href="/about" 
+              href="/admissions" 
               class="gsap-hero-btn w-full sm:w-auto justify-center bg-white text-stone-900 hover:bg-stone-100 font-semibold px-7 py-3.5 rounded-full inline-flex items-center gap-2 transition hover:-translate-y-0.5 text-center text-sm shadow-md min-h-[48px]"
             >
-              <span data-i18n="home.btn_about">Discover Our History</span>
+              <span data-en="Open Admissions" data-si="නවක සිසුන් ඇතුළත් කරගැනීම">Open Admissions</span>
               <ArrowRight size={16} />
             </a>
 
             <a 
-              href="/timetables" 
-              class="gsap-hero-btn w-full sm:w-auto justify-center bg-[#581838] hover:bg-[#43122b] text-white font-semibold px-7 py-3.5 rounded-full inline-flex items-center gap-2 transition hover:-translate-y-0.5 text-center text-sm shadow-md min-h-[48px]"
+              href="/about" 
+              class="gsap-hero-btn w-full sm:w-auto justify-center bg-white/10 hover:bg-white/20 text-white border border-white/25 backdrop-blur-sm font-semibold px-7 py-3.5 rounded-full inline-flex items-center gap-2 transition hover:-translate-y-0.5 text-center text-sm shadow-md min-h-[48px]"
             >
-              <Clock size={16} />
-              <span data-en="Daily Timetables" data-si="දෛනික කාලසටහන">Daily Timetables</span>
+              <span data-i18n="home.btn_about">Discover Our History</span>
             </a>
           </div>
         </div>
@@ -133,75 +131,111 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
       </div>
     </section>
 
-    <!-- 3. Interactive Student Tools Spotlight -->
-    <section class="py-12 sm:py-16 bg-white border-b border-stone-200">
+    <!-- 3. Academic Portals & Interactive Resources -->
+    <section class="py-14 sm:py-20 bg-stone-50 border-b border-stone-200/80">
       <div class="container mx-auto px-4 max-w-6xl">
-        <div class="mb-8 max-w-2xl">
-          <span class="text-[11px] font-bold uppercase tracking-wider text-[#581838] mb-2 inline-block" data-en="DIGITAL CAMPUS SUITE" data-si="ඩිජිටල් විද්‍යාලයීය මෙවලම්">
-            Digital Campus Suite
-          </span>
-          <h2 class="text-2xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight" data-en="Interactive Academic Portals" data-si="අන්තර්ක්‍රියාකාරී අධ්‍යයන ද්වාර">
-            Interactive Academic Portals
+        <div class="mb-10 max-w-2xl">
+          <h2 class="text-2xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight" data-en="Academic Portals & Digital Vault" data-si="අධ්‍යයන ද්වාර සහ සම්පත් සංචිතය">
+            Academic Portals &amp; Digital Vault
           </h2>
+          <p class="text-stone-500 text-sm sm:text-base mt-2 leading-relaxed" data-en="Direct collegiate access to term archives, syllabus modules, bell schedules, and house verification." data-si="වාර විභාග ප්‍රශ්න පත්‍ර, විෂය නිර්දේශ, දෛනික සීනු කාලසටහන් සහ නිවාස තොරතුරු සඳහා සෘජු ප්‍රවේශය.">
+            Direct collegiate access to term archives, syllabus modules, bell schedules, and house verification.
+          </p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <!-- Timetable Explorer -->
-          <a href="/timetables" class="group p-6 rounded-3xl border border-stone-200 bg-stone-50/60 hover:bg-white hover:border-[#581838]/40 hover:shadow-md transition-all flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-2xl bg-amber-100 text-amber-900 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                <Clock size={22} />
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+          <!-- Main Feature: Academic Vault with Real Classroom Photo (Span 7) -->
+          <div class="lg:col-span-7 rounded-3xl border border-stone-200/80 bg-white overflow-hidden flex flex-col justify-between shadow-xs hover:border-[#581838]/40 transition-all group">
+            <div class="relative h-56 sm:h-64 overflow-hidden bg-stone-900">
+              <img 
+                src="/assets/gallery/classroom.webp" 
+                alt="Sri Chandananda Buddhist College Academic Learning Environment" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
+              <div class="absolute bottom-4 left-6 right-6 flex items-center justify-between text-white">
+                <span class="font-mono text-xs uppercase tracking-widest text-amber-300" data-en="National Curriculum & Term Papers" data-si="ජාතික විෂය නිර්දේශ සහ වාර ප්‍රශ්න පත්‍ර">
+                  National Curriculum &amp; Term Papers
+                </span>
+                <span class="font-mono text-xs text-stone-300">Grades 6-13</span>
               </div>
-              <h3 class="text-xl font-serif font-bold text-stone-900 group-hover:text-[#581838] transition-colors mb-2" data-en="Timetables &amp; Bell Schedule" data-si="දෛනික කාලසටහන සහ සීනු වේලාවන්">
-                Timetables &amp; Bell Schedule
-              </h3>
-              <p class="text-xs sm:text-sm text-stone-500 leading-relaxed mb-4" data-en="Real-time period tracker, classroom routines across Grades 1-13, and printable desk charts." data-si="සජීවී කාලච්ඡේද සටහන, 1-13 ශ්‍රේණි පන්ති කාලසටහන් සහ මුද්‍රණය කළ හැකි පිටපත්.">
-                Real-time period tracker, classroom routines across Grades 1-13, and printable desk charts.
-              </p>
             </div>
-            <div class="inline-flex items-center gap-1.5 text-xs font-bold text-[#581838] group-hover:gap-2.5 transition-all">
-              <span data-en="Explore Timetables" data-si="කාලසටහන බලන්න">Explore Timetables</span>
-              <ArrowRight size={14} />
-            </div>
-          </a>
 
-          <!-- Academic Vault -->
-          <a href="/academics/resources" class="group p-6 rounded-3xl border border-stone-200 bg-stone-50/60 hover:bg-white hover:border-teal-600/40 hover:shadow-md transition-all flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-2xl bg-teal-100 text-teal-900 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                <DownloadCloud size={22} />
+            <div class="p-6 sm:p-8 flex flex-col justify-between flex-grow">
+              <div class="mb-6">
+                <h3 class="text-xl sm:text-2xl font-serif font-bold text-stone-900 mb-2 group-hover:text-[#581838] transition-colors" data-en="Academic Past Paper Vault" data-si="පසුගිය ප්‍රශ්න පත්‍ර සහ විෂය සංචිතය">
+                  Academic Past Paper Vault
+                </h3>
+                <p class="text-stone-600 text-xs sm:text-sm leading-relaxed" data-en="Complete searchable archives of G.C.E. O/L and A/L model papers, school term evaluations, and official marking schemes for all academic streams." data-si="සාමාන්‍ය පෙළ සහ උසස් පෙළ ආදර්ශ ප්‍රශ්න පත්‍ර, වාර විභාග පත්‍ර සහ නිල ලකුණු දීමේ පටිපාටි සහිත විද්‍යාලයීය විෂය සංචිතය.">
+                  Complete searchable archives of G.C.E. O/L and A/L model papers, school term evaluations, and official marking schemes for all academic streams.
+                </p>
               </div>
-              <h3 class="text-xl font-serif font-bold text-stone-900 group-hover:text-teal-800 transition-colors mb-2" data-en="Past Papers &amp; Academic Vault" data-si="පසුගිය ප්‍රශ්න පත්‍ර සහ විෂය සංචිතය">
-                Past Papers &amp; Academic Vault
-              </h3>
-              <p class="text-xs sm:text-sm text-stone-500 leading-relaxed mb-4" data-en="Searchable repository of term evaluations, national O/L &amp; A/L model papers, and marking schemes." data-si="වාර විභාග ප්‍රශ්න පත්‍ර, සාමාන්‍ය පෙළ සහ උසස් පෙළ ආදර්ශ පත්‍ර සහ ලකුණු දීමේ පටිපාටි.">
-                Searchable repository of term evaluations, national O/L &amp; A/L model papers, and marking schemes.
-              </p>
-            </div>
-            <div class="inline-flex items-center gap-1.5 text-xs font-bold text-teal-800 group-hover:gap-2.5 transition-all">
-              <span data-en="Access Library" data-si="සංචිතය පිරික්සන්න">Access Library</span>
-              <ArrowRight size={14} />
-            </div>
-          </a>
 
-          <!-- House System Verification -->
-          <a href="/student-life" class="group p-6 rounded-3xl border border-stone-200 bg-stone-50/60 hover:bg-white hover:border-rose-600/40 hover:shadow-md transition-all flex flex-col justify-between">
-            <div>
-              <div class="w-12 h-12 rounded-2xl bg-rose-100 text-[#581838] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                <Trophy size={22} />
+              <div>
+                <a 
+                  href="/academics/resources" 
+                  class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-[#581838] text-white text-xs sm:text-sm font-medium transition-colors"
+                >
+                  <span data-en="Enter Academic Vault" data-si="සංචිතයට පිවිසෙන්න">Enter Academic Vault</span>
+                  <ArrowRight size={15} />
+                </a>
               </div>
-              <h3 class="text-xl font-serif font-bold text-stone-900 group-hover:text-[#581838] transition-colors mb-2" data-en="House Portal &amp; Calculator" data-si="නිවාස පද්ධතිය සහ ගණකය">
-                House Portal &amp; Calculator
-              </h3>
-              <p class="text-xs sm:text-sm text-stone-500 leading-relaxed mb-4" data-en="Discover your allegiance to Ramya, Suramya, or Subha through your student admission index." data-si="ඔබගේ ඇතුළත් වීමේ අංකය ඇසුරින් රම්‍ය, සුරම්‍ය හෝ සුභ නිවාසය ක්ෂණිකව සොයාගන්න.">
-                Discover your allegiance to Ramya, Suramya, or Subha through your student admission index.
-              </p>
             </div>
-            <div class="inline-flex items-center gap-1.5 text-xs font-bold text-[#581838] group-hover:gap-2.5 transition-all">
-              <span data-en="Verify House Allegiance" data-si="නිවාසය තහවුරු කරන්න">Verify House Allegiance</span>
-              <ArrowRight size={14} />
-            </div>
-          </a>
+          </div>
+
+          <!-- Secondary Stack: Timetables and House Portal (Span 5) -->
+          <div class="lg:col-span-5 flex flex-col gap-6">
+            <!-- Timetables Panel -->
+            <a 
+              href="/timetables" 
+              class="rounded-3xl border border-stone-200/80 bg-white p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:border-[#581838]/40 transition-all group flex-1"
+            >
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-mono text-[11px] uppercase tracking-wider text-stone-500" data-en="Daily Schedules" data-si="දෛනික කාලසටහන">Daily Schedules</span>
+                  <span class="text-xs font-mono font-bold text-[#581838] bg-rose-50 px-2.5 py-0.5 rounded-md border border-rose-100">07:50 - 13:30</span>
+                </div>
+                <h3 class="text-lg sm:text-xl font-serif font-bold text-stone-900 group-hover:text-[#581838] transition-colors mb-2" data-en="Timetables & Bell Schedule" data-si="පන්ති කාලසටහන සහ සීනු වේලාවන්">
+                  Timetables &amp; Bell Schedule
+                </h3>
+                <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4" data-en="Live 8-period tracker, division schedules across Grades 1 to 13, and printable desk routines." data-si="සජීවී කාලච්ඡේද 8 ක සටහන, 1-13 ශ්‍රේණි පන්ති කාලසටහන් සහ මුද්‍රණය කළ හැකි පිටපත්.">
+                  Live 8-period tracker, division schedules across Grades 1 to 13, and printable desk routines.
+                </p>
+              </div>
+              <div class="inline-flex items-center gap-1.5 text-xs font-bold text-[#581838] group-hover:gap-2.5 transition-all pt-2 border-t border-stone-100">
+                <span data-en="View Daily Schedules" data-si="කාලසටහන බලන්න">View Daily Schedules</span>
+                <ArrowRight size={14} />
+              </div>
+            </a>
+
+            <!-- House Allegiance Panel -->
+            <a 
+              href="/student-life" 
+              class="rounded-3xl border border-stone-200/80 bg-white p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:border-[#581838]/40 transition-all group flex-1"
+            >
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-mono text-[11px] uppercase tracking-wider text-stone-500" data-en="Tri-House System" data-si="තුන් නිවාස පද්ධතිය">Tri-House System</span>
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-sm bg-[#007A87]" title="Ramya (Teal)"></span>
+                    <span class="w-2.5 h-2.5 rounded-sm bg-[#F58220]" title="Suramya (Gold)"></span>
+                    <span class="w-2.5 h-2.5 rounded-sm bg-[#581838]" title="Subha (Maroon)"></span>
+                  </div>
+                </div>
+                <h3 class="text-lg sm:text-xl font-serif font-bold text-stone-900 group-hover:text-[#581838] transition-colors mb-2" data-en="House Portal & Allegiance" data-si="නිවාස පද්ධතිය සහ තොරතුරු">
+                  House Portal &amp; Allegiance
+                </h3>
+                <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4" data-en="Verify your allegiance to Ramya, Suramya, or Subha through admission matriculation indexing." data-si="ඇතුළත් වීමේ අංකය අනුව රම්‍ය, සුරම්‍ය හෝ සුභ නිවාසය ක්ෂණිකව තහවුරු කරගන්න.">
+                  Verify your allegiance to Ramya, Suramya, or Subha through admission matriculation indexing.
+                </p>
+              </div>
+              <div class="inline-flex items-center gap-1.5 text-xs font-bold text-[#581838] group-hover:gap-2.5 transition-all pt-2 border-t border-stone-100">
+                <span data-en="Explore House System" data-si="නිවාස පද්ධතිය බලන්න">Explore House System</span>
+                <ArrowRight size={14} />
+              </div>
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -258,8 +292,7 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
     <section class="gsap-milestone-container py-16 sm:py-24 bg-stone-100/60 border-t border-b border-stone-200">
       <div class="container mx-auto px-4 max-w-5xl">
         <div class="text-center max-w-2xl mx-auto mb-16">
-          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-100/80 text-amber-900 text-xs font-semibold uppercase tracking-wider mb-3">
-            <Sparkles size={13} />
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-stone-200/70 text-stone-800 text-xs font-mono font-semibold uppercase tracking-wider mb-3 border border-stone-300/60">
             <span data-en="Two Decades of Excellence" data-si="දශක දෙකක අභිමානය">Two Decades of Excellence</span>
           </div>
           <h2 class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight mb-4" data-en="Our Milestones of Growth" data-si="අපගේ ඓතිහාසික සන්ධිස්ථාන">
@@ -289,8 +322,8 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
                   Founded under the noble patronage of Most Ven. Dr. Godagama Sri Mangala Nayaka Thero, establishing a premier Buddhist collegiate haven in Kandy.
                 </p>
               </div>
-              <div class="w-10 h-10 rounded-full bg-[#581838] text-white flex items-center justify-center text-xs font-bold shrink-0 shadow-md ring-4 ring-white z-10 order-1 md:order-2 -ml-[49px] md:ml-0">
-                06
+              <div class="px-3 py-1 rounded-md bg-[#581838] text-amber-200 font-mono text-xs font-bold shrink-0 shadow-xs z-10 order-1 md:order-2 -ml-[45px] md:ml-0">
+                2006
               </div>
               <div class="hidden md:block md:w-1/2 md:pl-10 order-3"></div>
             </div>
@@ -298,8 +331,8 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
             <!-- 2012 Milestone -->
             <div class="gsap-milestone-card relative flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
               <div class="hidden md:block md:w-1/2 md:pr-10 order-1"></div>
-              <div class="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center text-xs font-bold shrink-0 shadow-md ring-4 ring-white z-10 order-1 md:order-2 -ml-[49px] md:ml-0">
-                12
+              <div class="px-3 py-1 rounded-md bg-stone-800 text-stone-200 font-mono text-xs font-bold shrink-0 shadow-xs z-10 order-1 md:order-2 -ml-[45px] md:ml-0">
+                2012
               </div>
               <div class="w-full md:w-1/2 md:text-left md:pl-10 order-2 md:order-3">
                 <span class="text-xs font-bold text-amber-700 tracking-wider uppercase">Curriculum • 2012</span>
@@ -323,8 +356,8 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
                   Commissioning modern physics, chemistry, and biology laboratories alongside dedicated aesthetic dance arenas for the Kandyan Ves ensemble.
                 </p>
               </div>
-              <div class="w-10 h-10 rounded-full bg-teal-700 text-white flex items-center justify-center text-xs font-bold shrink-0 shadow-md ring-4 ring-white z-10 order-1 md:order-2 -ml-[49px] md:ml-0">
-                18
+              <div class="px-3 py-1 rounded-md bg-stone-800 text-stone-200 font-mono text-xs font-bold shrink-0 shadow-xs z-10 order-1 md:order-2 -ml-[45px] md:ml-0">
+                2018
               </div>
               <div class="hidden md:block md:w-1/2 md:pl-10 order-3"></div>
             </div>
@@ -332,8 +365,8 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
             <!-- 2026 Milestone -->
             <div class="gsap-milestone-card relative flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
               <div class="hidden md:block md:w-1/2 md:pr-10 order-1"></div>
-              <div class="w-10 h-10 rounded-full bg-[#581838] text-white flex items-center justify-center text-xs font-bold shrink-0 shadow-md ring-4 ring-white z-10 order-1 md:order-2 -ml-[49px] md:ml-0">
-                26
+              <div class="px-3 py-1 rounded-md bg-[#581838] text-amber-200 font-mono text-xs font-bold shrink-0 shadow-xs z-10 order-1 md:order-2 -ml-[45px] md:ml-0">
+                2026
               </div>
               <div class="w-full md:w-1/2 md:text-left md:pl-10 order-2 md:order-3">
                 <span class="text-xs font-bold text-[#581838] tracking-wider uppercase">Digital Era • 2026</span>
