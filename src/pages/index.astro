@@ -3,7 +3,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
 import HouseCalculator from '../components/common/HouseCalculator.astro';
-import { Users, BookOpen, Globe2, Bell, Trophy, Shield, Flame, ArrowRight } from 'lucide-react';
+import { Users, BookOpen, Globe2, Bell, Trophy, Shield, Flame, ArrowRight, Clock, DownloadCloud, Compass, CheckCircle2 } from 'lucide-react';
 import { getCollection } from 'astro:content';
 import fs from 'node:fs';
 import path from 'node:path';
@@ -31,58 +31,370 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
 }
 ---
 
-<BaseLayout title="Home">
+<BaseLayout 
+  title="Sri Chandananda Buddhist College | Asgiriya, Kandy"
+  description="Sri Chandananda Buddhist College is a prestigious national school in Asgiriya, Kandy. Nurturing wisdom, moral discipline, and Buddhist values across Grades 1–13 bilingual education."
+>
   <Header />
   
-  <main class="flex-grow bg-[#FCFCFC]">
-    <section class="min-h-[520px] sm:min-h-[580px] lg:min-h-[640px] relative flex items-center overflow-hidden">
+  <main class="flex-grow bg-[#FCFCFC] overflow-x-hidden">
+    <!-- 1. Cinematic GSAP Hero Section -->
+    <section class="hero-section min-h-[580px] sm:min-h-[660px] lg:min-h-[720px] relative flex items-center overflow-hidden">
       <img 
         src="/assets/campus/campus-main-building.jpg" 
-        alt="Sri Chandananda Buddhist College Campus Grounds" 
-        class="object-cover object-center w-full h-full absolute inset-0"
+        alt="Sri Chandananda Buddhist College Campus Grounds in Asgiriya, Kandy" 
+        class="gsap-parallax-bg object-cover object-center w-full h-[125%] absolute -top-[12%] inset-0 pointer-events-none will-change-transform"
         width="1920" 
         height="1080"
         loading="eager"
       />
 
-      <div class="absolute inset-0 bg-gradient-to-r from-slate-950/90 via-slate-950/70 to-slate-900/40"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-stone-950/95 via-stone-950/80 to-stone-900/40"></div>
       
-      <div class="container mx-auto px-4 relative z-10 py-24 md:py-32">
+      <div class="container mx-auto px-4 relative z-10 py-20 sm:py-28 md:py-36">
         <div class="max-w-4xl">
-          <h1 data-i18n="home.hero_title" class="text-4xl sm:text-5xl md:text-6xl lg:text-[5rem] font-serif font-bold leading-[1.05] mb-6 text-white drop-shadow-sm tracking-tight">
+          <!-- Institutional Provenance Eyebrow -->
+          <div class="gsap-hero-crest inline-flex items-center gap-2 text-amber-300/90 font-mono text-xs uppercase tracking-[0.2em] mb-6">
+            <span data-en="Asgiriya, Kandy • Founded 2006" data-si="අස්ගිරිය, මහනුවර • ආරම්භය 2006">
+              Asgiriya, Kandy • Founded 2006
+            </span>
+          </div>
+
+          <!-- Kinetic Hero Title -->
+          <h1 data-i18n="home.hero_title" class="gsap-hero-title text-4xl sm:text-6xl md:text-7xl font-serif font-bold leading-[1.05] mb-6 text-white drop-shadow-sm tracking-tight">
             Welcome to Sri Chandananda Buddhist College
           </h1>
 
-          <p data-i18n="home.hero_sub" class="text-lg sm:text-xl font-light mb-10 text-stone-200 max-w-2xl leading-relaxed">
-            Empowering the next generation through wisdom, discipline, and Buddhist philosophy since 2006.
+          <!-- Kinetic Subtitle -->
+          <p data-i18n="home.hero_sub" class="gsap-hero-sub text-base sm:text-xl md:text-2xl font-light mb-8 sm:mb-10 text-stone-200 max-w-2xl leading-relaxed">
+            Nurturing intellect, moral discipline, and Buddhist values in the sacred hill capital of Kandy.
           </p>
 
-          <div class="flex flex-col sm:flex-row gap-3 w-full sm:w-auto">
+          <!-- Staggered CTA Buttons (Primary: Open Admissions per requirement) -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
             <a 
-              href="/about" 
-              class="w-full sm:w-auto justify-center bg-white text-stone-900 hover:bg-stone-100 font-medium px-7 py-3.5 rounded-full inline-flex items-center gap-2 transition hover:-translate-y-0.5 text-center text-sm shadow-md"
+              href="/admissions" 
+              class="gsap-hero-btn w-full sm:w-auto justify-center bg-white text-stone-900 hover:bg-stone-100 font-semibold px-7 py-3.5 rounded-full inline-flex items-center gap-2 transition hover:-translate-y-0.5 text-center text-sm shadow-md min-h-[48px]"
             >
-              <span data-i18n="home.btn_about">Discover Our History</span>
+              <span data-en="Open Admissions" data-si="නවක සිසුන් ඇතුළත් කරගැනීම">Open Admissions</span>
               <ArrowRight size={16} />
             </a>
 
             <a 
-              href="/admissions" 
-              class="w-full sm:w-auto justify-center border border-white/40 text-white hover:bg-white/10 backdrop-blur-md px-7 py-3.5 rounded-full font-medium transition inline-flex items-center gap-2 hover:-translate-y-0.5 text-center text-sm"
+              href="/about" 
+              class="gsap-hero-btn w-full sm:w-auto justify-center bg-white/10 hover:bg-white/20 text-white border border-white/25 backdrop-blur-sm font-semibold px-7 py-3.5 rounded-full inline-flex items-center gap-2 transition hover:-translate-y-0.5 text-center text-sm shadow-md min-h-[48px]"
             >
-              <span data-i18n="home.btn_admissions">Admissions Info</span>
+              <span data-i18n="home.btn_about">Discover Our History</span>
             </a>
           </div>
         </div>
       </div>
-
     </section>
 
-    <section class="reveal-up py-10 sm:py-20">
+    <!-- 2. Prestige Counter Reel Band -->
+    <section class="bg-stone-900 text-white py-12 border-b border-stone-800">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
+          <div class="space-y-1">
+            <div class="text-3xl sm:text-5xl font-serif font-bold text-amber-400 font-mono tabular-nums">
+              <span class="gsap-counter" data-target="2640" data-suffix="+">2,640+</span>
+            </div>
+            <p class="text-xs sm:text-sm text-stone-400 font-medium uppercase tracking-wider" data-en="Students Enrolled" data-si="ශිෂ්‍ය ප්‍රජාව">
+              Students Enrolled
+            </p>
+          </div>
+
+          <div class="space-y-1">
+            <div class="text-3xl sm:text-5xl font-serif font-bold text-white font-mono tabular-nums">
+              <span class="gsap-counter" data-target="98" data-suffix=".4%">98.4%</span>
+            </div>
+            <p class="text-xs sm:text-sm text-stone-400 font-medium uppercase tracking-wider" data-en="O/L Academic Pass Rate" data-si="සා/පෙළ විශිෂ්ට සාමාර්ථ">
+              O/L Academic Pass Rate
+            </p>
+          </div>
+
+          <div class="space-y-1">
+            <div class="text-3xl sm:text-5xl font-serif font-bold text-amber-400 font-mono tabular-nums">
+              <span class="gsap-counter" data-target="13" data-suffix="">13</span>
+            </div>
+            <p class="text-xs sm:text-sm text-stone-400 font-medium uppercase tracking-wider" data-en="Grades (1 to 13)" data-si="1 සිට 13 දක්වා ශ්‍රේණි">
+              Grades (1 to 13)
+            </p>
+          </div>
+
+          <div class="space-y-1">
+            <div class="text-3xl sm:text-5xl font-serif font-bold text-white font-mono tabular-nums">
+              <span class="gsap-counter" data-target="20" data-suffix="+">20+</span>
+            </div>
+            <p class="text-xs sm:text-sm text-stone-400 font-medium uppercase tracking-wider" data-en="Years of Monastic Legacy" data-si="අභිමානවත් වසර ගණන">
+              Years of Monastic Legacy
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2.5. Core Institutional Values Section -->
+    <section class="py-14 sm:py-20 bg-white border-b border-stone-200/80">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="max-w-2xl mb-12">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-[#581838]/5 border border-[#581838]/15 text-[#581838] text-[11px] font-mono font-semibold uppercase tracking-widest mb-3">
+            <span data-i18n="home.values_kicker">Foundational Ethos</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight" data-i18n="home.values_title">
+            Our Core Institutional Values
+          </h2>
+          <p class="text-stone-600 text-sm sm:text-base mt-2.5 leading-relaxed" data-i18n="home.values_sub">
+            Rooted in Theravada Buddhist ethics and modern intellectual rigour, our four foundational pillars guide every scholar through their collegiate journey.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          <!-- Value 1: Wisdom -->
+          <div class="p-6 rounded-xl bg-stone-50/70 border border-stone-200/90 hover:border-stone-400 hover:shadow-xs transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-baseline justify-between mb-4">
+                <span class="font-mono text-xs font-bold text-amber-700 tracking-widest" data-i18n="home.value1_num">01</span>
+                <span class="text-xs font-semibold text-stone-400 uppercase tracking-wider" data-i18n="home.value1_pali">ප්‍රඥාව • Paññā</span>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-stone-900 mb-1" data-i18n="home.value1_title">
+                Wisdom
+              </h3>
+              <p class="text-xs font-medium text-stone-500 mb-3" data-i18n="home.value1_sub">
+                Intellectual Inquiry &amp; Bilingual Mastery
+              </p>
+              <p class="text-xs sm:text-sm text-stone-600 leading-relaxed" data-i18n="home.value1_desc">
+                Fostering analytical thinking, scientific inquiry, and dual-medium literacy from Primary foundation through G.C.E. Advanced Level.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-stone-200/60 flex items-center justify-between text-[11px] font-mono text-stone-400">
+              <span>Grades 1–13</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#007A87]"></span>
+            </div>
+          </div>
+
+          <!-- Value 2: Discipline -->
+          <div class="p-6 rounded-xl bg-stone-50/70 border border-stone-200/90 hover:border-stone-400 hover:shadow-xs transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-baseline justify-between mb-4">
+                <span class="font-mono text-xs font-bold text-amber-700 tracking-widest" data-i18n="home.value2_num">02</span>
+                <span class="text-xs font-semibold text-stone-400 uppercase tracking-wider" data-i18n="home.value2_pali">විනය • Sīla</span>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-stone-900 mb-1" data-i18n="home.value2_title">
+                Discipline
+              </h3>
+              <p class="text-xs font-medium text-stone-500 mb-3" data-i18n="home.value2_sub">
+                Theravada Ethics &amp; Character
+              </p>
+              <p class="text-xs sm:text-sm text-stone-600 leading-relaxed" data-i18n="home.value2_desc">
+                Instilling mindful self-restraint, respect for elders, moral uprightness, and composure rooted in daily Buddhist observance.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-stone-200/60 flex items-center justify-between text-[11px] font-mono text-stone-400">
+              <span>Monastic Ethos</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#581838]"></span>
+            </div>
+          </div>
+
+          <!-- Value 3: Heritage -->
+          <div class="p-6 rounded-xl bg-stone-50/70 border border-stone-200/90 hover:border-stone-400 hover:shadow-xs transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-baseline justify-between mb-4">
+                <span class="font-mono text-xs font-bold text-amber-700 tracking-widest" data-i18n="home.value3_num">03</span>
+                <span class="text-xs font-semibold text-stone-400 uppercase tracking-wider" data-i18n="home.value3_pali">සංස්කෘතිය • Cāritta</span>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-stone-900 mb-1" data-i18n="home.value3_title">
+                Heritage
+              </h3>
+              <p class="text-xs font-medium text-stone-500 mb-3" data-i18n="home.value3_sub">
+                Traditional Arts &amp; Monastic Ties
+              </p>
+              <p class="text-xs sm:text-sm text-stone-600 leading-relaxed" data-i18n="home.value3_desc">
+                Preserving Kandyan Ves dance traditions, pirith chanting ceremonies, and living cultural heritage in the sacred hill capital of Asgiriya.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-stone-200/60 flex items-center justify-between text-[11px] font-mono text-stone-400">
+              <span>Asgiriya, Kandy</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#F58220]"></span>
+            </div>
+          </div>
+
+          <!-- Value 4: Excellence -->
+          <div class="p-6 rounded-xl bg-stone-50/70 border border-stone-200/90 hover:border-stone-400 hover:shadow-xs transition-all flex flex-col justify-between">
+            <div>
+              <div class="flex items-baseline justify-between mb-4">
+                <span class="font-mono text-xs font-bold text-amber-700 tracking-widest" data-i18n="home.value4_num">04</span>
+                <span class="text-xs font-semibold text-stone-400 uppercase tracking-wider" data-i18n="home.value4_pali">විශිෂ්ටත්වය • Viriya</span>
+              </div>
+              <h3 class="text-xl font-serif font-bold text-stone-900 mb-1" data-i18n="home.value4_title">
+                Excellence
+              </h3>
+              <p class="text-xs font-medium text-stone-500 mb-3" data-i18n="home.value4_sub">
+                Tenacity &amp; Leadership
+              </p>
+              <p class="text-xs sm:text-sm text-stone-600 leading-relaxed" data-i18n="home.value4_desc">
+                Striving for physical and academic triumph through spirited inter-house sports meets, track and field mastery, and team brotherhood.
+              </p>
+            </div>
+            <div class="pt-4 mt-4 border-t border-stone-200/60 flex items-center justify-between text-[11px] font-mono text-stone-400">
+              <span>Athletics &amp; Teams</span>
+              <span class="w-1.5 h-1.5 rounded-full bg-[#007A87]"></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Official Institutional Identity & Social Share Card -->
+        <div class="mt-10 overflow-hidden rounded-2xl border border-stone-200/90 bg-stone-900 shadow-sm">
+          <div class="relative aspect-[1200/630] sm:max-h-[380px] w-full overflow-hidden bg-stone-950">
+            <img 
+              src="/assets/og-image.jpg" 
+              alt="Sri Chandananda Buddhist College - Official Institutional Identity and Core Values" 
+              class="w-full h-full object-cover transition-transform duration-700 hover:scale-[1.01]" 
+              width="1200" 
+              height="630"
+              loading="lazy"
+            />
+          </div>
+          <div class="p-4 sm:p-5 bg-stone-900 text-stone-300 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 text-xs border-t border-stone-800/80">
+            <div class="flex items-center gap-2.5">
+              <span class="w-2 h-2 rounded-full bg-amber-400"></span>
+              <span class="font-mono text-stone-200 uppercase tracking-wider text-[11px]" data-en="Official Social Share &amp; Marketing Card (1200 × 630)" data-si="නිල සමාජ මාධ්‍ය සහ ප්‍රවර්ධන සන්නාම කාඩ්පත (1200 × 630)">
+                Official Social Share &amp; Marketing Card (1200 × 630)
+              </span>
+            </div>
+            <div class="flex items-center gap-4">
+              <a 
+                href="/assets/og-image.jpg" 
+                target="_blank" 
+                rel="noopener noreferrer" 
+                class="font-mono text-amber-300 hover:text-amber-200 hover:underline flex items-center gap-1.5 transition-colors"
+              >
+                <span>View Full Resolution HD</span>
+                <span>↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. Academic Portals & Interactive Resources -->
+    <section class="py-14 sm:py-20 bg-stone-50 border-b border-stone-200/80">
+      <div class="container mx-auto px-4 max-w-6xl">
+        <div class="mb-10 max-w-2xl">
+          <h2 class="text-2xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight" data-en="Academic Portals & Digital Vault" data-si="අධ්‍යයන ද්වාර සහ සම්පත් සංචිතය">
+            Academic Portals &amp; Digital Vault
+          </h2>
+          <p class="text-stone-500 text-sm sm:text-base mt-2 leading-relaxed" data-en="Direct collegiate access to term archives, syllabus modules, bell schedules, and house verification." data-si="වාර විභාග ප්‍රශ්න පත්‍ර, විෂය නිර්දේශ, දෛනික සීනු කාලසටහන් සහ නිවාස තොරතුරු සඳහා සෘජු ප්‍රවේශය.">
+            Direct collegiate access to term archives, syllabus modules, bell schedules, and house verification.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 items-stretch">
+          <!-- Main Feature: Academic Vault with Real Classroom Photo (Span 7) -->
+          <div class="lg:col-span-7 rounded-3xl border border-stone-200/80 bg-white overflow-hidden flex flex-col justify-between shadow-xs hover:border-[#581838]/40 transition-all group">
+            <div class="relative h-56 sm:h-64 overflow-hidden bg-stone-900">
+              <img 
+                src="/assets/gallery/classroom.webp" 
+                alt="Sri Chandananda Buddhist College Academic Learning Environment" 
+                class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 opacity-90"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-stone-950 via-stone-950/40 to-transparent"></div>
+              <div class="absolute bottom-4 left-6 right-6 flex items-center justify-between text-white">
+                <span class="font-mono text-xs uppercase tracking-widest text-amber-300" data-en="National Curriculum & Term Papers" data-si="ජාතික විෂය නිර්දේශ සහ වාර ප්‍රශ්න පත්‍ර">
+                  National Curriculum &amp; Term Papers
+                </span>
+                <span class="font-mono text-xs text-stone-300">Grades 6-13</span>
+              </div>
+            </div>
+
+            <div class="p-6 sm:p-8 flex flex-col justify-between flex-grow">
+              <div class="mb-6">
+                <h3 class="text-xl sm:text-2xl font-serif font-bold text-stone-900 mb-2 group-hover:text-[#581838] transition-colors" data-en="Academic Past Paper Vault" data-si="පසුගිය ප්‍රශ්න පත්‍ර සහ විෂය සංචිතය">
+                  Academic Past Paper Vault
+                </h3>
+                <p class="text-stone-600 text-xs sm:text-sm leading-relaxed" data-en="Complete searchable archives of G.C.E. O/L and A/L model papers, school term evaluations, and official marking schemes for all academic streams." data-si="සාමාන්‍ය පෙළ සහ උසස් පෙළ ආදර්ශ ප්‍රශ්න පත්‍ර, වාර විභාග පත්‍ර සහ නිල ලකුණු දීමේ පටිපාටි සහිත විද්‍යාලයීය විෂය සංචිතය.">
+                  Complete searchable archives of G.C.E. O/L and A/L model papers, school term evaluations, and official marking schemes for all academic streams.
+                </p>
+              </div>
+
+              <div>
+                <a 
+                  href="/academics/resources" 
+                  class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-stone-900 hover:bg-[#581838] text-white text-xs sm:text-sm font-medium transition-colors"
+                >
+                  <span data-en="Enter Academic Vault" data-si="සංචිතයට පිවිසෙන්න">Enter Academic Vault</span>
+                  <ArrowRight size={15} />
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Secondary Stack: Timetables and House Portal (Span 5) -->
+          <div class="lg:col-span-5 flex flex-col gap-6">
+            <!-- Timetables Panel -->
+            <a 
+              href="/timetables" 
+              class="rounded-3xl border border-stone-200/80 bg-white p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:border-[#581838]/40 transition-all group flex-1"
+            >
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-mono text-[11px] uppercase tracking-wider text-stone-500" data-en="Daily Schedules" data-si="දෛනික කාලසටහන">Daily Schedules</span>
+                  <span class="text-xs font-mono font-bold text-[#581838] bg-rose-50 px-2.5 py-0.5 rounded-md border border-rose-100">07:50 - 13:30</span>
+                </div>
+                <h3 class="text-lg sm:text-xl font-serif font-bold text-stone-900 group-hover:text-[#581838] transition-colors mb-2" data-en="Timetables & Bell Schedule" data-si="පන්ති කාලසටහන සහ සීනු වේලාවන්">
+                  Timetables &amp; Bell Schedule
+                </h3>
+                <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4" data-en="Live 8-period tracker, division schedules across Grades 1 to 13, and printable desk routines." data-si="සජීවී කාලච්ඡේද 8 ක සටහන, 1-13 ශ්‍රේණි පන්ති කාලසටහන් සහ මුද්‍රණය කළ හැකි පිටපත්.">
+                  Live 8-period tracker, division schedules across Grades 1 to 13, and printable desk routines.
+                </p>
+              </div>
+              <div class="inline-flex items-center gap-1.5 text-xs font-bold text-[#581838] group-hover:gap-2.5 transition-all pt-2 border-t border-stone-100">
+                <span data-en="View Daily Schedules" data-si="කාලසටහන බලන්න">View Daily Schedules</span>
+                <ArrowRight size={14} />
+              </div>
+            </a>
+
+            <!-- House Allegiance Panel -->
+            <a 
+              href="/student-life" 
+              class="rounded-3xl border border-stone-200/80 bg-white p-6 sm:p-7 flex flex-col justify-between shadow-xs hover:border-[#581838]/40 transition-all group flex-1"
+            >
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <span class="font-mono text-[11px] uppercase tracking-wider text-stone-500" data-en="Tri-House System" data-si="තුන් නිවාස පද්ධතිය">Tri-House System</span>
+                  <div class="flex items-center gap-1.5">
+                    <span class="w-2.5 h-2.5 rounded-sm bg-[#007A87]" title="Ramya (Teal)"></span>
+                    <span class="w-2.5 h-2.5 rounded-sm bg-[#F58220]" title="Suramya (Gold)"></span>
+                    <span class="w-2.5 h-2.5 rounded-sm bg-[#581838]" title="Subha (Maroon)"></span>
+                  </div>
+                </div>
+                <h3 class="text-lg sm:text-xl font-serif font-bold text-stone-900 group-hover:text-[#581838] transition-colors mb-2" data-en="House Portal & Allegiance" data-si="නිවාස පද්ධතිය සහ තොරතුරු">
+                  House Portal &amp; Allegiance
+                </h3>
+                <p class="text-stone-600 text-xs sm:text-sm leading-relaxed mb-4" data-en="Verify your allegiance to Ramya, Suramya, or Subha through admission matriculation indexing." data-si="ඇතුළත් වීමේ අංකය අනුව රම්‍ය, සුරම්‍ය හෝ සුභ නිවාසය ක්ෂණිකව තහවුරු කරගන්න.">
+                  Verify your allegiance to Ramya, Suramya, or Subha through admission matriculation indexing.
+                </p>
+              </div>
+              <div class="inline-flex items-center gap-1.5 text-xs font-bold text-[#581838] group-hover:gap-2.5 transition-all pt-2 border-t border-stone-100">
+                <span data-en="Explore House System" data-si="නිවාස පද්ධතිය බලන්න">Explore House System</span>
+                <ArrowRight size={14} />
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. Circulars & Announcements Section -->
+    <section class="py-12 sm:py-20">
       <div class="container mx-auto px-4 max-w-6xl">
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4 mb-8 sm:mb-12">
           <div class="max-w-2xl">
-            <h2 data-i18n="home.announcements_title" class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight mb-2 sm:mb-4">Latest Circulars & Announcements</h2>
+            <h2 data-i18n="home.announcements_title" class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 tracking-tight mb-2 sm:mb-4">
+              Latest Circulars &amp; Announcements
+            </h2>
           </div>
           <a href="/admissions" class="text-stone-900 hover:text-stone-500 font-medium text-sm inline-flex items-center gap-2 transition-colors border-b border-stone-900 pb-0.5 mb-2">
             <span data-i18n="home.view_circulars">View all circulars</span> <ArrowRight size={16} />
@@ -91,58 +403,146 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
         
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
           {latestAnnouncements.map((notice) => (
-            <div class="group block cursor-pointer">
-                <div class="pt-6 border-t border-stone-200 group-hover:border-stone-900 transition-colors duration-300">
-                  <div class="flex justify-between items-center mb-4">
-                    {notice.data.category === 'Religious' ? (
-                      <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500" data-en={notice.data.category} data-si={notice.data.category_si || notice.data.category}>
-                        {notice.data.category}
-                      </span>
-                    ) : notice.data.category === 'Sports' ? (
-                      <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500" data-en={notice.data.category} data-si={notice.data.category_si || notice.data.category}>
-                        {notice.data.category}
-                      </span>
-                    ) : (
-                      <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500" data-en={notice.data.category} data-si={notice.data.category_si || notice.data.category}>
-                        {notice.data.category}
-                      </span>
-                    )}
+            <div class="gsap-reveal-batch group block cursor-pointer">
+              <div class="pt-6 border-t border-stone-200 group-hover:border-stone-900 transition-colors duration-300">
+                <div class="flex justify-between items-center mb-4">
+                  <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500" data-en={notice.data.category} data-si={notice.data.category_si || notice.data.category}>
+                    {notice.data.category}
+                  </span>
 
-                    {notice.data.pinned && (
-                      <span data-i18n="home.pinned" class="text-stone-900 text-[11px] font-bold flex items-center gap-1">
-                        <span class="w-1.5 h-1.5 rounded-full bg-stone-900 block"></span> Pinned
-                      </span>
-                    )}
-                  </div>
-                  
-                  <h3 class="text-xl sm:text-2xl font-serif text-stone-900 group-hover:opacity-70 transition-opacity leading-snug mb-3" data-en={notice.data.title} data-si={notice.data.title_si || notice.data.title}>
-                    {notice.data.title}
-                  </h3>
-                  
-                  <p class="text-stone-500 text-sm line-clamp-3 leading-relaxed mb-4" data-en={notice.data.summary} data-si={notice.data.summary_si || notice.data.summary}>
-                    {notice.data.summary}
-                  </p>
-                  
-                  <p class="text-xs text-stone-400 font-medium">
-                    {new Date(notice.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
-                  </p>
+                  {notice.data.pinned && (
+                    <span data-i18n="home.pinned" class="text-[#581838] text-[11px] font-bold flex items-center gap-1">
+                      <span class="w-1.5 h-1.5 rounded-full bg-[#581838] block"></span> Pinned
+                    </span>
+                  )}
                 </div>
+                
+                <h3 class="text-xl sm:text-2xl font-serif text-stone-900 group-hover:text-[#581838] transition-colors leading-snug mb-3" data-en={notice.data.title} data-si={notice.data.title_si || notice.data.title}>
+                  {notice.data.title}
+                </h3>
+                
+                <p class="text-stone-500 text-sm line-clamp-3 leading-relaxed mb-4" data-en={notice.data.summary} data-si={notice.data.summary_si || notice.data.summary}>
+                  {notice.data.summary}
+                </p>
+                
+                <p class="text-xs text-stone-400 font-medium">
+                  {new Date(notice.data.date).toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' })}
+                </p>
+              </div>
             </div>
           ))}
         </div>
       </div>
     </section>
 
-    <section class="reveal-up py-10 sm:py-20 border-t border-stone-200">
+    <!-- 5. Milestone Timeline with GSAP Scrub -->
+    <section class="gsap-milestone-container py-16 sm:py-24 bg-stone-100/60 border-t border-b border-stone-200">
+      <div class="container mx-auto px-4 max-w-5xl">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-stone-200/70 text-stone-800 text-xs font-mono font-semibold uppercase tracking-wider mb-3 border border-stone-300/60">
+            <span data-en="Two Decades of Excellence" data-si="දශක දෙකක අභිමානය">Two Decades of Excellence</span>
+          </div>
+          <h2 class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight mb-4" data-en="Our Milestones of Growth" data-si="අපගේ ඓතිහාසික සන්ධිස්ථාන">
+            Our Milestones of Growth
+          </h2>
+          <p class="text-stone-500 text-sm sm:text-base leading-relaxed" data-en="Chronicle of visionary monastic leadership, infrastructure expansion, and scholastic triumph since 2006." data-si="2006 වසරේ සිට දූරදර්ශී නායකත්වය, භෞතික සම්පත් සංවර්ධනය සහ අධ්‍යාපනික ජයග්‍රහණවල ඓතිහාසික ගමන් මග.">
+            Chronicle of visionary monastic leadership, infrastructure expansion, and scholastic triumph since 2006.
+          </p>
+        </div>
+
+        <div class="relative">
+          <!-- Center Vertical Scrub Line (Desktop) -->
+          <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-stone-200 -translate-x-1/2">
+            <div class="gsap-milestone-line w-full h-full bg-[#581838] origin-top scale-y-0"></div>
+          </div>
+
+          <!-- Milestones Grid / Mobile Rail -->
+          <div class="relative border-l-2 border-stone-200 ml-5 pl-7 md:border-l-0 md:ml-0 md:pl-0 space-y-10 sm:space-y-12">
+            <!-- 2006 Milestone -->
+            <div class="gsap-milestone-card relative flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
+              <div class="w-full md:w-1/2 md:text-right md:pr-10 order-2 md:order-1">
+                <span class="text-xs font-bold text-amber-700 tracking-wider uppercase">Foundation • 2006</span>
+                <h3 class="text-xl sm:text-2xl font-serif font-bold text-stone-900 mt-1 mb-2" data-en="Monastic Inception at Asgiriya" data-si="අස්ගිරියේදී විද්‍යාලයීය ආරම්භය">
+                  Monastic Inception at Asgiriya
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed" data-en="Founded under the noble patronage of Most Ven. Dr. Godagama Sri Mangala Nayaka Thero, establishing a premier Buddhist collegiate haven in Kandy." data-si="අතිපූජ්‍ය ආචාර්ය ගොඩගම ශ්‍රී මංගල නායක ස්වාමීන්ද්‍රයන් වහන්සේගේ මූලිකත්වයෙන් මහනුවර අස්ගිරිය පුදබිමේදී විද්‍යාලය ආරම්භ කිරීම.">
+                  Founded under the noble patronage of Most Ven. Dr. Godagama Sri Mangala Nayaka Thero, establishing a premier Buddhist collegiate haven in Kandy.
+                </p>
+              </div>
+              <div class="px-3 py-1 rounded-md bg-[#581838] text-amber-200 font-mono text-xs font-bold shrink-0 shadow-xs z-10 order-1 md:order-2 -ml-[45px] md:ml-0">
+                2006
+              </div>
+              <div class="hidden md:block md:w-1/2 md:pl-10 order-3"></div>
+            </div>
+
+            <!-- 2012 Milestone -->
+            <div class="gsap-milestone-card relative flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
+              <div class="hidden md:block md:w-1/2 md:pr-10 order-1"></div>
+              <div class="px-3 py-1 rounded-md bg-stone-800 text-stone-200 font-mono text-xs font-bold shrink-0 shadow-xs z-10 order-1 md:order-2 -ml-[45px] md:ml-0">
+                2012
+              </div>
+              <div class="w-full md:w-1/2 md:text-left md:pl-10 order-2 md:order-3">
+                <span class="text-xs font-bold text-amber-700 tracking-wider uppercase">Curriculum • 2012</span>
+                <h3 class="text-xl sm:text-2xl font-serif font-bold text-stone-900 mt-1 mb-2" data-en="Bilingual Secondary Expansion" data-si="ද්විභාෂා ද්විතීයික අධ්‍යාපන ව්‍යාප්තිය">
+                  Bilingual Secondary Expansion
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed" data-en="Introduction of English-medium bilingual streams in Science and Mathematics, broadening horizons for collegiate scholars across the Central Province." data-si="මධ්‍යම පළාතේ සිසුන් උදෙසා විද්‍යාව හා ගණිතය විෂයන් සඳහා ඉංග්‍රීසි මාධ්‍ය ද්විභාෂා පන්ති ආරම්භ කිරීම.">
+                  Introduction of English-medium bilingual streams in Science and Mathematics, broadening horizons for collegiate scholars across the Central Province.
+                </p>
+              </div>
+            </div>
+
+            <!-- 2018 Milestone -->
+            <div class="gsap-milestone-card relative flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
+              <div class="w-full md:w-1/2 md:text-right md:pr-10 order-2 md:order-1">
+                <span class="text-xs font-bold text-amber-700 tracking-wider uppercase">Infrastructure • 2018</span>
+                <h3 class="text-xl sm:text-2xl font-serif font-bold text-stone-900 mt-1 mb-2" data-en="Advanced Science &amp; Arts Complexes" data-si="විද්‍යාගාර සහ කලා නිකේතන විවෘත කිරීම">
+                  Advanced Science &amp; Arts Complexes
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed" data-en="Commissioning modern physics, chemistry, and biology laboratories alongside dedicated aesthetic dance arenas for the Kandyan Ves ensemble." data-si="භෞතික, රසායනික හා ජීව විද්‍යා නවීන විද්‍යාගාර මෙන්ම උඩරට වෙස් නැටුම් ශාලාව සහ සෞන්දර්ය අංශය විවෘත කිරීම.">
+                  Commissioning modern physics, chemistry, and biology laboratories alongside dedicated aesthetic dance arenas for the Kandyan Ves ensemble.
+                </p>
+              </div>
+              <div class="px-3 py-1 rounded-md bg-stone-800 text-stone-200 font-mono text-xs font-bold shrink-0 shadow-xs z-10 order-1 md:order-2 -ml-[45px] md:ml-0">
+                2018
+              </div>
+              <div class="hidden md:block md:w-1/2 md:pl-10 order-3"></div>
+            </div>
+
+            <!-- 2026 Milestone -->
+            <div class="gsap-milestone-card relative flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
+              <div class="hidden md:block md:w-1/2 md:pr-10 order-1"></div>
+              <div class="px-3 py-1 rounded-md bg-[#581838] text-amber-200 font-mono text-xs font-bold shrink-0 shadow-xs z-10 order-1 md:order-2 -ml-[45px] md:ml-0">
+                2026
+              </div>
+              <div class="w-full md:w-1/2 md:text-left md:pl-10 order-2 md:order-3">
+                <span class="text-xs font-bold text-[#581838] tracking-wider uppercase">Digital Era • 2026</span>
+                <h3 class="text-xl sm:text-2xl font-serif font-bold text-stone-900 mt-1 mb-2" data-en="Digital Campus &amp; Academic Vault" data-si="ඩිජිටල් විද්‍යාලයීය සහ සම්පත් සංචිතය">
+                  Digital Campus &amp; Academic Vault
+                </h3>
+                <p class="text-xs sm:text-sm text-stone-600 leading-relaxed" data-en="Deployment of real-time digital timetables, online past paper repositories, and interactive collegiate portals for the next generation of leaders." data-si="සජීවී කාලසටහන්, මාර්ගගත විභාග ප්‍රශ්න පත්‍ර සංචිතය සහ ඩිජිටල් ශිෂ්‍ය මෙවලම් පද්ධතිය එළිදැක්වීම.">
+                  Deployment of real-time digital timetables, online past paper repositories, and interactive collegiate portals for the next generation of leaders.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. Leadership Section -->
+    <section class="py-12 sm:py-20 border-t border-stone-200">
       <div class="container mx-auto px-4 max-w-6xl">
         <div class="mb-8 sm:mb-14 max-w-2xl">
-          <h2 data-i18n="home.leadership_title" class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight mb-3 sm:mb-4">Our Leadership</h2>
+          <h2 data-i18n="home.leadership_title" class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight mb-3 sm:mb-4">
+            Our Monastic &amp; Academic Leadership
+          </h2>
         </div>
         
         <div class="grid grid-cols-1 md:grid-cols-2 gap-8 sm:gap-16">
           {sortedLeadership.map(leader => (
-            <div class="group flex flex-col">
-              <div class="overflow-hidden rounded-3xl mb-5 sm:mb-8">
+            <div class="gsap-reveal-batch group flex flex-col">
+              <div class="overflow-hidden rounded-3xl mb-5 sm:mb-8 bg-stone-100 shadow-xs">
                 <img 
                   src={getLeaderImage(leader.data.image, leader.data.fallbackImage)} 
                   alt={leader.data.name} 
@@ -170,7 +570,8 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
       </div>
     </section>
 
-    <section class="reveal-up py-10 sm:py-20 bg-stone-100/50">
+    <!-- 7. Holistic Development & Cultural Arts -->
+    <section class="py-12 sm:py-20 bg-stone-100/50">
       <div class="container mx-auto px-4 max-w-6xl">
         <div class="mb-8 sm:mb-14 max-w-2xl">
           <span class="text-[11px] font-bold uppercase tracking-wider text-stone-500 mb-2 inline-block" data-en="STUDENT LIFE" data-si="ශිෂ්‍ය ජීවිතය">Student Life</span>
@@ -181,7 +582,7 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
 
         <div class="grid grid-cols-1 md:grid-cols-12 gap-8 mb-10 sm:mb-20">
           <div class="md:col-span-7 group cursor-pointer">
-            <div class="aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-3xl bg-stone-200 mb-5">
+            <div class="aspect-[4/3] sm:aspect-[16/10] overflow-hidden rounded-3xl bg-stone-200 mb-5 shadow-xs">
               <img 
                 src="/assets/activities/activities-kandyan-dance-group.jpg" 
                 alt="Traditional Kandyan Ves Dance and Cultural Celebrations at SCBC" 
@@ -201,7 +602,7 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
           </div>
 
           <div class="md:col-span-5 group cursor-pointer">
-            <div class="aspect-[4/5] overflow-hidden rounded-3xl bg-stone-200 mb-5">
+            <div class="aspect-[4/5] overflow-hidden rounded-3xl bg-stone-200 mb-5 shadow-xs">
               <img 
                 src="/assets/activities/activities-sports-meet-band.jpg" 
                 alt="Annual Inter-House Sports Meet at Sri Chandananda Buddhist College" 
@@ -221,36 +622,9 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
           </div>
         </div>
 
-        <div class="reveal-up pt-16 border-t border-stone-200">
-          <div class="max-w-3xl mb-12">
-            <h3 data-i18n="home.houses_title" class="text-3xl sm:text-4xl font-serif font-bold text-stone-900 mb-4 tracking-tight">Three Esteemed Houses</h3>
-            <p data-i18n="home.houses_sub" class="text-stone-500 text-lg leading-relaxed"> Fostering inter-house sports meet rivalries, camaraderie, and house pride across athletics, academics, and cultural contests.
-            </p>
-          </div>
-          
-          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="border-t border-stone-200 pt-6 group">
-              <h4 class="text-2xl font-serif font-bold text-stone-900 mb-3" data-i18n="home.house_ramya_name">Ramya House</h4>
-              <p data-i18n="home.house_ramya_desc" class="text-sm text-stone-500 leading-relaxed"> Embodying foundational Buddhist discipline, academic devotion, and respect for college heritage during inter-house championships and sports meets.
-              </p>
-            </div>
-            
-            <div class="border-t border-stone-200 pt-6 group">
-              <h4 class="text-2xl font-serif font-bold text-stone-900 mb-3" data-i18n="home.house_suramya_name">Suramya House</h4>
-              <p data-i18n="home.house_suramya_desc" class="text-sm text-stone-500 leading-relaxed"> Fostering intellectual sharpness, ethical governance, and strategic team leadership in competitive co-curricular challenges and debates.
-              </p>
-            </div>
-            
-            <div class="border-t border-stone-200 pt-6 group">
-              <h4 class="text-2xl font-serif font-bold text-stone-900 mb-3" data-i18n="home.house_subha_name">Subha House</h4>
-              <p data-i18n="home.house_subha_desc" class="text-sm text-stone-500 leading-relaxed"> Channeling vibrant energy, track and field excellence, and tenacious athletic spirit into annual inter-house competitions and team triumphs.
-              </p>
-            </div>
-          </div>
-
-          <div class="mt-16 pt-12 border-t border-stone-200/50">
-            <HouseCalculator />
-          </div>
+        <!-- House System Highlight & Calculator -->
+        <div class="pt-16 border-t border-stone-200">
+          <HouseCalculator />
         </div>
 
       </div>

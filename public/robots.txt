@@ -1,0 +1,11 @@
+# robots.txt for Sri Chandananda Buddhist College (scbck.lk)
+User-agent: *
+Allow: /
+
+# Disallow administrative and private endpoints
+Disallow: /admin/
+Disallow: /api/
+
+# Canonical Sitemaps
+Sitemap: https://scbck.lk/sitemap-index.xml
+Sitemap: https://scbck.lk/sitemap-0.xml

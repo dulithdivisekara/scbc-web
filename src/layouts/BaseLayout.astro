@@ -6,7 +6,7 @@ export interface Props {
 	description?: string;
 }
 
-const { title, description = "Empowering the next generation through wisdom, discipline, and Buddhist philosophy since 2006." } = Astro.props;
+const { title, description = "Nurturing intellectual wisdom, moral discipline, and cultural heritage in the sacred hill capital of Kandy since 2006." } = Astro.props;
 
 const isHome = title === "Home" || title === "Sri Chandananda Buddhist College";
 const pageTitle = isHome ? "Sri Chandananda College, Kandy" : title;
@@ -15,26 +15,45 @@ const ogTitle = isHome
 	? "Sri Chandananda Buddhist College, Kandy"
 	: `${title} | Sri Chandananda Buddhist College, Kandy`;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://scbck.lk/');
+const siteOrigin = (
+  process.env.SITE_URL || 
+  process.env.CF_PAGES_URL || 
+  (Astro.site && !Astro.site.toString().includes('scbck.lk') ? Astro.site.toString() : null) || 
+  'https://feature-campus-redesign-and.scbc-web.pages.dev'
+).replace(/\/$/, '');
+
+const canonicalURL = new URL(Astro.url.pathname, `${siteOrigin}/`);
+const ogImageURL = `${siteOrigin}/assets/og-image.jpg`;
+const crestURL = `${siteOrigin}/assets/branding/school-crest-official.png`;
 
 const jsonLd = {
   "@context": "https://schema.org",
-  "@type": "EducationalOrganization",
+  "@type": ["EducationalOrganization", "School"],
   "name": "Sri Chandananda Buddhist College",
-  "alternateName": "ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය",
-  "url": Astro.site || "https://scbck.lk/",
-  "logo": new URL("/assets/branding/school-crest-official.png", canonicalURL).toString(),
-  "foundingDate": "2006",
+  "alternateName": ["ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය", "SCBC Kandy"],
+  "url": `${siteOrigin}/`,
+  "logo": crestURL,
+  "image": ogImageURL,
+  "description": description,
+  "slogan": "Nurturing Intellectual Wisdom, Moral Discipline, and Buddhist Values",
+  "foundingDate": "2006-01-04",
   "founder": {
     "@type": "Person",
-    "name": "Most Ven. Dr. Godagama Mangala Thero"
+    "name": "Most Ven. Dr. Godagama Mangala Thero",
+    "jobTitle": "Founder & Executive Director"
   },
   "address": {
     "@type": "PostalAddress",
     "streetAddress": "Asgiri Vihara Mawatha",
     "addressLocality": "Kandy",
+    "addressRegion": "Central Province",
     "postalCode": "20000",
     "addressCountry": "LK"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 7.2982,
+    "longitude": 80.6315
   },
   "contactPoint": {
     "@type": "ContactPoint",
@@ -42,7 +61,14 @@ const jsonLd = {
     "email": "info@scbck.lk",
     "contactType": "Admissions",
     "availableLanguage": ["Sinhala", "English"]
-  }
+  },
+  "knowsAbout": [
+    "Theravada Buddhist Ethics",
+    "Bilingual Secondary Education",
+    "G.C.E. Advanced Level Science and Commerce",
+    "Traditional Kandyan Dance & Arts",
+    "Character Formation & Moral Discipline"
+  ]
 };
 ---
 
@@ -55,16 +81,32 @@ const jsonLd = {
 		<meta name="description" content={description} />
 		<link rel="canonical" href={canonicalURL} />
 		
-		<meta property="og:title" content={ogTitle} />
-		<meta property="og:description" content={description} />
+		<!-- Open Graph / Facebook / LinkedIn / WhatsApp -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content={canonicalURL} />
-		<meta property="og:image" content={new URL("/assets/branding/school-crest-official.png", canonicalURL)} />
+		<meta property="og:site_name" content="Sri Chandananda Buddhist College" />
+		<meta property="og:title" content={ogTitle} />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content={ogImageURL} />
+		<meta property="og:image:secure_url" content={ogImageURL} />
+		<meta property="og:image:type" content="image/jpeg" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:image:alt" content="Sri Chandananda Buddhist College - Campus in Asgiriya, Kandy, Core Institutional Values, and Crest" />
+		<meta property="og:locale" content="en_LK" />
+		<meta property="og:locale:alternate" content="si_LK" />
 		
+		<!-- Twitter Cards -->
 		<meta name="twitter:card" content="summary_large_image" />
 		<meta name="twitter:title" content={ogTitle} />
 		<meta name="twitter:description" content={description} />
-		<meta name="twitter:image" content={new URL("/assets/branding/school-crest-official.png", canonicalURL)} />
+		<meta name="twitter:image" content={ogImageURL} />
+		<meta name="twitter:image:alt" content="Sri Chandananda Buddhist College - Campus in Asgiriya, Kandy, Core Institutional Values, and Crest" />
+		
+		<!-- SEO & Crawling Signals -->
+		<meta name="keywords" content="Sri Chandananda Buddhist College, SCBC Kandy, Buddhist School Kandy, Asgiriya Buddhist College, Admissions 2026, National School Sri Lanka, Bilingual Education Kandy, O/L A/L School Kandy, Sri Chandananda College" />
+		<meta name="author" content="Sri Chandananda Buddhist College" />
+		<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
 		
 		<link rel="icon" type="image/png" href="/assets/branding/school-crest-official.png" />
 		<link rel="apple-touch-icon" href="/assets/branding/school-crest-official.png" />
@@ -139,6 +181,21 @@ const jsonLd = {
 				setupInteractions();
 			}
 			document.addEventListener('astro:page-load', setupInteractions);
+		</script>
+
+		<script>
+			import { initGsapAnimations } from '../scripts/gsap-init';
+
+			function runGsap() {
+				initGsapAnimations();
+			}
+
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', runGsap);
+			} else {
+				runGsap();
+			}
+			document.addEventListener('astro:page-load', runGsap);
 		</script>
 	</body>
 </html>

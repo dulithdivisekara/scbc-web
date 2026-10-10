@@ -9,7 +9,10 @@ const page = (await getEntry('pages', 'admissions'))!.data;
 const { intro, procedure_heading, steps, download } = page;
 ---
 
-<BaseLayout title="Admissions">
+<BaseLayout 
+  title="Admissions & Enrolment" 
+  description="Official admissions portal for Sri Chandananda Buddhist College, Kandy. Enrolment steps, entrance requirements, downloadable application forms, and bilingual curriculum admissions for Grades 1 through 13."
+>
   <Header />
   
   <main class="flex-grow py-16 sm:py-24 bg-[#FCFCFC]">

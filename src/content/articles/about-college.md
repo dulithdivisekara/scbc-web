@@ -2,8 +2,8 @@
 id: about-college
 title: "The Heritage and Evolution of Sri Chandananda Buddhist College"
 title_si: "ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලයීය ඓතිහාසික උරුමය සහ අභිවෘද්ධිය"
-lead: "Empowering the next generation through wisdom, discipline, and Buddhist philosophy since 2006."
-lead_si: "2006 වසරේ සිට ප්‍රඥාව, විනය සහ බෞද්ධ දර්ශනය ඔස්සේ අනාගත පරපුර සවිබල ගැන්වීම."
+lead: "Nurturing intellectual wisdom, moral discipline, and Buddhist values in the historic hill capital of Kandy since 2006."
+lead_si: "2006 වසරේ සිට මහනුවර ඓතිහාසික අස්ගිරිය පුදබිමෙහි ගුණ නැණ බෙලෙන් පිරිපුන් දැහැමි ශිෂ්‍ය පරපුරක් බිහිකිරීම."
 sections:
   - heading: "Conceptual Foundation & Legacy"
     heading_si: "සංකල්පීය පදනම සහ උරුමය"
