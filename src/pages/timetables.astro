@@ -1,0 +1,90 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Header from '../components/common/Header.astro';
+import Footer from '../components/common/Footer.astro';
+import { TimetableExplorer } from '../components/timetable/TimetableExplorer';
+import { Clock, Calendar, ShieldCheck, ArrowRight } from 'lucide-react';
+---
+
+<BaseLayout title="Daily Timetables & Bell Schedule | Sri Chandananda Buddhist College">
+  <Header />
+
+  <main class="flex-grow py-8 sm:py-16 bg-[#FCFCFC]">
+    <div class="container mx-auto px-4 max-w-6xl">
+      <!-- Breadcrumb Navigation -->
+      <nav class="flex items-center gap-2 text-xs text-stone-500 mb-6 no-print">
+        <a href="/" class="hover:text-stone-900 transition-colors">Home</a>
+        <span>/</span>
+        <a href="/academics" class="hover:text-stone-900 transition-colors">Academics</a>
+        <span>/</span>
+        <span class="text-stone-900 font-semibold">Timetables &amp; Schedule</span>
+      </nav>
+
+      <!-- Print-Only Institutional Header -->
+      <div class="hidden print:block mb-8 border-b-2 border-stone-800 pb-4 text-center">
+        <h1 class="text-2xl font-serif font-bold tracking-tight text-stone-900">
+          SRI CHANDANANDA BUDDHIST COLLEGE
+        </h1>
+        <p class="text-xs uppercase tracking-widest text-stone-600 mt-1 font-semibold">
+          ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය • Asgiriya, Kandy • Official Academic Timetable
+        </p>
+        <p class="text-[11px] text-stone-500 mt-0.5">
+          School Hours: 07:50 AM – 01:30 PM • 8 Periods Daily
+        </p>
+      </div>
+
+      <!-- Hero Header Section -->
+      <div class="mb-8 sm:mb-12 max-w-3xl no-print">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-amber-50 border border-amber-200/80 text-amber-900 text-xs font-semibold uppercase tracking-wider mb-3">
+          <Clock size={13} />
+          <span data-en="2026 Academic Bell Schedule" data-si="2026 අධ්‍යයන සීනු කාලසටහන">
+            2026 Academic Bell Schedule
+          </span>
+        </div>
+        <h1 class="text-3xl sm:text-5xl font-serif font-bold text-stone-900 tracking-tight mb-3">
+          <span data-en="Class Timetables &amp; Daily Schedule" data-si="පන්ති කාලසටහන් සහ දෛනික කාලවේලාවන්">
+            Class Timetables &amp; Daily Schedule
+          </span>
+        </h1>
+        <p class="text-stone-600 text-sm sm:text-base leading-relaxed" data-en="Access real-time period trackers, grade-wise class schedules, and printable desk copies for Sri Chandananda Buddhist College students and faculty." data-si="ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලයීය සිසුන් සහ ගුරුභවතුන් සඳහා සජීවී කාලච්ඡේද සටහන්, ශ්‍රේණි අනුව කාලසටහන් සහ මුද්‍රණය කළ හැකි පිටපත් මෙතැනින් ලබාගන්න.">
+          Access real-time period trackers, grade-wise class schedules, and printable desk copies for Sri Chandananda Buddhist College students and faculty.
+        </p>
+      </div>
+
+      <!-- Reactive Timetable Explorer Island -->
+      <TimetableExplorer client:load />
+
+      <!-- Institutional Schedule Notes -->
+      <div class="mt-12 p-6 rounded-2xl bg-stone-100/80 border border-stone-200/90 no-print">
+        <div class="flex items-start gap-4">
+          <div class="p-2.5 rounded-xl bg-white text-stone-700 shadow-xs shrink-0">
+            <ShieldCheck size={22} />
+          </div>
+          <div class="space-y-1">
+            <h3 class="text-base font-serif font-bold text-stone-900" data-en="Academic Protocol &amp; Punctuality" data-si="අධ්‍යයන විනය හා වෙලාවට වැඩකිරීම">
+              Academic Protocol &amp; Punctuality
+            </h3>
+            <p class="text-xs sm:text-sm text-stone-600 leading-relaxed" data-en="All students are required to enter the college premises before 07:45 AM. The morning Buddha Vandana and assembly commence promptly at 07:50 AM. Students are expected to maintain silence and reverent posture during all Dhamma periods." data-si="සියලුම සිසුන් පෙරවරු 07:45 ට පෙර විද්‍යාල භූමියට ඇතුළත් විය යුතුය. පෙරවරු 07:50 ට බුද්ධ වන්දනාව ආරම්භ වේ. ධර්ම දේශනා හා වන්දනා කාලච්ඡේදයන්හිදී සම්පූර්ණ නිහඬතාව සහ සංවරභාවය ආරක්ෂා කළ යුතුය.">
+              All students are required to enter the college premises before 07:45 AM. The morning Buddha Vandana and assembly commence promptly at 07:50 AM. Students are expected to maintain silence and reverent posture during all Dhamma periods.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <Footer />
+</BaseLayout>
+
+<style>
+  @media print {
+    body {
+      background: white !important;
+      color: black !important;
+      font-size: 11pt;
+    }
+    .no-print {
+      display: none !important;
+    }
+  }
+</style>
