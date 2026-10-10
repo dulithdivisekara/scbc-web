@@ -83,8 +83,8 @@ export const TimetableExplorer: React.FC = () => {
         if (weekday === 'Saturday' || weekday === 'Sunday') {
           setCurrentStatus({
             inSession: false,
-            labelEn: 'Weekend — Academic sessions resume Monday at 07:50 AM',
-            labelSi: 'සති අන්තය — අධ්‍යයන කටයුතු සඳුදා පෙරවරු 07:50 ට ආරම්භ වේ',
+            labelEn: 'Weekend: Academic sessions resume Monday at 07:50 AM',
+            labelSi: 'සති අන්තය: අධ්‍යයන කටයුතු සඳුදා පෙරවරු 07:50 ට ආරම්භ වේ',
             currentTimeStr: timeString,
           });
           return;
@@ -94,8 +94,8 @@ export const TimetableExplorer: React.FC = () => {
         if (currentMins < 7 * 60 + 50) {
           setCurrentStatus({
             inSession: false,
-            labelEn: 'Pre-Session — Morning Buddha Vandana begins at 07:50 AM',
-            labelSi: 'පාසල් ආරම්භයට පෙර — උදෑසන බුද්ධ වන්දනාව 07:50 ට ආරම්භ වේ',
+            labelEn: 'Pre-Session: Morning Buddha Vandana begins at 07:50 AM',
+            labelSi: 'පාසල් ආරම්භයට පෙර: උදෑසන බුද්ධ වන්දනාව 07:50 ට ආරම්භ වේ',
             currentTimeStr: timeString,
           });
           return;
@@ -105,8 +105,8 @@ export const TimetableExplorer: React.FC = () => {
         if (currentMins >= 7 * 60 + 50 && currentMins < 8 * 60 + 10) {
           setCurrentStatus({
             inSession: true,
-            labelEn: 'In Session: Buddha Vandana & Morning Assembly (07:50 – 08:10)',
-            labelSi: 'දැනට පැවැත්වේ: බුද්ධ වන්දනාව සහ උදෑසන රැස්වීම (07:50 – 08:10)',
+            labelEn: 'In Session: Buddha Vandana & Morning Assembly (07:50 - 08:10)',
+            labelSi: 'දැනට පැවැත්වේ: බුද්ධ වන්දනාව සහ උදෑසන රැස්වීම (07:50 - 08:10)',
             periodIndex: -1,
             currentTimeStr: timeString,
           });
@@ -117,8 +117,8 @@ export const TimetableExplorer: React.FC = () => {
         if (currentMins >= 10 * 60 + 50 && currentMins < 11 * 60 + 10) {
           setCurrentStatus({
             inSession: true,
-            labelEn: 'Interval & Refreshments Break (10:50 – 11:10)',
-            labelSi: 'විවේක කාලය (10:50 – 11:10)',
+            labelEn: 'Interval & Refreshments Break (10:50 - 11:10)',
+            labelSi: 'විවේක කාලය (10:50 - 11:10)',
             periodIndex: -2,
             currentTimeStr: timeString,
           });
@@ -142,8 +142,8 @@ export const TimetableExplorer: React.FC = () => {
             const bell = bellSchedule.find((b) => b.period === slot.p);
             setCurrentStatus({
               inSession: true,
-              labelEn: `Active Now: Period ${slot.p} (${bell?.startTime} – ${bell?.endTime})`,
-              labelSi: `දැනට පැවැත්වේ: ${slot.p} වන කාලච්ඡේදය (${bell?.startTime} – ${bell?.endTime})`,
+              labelEn: `Active Now: Period ${slot.p} (${bell?.startTime} - ${bell?.endTime})`,
+              labelSi: `දැනට පැවැත්වේ: ${slot.p} වන කාලච්ඡේදය (${bell?.startTime} - ${bell?.endTime})`,
               periodIndex: slot.p,
               currentTimeStr: timeString,
             });
@@ -154,15 +154,15 @@ export const TimetableExplorer: React.FC = () => {
         // After school (after 13:30)
         setCurrentStatus({
           inSession: false,
-          labelEn: 'School Day Concluded — Co-curricular clubs & sports in session',
-          labelSi: 'පාසල් වේලාව අවසන් — සමගාමී ක්‍රියාකාරකම් සහ ක්‍රීඩා පුහුණුවීම් පැවැත්වේ',
+          labelEn: 'School Day Concluded: Co-curricular clubs & sports in session',
+          labelSi: 'පාසල් වේලාව අවසන්: සමගාමී ක්‍රියාකාරකම් සහ ක්‍රීඩා පුහුණුවීම් පැවැත්වේ',
           currentTimeStr: timeString,
         });
       } catch (e) {
         setCurrentStatus({
           inSession: false,
-          labelEn: 'Standard Bell Schedule: 07:50 AM – 01:30 PM',
-          labelSi: 'දෛනික කාලසටහන: පෙ.ව. 07:50 – ප.ව. 01:30',
+          labelEn: 'Standard Bell Schedule: 07:50 AM - 01:30 PM',
+          labelSi: 'දෛනික කාලසටහන: පෙ.ව. 07:50 - ප.ව. 01:30',
           currentTimeStr: '',
         });
       }
@@ -237,18 +237,18 @@ export const TimetableExplorer: React.FC = () => {
       </div>
 
       {/* Class & Stream Selector Bar */}
-      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4 p-4 rounded-2xl bg-stone-100/70 border border-stone-200/80 no-print">
-        <div className="flex items-center gap-2.5 overflow-x-auto pb-1 sm:pb-0">
-          <GraduationCap size={18} className="text-stone-500 shrink-0" />
-          <span className="text-xs font-bold uppercase tracking-wider text-stone-600 shrink-0">
-            {isSinhala ? 'පන්තිය තෝරන්න:' : 'Select Division:'}
+      <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 p-3 sm:p-4 rounded-2xl bg-stone-100/70 border border-stone-200/80 no-print">
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 sm:pb-0 scrollbar-none w-full sm:w-auto">
+          <GraduationCap size={16} className="text-stone-500 shrink-0" />
+          <span className="text-[11px] sm:text-xs font-bold uppercase tracking-wider text-stone-600 shrink-0">
+            {isSinhala ? 'පන්තිය:' : 'Division:'}
           </span>
           <div className="flex gap-1.5 shrink-0">
             {timetableData.map((cls) => (
               <button
                 key={cls.id}
                 onClick={() => setSelectedClassId(cls.id)}
-                className={`px-3.5 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer ${
+                className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all cursor-pointer whitespace-nowrap min-h-[36px] flex items-center ${
                   selectedClassId === cls.id
                     ? 'bg-stone-900 text-white shadow-xs'
                     : 'bg-white text-stone-700 hover:bg-stone-200/60 border border-stone-200'
@@ -261,10 +261,10 @@ export const TimetableExplorer: React.FC = () => {
         </div>
 
         {/* View Mode Toggle */}
-        <div className="flex items-center gap-1 bg-stone-200/70 p-1 rounded-xl self-end sm:self-auto shrink-0">
+        <div className="flex items-center gap-1 bg-stone-200/70 p-1 rounded-xl self-start sm:self-auto shrink-0 w-full sm:w-auto justify-center sm:justify-start">
           <button
             onClick={() => setViewMode('single-day')}
-            className={`px-3 py-1 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
+            className={`flex-1 sm:flex-initial px-3 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer min-h-[34px] ${
               viewMode === 'single-day' ? 'bg-white text-stone-900 shadow-xs' : 'text-stone-600 hover:text-stone-900'
             }`}
           >
@@ -272,7 +272,7 @@ export const TimetableExplorer: React.FC = () => {
           </button>
           <button
             onClick={() => setViewMode('full-week')}
-            className={`px-3 py-1 text-xs font-semibold rounded-lg transition-all cursor-pointer ${
+            className={`flex-1 sm:flex-initial px-3 py-1.5 text-xs font-semibold rounded-lg transition-all cursor-pointer min-h-[34px] ${
               viewMode === 'full-week' ? 'bg-white text-stone-900 shadow-xs' : 'text-stone-600 hover:text-stone-900'
             }`}
           >
@@ -327,7 +327,7 @@ export const TimetableExplorer: React.FC = () => {
               <div className="flex items-center gap-2 text-amber-900 font-semibold">
                 <Sparkles size={16} className="text-amber-600" />
                 <span>
-                  {isSinhala ? 'පෙ.ව. 07:50 – 08:10: බුද්ධ වන්දනාව සහ උදෑසන රැස්වීම' : '07:50 – 08:10 AM: Morning Buddha Vandana & Assembly'}
+                  {isSinhala ? 'පෙ.ව. 07:50 - 08:10: බුද්ධ වන්දනාව සහ උදෑසන රැස්වීම' : '07:50 - 08:10 AM: Morning Buddha Vandana & Assembly'}
                 </span>
               </div>
               <span className="text-xs text-amber-700 uppercase font-bold tracking-wider">
@@ -365,7 +365,7 @@ export const TimetableExplorer: React.FC = () => {
                       </div>
                       <div className="flex items-center gap-3 text-xs text-stone-500 mt-1">
                         <span className="flex items-center gap-1">
-                          <Clock size={13} /> {bell?.startTime} – {bell?.endTime}
+                          <Clock size={13} /> {bell?.startTime} - {bell?.endTime}
                         </span>
                         {slot.room && (
                           <span className="flex items-center gap-1">
@@ -390,7 +390,7 @@ export const TimetableExplorer: React.FC = () => {
               <div className="flex items-center gap-2 text-stone-700 font-semibold">
                 <Clock size={16} className="text-stone-500" />
                 <span>
-                  {isSinhala ? 'පෙ.ව. 10:50 – 11:10: විවේක කාලය (Interval)' : '10:50 – 11:10 AM: Morning Refreshment & Interval'}
+                  {isSinhala ? 'පෙ.ව. 10:50 - 11:10: විවේක කාලය (Interval)' : '10:50 - 11:10 AM: Morning Refreshment & Interval'}
                 </span>
               </div>
               <span className="text-xs text-stone-500 uppercase font-semibold">20 Minutes</span>
@@ -426,7 +426,7 @@ export const TimetableExplorer: React.FC = () => {
                       </div>
                       <div className="flex items-center gap-3 text-xs text-stone-500 mt-1">
                         <span className="flex items-center gap-1">
-                          <Clock size={13} /> {bell?.startTime} – {bell?.endTime}
+                          <Clock size={13} /> {bell?.startTime} - {bell?.endTime}
                         </span>
                         {slot.room && (
                           <span className="flex items-center gap-1">
@@ -451,96 +451,105 @@ export const TimetableExplorer: React.FC = () => {
 
       {/* Full Week Grid View */}
       {viewMode === 'full-week' && (
-        <div className="overflow-x-auto rounded-2xl border border-stone-200 bg-white shadow-xs">
-          <table className="w-full text-left border-collapse text-xs">
-            <thead>
-              <tr className="bg-stone-100 border-b border-stone-200 text-stone-700">
-                <th className="p-3 font-bold border-r border-stone-200 w-24">Period / Time</th>
-                {weekdays.map((day) => (
-                  <th key={day} className="p-3 font-bold border-r border-stone-200 last:border-r-0">
-                    {getDayLabel(day)}
-                  </th>
-                ))}
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-stone-200">
-              {/* Assembly */}
-              <tr className="bg-amber-50/60 font-semibold text-amber-900">
-                <td className="p-2.5 border-r border-stone-200 font-mono text-[11px]">07:50–08:10</td>
-                <td colSpan={5} className="p-2.5 text-center">
-                  {isSinhala ? 'බුද්ධ වන්දනාව සහ උදෑසන රැස්වීම (Buddha Vandana & Assembly)' : 'Buddha Vandana & Morning Assembly'}
-                </td>
-              </tr>
+        <div className="rounded-2xl border border-stone-200 bg-white shadow-xs overflow-hidden">
+          {/* Mobile horizontal scroll hint */}
+          <div className="md:hidden flex items-center justify-between px-3.5 py-2 bg-stone-100/90 border-b border-stone-200 text-[11px] text-stone-600 font-medium">
+            <span>Swipe horizontally to view all weekdays</span>
+            <span className="text-stone-400">•</span>
+            <span>දින 5 ම බැලීමට ස්වයිප් කරන්න</span>
+          </div>
 
-              {/* Periods 1 to 4 */}
-              {[0, 1, 2, 3].map((pIdx) => {
-                const bell = bellSchedule.find((b) => b.period === pIdx + 1);
-                return (
-                  <tr key={pIdx} className="hover:bg-stone-50/60">
-                    <td className="p-3 border-r border-stone-200 font-medium bg-stone-50/50">
-                      <div className="font-bold text-stone-900">Period {pIdx + 1}</div>
-                      <div className="font-mono text-[10px] text-stone-500">{bell?.startTime}–{bell?.endTime}</div>
-                    </td>
-                    {weekdays.map((day) => {
-                      const slot = activeClass.schedule[day]?.[pIdx];
-                      return (
-                        <td key={day} className="p-3 border-r border-stone-200 last:border-r-0 align-top">
-                          {slot ? (
-                            <div>
-                              <div className="font-bold text-stone-900">
-                                {isSinhala ? slot.subjectSi : slot.subjectEn}
+          <div className="overflow-x-auto w-full">
+            <table className="w-full min-w-[700px] text-left border-collapse text-xs">
+              <thead>
+                <tr className="bg-stone-100 border-b border-stone-200 text-stone-700">
+                  <th className="p-3 font-bold border-r border-stone-200 w-28">Period / Time</th>
+                  {weekdays.map((day) => (
+                    <th key={day} className="p-3 font-bold border-r border-stone-200 last:border-r-0">
+                      {getDayLabel(day)}
+                    </th>
+                  ))}
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-stone-200">
+                {/* Assembly */}
+                <tr className="bg-amber-50/60 font-semibold text-amber-900">
+                  <td className="p-2.5 border-r border-stone-200 font-mono tabular-nums text-[11px]">07:50 - 08:10</td>
+                  <td colSpan={5} className="p-2.5 text-center">
+                    {isSinhala ? 'බුද්ධ වන්දනාව සහ උදෑසන රැස්වීම (Buddha Vandana & Assembly)' : 'Buddha Vandana & Morning Assembly'}
+                  </td>
+                </tr>
+
+                {/* Periods 1 to 4 */}
+                {[0, 1, 2, 3].map((pIdx) => {
+                  const bell = bellSchedule.find((b) => b.period === pIdx + 1);
+                  return (
+                    <tr key={pIdx} className="hover:bg-stone-50/60">
+                      <td className="p-3 border-r border-stone-200 font-medium bg-stone-50/50">
+                        <div className="font-bold text-stone-900">Period {pIdx + 1}</div>
+                        <div className="font-mono tabular-nums text-[10px] text-stone-500">{bell?.startTime} - {bell?.endTime}</div>
+                      </td>
+                      {weekdays.map((day) => {
+                        const slot = activeClass.schedule[day]?.[pIdx];
+                        return (
+                          <td key={day} className="p-3 border-r border-stone-200 last:border-r-0 align-top">
+                            {slot ? (
+                              <div>
+                                <div className="font-bold text-stone-900">
+                                  {isSinhala ? slot.subjectSi : slot.subjectEn}
+                                </div>
+                                <div className="text-[10px] text-stone-400 mt-0.5">{slot.room}</div>
                               </div>
-                              <div className="text-[10px] text-stone-400 mt-0.5">{slot.room}</div>
-                            </div>
-                          ) : (
-                            <span className="text-stone-300">—</span>
-                          )}
-                        </td>
-                      );
-                    })}
-                  </tr>
-                );
-              })}
+                            ) : (
+                              <span className="text-stone-300 font-mono">-</span>
+                            )}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  );
+                })}
 
-              {/* Interval */}
-              <tr className="bg-stone-100 font-semibold text-stone-600">
-                <td className="p-2.5 border-r border-stone-200 font-mono text-[11px]">10:50–11:10</td>
-                <td colSpan={5} className="p-2.5 text-center tracking-wider uppercase text-[11px]">
-                  {isSinhala ? 'විවේක කාලය (Interval & Refreshments Break)' : 'Interval & Refreshments Break'}
-                </td>
-              </tr>
+                {/* Interval */}
+                <tr className="bg-stone-100 font-semibold text-stone-600">
+                  <td className="p-2.5 border-r border-stone-200 font-mono tabular-nums text-[11px]">10:50 - 11:10</td>
+                  <td colSpan={5} className="p-2.5 text-center tracking-wider uppercase text-[11px]">
+                    {isSinhala ? 'විවේක කාලය (Interval & Refreshments Break)' : 'Interval & Refreshments Break'}
+                  </td>
+                </tr>
 
-              {/* Periods 5 to 8 */}
-              {[4, 5, 6, 7].map((pIdx) => {
-                const bell = bellSchedule.find((b) => b.period === pIdx + 1);
-                return (
-                  <tr key={pIdx} className="hover:bg-stone-50/60">
-                    <td className="p-3 border-r border-stone-200 font-medium bg-stone-50/50">
-                      <div className="font-bold text-stone-900">Period {pIdx + 1}</div>
-                      <div className="font-mono text-[10px] text-stone-500">{bell?.startTime}–{bell?.endTime}</div>
-                    </td>
-                    {weekdays.map((day) => {
-                      const slot = activeClass.schedule[day]?.[pIdx];
-                      return (
-                        <td key={day} className="p-3 border-r border-stone-200 last:border-r-0 align-top">
-                          {slot ? (
-                            <div>
-                              <div className="font-bold text-stone-900">
-                                {isSinhala ? slot.subjectSi : slot.subjectEn}
+                {/* Periods 5 to 8 */}
+                {[4, 5, 6, 7].map((pIdx) => {
+                  const bell = bellSchedule.find((b) => b.period === pIdx + 1);
+                  return (
+                    <tr key={pIdx} className="hover:bg-stone-50/60">
+                      <td className="p-3 border-r border-stone-200 font-medium bg-stone-50/50">
+                        <div className="font-bold text-stone-900">Period {pIdx + 1}</div>
+                        <div className="font-mono tabular-nums text-[10px] text-stone-500">{bell?.startTime} - {bell?.endTime}</div>
+                      </td>
+                      {weekdays.map((day) => {
+                        const slot = activeClass.schedule[day]?.[pIdx];
+                        return (
+                          <td key={day} className="p-3 border-r border-stone-200 last:border-r-0 align-top">
+                            {slot ? (
+                              <div>
+                                <div className="font-bold text-stone-900">
+                                  {isSinhala ? slot.subjectSi : slot.subjectEn}
+                                </div>
+                                <div className="text-[10px] text-stone-400 mt-0.5">{slot.room}</div>
                               </div>
-                              <div className="text-[10px] text-stone-400 mt-0.5">{slot.room}</div>
-                            </div>
-                          ) : (
-                            <span className="text-stone-300">—</span>
-                          )}
-                        </td>
-                      );
-                    })}
-                  </tr>
-                );
-              })}
-            </tbody>
-          </table>
+                            ) : (
+                              <span className="text-stone-300 font-mono">-</span>
+                            )}
+                          </td>
+                        );
+                      })}
+                    </tr>
+                  );
+                })}
+              </tbody>
+            </table>
+          </div>
         </div>
       )}
     </div>

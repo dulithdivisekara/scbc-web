@@ -75,7 +75,7 @@ export function initGsapAnimations() {
           duration: 1.8,
           ease: 'power2.out',
           onUpdate: () => {
-            counter.textContent = Math.floor(obj.val) + suffix;
+            counter.textContent = Math.floor(obj.val).toLocaleString() + suffix;
           },
         });
       },

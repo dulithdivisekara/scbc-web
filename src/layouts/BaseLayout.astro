@@ -6,7 +6,7 @@ export interface Props {
 	description?: string;
 }
 
-const { title, description = "Empowering the next generation through wisdom, discipline, and Buddhist philosophy since 2006." } = Astro.props;
+const { title, description = "Nurturing intellectual wisdom, moral discipline, and cultural heritage in the sacred hill capital of Kandy since 2006." } = Astro.props;
 
 const isHome = title === "Home" || title === "Sri Chandananda Buddhist College";
 const pageTitle = isHome ? "Sri Chandananda College, Kandy" : title;

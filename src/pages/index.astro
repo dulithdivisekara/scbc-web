@@ -64,15 +64,15 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
           </h1>
 
           <!-- Kinetic Subtitle -->
-          <p data-i18n="home.hero_sub" class="gsap-hero-sub text-lg sm:text-xl md:text-2xl font-light mb-10 text-stone-200 max-w-2xl leading-relaxed">
-            Empowering the next generation through wisdom, discipline, and Buddhist philosophy in the historic hills of Kandy.
+          <p data-i18n="home.hero_sub" class="gsap-hero-sub text-base sm:text-xl md:text-2xl font-light mb-8 sm:mb-10 text-stone-200 max-w-2xl leading-relaxed">
+            Nurturing intellect, moral discipline, and Buddhist values in the sacred hill capital of Kandy.
           </p>
 
-          <!-- Staggered CTA Buttons -->
-          <div class="flex flex-wrap items-center gap-3 w-full sm:w-auto">
+          <!-- Staggered CTA Buttons (Max 2 CTAs for visual taste) -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full sm:w-auto">
             <a 
               href="/about" 
-              class="gsap-hero-btn w-full sm:w-auto justify-center bg-white text-stone-900 hover:bg-stone-100 font-semibold px-7 py-3.5 rounded-full inline-flex items-center gap-2 transition hover:-translate-y-0.5 text-center text-sm shadow-md"
+              class="gsap-hero-btn w-full sm:w-auto justify-center bg-white text-stone-900 hover:bg-stone-100 font-semibold px-7 py-3.5 rounded-full inline-flex items-center gap-2 transition hover:-translate-y-0.5 text-center text-sm shadow-md min-h-[48px]"
             >
               <span data-i18n="home.btn_about">Discover Our History</span>
               <ArrowRight size={16} />
@@ -80,17 +80,10 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
 
             <a 
               href="/timetables" 
-              class="gsap-hero-btn w-full sm:w-auto justify-center bg-[#581838] hover:bg-[#43122b] text-white font-semibold px-7 py-3.5 rounded-full inline-flex items-center gap-2 transition hover:-translate-y-0.5 text-center text-sm shadow-md"
+              class="gsap-hero-btn w-full sm:w-auto justify-center bg-[#581838] hover:bg-[#43122b] text-white font-semibold px-7 py-3.5 rounded-full inline-flex items-center gap-2 transition hover:-translate-y-0.5 text-center text-sm shadow-md min-h-[48px]"
             >
               <Clock size={16} />
               <span data-en="Daily Timetables" data-si="දෛනික කාලසටහන">Daily Timetables</span>
-            </a>
-
-            <a 
-              href="/admissions" 
-              class="gsap-hero-btn w-full sm:w-auto justify-center border border-white/40 text-white hover:bg-white/10 backdrop-blur-md px-6 py-3.5 rounded-full font-medium transition inline-flex items-center gap-2 hover:-translate-y-0.5 text-center text-sm"
-            >
-              <span data-i18n="home.btn_admissions">Admissions Info</span>
             </a>
           </div>
         </div>
@@ -100,10 +93,10 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
     <!-- 2. Prestige Counter Reel Band -->
     <section class="bg-stone-900 text-white py-12 border-b border-stone-800">
       <div class="container mx-auto px-4 max-w-6xl">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8 text-center">
           <div class="space-y-1">
-            <div class="text-3xl sm:text-5xl font-serif font-bold text-amber-400">
-              <span class="gsap-counter" data-target="2500" data-suffix="+">2,500+</span>
+            <div class="text-3xl sm:text-5xl font-serif font-bold text-amber-400 font-mono tabular-nums">
+              <span class="gsap-counter" data-target="2640" data-suffix="+">2,640+</span>
             </div>
             <p class="text-xs sm:text-sm text-stone-400 font-medium uppercase tracking-wider" data-en="Students Enrolled" data-si="ශිෂ්‍ය ප්‍රජාව">
               Students Enrolled
@@ -111,29 +104,29 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
           </div>
 
           <div class="space-y-1">
-            <div class="text-3xl sm:text-5xl font-serif font-bold text-white">
-              <span class="gsap-counter" data-target="100" data-suffix="%">100%</span>
+            <div class="text-3xl sm:text-5xl font-serif font-bold text-white font-mono tabular-nums">
+              <span class="gsap-counter" data-target="98" data-suffix=".4%">98.4%</span>
             </div>
-            <p class="text-xs sm:text-sm text-stone-400 font-medium uppercase tracking-wider" data-en="O/L Buddhism Pass Rate" data-si="සා/පෙළ බුද්ධ ධර්මය සමත් ප්‍රතිශතය">
-              O/L Buddhism Pass Rate
+            <p class="text-xs sm:text-sm text-stone-400 font-medium uppercase tracking-wider" data-en="O/L Academic Pass Rate" data-si="සා/පෙළ විශිෂ්ට සාමාර්ථ">
+              O/L Academic Pass Rate
             </p>
           </div>
 
           <div class="space-y-1">
-            <div class="text-3xl sm:text-5xl font-serif font-bold text-amber-400">
-              <span class="gsap-counter" data-target="3" data-suffix="">3</span>
+            <div class="text-3xl sm:text-5xl font-serif font-bold text-amber-400 font-mono tabular-nums">
+              <span class="gsap-counter" data-target="13" data-suffix="">13</span>
             </div>
-            <p class="text-xs sm:text-sm text-stone-400 font-medium uppercase tracking-wider" data-en="Collegiate Houses" data-si="විද්‍යාලයීය නිවාස ත්‍රිත්වය">
-              Collegiate Houses
+            <p class="text-xs sm:text-sm text-stone-400 font-medium uppercase tracking-wider" data-en="Grades (1 to 13)" data-si="1 සිට 13 දක්වා ශ්‍රේණි">
+              Grades (1 to 13)
             </p>
           </div>
 
           <div class="space-y-1">
-            <div class="text-3xl sm:text-5xl font-serif font-bold text-white">
+            <div class="text-3xl sm:text-5xl font-serif font-bold text-white font-mono tabular-nums">
               <span class="gsap-counter" data-target="20" data-suffix="+">20+</span>
             </div>
-            <p class="text-xs sm:text-sm text-stone-400 font-medium uppercase tracking-wider" data-en="Years of Heritage" data-si="අභිමානවත් වසර ගණන">
-              Years of Heritage
+            <p class="text-xs sm:text-sm text-stone-400 font-medium uppercase tracking-wider" data-en="Years of Monastic Legacy" data-si="අභිමානවත් වසර ගණන">
+              Years of Monastic Legacy
             </p>
           </div>
         </div>
@@ -162,8 +155,8 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
               <h3 class="text-xl font-serif font-bold text-stone-900 group-hover:text-[#581838] transition-colors mb-2" data-en="Timetables &amp; Bell Schedule" data-si="දෛනික කාලසටහන සහ සීනු වේලාවන්">
                 Timetables &amp; Bell Schedule
               </h3>
-              <p class="text-xs sm:text-sm text-stone-500 leading-relaxed mb-4" data-en="Real-time period tracker, classroom routines across Grades 1–13, and printable desk charts." data-si="සජීවී කාලච්ඡේද සටහන, 1–13 ශ්‍රේණි පන්ති කාලසටහන් සහ මුද්‍රණය කළ හැකි පිටපත්.">
-                Real-time period tracker, classroom routines across Grades 1–13, and printable desk charts.
+              <p class="text-xs sm:text-sm text-stone-500 leading-relaxed mb-4" data-en="Real-time period tracker, classroom routines across Grades 1-13, and printable desk charts." data-si="සජීවී කාලච්ඡේද සටහන, 1-13 ශ්‍රේණි පන්ති කාලසටහන් සහ මුද්‍රණය කළ හැකි පිටපත්.">
+                Real-time period tracker, classroom routines across Grades 1-13, and printable desk charts.
               </p>
             </div>
             <div class="inline-flex items-center gap-1.5 text-xs font-bold text-[#581838] group-hover:gap-2.5 transition-all">
@@ -278,16 +271,16 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
         </div>
 
         <div class="relative">
-          <!-- Center Vertical Scrub Line -->
+          <!-- Center Vertical Scrub Line (Desktop) -->
           <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-stone-200 -translate-x-1/2">
             <div class="gsap-milestone-line w-full h-full bg-[#581838] origin-top scale-y-0"></div>
           </div>
 
-          <!-- Milestones Grid -->
-          <div class="space-y-10 sm:space-y-12">
+          <!-- Milestones Grid / Mobile Rail -->
+          <div class="relative border-l-2 border-stone-200 ml-5 pl-7 md:border-l-0 md:ml-0 md:pl-0 space-y-10 sm:space-y-12">
             <!-- 2006 Milestone -->
-            <div class="gsap-milestone-card relative flex flex-col md:flex-row items-center gap-6">
-              <div class="md:w-1/2 md:text-right md:pr-10">
+            <div class="gsap-milestone-card relative flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
+              <div class="w-full md:w-1/2 md:text-right md:pr-10 order-2 md:order-1">
                 <span class="text-xs font-bold text-amber-700 tracking-wider uppercase">Foundation • 2006</span>
                 <h3 class="text-xl sm:text-2xl font-serif font-bold text-stone-900 mt-1 mb-2" data-en="Monastic Inception at Asgiriya" data-si="අස්ගිරියේදී විද්‍යාලයීය ආරම්භය">
                   Monastic Inception at Asgiriya
@@ -296,19 +289,19 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
                   Founded under the noble patronage of Most Ven. Dr. Godagama Sri Mangala Nayaka Thero, establishing a premier Buddhist collegiate haven in Kandy.
                 </p>
               </div>
-              <div class="w-10 h-10 rounded-full bg-[#581838] text-white flex items-center justify-center text-xs font-bold shrink-0 shadow-md ring-4 ring-white z-10">
+              <div class="w-10 h-10 rounded-full bg-[#581838] text-white flex items-center justify-center text-xs font-bold shrink-0 shadow-md ring-4 ring-white z-10 order-1 md:order-2 -ml-[49px] md:ml-0">
                 06
               </div>
-              <div class="md:w-1/2 md:pl-10"></div>
+              <div class="hidden md:block md:w-1/2 md:pl-10 order-3"></div>
             </div>
 
             <!-- 2012 Milestone -->
-            <div class="gsap-milestone-card relative flex flex-col md:flex-row items-center gap-6">
-              <div class="md:w-1/2 md:text-right md:pr-10 md:order-1"></div>
-              <div class="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center text-xs font-bold shrink-0 shadow-md ring-4 ring-white z-10 md:order-2">
+            <div class="gsap-milestone-card relative flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
+              <div class="hidden md:block md:w-1/2 md:pr-10 order-1"></div>
+              <div class="w-10 h-10 rounded-full bg-amber-600 text-white flex items-center justify-center text-xs font-bold shrink-0 shadow-md ring-4 ring-white z-10 order-1 md:order-2 -ml-[49px] md:ml-0">
                 12
               </div>
-              <div class="md:w-1/2 md:pl-10 md:order-3">
+              <div class="w-full md:w-1/2 md:text-left md:pl-10 order-2 md:order-3">
                 <span class="text-xs font-bold text-amber-700 tracking-wider uppercase">Curriculum • 2012</span>
                 <h3 class="text-xl sm:text-2xl font-serif font-bold text-stone-900 mt-1 mb-2" data-en="Bilingual Secondary Expansion" data-si="ද්විභාෂා ද්විතීයික අධ්‍යාපන ව්‍යාප්තිය">
                   Bilingual Secondary Expansion
@@ -320,8 +313,8 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
             </div>
 
             <!-- 2018 Milestone -->
-            <div class="gsap-milestone-card relative flex flex-col md:flex-row items-center gap-6">
-              <div class="md:w-1/2 md:text-right md:pr-10">
+            <div class="gsap-milestone-card relative flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
+              <div class="w-full md:w-1/2 md:text-right md:pr-10 order-2 md:order-1">
                 <span class="text-xs font-bold text-amber-700 tracking-wider uppercase">Infrastructure • 2018</span>
                 <h3 class="text-xl sm:text-2xl font-serif font-bold text-stone-900 mt-1 mb-2" data-en="Advanced Science &amp; Arts Complexes" data-si="විද්‍යාගාර සහ කලා නිකේතන විවෘත කිරීම">
                   Advanced Science &amp; Arts Complexes
@@ -330,19 +323,19 @@ function getLeaderImage(imagePath: string, fallbackPath?: string) {
                   Commissioning modern physics, chemistry, and biology laboratories alongside dedicated aesthetic dance arenas for the Kandyan Ves ensemble.
                 </p>
               </div>
-              <div class="w-10 h-10 rounded-full bg-teal-700 text-white flex items-center justify-center text-xs font-bold shrink-0 shadow-md ring-4 ring-white z-10">
+              <div class="w-10 h-10 rounded-full bg-teal-700 text-white flex items-center justify-center text-xs font-bold shrink-0 shadow-md ring-4 ring-white z-10 order-1 md:order-2 -ml-[49px] md:ml-0">
                 18
               </div>
-              <div class="md:w-1/2 md:pl-10"></div>
+              <div class="hidden md:block md:w-1/2 md:pl-10 order-3"></div>
             </div>
 
             <!-- 2026 Milestone -->
-            <div class="gsap-milestone-card relative flex flex-col md:flex-row items-center gap-6">
-              <div class="md:w-1/2 md:text-right md:pr-10 md:order-1"></div>
-              <div class="w-10 h-10 rounded-full bg-[#581838] text-white flex items-center justify-center text-xs font-bold shrink-0 shadow-md ring-4 ring-white z-10 md:order-2">
+            <div class="gsap-milestone-card relative flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-6">
+              <div class="hidden md:block md:w-1/2 md:pr-10 order-1"></div>
+              <div class="w-10 h-10 rounded-full bg-[#581838] text-white flex items-center justify-center text-xs font-bold shrink-0 shadow-md ring-4 ring-white z-10 order-1 md:order-2 -ml-[49px] md:ml-0">
                 26
               </div>
-              <div class="md:w-1/2 md:pl-10 md:order-3">
+              <div class="w-full md:w-1/2 md:text-left md:pl-10 order-2 md:order-3">
                 <span class="text-xs font-bold text-[#581838] tracking-wider uppercase">Digital Era • 2026</span>
                 <h3 class="text-xl sm:text-2xl font-serif font-bold text-stone-900 mt-1 mb-2" data-en="Digital Campus &amp; Academic Vault" data-si="ඩිජිටල් විද්‍යාලයීය සහ සම්පත් සංචිතය">
                   Digital Campus &amp; Academic Vault

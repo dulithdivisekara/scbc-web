@@ -142,9 +142,9 @@ export const AcademicVaultExplorer: React.FC = () => {
           </span>
           {[
             { id: 'all', en: 'All Grades', si: 'සියලු ශ්‍රේණි' },
-            { id: 'ol', en: 'G.C.E. O/L (Grades 10–11)', si: 'සාමාන්‍ය පෙළ (10–11)' },
-            { id: 'al', en: 'G.C.E. A/L (Grades 12–13)', si: 'උසස් පෙළ (12–13)' },
-            { id: 'junior', en: 'Junior Secondary (6–9)', si: 'කනිෂ්ඨ ද්විතීයික (6–9)' },
+            { id: 'ol', en: 'G.C.E. O/L (Grades 10-11)', si: 'සාමාන්‍ය පෙළ (10-11)' },
+            { id: 'al', en: 'G.C.E. A/L (Grades 12-13)', si: 'උසස් පෙළ (12-13)' },
+            { id: 'junior', en: 'Junior Secondary (6-9)', si: 'කනිෂ්ඨ ද්විතීයික (6-9)' },
           ].map((cat) => (
             <button
               key={cat.id}
@@ -305,14 +305,14 @@ export const AcademicVaultExplorer: React.FC = () => {
             </div>
 
             {/* Action buttons */}
-            <div className="pt-3 border-t border-stone-100 flex items-center justify-between gap-2">
+            <div className="pt-3 border-t border-stone-100 flex flex-col sm:flex-row sm:items-center justify-between gap-2.5">
               <span className="text-[11px] text-stone-400 font-medium">
                 Official SCBC Faculty Archive
               </span>
 
               <button
                 onClick={() => handleDownload(res)}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-stone-900 hover:bg-[#581838] text-white transition-colors cursor-pointer shrink-0"
+                className="inline-flex items-center justify-center gap-1.5 px-3.5 py-2 sm:py-1.5 rounded-lg text-xs font-semibold bg-stone-900 hover:bg-[#581838] text-white transition-colors cursor-pointer shrink-0 w-full sm:w-auto min-h-[36px]"
               >
                 <Download size={13} />
                 <span>{isSinhala ? 'බාගත කරන්න (PDF)' : 'Download PDF'}</span>

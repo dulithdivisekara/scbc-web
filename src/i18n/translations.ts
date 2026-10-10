@@ -12,7 +12,7 @@ export const translations: Record<string, Record<string, string>> = {
 
     // Home Page
     'home.hero_title': 'Welcome to Sri Chandananda Buddhist College',
-    'home.hero_sub': 'Empowering the next generation through wisdom, discipline, and Buddhist philosophy since 2006.',
+    'home.hero_sub': 'Nurturing intellectual wisdom, moral discipline, and Buddhist values in the sacred hill capital of Kandy since 2006.',
     'home.btn_about': 'Discover Our History',
     'home.btn_admissions': 'Admissions Info',
     'home.stats_students': 'Active Students',
@@ -34,7 +34,7 @@ export const translations: Record<string, Record<string, string>> = {
     'contact.address_label': 'School Address:',
     'contact.address_val': 'Asgiri Vihara Mawatha, Kandy 20000, Sri Lanka',
     'contact.hours_label': 'Office Hours:',
-    'contact.hours_val': 'Monday – Friday, 7:30 AM – 1:30 PM',
+    'contact.hours_val': 'Monday - Friday, 7:30 AM - 1:30 PM',
     'contact.form_name': 'Full Name',
     'contact.form_email': 'Email Address',
     'contact.form_message': 'Your Message',
@@ -69,7 +69,7 @@ export const translations: Record<string, Record<string, string>> = {
     'home.house_subha_name': 'Subha House',
     'home.house_subha_desc': 'Channeling vibrant energy, track and field excellence, and tenacious athletic spirit into annual inter-house competitions and team triumphs.',
     'footer.location': 'Asgiriya, Kandy, Sri Lanka',
-    'footer.desc': 'Empowering the next generation through wisdom, discipline, and Buddhist philosophy since 2006. Operating under the visionary guidance of Most Ven. Dr. Godagama Mangala Thero.',
+    'footer.desc': 'Nurturing intellectual wisdom, moral discipline, and cultural heritage in the sacred hill capital of Kandy since 2006. Operating under the visionary guidance of Most Ven. Dr. Godagama Mangala Thero.',
     'footer.quick_links': 'Quick Links',
     'footer.academics': 'Academic Structure',
     'footer.timetables': 'Timetables & Bell Times',
@@ -77,7 +77,7 @@ export const translations: Record<string, Record<string, string>> = {
     'footer.student_life': 'Student Life & Sports',
     'footer.admissions': 'Admissions & Forms',
     'footer.contact_dir': 'Contact Directory',
-    'footer.hours_line': 'Office Hours: Monday – Friday, 7:30 AM – 1:30 PM',
+    'footer.hours_line': 'Office Hours: Monday - Friday, 7:30 AM - 1:30 PM',
     'footer.copyright': '© 2026 Sri Chandananda Buddhist College. All rights reserved.',
     'footer.credit': 'Alumni Contribution by',
 
@@ -108,7 +108,7 @@ export const translations: Record<string, Record<string, string>> = {
 
     // Home Page
     'home.hero_title': 'ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය වෙත සාදරයෙන් පිළිගනිමු',
-    'home.hero_sub': '2006 වසරේ සිට ප්‍රඥාව, විනය සහ බෞද්ධ දර්ශනයෙන් හෙබි අනාගත පරපුරක් දැයට දායාද කරමින්.',
+    'home.hero_sub': '2006 වසරේ සිට මහනුවර ඓතිහාසික අස්ගිරිය පුදබිමෙහි ගුණ නැණ බෙලෙන් පිරිපුන් දැහැමි ශිෂ්‍ය පරපුරක් බිහිකිරීම.',
     'home.btn_about': 'අපගේ ඉතිහාසය',
     'home.btn_admissions': 'ඇතුළත් කිරීම් තොරතුරු',
     'home.stats_students': 'සක්‍රීය සිසුන්',
@@ -130,7 +130,7 @@ export const translations: Record<string, Record<string, string>> = {
     'contact.address_label': 'විද්‍යාලයීය ලිපිනය:',
     'contact.address_val': 'අස්ගිරි විහාර මාවත, මහනුවර 20000, ශ්‍රී ලංකාව',
     'contact.hours_label': 'කාර්යාල වේලාවන්:',
-    'contact.hours_val': 'සඳුදා – සිකුරාදා, පෙ.ව. 7:30 – ප.ව. 1:30',
+    'contact.hours_val': 'සඳුදා - සිකුරාදා, පෙ.ව. 7:30 - ප.ව. 1:30',
     'contact.form_name': 'සම්පූර්ණ නම',
     'contact.form_email': 'විද්‍යුත් තැපැල් ලිපිනය',
     'contact.form_message': 'ඔබගේ පණිවිඩය',
@@ -165,7 +165,7 @@ export const translations: Record<string, Record<string, string>> = {
     'home.house_subha_name': 'සුභ නිවාසය',
     'home.house_subha_desc': 'ප්‍රාණවත් ශක්තිය, මලල ක්‍රීඩා විශිෂ්ටත්වය සහ අවිහිංසක ක්‍රීඩා ආත්මය වාර්ෂික අන්තර් නිවාස තරග සහ කණ්ඩායම් ජයග්‍රහණ කරා යොමු කරයි.',
     'footer.location': 'අස්ගිරිය, මහනුවර, ශ්‍රී ලංකාව',
-    'footer.desc': '2006 වසරේ සිට ප්‍රඥාව, විනය සහ බෞද්ධ දර්ශනයෙන් හෙබි අනාගත පරපුරක් දැයට දායාද කරමින්. පූජ්‍ය ආචාර්ය ගොඩගම මංගල හිමියන්ගේ දැක්ම යටතේ ක්‍රියාත්මක වේ.',
+    'footer.desc': '2006 වසරේ සිට මහනුවර ඓතිහාසික අස්ගිරිය පුදබිමෙහි ගුණ නැණ බෙලෙන් පිරිපුන් දැහැමි ශිෂ්‍ය පරපුරක් බිහිකිරීම. පූජ්‍ය ආචාර්ය ගොඩගම මංගල නාහිමියන්ගේ දැක්ම යටතේ ක්‍රියාත්මක වේ.',
     'footer.quick_links': 'ඉක්මන් සබැඳි',
     'footer.academics': 'අධ්‍යාපනික ව්‍යුහය',
     'footer.timetables': 'දෛනික කාලසටහන්',
@@ -173,7 +173,7 @@ export const translations: Record<string, Record<string, string>> = {
     'footer.student_life': 'ශිෂ්‍ය ජීවිතය සහ ක්‍රීඩා',
     'footer.admissions': 'ඇතුළත් කිරීම් සහ අයදුම්පත්',
     'footer.contact_dir': 'සබඳතා නාමාවලිය',
-    'footer.hours_line': 'කාර්යාල වේලාවන්: සඳුදා – සිකුරාදා, පෙ.ව. 7:30 – ප.ව. 1:30',
+    'footer.hours_line': 'කාර්යාල වේලාවන්: සඳුදා - සිකුරාදා, පෙ.ව. 7:30 - ප.ව. 1:30',
     'footer.copyright': '© 2026 ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය. සියලුම හිමිකම් ඇවිරිණි.',
     'footer.credit': 'ආදිශිෂ්‍ය දායකත්වය:',
 
