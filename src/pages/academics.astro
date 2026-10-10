@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Header from '../components/common/Header.astro';
 import Footer from '../components/common/Footer.astro';
-import { BookOpen, MonitorPlay, Globe, Microscope } from 'lucide-react';
+import { BookOpen, MonitorPlay, Globe, Microscope, Calendar, Clock, ArrowRight, DownloadCloud } from 'lucide-react';
 import { getEntry } from 'astro:content';
 
 const page = (await getEntry('pages', 'academics'))!.data;
@@ -71,6 +71,52 @@ const tints = {
           </>
         );
       })}
+      <!-- Interactive Academic Portals Spotlight -->
+      <div class="mt-8 pt-10 border-t border-stone-200">
+        <h2 class="text-2xl sm:text-3xl font-serif font-bold text-stone-900 tracking-tight mb-6" data-en="Student Academic Tools &amp; Repositories" data-si="ශිෂ්‍ය අධ්‍යයන මෙවලම් සහ එකතු">
+          Student Academic Tools &amp; Repositories
+        </h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Timetable Card -->
+          <a href="/timetables" class="group p-6 rounded-2xl border border-stone-200 bg-white hover:border-[#581838]/40 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-amber-50 text-amber-900 flex items-center justify-center mb-4">
+                <Clock size={20} />
+              </div>
+              <h3 class="text-lg font-serif font-bold text-stone-900 group-hover:text-[#581838] transition-colors mb-2" data-en="Daily Timetables &amp; Bell Schedule" data-si="දෛනික කාලසටහන සහ සීනු කාලවේලාවන්">
+                Daily Timetables &amp; Bell Schedule
+              </h3>
+              <p class="text-xs sm:text-sm text-stone-500 leading-relaxed mb-4" data-en="Live period tracker, grade-wise routine schedules (Grades 1–13), and printable desk timetables." data-si="සජීවී කාලච්ඡේද සටහන, 1–13 ශ්‍රේණි සඳහා පන්ති කාලසටහන් සහ මුද්‍රණය කළ හැකි පිටපත්.">
+                Live period tracker, grade-wise routine schedules (Grades 1–13), and printable desk timetables.
+              </p>
+            </div>
+            <div class="inline-flex items-center gap-1.5 text-xs font-bold text-[#581838] group-hover:gap-2.5 transition-all">
+              <span data-en="Launch Timetable Explorer" data-si="කාලසටහන බලන්න">Launch Timetable Explorer</span>
+              <ArrowRight size={14} />
+            </div>
+          </a>
+
+          <!-- Past Papers Vault Card -->
+          <a href="/academics/resources" class="group p-6 rounded-2xl border border-stone-200 bg-white hover:border-teal-600/40 hover:shadow-md transition-all flex flex-col justify-between">
+            <div>
+              <div class="w-10 h-10 rounded-xl bg-teal-50 text-teal-800 flex items-center justify-center mb-4">
+                <DownloadCloud size={20} />
+              </div>
+              <h3 class="text-lg font-serif font-bold text-stone-900 group-hover:text-teal-800 transition-colors mb-2" data-en="Academic Vault: Past Papers &amp; Syllabi" data-si="පසුගිය ප්‍රශ්න පත්‍ර සහ විෂය නිර්දේශ එකතුව">
+                Academic Vault: Past Papers &amp; Syllabi
+              </h3>
+              <p class="text-xs sm:text-sm text-stone-500 leading-relaxed mb-4" data-en="Searchable repository of term evaluations, national O/L and A/L model papers, and official marking schemes." data-si="වාර විභාග ප්‍රශ්න පත්‍ර, සාමාන්‍ය පෙළ සහ උසස් පෙළ ආදර්ශ පත්‍ර සහ ලකුණු දීමේ පටිපාටි.">
+                Searchable repository of term evaluations, national O/L and A/L model papers, and official marking schemes.
+              </p>
+            </div>
+            <div class="inline-flex items-center gap-1.5 text-xs font-bold text-teal-800 group-hover:gap-2.5 transition-all">
+              <span data-en="Browse Academic Vault" data-si="ඩිජිටල් එකතුව පිරික්සන්න">Browse Academic Vault</span>
+              <ArrowRight size={14} />
+            </div>
+          </a>
+        </div>
+      </div>
     </div>
   </main>
   
