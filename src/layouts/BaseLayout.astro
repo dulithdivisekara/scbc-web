@@ -140,5 +140,20 @@ const jsonLd = {
 			}
 			document.addEventListener('astro:page-load', setupInteractions);
 		</script>
+
+		<script>
+			import { initGsapAnimations } from '../scripts/gsap-init';
+
+			function runGsap() {
+				initGsapAnimations();
+			}
+
+			if (document.readyState === 'loading') {
+				document.addEventListener('DOMContentLoaded', runGsap);
+			} else {
+				runGsap();
+			}
+			document.addEventListener('astro:page-load', runGsap);
+		</script>
 	</body>
 </html>
