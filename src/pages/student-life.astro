@@ -68,7 +68,99 @@ const galleryPage = (await getEntry('pages', 'student-life'))!.data;
         </section>
       )}
 
-        <div class="mt-10 sm:mt-16 pt-8 sm:pt-12 border-t border-stone-200/50">
+        <!-- The Three Collegiate Houses Showcase -->
+        <section class="mt-12 sm:mt-20 pt-10 sm:pt-16 border-t border-stone-200">
+          <div class="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+            <h2 class="text-2xl sm:text-4xl font-bold font-serif text-stone-900 mb-3" data-en="The Three Collegiate Houses" data-si="විද්‍යාලයීය නිවාස ත්‍රිත්වය">
+              The Three Collegiate Houses
+            </h2>
+            <p class="text-stone-500 text-xs sm:text-sm leading-relaxed" data-en="Rooted in Buddhist heritage, our house system fosters camaraderie, moral integrity, athletic endurance, and intellectual leadership through spirited annual competitions." data-si="බෞද්ධ සංස්කෘතිය පදනම් කරගනිමින්, අපගේ නිවාස ක්‍රමය සහෝදරත්වය, සදාචාරාත්මක අඛණ්ඩතාව, මලල ක්‍රීඩා ශක්තිය සහ බුද්ධිමය නායකත්වය වාර්ෂික තරග තුළින් ඔප්නංවයි.">
+              Rooted in Buddhist heritage, our house system fosters camaraderie, moral integrity, athletic endurance, and intellectual leadership through spirited annual competitions.
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-12">
+            <!-- Ramya House Card -->
+            <div class="rounded-3xl border border-teal-200 bg-gradient-to-b from-teal-50/60 to-white p-6 shadow-xs flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="w-8 h-8 rounded-full bg-teal-700 text-white flex items-center justify-center font-bold text-xs">
+                    R
+                  </span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-teal-100 text-teal-800">
+                    Mod 3 = 1
+                  </span>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-stone-900 mb-1" data-en="Ramya House" data-si="රම්‍ය නිවාසය">
+                  Ramya House
+                </h3>
+                <p class="text-xs font-semibold text-teal-800 uppercase tracking-wider mb-3" data-en="Lotus • Teal" data-si="නෙළුම් මල • ටීල්">
+                  Lotus • Institutional Teal
+                </p>
+                <p class="text-xs text-stone-600 leading-relaxed mb-4" data-en="Emphasizing spiritual discipline, scholastic devotion, and reverence for Dhamma. Ramya consistently leads in academic exhibitions and Buddhist quizzes." data-si="ආධ්‍යාත්මික විනය, අධ්‍යාපනික කැපවීම සහ ධර්මානුකූල බව පෙරදැරි කරගනී. අධ්‍යයන ප්‍රදර්ශන හා දහම් දැනුම තරගවලදී විශිෂ්ටත්වය දක්වයි.">
+                  Emphasizing spiritual discipline, scholastic devotion, and reverence for Dhamma. Ramya consistently leads in academic exhibitions and Buddhist quizzes.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-teal-100/70 text-[11px] text-teal-900 font-serif italic">
+                <span data-en="&ldquo;Wisdom, Discipline &amp; Moral Clarity&rdquo;" data-si="&ldquo;ප්‍රඥාව, විනය සහ සදාචාරාත්මක අඛණ්ඩතාව&rdquo;">&ldquo;Wisdom, Discipline &amp; Moral Clarity&rdquo;</span>
+              </div>
+            </div>
+
+            <!-- Suramya House Card -->
+            <div class="rounded-3xl border border-amber-200 bg-gradient-to-b from-amber-50/60 to-white p-6 shadow-xs flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="w-8 h-8 rounded-full bg-amber-600 text-white flex items-center justify-center font-bold text-xs">
+                    S
+                  </span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-amber-100 text-amber-900">
+                    Mod 3 = 2
+                  </span>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-stone-900 mb-1" data-en="Suramya House" data-si="සුරම්‍ය නිවාසය">
+                  Suramya House
+                </h3>
+                <p class="text-xs font-semibold text-amber-800 uppercase tracking-wider mb-3" data-en="Torch • Saffron" data-si="දැල්වෙන පන්දම • කහ">
+                  Blazing Torch • Saffron Gold
+                </p>
+                <p class="text-xs text-stone-600 leading-relaxed mb-4" data-en="Focusing on intellectual sharpness, debating, innovation, and ethical leadership in cultural and scientific societies." data-si="බුද්ධිමය තියුණුබව, වාග් චතුර්යය, නවෝත්පාදන සහ සංස්කෘතික හා විද්‍යාත්මක සමිතිවල ආචාරශීලී නායකත්වය කෙරෙහි අවධානය යොමු කරයි.">
+                  Focusing on intellectual sharpness, debating, innovation, and ethical leadership in cultural and scientific societies.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-amber-100/70 text-[11px] text-amber-950 font-serif italic">
+                <span data-en="&ldquo;Intellect, Leadership &amp; Eloquence&rdquo;" data-si="&ldquo;බුද්ධිය, නායකත්වය සහ වාග් චතුර්යය&rdquo;">&ldquo;Intellect, Leadership &amp; Eloquence&rdquo;</span>
+              </div>
+            </div>
+
+            <!-- Subha House Card -->
+            <div class="rounded-3xl border border-rose-200 bg-gradient-to-b from-rose-50/60 to-white p-6 shadow-xs flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <span class="w-8 h-8 rounded-full bg-[#581838] text-white flex items-center justify-center font-bold text-xs">
+                    Su
+                  </span>
+                  <span class="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider bg-rose-100 text-[#581838]">
+                    Mod 3 = 0
+                  </span>
+                </div>
+                <h3 class="text-xl font-serif font-bold text-stone-900 mb-1" data-en="Subha House" data-si="සුභ නිවාසය">
+                  Subha House
+                </h3>
+                <p class="text-xs font-semibold text-[#581838] uppercase tracking-wider mb-3" data-en="Lion • Maroon" data-si="සිංහයා • මැරූන්">
+                  Courageous Lion • Royal Maroon
+                </p>
+                <p class="text-xs text-stone-600 leading-relaxed mb-4" data-en="Known for athletic tenacity, track dominance, martial arts, and vibrant collegiate team spirit at the annual sports meet." data-si="වාර්ෂික ක්‍රීඩා උළෙලේදී මලල ක්‍රීඩා ජයග්‍රහණ, සටන් කලා, කණ්ඩායම් ශක්තිය සහ අභිමානවත් ක්‍රීඩා ආත්මය විදහා දක්වයි.">
+                  Known for athletic tenacity, track dominance, martial arts, and vibrant collegiate team spirit at the annual sports meet.
+                </p>
+              </div>
+              <div class="pt-3 border-t border-rose-100/70 text-[11px] text-[#581838] font-serif italic">
+                <span data-en="&ldquo;Valor, Athletic Tenacity &amp; Sportsmanship&rdquo;" data-si="&ldquo;වීරත්වය, ක්‍රීඩා ශක්තිය සහ කණ්ඩායම් ආත්මය&rdquo;">&ldquo;Valor, Athletic Tenacity &amp; Sportsmanship&rdquo;</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="mt-8 pt-8 border-t border-stone-200/50">
           <HouseCalculator />
         </div>
 
