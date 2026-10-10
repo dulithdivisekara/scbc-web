@@ -5,9 +5,12 @@ import tailwindcss from '@tailwindcss/vite';
 import react from '@astrojs/react';
 import sitemap from '@astrojs/sitemap';
 
-// Canonical production domain. Override with SITE_URL for previews,
-// e.g. SITE_URL=https://scbc-web.pages.dev npm run build
-const site = process.env.SITE_URL || 'https://scbck.lk';
+// Canonical production domain or Cloudflare Pages preview URL.
+// Default to the live Cloudflare Pages preview domain so social scrapers (WhatsApp, FB, Twitter)
+// can resolve and render the OG preview card immediately without DNS errors.
+const site = process.env.SITE_URL || 
+             process.env.CF_PAGES_URL || 
+             'https://feature-campus-redesign-and.scbc-web.pages.dev';
 
 // https://astro.build/config
 export default defineConfig({

@@ -15,16 +15,23 @@ const ogTitle = isHome
 	? "Sri Chandananda Buddhist College, Kandy"
 	: `${title} | Sri Chandananda Buddhist College, Kandy`;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://scbck.lk/');
-const ogImageURL = new URL('/assets/og-image.jpg', canonicalURL).toString();
-const crestURL = new URL('/assets/branding/school-crest-official.png', canonicalURL).toString();
+const siteOrigin = (
+  process.env.SITE_URL || 
+  process.env.CF_PAGES_URL || 
+  (Astro.site && !Astro.site.toString().includes('scbck.lk') ? Astro.site.toString() : null) || 
+  'https://feature-campus-redesign-and.scbc-web.pages.dev'
+).replace(/\/$/, '');
+
+const canonicalURL = new URL(Astro.url.pathname, `${siteOrigin}/`);
+const ogImageURL = `${siteOrigin}/assets/og-image.jpg`;
+const crestURL = `${siteOrigin}/assets/branding/school-crest-official.png`;
 
 const jsonLd = {
   "@context": "https://schema.org",
   "@type": ["EducationalOrganization", "School"],
   "name": "Sri Chandananda Buddhist College",
   "alternateName": ["ශ්‍රී චන්දානන්ද බෞද්ධ විද්‍යාලය", "SCBC Kandy"],
-  "url": Astro.site || "https://scbck.lk/",
+  "url": `${siteOrigin}/`,
   "logo": crestURL,
   "image": ogImageURL,
   "description": description,
