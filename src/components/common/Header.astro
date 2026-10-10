@@ -19,10 +19,11 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
     </a>
     
     <!-- Desktop Navigation Links (Hidden on screens < md) -->
-    <nav class="hidden md:flex gap-6 items-center font-medium text-sm">
+    <nav class="hidden md:flex gap-5 lg:gap-6 items-center font-medium text-sm">
       <a href="/" data-i18n="nav.home" class={`py-1 transition-all ${currentPath === '/' ? 'text-stone-900 font-bold border-b border-stone-900' : 'text-stone-500 hover:text-stone-900'}`}>Home</a>
       <a href="/about" data-i18n="nav.about" class={`py-1 transition-all ${currentPath === '/about' ? 'text-stone-900 font-bold border-b border-stone-900' : 'text-stone-500 hover:text-stone-900'}`}>About Us</a>
       <a href="/academics" data-i18n="nav.academics" class={`py-1 transition-all ${currentPath === '/academics' ? 'text-stone-900 font-bold border-b border-stone-900' : 'text-stone-500 hover:text-stone-900'}`}>Academics</a>
+      <a href="/timetables" data-i18n="nav.timetables" class={`py-1 transition-all ${currentPath === '/timetables' ? 'text-stone-900 font-bold border-b border-stone-900' : 'text-stone-500 hover:text-stone-900'}`}>Timetables</a>
       <a href="/student-life" data-i18n="nav.student_life" class={`py-1 transition-all ${currentPath === '/student-life' ? 'text-stone-900 font-bold border-b border-stone-900' : 'text-stone-500 hover:text-stone-900'}`}>Student Life</a>
       <a href="/admissions" data-i18n="nav.admissions" class={`py-1 transition-all ${currentPath === '/admissions' ? 'text-stone-900 font-bold border-b border-stone-900' : 'text-stone-500 hover:text-stone-900'}`}>Admissions</a>
       <a href="/contact" data-i18n="nav.contact" class={`py-1 transition-all ${currentPath === '/contact' ? 'text-stone-900 font-bold border-b border-stone-900' : 'text-stone-500 hover:text-stone-900'}`}>Contact</a>
@@ -71,6 +72,14 @@ const currentPath = Astro.url.pathname.replace(/\/$/, '') || '/';
         <a href="/academics" class={`text-xl font-serif tracking-tight transition-colors py-3 flex items-center justify-between border-b border-stone-100 ${currentPath === '/academics' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
           <span data-i18n="nav.academics">Academics</span>
           {currentPath === '/academics' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
+        </a>
+        <a href="/timetables" class={`text-xl font-serif tracking-tight transition-colors py-3 flex items-center justify-between border-b border-stone-100 ${currentPath === '/timetables' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
+          <span data-i18n="nav.timetables">Timetables</span>
+          {currentPath === '/timetables' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
+        </a>
+        <a href="/academics/resources" class={`text-xl font-serif tracking-tight transition-colors py-3 flex items-center justify-between border-b border-stone-100 ${currentPath === '/academics/resources' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
+          <span data-i18n="nav.resources">Academic Vault</span>
+          {currentPath === '/academics/resources' && <span class="w-2 h-2 rounded-full bg-stone-900"></span>}
         </a>
         <a href="/student-life" class={`text-xl font-serif tracking-tight transition-colors py-3 flex items-center justify-between border-b border-stone-100 ${currentPath === '/student-life' ? 'text-stone-900 font-bold' : 'text-stone-500 hover:text-stone-900 font-normal'}`}>
           <span data-i18n="nav.student_life">Student Life</span>
