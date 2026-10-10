@@ -9,7 +9,10 @@ const studentLifeArticle = await getEntry('articles', 'student-life');
 const galleryPage = (await getEntry('pages', 'student-life'))!.data;
 ---
 
-<BaseLayout title="Student Life">
+<BaseLayout 
+  title="Student Life & Co-Curricular" 
+  description="Student life, traditional Kandyan Ves dance, pirith chanting ceremonies, inter-house sports meets, and the Ramya, Suramya, Subha house portal at SCBC Kandy."
+>
   <Header />
   
   <main class="flex-grow py-10 sm:py-24 bg-[#FCFCFC]">

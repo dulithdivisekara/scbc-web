@@ -16,7 +16,10 @@ const formEndpoint = import.meta.env.PUBLIC_FORM_ENDPOINT || '';
 const encodedEmail = Buffer.from(contactEmail).toString('base64');
 ---
 
-<BaseLayout title="Contact Us">
+<BaseLayout 
+  title="Contact & Location Directory" 
+  description="Contact Sri Chandananda Buddhist College in Asgiriya, Kandy. Direct telephone directory, email inquiries, administrative hours, and official campus location map."
+>
   <Header />
   
   <main class="flex-grow py-16 sm:py-24 bg-[#FCFCFC]">
